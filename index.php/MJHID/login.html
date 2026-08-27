@@ -80,12 +80,12 @@
 			<!-- <nav aria-label="Navigazione utente">
 					<ul id="navigationUser" class="menu">
 														<li class="">
-				<a href="https://mattioli1885journals.com/index.php/MJHID/user/register">
+				<a href="/auth/?mode=register">
 					Registrazione
 									</a>
 							</li>
 														<li class="">
-				<a href="https://mattioli1885journals.com/index.php/MJHID/login">
+				<a href="/auth/?mode=login">
 					Login
 									</a>
 							</li>
@@ -121,10 +121,10 @@
             
                  
         <li>
-         <a href="https://mattioli1885journals.com/index.php/MJHID/user/register"><i class="fa fa-key"></i> Registrazione</a>
+         <a href="/auth/?mode=register"><i class="fa fa-key"></i> Registrazione</a>
         </li>
               
-         <li><a href="https://mattioli1885journals.com/index.php/MJHID/login"><i class="fa fa-user"></i> Login</a></li>
+         <li><a href="/auth/?mode=login"><i class="fa fa-user"></i> Login</a></li>
                         
         
                </ul>
@@ -236,7 +236,7 @@
 </nav>
 
 		
-	<form class="pkp_form login" id="login" method="post" action="https://mattioli1885journals.com/index.php/MJHID/login/signIn">
+	<form class="pkp_form login" id="login" method="post" action="/auth/?mode=login/signIn">
 		<input type="hidden" name="csrfToken" value="775c0bdeafd97beb998f2bc9ce64fdde">
 		<input type="hidden" name="source" value="" />
 
@@ -256,7 +256,7 @@
 		</div>
 
 		<div class="form-group">
-			<a href="https://mattioli1885journals.com/index.php/MJHID/login/lostPassword">
+			<a href="/auth/?mode=login/lostPassword">
 				Password dimenticata?
 			</a>
 		</div>
@@ -274,7 +274,7 @@
 			</button>
 
 											
-				<a class="btn btn-default register-button" href="https://mattioli1885journals.com/index.php/MJHID/user/register?source=" role="button">
+				<a class="btn btn-default register-button" href="/auth/?mode=register?source=" role="button">
 					Registrati
 				</a>
 					</div>

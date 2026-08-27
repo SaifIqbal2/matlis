@@ -2,10 +2,10 @@
   "cleanUrls": false,
   "trailingSlash": false,
   "outputDirectory": ".",
-  "rewrites": [
-    { "source": "/index.php/:journal/login.html", "destination": "/auth/?mode=login&journal=:journal" },
-    { "source": "/index.php/:journal/user/register.html", "destination": "/auth/?mode=register&journal=:journal" },
-    { "source": "/index.php/:journal/user/register4cef.html", "destination": "/auth/?mode=register&journal=:journal" },
-    { "source": "/index.php/:journal/user/registerd976.html", "destination": "/auth/?mode=register&journal=:journal" }
+  "redirects": [
+    { "source": "/index.php/:journal/login.html", "destination": "/auth/?mode=login&journal=:journal", "permanent": false },
+    { "source": "/index.php/:journal/user/register.html", "destination": "/auth/?mode=register&journal=:journal", "permanent": false },
+    { "source": "/index.php/:journal/user/register4cef.html", "destination": "/auth/?mode=register&journal=:journal", "permanent": false },
+    { "source": "/index.php/:journal/user/registerd976.html", "destination": "/auth/?mode=register&journal=:journal", "permanent": false }
   ]
 }
