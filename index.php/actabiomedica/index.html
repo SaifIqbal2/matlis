@@ -1074,7 +1074,17 @@
 			</div>
 			<div id="pagination">
 			<input type="hidden" name="rowcount" id="rowcount" />
-			<div id="pagelink"><span class="disabled"><<</span><span class="disabled"><</span><span id=1 class="current">1</span><a class="link" onclick="getresult('onlinefirst/pagination4658.html?page=2')" >2</a><a class="link" onclick="getresult('onlinefirst/pagination9ba9.html?page=3')" >3</a>...<a class="link" onclick="getresult('onlinefirst/pagination0b08.html?page=9')" >9</a><a  class="link" onclick="getresult('onlinefirst/pagination4658.html?page=2')" >></a><a  class="link" onclick="getresult('onlinefirst/pagination0b08.html?page=9')" >>></a></div>
+			<div id="pagelink">
+				<span class="disabled"><<</span>
+				<span class="disabled"><</span>
+				<span id="page-1" class="current">1</span>
+				<a class="link" href="#" data-page="onlinefirst/pagination4658.html?page=2">2</a>
+				<a class="link" href="#" data-page="onlinefirst/pagination9ba9.html?page=3">3</a>
+				...
+				<a class="link" href="#" data-page="onlinefirst/pagination0b08.html?page=9">9</a>
+				<a class="link" href="#" data-page="onlinefirst/pagination4658.html?page=2">></a>
+				<a class="link" href="#" data-page="onlinefirst/pagination0b08.html?page=9">>></a>
+			</div>
 			</div>
 		
 	</div><!-- .sections -->
@@ -1087,6 +1097,13 @@ $(document).ready(function(){
 	$(document).on('click','a#load_more',function(e){
 		e.preventDefault();
 		var url=$(this).attr("href");
+		getresult(url);
+	});
+
+	$(document).on('click','a.link[data-page]',function(e){
+		e.preventDefault();
+		const url = $(this).data('page');
+		if (!url) return;
 		getresult(url);
 	});
 	

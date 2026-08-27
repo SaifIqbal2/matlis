@@ -89,4 +89,11 @@ records.addEventListener('click', async event => {
   }
 });
 
-client.auth.getSession().then(({ data }) => { if (data.session) showDashboard(); });
+client.auth.getSession().then(({ data }) => { 
+  if (data.session) { 
+    showDashboard(); 
+  } else {
+    // Redirect to unified Supabase auth if not logged in
+    window.location.href = '/auth/?mode=login&journal=admin';
+  }
+});

@@ -11,6 +11,13 @@ const switchButton = document.querySelector('#switchButton');
 const forgotButton = document.querySelector('#forgotButton');
 const message = document.querySelector('#message');
 
+// Check if already logged in - redirect to admin
+client.auth.getSession().then(({ data }) => {
+  if (data.session) {
+    window.location.href = '/admin/';
+  }
+});
+
 function setMessage(text, error = false) {
   message.textContent = text;
   message.style.color = error ? '#a52c2c' : '';
