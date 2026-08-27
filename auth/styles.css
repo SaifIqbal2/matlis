@@ -1,0 +1,16 @@
+:root { --ink: #1c2723; --muted: #65736c; --line: #dce5df; --paper: #f4f7f2; --accent: #b1401a; --accent-dark: #842d12; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; color: var(--ink); background: radial-gradient(circle at top right, #e8f0e8, var(--paper) 48%); font: 16px/1.5 Georgia, serif; }
+.auth-shell { width: min(100% - 32px, 460px); }
+.auth-card { padding: 32px; background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 16px 40px rgba(28, 39, 35, .08); }
+.eyebrow { margin: 0 0 10px; color: var(--accent); font: 700 .75rem/1.2 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+h1 { margin: 0 0 10px; font-size: 2.5rem; font-weight: 500; line-height: 1.1; }
+.muted, .message { color: var(--muted); }
+form { display: grid; gap: 14px; margin-top: 24px; }
+label { display: grid; gap: 6px; color: var(--muted); font: .85rem Arial, sans-serif; }
+input { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 4px; background: #fbfdfb; color: var(--ink); font: 1rem Georgia, serif; }
+button { width: 100%; padding: 12px 16px; border: 0; border-radius: 4px; cursor: pointer; background: var(--accent); color: #fff; font: 700 .85rem Arial, sans-serif; }
+button:hover { background: var(--accent-dark); }
+.link-button { width: auto; margin: 16px 16px 0 0; padding: 0; background: transparent; color: var(--accent-dark); font-weight: 400; }
+.link-button:hover { background: transparent; text-decoration: underline; }
+.message { min-height: 24px; margin: 18px 0 0; font: .9rem Arial, sans-serif; }
