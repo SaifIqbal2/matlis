@@ -1083,6 +1083,11 @@
 <script>
 function getresult(url){
 	var requestUrl = new URL(url, window.location.origin + '/index.php/actabiomedica/').href;
+	var page = new URL(requestUrl).searchParams.get('page');
+	if (page === '1') {
+		window.location.href = '/index.php/actabiomedica.html';
+		return;
+	}
 	var container = document.querySelector('.online_first_issue_toc > .issueTocPublishArticles');
 	if (!container) return;
 	var section = container.querySelector('.section');
@@ -1093,11 +1098,18 @@ function getresult(url){
 			return response.text();
 		})
 		.then(function(data) { container.innerHTML = data; })
-		.catch(function(error) { console.error(error); })
+		.catch(function(error) {
+			console.error(error);
+			if (responsePageIsMissing(requestUrl)) window.location.href = '/index.php/actabiomedica/issue/archive.html';
+		})
 		.finally(function() {
 			var currentSection = container.querySelector('.section');
 			if (currentSection) currentSection.classList.remove('OF-loading');
 		});
+}
+
+function responsePageIsMissing(url) {
+	return !url.includes('pagination4658.html') && !url.includes('pagination9ba9.html') && !url.includes('pagination0b08.html');
 }
 
 document.addEventListener('click', function(event) {
