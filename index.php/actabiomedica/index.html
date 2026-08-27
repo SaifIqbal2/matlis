@@ -1092,8 +1092,9 @@ $(document).ready(function(){
 	
 });
 function getresult(url){
+	var requestUrl = new URL(url, window.location.origin + '/index.php/actabiomedica/').href;
 	$.ajax({
-		url:url,
+		url:requestUrl,
 		type: 'GET',
 		beforeSend: function(){
 			$(".online_first_issue_toc > .issueTocPublishArticles > .section").addClass("OF-loading");
