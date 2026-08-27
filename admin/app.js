@@ -55,6 +55,11 @@ function setJournalEditMode(journal) {
   document.querySelector('#journalDescription').value = journal?.description || '';
 }
 
+function doiPageNumber(doi) {
+  const value = String(doi || '').trim().replace(/\/$/, '');
+  return value.split('/').pop() || '';
+}
+
 async function showDashboard() {
   const { data: sessionData } = await client.auth.getSession();
   if (!sessionData.session) return redirectToLogin();
@@ -101,6 +106,7 @@ function setPdfEditMode(pdf) {
   document.querySelector('#editPdfTitle').value = pdf.title || '';
   document.querySelector('#editPdfAuthors').value = pdf.authors || '';
   document.querySelector('#editPdfIssue').value = pdf.issue || '';
+  document.querySelector('#editPdfPageNumber').value = pdf.page_number || doiPageNumber(pdf.doi);
   document.querySelector('#editPdfDoi').value = pdf.doi || '';
   document.querySelector('#editPdfAbstract').value = pdf.abstract || '';
   document.querySelector('#editPdfKeywords').value = pdf.keywords || '';
@@ -136,6 +142,7 @@ pdfEditForm.addEventListener('submit', async event => {
     title: document.querySelector('#editPdfTitle').value.trim(),
     authors: document.querySelector('#editPdfAuthors').value.trim() || null,
     issue: document.querySelector('#editPdfIssue').value.trim() || null,
+    page_number: document.querySelector('#editPdfPageNumber').value.trim() || doiPageNumber(document.querySelector('#editPdfDoi').value) || null,
     doi: document.querySelector('#editPdfDoi').value.trim() || null,
     abstract: document.querySelector('#editPdfAbstract').value.trim() || null,
     keywords: document.querySelector('#editPdfKeywords').value.trim() || null
@@ -159,7 +166,8 @@ document.querySelector('#pdfForm').addEventListener('submit', async event => {
   const upload = await client.storage.from('journal-pdfs').upload(filePath, file, { contentType: 'application/pdf', upsert: false });
   if (upload.error) return setMessage(dashboardMessage, upload.error.message, true);
   const { data: sessionData } = await client.auth.getSession();
-  const insert = await client.from('journal_pdfs').insert({ journal_id: journal.id, title: document.querySelector('#pdfTitle').value.trim(), authors: document.querySelector('#pdfAuthors').value.trim() || null, issue: document.querySelector('#pdfIssue').value.trim() || null, doi: document.querySelector('#pdfDoi').value.trim() || null, abstract: document.querySelector('#pdfAbstract').value.trim() || null, keywords: document.querySelector('#pdfKeywords').value.trim() || null, file_path: filePath, file_size: file.size, created_by: sessionData.session?.user.id });
+  const doi = document.querySelector('#pdfDoi').value.trim();
+  const insert = await client.from('journal_pdfs').insert({ journal_id: journal.id, title: document.querySelector('#pdfTitle').value.trim(), authors: document.querySelector('#pdfAuthors').value.trim() || null, issue: document.querySelector('#pdfIssue').value.trim() || null, page_number: document.querySelector('#pdfPageNumber').value.trim() || doiPageNumber(doi) || null, doi: doi || null, abstract: document.querySelector('#pdfAbstract').value.trim() || null, keywords: document.querySelector('#pdfKeywords').value.trim() || null, file_path: filePath, file_size: file.size, created_by: sessionData.session?.user.id });
   if (insert.error) { await client.storage.from('journal-pdfs').remove([filePath]); return setMessage(dashboardMessage, insert.error.message, true); }
   event.target.reset(); await loadData();
 });

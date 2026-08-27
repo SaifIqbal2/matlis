@@ -7,7 +7,7 @@
   const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
 
   async function loadUploadedArticle() {
-    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, doi, abstract, keywords, file_path, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
+    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, doi, abstract, keywords, file_path, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
     if (error || !data) return;
 
     const pdfUrl = client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl;
@@ -25,7 +25,8 @@
     const doi = document.querySelector('meta[name="DC.Identifier.DOI"]');
     if (doi && data.doi) doi.setAttribute('content', data.doi);
     const details = document.querySelector('.entry_details');
-    if (details) details.insertAdjacentHTML('afterbegin', `<div class="item"><strong>Pages:</strong> ${escapeHtml(data.issue || 'Online First')}</div><p><a class="obj_galley_link btn btn-primary pdf" href="${escapeHtml(pdfUrl)}" target="_blank" rel="noopener">PDF</a></p>`);
+    const pageNumber = data.page_number || (data.doi || '').replace(/\/$/, '').split('/').pop() || 'Online First';
+    if (details) details.insertAdjacentHTML('afterbegin', `<div class="item"><strong>Pages:</strong> ${escapeHtml(pageNumber)}</div><p><a class="obj_galley_link btn btn-primary pdf" href="${escapeHtml(pdfUrl)}" target="_blank" rel="noopener">PDF</a></p>`);
   }
 
   loadUploadedArticle();

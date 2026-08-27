@@ -34,6 +34,7 @@ alter table public.journal_pdfs add column if not exists authors text;
 alter table public.journal_pdfs add column if not exists abstract text;
 alter table public.journal_pdfs add column if not exists keywords text;
 alter table public.journal_pdfs add column if not exists doi text;
+alter table public.journal_pdfs add column if not exists page_number text;
 ```
 
 ## 3. Use the control panel
