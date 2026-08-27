@@ -1,0 +1,23 @@
+TY  - JOUR
+AU  - Lin, Zimei
+AU  - Chen, Yi-jie 
+AU  - Xu, Yong-yuan 
+AU  - Wen, Qing 
+AU  - Chen, Ling-ling 
+AU  - Shao, Li-ming 
+AU  - Niu, Xiao-yan 
+AU  - Tang, Li-na 
+AU  - Huang, Pintong
+TI  - A hybrid radiomics framework integrating genetic algorithm-optimized random forest for preoperative identification of Luminal B breast cancer and Ki-67 prediction: A multicenter study
+PY  - %2026/%05/%20
+Y2  - %2026/%08/%27
+JF  - The Ultrasound Journal
+JA  - Ultrasound J
+VL  - 18
+IS  - 1
+SE  - Automation in Ultrasound Imaging: AI-driven and Model-based Data Acquisition, Analysis and Classification: Original Research Article
+DO  - 10.5826/tuj.2026.18667
+UR  - https://doi.org/10.5826/tuj.2026.18667
+SP  - 18667
+AB  - Background: Preoperative identification of Luminal B breast cancer remains a clinical challenge. This study aimed to develop an ultrasound radiomics framework integrating tumoral and peritumoral information for preoperative identification of Luminal B subtype and prediction of Ki-67 status.Methods: We retrospectively analyzed 1,944 patients from three centers. The development cohort from Centers One and Two was divided by stratified sampling into a training set (n = 1,434) and an internal test set (n = 253), and an independent cohort from Center Three (n = 257) was used for external validation. Lesion-containing ROIs were processed using deep learning-assisted segmentation and standardized for downstream analysis. Radiomic features were extracted, and a genetic algorithm (GA) was coupled with a random forest (RF) classifier to construct two models: one for Luminal B classification and another for predicting Ki-67 expression.Results: The combined tumor-peritumoral model achieved the highest performance, with the Luminal B classifier showing AUCs of 0.876 (training), 0.693 (test), and 0.786 (external validation). The Ki-67 prediction model yielded AUCs of 0.890 (training) and 0.858 (test), though external validation (AUC=0.661) was limited by dataset distribution. The Delong test confirmed that combined ROIs significantly outperformed tumor-only models, with NRI and IDI tests further validating the added value of peritumoral features.Conclusions: Ultrasound radiomics integrating tumoral and peritumoral regions can support the preoperative identification of Luminal B breast cancer, and peritumoral region analysis significantly enhances predictive performance. The framework also shows potential for predicting Ki-67 status within this subtype.
+ER  -

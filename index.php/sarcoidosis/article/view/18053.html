@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<!-- Mirrored from mattioli1885journals.com/index.php/sarcoidosis/article/view/18053 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Aug 2026 05:32:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Transcriptomic profiling of collagen gene expression in lung fibroblasts from patients with idiopathic pulmonary fibrosis
+							| Sarcoidosis, Vasculitis and Diffuse Lung Diseases
+			</title>
+
+	
+<meta name="generator" content="Open Journal Systems 3.4.0.8">
+<link rel="schema.DC" href="https://purl.org/dc/elements/1.1/" />
+<meta name="DC.Contributor.Sponsor" xml:lang="en" content="Ministry of Education, south korea"/>
+<meta name="DC.Creator.PersonalName" content="Eun-Jeong Seo"/>
+<meta name="DC.Creator.PersonalName" content="Seung-Lee Park"/>
+<meta name="DC.Creator.PersonalName" content="Min-Kyung Kim"/>
+<meta name="DC.Creator.PersonalName" content="Jae-Sung Choi"/>
+<meta name="DC.Creator.PersonalName" content="Hun-Gyu Hwang"/>
+<meta name="DC.Creator.PersonalName" content="Jung-Hyun Kim"/>
+<meta name="DC.Creator.PersonalName" content="Hun-Soo Chang"/>
+<meta name="DC.Creator.PersonalName" content="Choon-sik Park"/>
+<meta name="DC.Creator.PersonalName" content="Jong-Uk Lee"/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2026-06-22"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2025-10-14"/>
+<meta name="DC.Date.issued" scheme="ISO8601" content="2026-06-22"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2026-06-22"/>
+<meta name="DC.Description" xml:lang="en" content="Background and aim: Idiopathic Pulmonary Fibrosis (IPF) is a progressive interstitial lung disease characterized by aberrant extracellular matrix remodeling. While type I and III collagens are known contributors, the broader transcriptional landscape of diverse collagen genes in IPF fibroblasts and their potential associations with clinical outcomes remain incompletely understood. This study aimed to comprehensively characterize gene expression of collagen genes in IPF fibroblasts and to explore its relationship with patient survival.
+Methods: RNA sequencing was conducted on primary lung fibroblasts from 33 IPF patients and 10 non-fibrotic controls. Differential expression of collagen genes was analyzed using EdgeR’s exact test, with significance defined as false discovery rate-adjusted p &amp;lt; 0.05. Association with mortality was assessed using Cox regression analysis.
+Results: Among 17 collagen genes, 14 genes — including COL1A1, COL1A2, COL3A1, COL4A4, COL4A5, COL4A6, COL5A2, COL6A6, COL8A1, COL11A1, COL14A1, COL18A1, COL24A1, and COL27A1 — were significantly upregulated in IPF fibroblasts, while COL5A3, COL13A1, and COL16A1 were downregulated. COL3A1, COL4A4, and COL24A1 were associated with reduced survival in both Cox regression analysis and Kaplan–Meier plots. Among them, COL4A4 remained association with mortality in multivariable Cox model.
+Conclusions: This study delineates fibroblast-specific dysregulation across multiple collagen families in IPF, providing mechanistic insight into extracellular matrix remodeling. Although COL4A4 remained associated with mortality in multivariable Cox models, this finding should be interpreted as exploratory, given the limited number of events and the absence of experimental validation. Overall, our results highlight collagen transcript signatures as hypothesis-generating markers that warrant further validation to clarify their potential clinical relevance in IPF."/>
+<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+<meta name="DC.Identifier" content="18053"/>
+<meta name="DC.Identifier.pageNumber" content="18053"/>
+<meta name="DC.Identifier.DOI" content="10.36141/svdld.2026.18053"/>
+<meta name="DC.Identifier.URI" content="18053.html"/>
+<meta name="DC.Language" scheme="ISO639-1" content="en"/>
+<meta name="DC.Rights" content="Copyright (c) 2026 Eun-Jeong Seo, Seung-Lee Park, Min-Kyung Kim, Jae-Sung Choi, Hun-Gyu Hwang, Jung-Hyun Kim, Hun-Soo Chang, Choon-sik Park, Jong-Uk Lee"/>
+<meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc/4.0"/>
+<meta name="DC.Source" content="Sarcoidosis, Vasculitis and Diffuse Lung Diseases"/>
+<meta name="DC.Source.ISSN" content="2532-179X"/>
+<meta name="DC.Source.Issue" content="2"/>
+<meta name="DC.Source.Volume" content="43"/>
+<meta name="DC.Source.URI" content="../../../sarcoidosis.html"/>
+<meta name="DC.Subject" xml:lang="en" content=" idiopathic Pulmonary Fibrosis (IPF)"/>
+<meta name="DC.Subject" xml:lang="en" content="collagen"/>
+<meta name="DC.Subject" xml:lang="en" content="fibroblast"/>
+<meta name="DC.Subject" xml:lang="en" content="extracellular matrix"/>
+<meta name="DC.Subject" xml:lang="en" content="rna-seq"/>
+<meta name="DC.Subject" xml:lang="en" content="prognostic factors"/>
+<meta name="DC.Title" content="Transcriptomic profiling of collagen gene expression in lung fibroblasts from patients with idiopathic pulmonary fibrosis"/>
+<meta name="DC.Type" content="Text.Serial.Journal"/>
+<meta name="DC.Type.articleType" content="Original Articles: Laboratory Research"/>
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_journal_title" content="Sarcoidosis, Vasculitis and Diffuse Lung Diseases"/>
+<meta name="citation_journal_abbrev" content="Sarcoidosis Vasc Diffuse Lung Dis"/>
+<meta name="citation_issn" content="2532-179X"/> 
+<meta name="citation_author" content="Eun-Jeong Seo"/>
+<meta name="citation_author_institution" content="Department of Interdisciplinary Program in Biomedical Science Major, Graduate School, Soonchunhyang University, Asan, Republic of Korea"/>
+<meta name="citation_author" content="Seung-Lee Park"/>
+<meta name="citation_author_institution" content="Department of Interdisciplinary Program in Biomedical Science Major, Graduate School, Soonchunhyang University, Asan, Republic of Korea"/>
+<meta name="citation_author" content="Min-Kyung Kim"/>
+<meta name="citation_author_institution" content="Department of Interdisciplinary Program in Biomedical Science Major, Graduate School, Soonchunhyang University, Asan, Republic of Korea"/>
+<meta name="citation_author" content="Jae-Sung Choi"/>
+<meta name="citation_author_institution" content="Division of Respiratory Medicine, Department of Internal Medicine, Soonchunhyang University Cheonan Hospital, Cheonan, Republic of Korea"/>
+<meta name="citation_author" content="Hun-Gyu Hwang"/>
+<meta name="citation_author_institution" content="Soonchunhyang University Bucheon Hospital, Bucheon, Republic of Korea"/>
+<meta name="citation_author" content="Jung-Hyun Kim"/>
+<meta name="citation_author_institution" content="Division of Allergy and Clinical Immunology, Department of Internal Medicine, Soonchunhyang University Hospital, Seoul, Republic of Korea"/>
+<meta name="citation_author" content="Hun-Soo Chang"/>
+<meta name="citation_author_institution" content="Department of Interdisciplinary Program in Biomedical Science Major, Graduate School, Soonchunhyang University, Asan, Republic of Korea"/>
+<meta name="citation_author" content="Choon-sik Park"/>
+<meta name="citation_author_institution" content="Biobank, Soonchunhyang University Bucheon Hospital, Bucheon, Republic of Korea"/>
+<meta name="citation_author" content="Jong-Uk Lee"/>
+<meta name="citation_author_institution" content="Department of Interdisciplinary Program in Biomedical Science Major, Graduate School, Soonchunhyang University, Asan, Republic of Korea"/>
+<meta name="citation_title" content="Transcriptomic profiling of collagen gene expression in lung fibroblasts from patients with idiopathic pulmonary fibrosis"/>
+<meta name="citation_language" content="en"/>
+<meta name="citation_date" content="2026/06/22"/>
+<meta name="citation_volume" content="43"/>
+<meta name="citation_issue" content="2"/>
+<meta name="citation_firstpage" content="18053"/>
+<meta name="citation_lastpage" content="18053"/>
+<meta name="citation_doi" content="10.36141/svdld.2026.18053"/>
+<meta name="citation_abstract_html_url" content="18053.html"/>
+<meta name="citation_abstract" xml:lang="en" content="Background and aim: Idiopathic Pulmonary Fibrosis (IPF) is a progressive interstitial lung disease characterized by aberrant extracellular matrix remodeling. While type I and III collagens are known contributors, the broader transcriptional landscape of diverse collagen genes in IPF fibroblasts and their potential associations with clinical outcomes remain incompletely understood. This study aimed to comprehensively characterize gene expression of collagen genes in IPF fibroblasts and to explore its relationship with patient survival.
+Methods: RNA sequencing was conducted on primary lung fibroblasts from 33 IPF patients and 10 non-fibrotic controls. Differential expression of collagen genes was analyzed using EdgeR’s exact test, with significance defined as false discovery rate-adjusted p &amp;lt; 0.05. Association with mortality was assessed using Cox regression analysis.
+Results: Among 17 collagen genes, 14 genes — including COL1A1, COL1A2, COL3A1, COL4A4, COL4A5, COL4A6, COL5A2, COL6A6, COL8A1, COL11A1, COL14A1, COL18A1, COL24A1, and COL27A1 — were significantly upregulated in IPF fibroblasts, while COL5A3, COL13A1, and COL16A1 were downregulated. COL3A1, COL4A4, and COL24A1 were associated with reduced survival in both Cox regression analysis and Kaplan–Meier plots. Among them, COL4A4 remained association with mortality in multivariable Cox model.
+Conclusions: This study delineates fibroblast-specific dysregulation across multiple collagen families in IPF, providing mechanistic insight into extracellular matrix remodeling. Although COL4A4 remained associated with mortality in multivariable Cox models, this finding should be interpreted as exploratory, given the limited number of events and the absence of experimental validation. Overall, our results highlight collagen transcript signatures as hypothesis-generating markers that warrant further validation to clarify their potential clinical relevance in IPF."/>
+<meta name="citation_keywords" xml:lang="en" content=" idiopathic Pulmonary Fibrosis (IPF)"/>
+<meta name="citation_keywords" xml:lang="en" content="collagen"/>
+<meta name="citation_keywords" xml:lang="en" content="fibroblast"/>
+<meta name="citation_keywords" xml:lang="en" content="extracellular matrix"/>
+<meta name="citation_keywords" xml:lang="en" content="rna-seq"/>
+<meta name="citation_keywords" xml:lang="en" content="prognostic factors"/>
+<meta name="citation_pdf_url" content="../download/18053/SVDLD_18053.pdf%3bfilename_%3dUTF-8%27%27SVDLD_18053.pdf"/>
+<meta name="citation_reference" content="1. Jessen H, Hoyer N, Prior TS, Frederiksen P, Karsdal MA, Leeming DJ, et al. Turnover of type I and III collagen predicts progression of idiopathic pulmonary fibrosis. Respir Res. 2021 Jul 15;22(1):205. doi: 10.1186/s12931-021-01801-0."/>
+<meta name="citation_reference" content="2. Ko SJ, Choi SM, Han KD, Lee CH, Lee J. All-cause mortality of patients with idiopathic pulmonary fibrosis: a nationwide population-based cohort study in Korea. Sci Rep. 2021;11(1):15145. doi: 10.1038/s41598-021-94655-x."/>
+<meta name="citation_reference" content="3. Gimenez A, Duch P, Puig M, Gabasa M, Xaubet A, Alcaraz J. Dysregulated Collagen Homeostasis by Matrix Stiffening and TGF-beta1 in Fibroblasts from Idiopathic Pulmonary Fibrosis Patients: Role of FAK/Akt. Int J Mol Sci. 2017;18(11). doi: 10.3390/ijms18112431."/>
+<meta name="citation_reference" content="4. Hardie WD, Glasser SW, Hagood JS. Emerging concepts in the pathogenesis of lung fibrosis. Am J Pathol. 2009;175(1):3-16. doi: 10.2353/ajpath.2009.081170."/>
+<meta name="citation_reference" content="5. Staab-Weijnitz CA. Fighting the Fiber: Targeting Collagen in Lung Fibrosis. Am J Respir Cell Mol Biol. 2022;66(4):363-81. doi: 10.1165/rcmb.2021-0342TR."/>
+<meta name="citation_reference" content="6. Ricard-Blum S. The collagen family. Cold Spring Harb Perspect Biol. 2011;3(1):a004978. doi: 10.1101/cshperspect.a004978."/>
+<meta name="citation_reference" content="7. Gelse K, Poschl E, Aigner T. Collagens--structure, function, and biosynthesis. Adv Drug Deliv Rev. 2003;55(12):1531-46. doi: 10.1016/j.addr.2003.08.002."/>
+<meta name="citation_reference" content="8. Liu L, Stephens B, Bergman M, May A, Chiang T. Role of Collagen in Airway Mechanics. Bioengineering (Basel). 2021;8(1). doi: 10.3390/bioengineering8010013."/>
+<meta name="citation_reference" content="9. Hoyer N, Jessen H, Prior TS, Sand JMB, Leeming DJ, Karsdal MA, et al. High turnover of types III and VI collagen in progressive idiopathic pulmonary fibrosis. Respirology. 2021;26(6):582-9. doi: 10.1111/resp.14056."/>
+<meta name="citation_reference" content="10. Lee JU, Cheong HS, Shim EY, Bae DJ, Chang HS, Uh ST, et al. Gene profile of fibroblasts identify relation of CCL8 with idiopathic pulmonary fibrosis. Respir Res. 2017;18(1):3. doi: 10.1186/s12931-016-0493-6."/>
+<meta name="citation_reference" content="11. Raghu G, Remy-Jardin M, Myers JL, Richeldi L, Ryerson CJ, Lederer DJ, et al. Diagnosis of Idiopathic Pulmonary Fibrosis. An Official ATS/ERS/JRS/ALAT Clinical Practice Guideline. Am J Respir Crit Care Med. 2018;198(5):e44-e68. doi: 10.1164/rccm.201807-1255ST."/>
+<meta name="citation_reference" content="12. Raghu G, Collard HR, Egan JJ, Martinez FJ, Behr J, Brown KK, et al. An official ATS/ERS/JRS/ALAT statement: idiopathic pulmonary fibrosis: evidence-based guidelines for diagnosis and management. Am J Respir Crit Care Med. 2011;183(6):788-824. doi: 10.1164/rccm.2009-040GL."/>
+<meta name="citation_reference" content="13. Birk DE, Fitch JM, Babiarz JP, Doane KJ, Linsenmayer TF. Collagen fibrillogenesis in vitro: interaction of types I and V collagen regulates fibril diameter. J Cell Sci. 1990;95 ( Pt 4):649-57. doi: 10.1242/jcs.95.4.649."/>
+<meta name="citation_reference" content="14. Peyser R, MacDonnell S, Gao Y, Cheng L, Kim Y, Kaplan T, et al. Defining the Activated Fibroblast Population in Lung Fibrosis Using Single-Cell Sequencing. Am J Respir Cell Mol Biol. 2019;61(1):74-85. doi: 10.1165/rcmb.2018-0313OC."/>
+<meta name="citation_reference" content="15. Urushiyama H, Terasaki Y, Nagasaka S, Terasaki M, Kunugi S, Nagase T, et al. Role of alpha1 and alpha2 chains of type IV collagen in early fibrotic lesions of idiopathic interstitial pneumonias and migration of lung fibroblasts. Lab Invest. 2015;95(8):872-85. doi: 10.1038/labinvest.2015.66."/>
+<meta name="citation_reference" content="16. Chen H, Qu J, Huang X, Kurundkar A, Zhu L, Yang N, et al. Mechanosensing by the alpha6-integrin confers an invasive fibroblast phenotype and mediates lung fibrosis. Nat Commun. 2016;7:12564. doi: 10.1038/ncomms12564."/>
+<meta name="citation_reference" content="17. Li Y, Lacerda DA, Warman ML, Beier DR, Yoshioka H, Ninomiya Y, et al. A fibrillar collagen gene, Col11a1, is essential for skeletal morphogenesis. Cell. 1995;80(3):423-30. doi: 10.1016/0092-8674(95)90492-1."/>
+<meta name="citation_reference" content="18. Grassel S, Bauer RJ. Collagen XVI in health and disease. Matrix Biol. 2013;32(2):64-73. doi: 10.1016/j.matbio.2012.11.001."/>
+<meta name="citation_reference" content="19. Li Q, Olsen BR. Increased angiogenic response in aortic explants of collagen XVIII/endostatin-null mice. Am J Pathol. 2004;165(2):415-24. doi: 10.1016/S0002-9440(10)63307-X."/>
+<meta name="citation_reference" content="20. Hjorten R, Hansen U, Underwood RA, Telfer HE, Fernandes RJ, Krakow D, et al. Type XXVII collagen at the transition of cartilage to bone during skeletogenesis. Bone. 2007;41(4):535-42. doi: 10.1016/j.bone.2007.06.024."/>
+<meta name="citation_reference" content="21. Loscertales M, Nicolaou F, Jeanne M, Longoni M, Gould DB, Sun Y, et al. Type IV collagen drives alveolar epithelial-endothelial association and the morphogenetic movements of septation. BMC Biol. 2016;14:59. doi: 10.1186/s12915-016-0281-2."/>
+<meta name="citation_reference" content="22. Abreu-Velez AM, Howard MS. Collagen IV in Normal Skin and in Pathological Processes. N Am J Med Sci. 2012;4(1):1-8. doi: 10.4103/1947-2714.92892."/>
+<meta name="citation_reference" content="23. Leeming DJ, Sand JM, Nielsen MJ, Genovese F, Martinez FJ, Hogaboam CM, et al. Serological investigation of the collagen degradation profile of patients with chronic obstructive pulmonary disease or idiopathic pulmonary fibrosis. Biomark Insights. 2012;7:119-26. doi: 10.4137/BMI.S9415."/>
+<meta name="citation_reference" content="24. Organ LA, Duggan AR, Oballa E, Taggart SC, Simpson JK, Kang&#039;ombe AR, et al. Biomarkers of collagen synthesis predict progression in the PROFILE idiopathic pulmonary fibrosis cohort. Respir Res. 2019 Jul 12;20(1):148. doi: 10.1186/s12931-019-1118-7."/>
+<meta name="citation_reference" content="25. Matsuo N, Tanaka S, Yoshioka H, Koch M, Gordon MK, Ramirez F. Collagen XXIV (Col24a1) gene expression is a specific marker of osteoblast differentiation and bone formation. Connect Tissue Res. 2008;49(2):68-75. doi: 10.1080/03008200801913502."/>
+<meta name="citation_reference" content="26. Oldham JM, Huang Y, Bose S, Ma SF, Kim JS, Schwab A, et al. Proteomic Biomarkers of Survival in Idiopathic Pulmonary Fibrosis. Am J Respir Crit Care Med. 2024;209(9):1111-20. doi: 10.1164/rccm.202301-0117OC."/>
+<meta name="citation_reference" content="27. Lavis P, Garabet A, Cardozo AK, Bondue B. The fibroblast activation protein alpha as a biomarker of pulmonary fibrosis. Front Med (Lausanne). 2024;11:1393778. doi: 10.3389/fmed.2024.1393778."/>
+<link rel="alternate" type="application/atom+xml" href="../../gateway/plugin/WebFeedGatewayPlugin/atom">
+<link rel="alternate" type="application/rdf+xml" href="../../gateway/plugin/WebFeedGatewayPlugin/rss">
+<link rel="alternate" type="application/rss+xml" href="../../gateway/plugin/WebFeedGatewayPlugin/rss2">
+	<link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css1cc1.css?name=stylesheetless" type="text/css" /><style type="text/css">.hero-section { background: center / cover no-repeat url("../../../../public/journals/3/homepageImage_en.jpg");}</style><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css1e80.css?name=stylesheetless_new" type="text/css" /><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css4a93.css?name=stylesheet" type="text/css" /><link rel="stylesheet" href="../../../../lib/pkp/styles/fontawesome/fontawesome7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/fontawesome/css/all.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/mdb/css/mdb.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/aos/aos7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/swiper/swiper-bundle.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/cssa8ed.css?name=my-custom-layout-new" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/onlineFirst/css/paginationStyle7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/citations/css/citations7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/doiInSummary/styles/doi7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/citationStyleLanguage/css/citationStyleLanguagePlugin7187.css?v=3.4.0.8" type="text/css" />
+
+
+</head>
+
+<body class="pkp_page_article pkp_op_view has_site_logo" dir="ltr">
+
+	<!-- ======= Header ======= -->
+	<header id="header" class="fixed-top d-flex align-items-center">
+  		    <div class="container d-flex justify-content-between align-items-center">
+    	<div class="logo">
+    						<a href="../../index.html" class="navbar-brand _is_img">
+					<img
+						src="../../../../public/journals/3/pageHeaderLogoImage_en.png"
+						width="2000"
+						height="313"
+													alt="SS"
+												class="img-fluid"
+						>
+				</a>
+					</div>
+
+		<nav id="navbar" class="navbar navbar-dark flex-row shadow-0">
+			
+											<ul id="_navigationPrimary" class="_pkp_navigation_primary navbar-nav ml-auto">
+
+								<li class=" nav-item">
+														<a href="../../index.html" class="nav-link">
+						Home
+					</a>
+							</li>
+								<li class=" nav-item">
+									<div class="dropdown">
+						<a
+							href="../../about.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							About
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="">
+										<a
+											href="../../about.html"
+											class="dropdown-item">
+											About the Journal
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/submissions.html"
+											class="dropdown-item">
+											Submissions
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../authorguidelines.html"
+											class="dropdown-item">
+											Authors Guidelines
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/editorialTeam.html"
+											class="dropdown-item">
+											Editorial Team
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../ITS_AIPO.html"
+											class="dropdown-item">
+											ITS-AIPO
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/contact.html"
+											class="dropdown-item">
+											Contact
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class=" nav-item">
+														<a href="../../issue/view/1026.html" class="nav-link">
+						Current
+					</a>
+							</li>
+								<li class=" nav-item">
+														<a href="../../issue/archive.html" class="nav-link">
+						Archives
+					</a>
+							</li>
+								<li class=" nav-item">
+														<a href="../../announcement.html" class="nav-link">
+						Announcements
+					</a>
+							</li>
+			</ul>
+
+			
+      	</nav><!-- .navbar -->
+
+      	<nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar d-flex flex-column shadow-0">
+			<div class="container">
+				<div class="navbar-collapse d-flex justify-content-end">
+					
+<ul class="navbar-nav mr-auto flex-row ">
+		<li class="nav-item ">
+		<div class="dropdown">
+							<a href="#" class="nav-link" type="button" id="dropdownSidebar" data-mdb-toggle="dropdown" aria-expanded="false">
+					<i class="fas fa-globe"></i>
+				</a>
+						<ul class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light" aria-labelledby="dropdownSidebar">
+									<li class="locale_0" lang="0">
+						<a href="18053.html?source=%2Findex.php%2Fsarcoidosis%2Farticle%2Fview%2F18053" class="dropdown-item">
+							en
+						</a>
+					</li>
+							</ul>
+		</div>
+	</li>
+
+		<li class=" nav-item">
+					<a href="../../search.html" class="nav-link mx-1">
+				<i class="fas fa-search"></i>
+			</a>
+			</li>
+</ul>											<ul id="_navigationUser" class="_pkp_navigation_user flex-row justify-content-end navbar-nav ml-auto">
+
+								<li class="profile px-2 px-md-0 nav-item">
+														<a href="../../user/register.html" class="nav-link">
+						Register
+					</a>
+							</li>
+								<li class="profile px-2 px-md-0 nav-item">
+														<a href="../../login.html" class="nav-link">
+						Login
+					</a>
+							</li>
+										</ul>
+
+				</div>
+			</div>
+		</nav>
+      	<button
+    type="button"
+    class="navbar-toggler text-white d-lg-none"
+    data-mdb-toggle="modal"
+    data-mdb-target="#exampleModal">
+	<i class="fas fa-bars"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel"></h5>
+				<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+	      		<div>
+		      		
+																	<ul id="_navigationPrimary" class="_pkp_navigation_primary d-block navbar-nav ml-auto">
+
+								<li class="text-dark nav-item">
+														<a href="../../index.html" class="nav-link">
+						Home
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+									<div class="dropdown">
+						<a
+							href="../../about.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							About
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="text-dark">
+										<a
+											href="../../about.html"
+											class="dropdown-item">
+											About the Journal
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/submissions.html"
+											class="dropdown-item">
+											Submissions
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../authorguidelines.html"
+											class="dropdown-item">
+											Authors Guidelines
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/editorialTeam.html"
+											class="dropdown-item">
+											Editorial Team
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../ITS_AIPO.html"
+											class="dropdown-item">
+											ITS-AIPO
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/contact.html"
+											class="dropdown-item">
+											Contact
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../issue/view/1026.html" class="nav-link">
+						Current
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../issue/archive.html" class="nav-link">
+						Archives
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../announcement.html" class="nav-link">
+						Announcements
+					</a>
+							</li>
+			</ul>
+
+					
+				</div>
+
+				<hr/>
+
+				<div>
+					
+<ul class="navbar-nav mr-auto flex-row d-block">
+		<li class="nav-item mx-0">
+		<div class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownSidebar" data-mdb-toggle="dropdown" aria-expanded="false">
+					Language
+				</a>
+						<ul class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light" aria-labelledby="dropdownSidebar">
+									<li class="locale_0" lang="0">
+						<a href="18053.html?source=%2Findex.php%2Fsarcoidosis%2Farticle%2Fview%2F18053" class="dropdown-item">
+							en
+						</a>
+					</li>
+							</ul>
+		</div>
+	</li>
+
+		<li class="mx-0 nav-item">
+					<a href="../../search.html" class="nav-link">
+				Search
+			</a>
+			</li>
+</ul>											<ul id="_navigationUser" class="_pkp_navigation_user d-block navbar-nav ml-auto">
+
+								<li class="profile text-dark nav-item">
+														<a href="../../user/register.html" class="nav-link">
+						Register
+					</a>
+							</li>
+								<li class="profile text-dark nav-item">
+														<a href="../../login.html" class="nav-link">
+						Login
+					</a>
+							</li>
+										</ul>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</div>
+	</div>
+</div>    </div>
+  </header><!-- End Header -->
+
+  
+
+
+		
+		<div class="mainWrapper">
+	<main class="" role="main">
+		<a id="pkp_content_main"></a>
+
+				
+			<section class="hero-section inner-page">
+			  <div class="wave">
+
+			    <svg width="1920px" height="90px" viewBox="0 0 1920 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <g id="Apple-TV" transform="translate(0.000000, -402.000000)" fill="#FFFFFF">
+			          <path d="M0,439.134243 C175.04074,464.89273 327.944386,477.771974 458.710937,477.771974 C654.860765,477.771974 870.645295,442.632362 1205.9828,410.192501 C1429.54114,388.565926 1667.54687,411.092417 1920,477.771974 L1920,667 L1017.15166,667 L0,667 L0,439.134243 Z" id="Path"></path>
+			        </g>
+			      </g>
+			    </svg>
+
+			  </div>
+
+			  <div class="container">
+			    <div class="row align-items-center">
+			      <div class="col-12">
+			        <div class="row justify-content-center">
+			          <div class="col-md-10 text-center hero-text">
+			            <h1 data-aos="fade-up" data-aos-delay="">Transcriptomic profiling of collagen gene expression in lung fibroblasts from patients with idiopathic pulmonary fibrosis</h1>
+			            <p class="mb-5" data-aos="fade-up" data-aos-delay="100"></p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+
+			</section>
+		
+<div class="page page_article">
+			<nav class="cmp_breadcrumbs" role="navigation" aria-label="You are here:">
+	<ol>
+		<li>
+			<a href="../../index.html">
+				Home
+			</a>
+			<span class="separator">/</span>
+		</li>
+		<li>
+			<a href="../../issue/archive.html">
+				Archives
+			</a>
+			<span class="separator">/</span>
+		</li>
+					<li>
+				<a href="../../issue/view/1026.html">
+					Vol. 43 No. 2 (2026)
+				</a>
+				<span class="separator">/</span>
+			</li>
+				<li class="current" aria-current="page">
+			<span aria-current="page">
+									Original Articles: Laboratory Research
+							</span>
+		</li>
+	</ol>
+</nav>
+	
+		  	 <article class="obj_article_details">
+
+		
+	<div class="d-md-flex">
+		<div class="main_entry">
+			<section class="item">
+				<h3 class="page_title">
+					Transcriptomic profiling of collagen gene expression in lung fibroblasts from patients with idiopathic pulmonary fibrosis
+				</h3>
+
+							</section> 
+
+							<section class="item authors">
+					<h2 class="pkp_screen_reader">Authors</h2>
+					<ul class="authors">
+											<li>
+							<span class="name">
+								Eun-Jeong Seo
+							</span>
+															<span class="affiliation">
+									Department of Interdisciplinary Program in Biomedical Science Major, Graduate School, Soonchunhyang University, Asan, Republic of Korea
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0009-0000-9347-0244" target="_blank">
+										https://orcid.org/0009-0000-9347-0244
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Seung-Lee Park
+							</span>
+															<span class="affiliation">
+									Department of Interdisciplinary Program in Biomedical Science Major, Graduate School, Soonchunhyang University, Asan, Republic of Korea
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0000-0002-1562-732X" target="_blank">
+										https://orcid.org/0000-0002-1562-732X
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Min-Kyung Kim
+							</span>
+															<span class="affiliation">
+									Department of Interdisciplinary Program in Biomedical Science Major, Graduate School, Soonchunhyang University, Asan, Republic of Korea
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0000-0003-2996-0198" target="_blank">
+										https://orcid.org/0000-0003-2996-0198
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Jae-Sung Choi
+							</span>
+															<span class="affiliation">
+									Division of Respiratory Medicine, Department of Internal Medicine, Soonchunhyang University Cheonan Hospital, Cheonan, Republic of Korea
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0000-0002-8673-8131" target="_blank">
+										https://orcid.org/0000-0002-8673-8131
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Hun-Gyu Hwang
+							</span>
+															<span class="affiliation">
+									Soonchunhyang University Bucheon Hospital, Bucheon, Republic of Korea
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0000-0001-9304-7219" target="_blank">
+										https://orcid.org/0000-0001-9304-7219
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Jung-Hyun Kim
+							</span>
+															<span class="affiliation">
+									Division of Allergy and Clinical Immunology, Department of Internal Medicine, Soonchunhyang University Hospital, Seoul, Republic of Korea
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0000-0002-5498-5170" target="_blank">
+										https://orcid.org/0000-0002-5498-5170
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Hun-Soo Chang
+							</span>
+															<span class="affiliation">
+									Department of Interdisciplinary Program in Biomedical Science Major, Graduate School, Soonchunhyang University, Asan, Republic of Korea
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0000-0002-4025-4182" target="_blank">
+										https://orcid.org/0000-0002-4025-4182
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Choon-sik Park
+							</span>
+															<span class="affiliation">
+									Biobank, Soonchunhyang University Bucheon Hospital, Bucheon, Republic of Korea
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0000-0001-7955-2526" target="_blank">
+										https://orcid.org/0000-0001-7955-2526
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Jong-Uk Lee
+							</span>
+															<span class="affiliation">
+									Department of Interdisciplinary Program in Biomedical Science Major, Graduate School, Soonchunhyang University, Asan, Republic of Korea
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0000-0002-0232-5381" target="_blank">
+										https://orcid.org/0000-0002-0232-5381
+									</a>
+								</span>
+													</li>
+										</ul>
+				</section>
+			
+						
+									<section class="item keywords">
+				<h4 class="_label">
+										Keywords:
+				</h4>
+				<span class="value">
+											 idiopathic Pulmonary Fibrosis (IPF), 											collagen, 											fibroblast, 											extracellular matrix, 											rna-seq, 											prognostic factors									</span>
+			</section>
+			
+										<section class="item abstract">
+					<h4 class="_label">Abstract</h4>
+					<p><strong>Background and aim: </strong>Idiopathic Pulmonary Fibrosis (IPF) is a progressive interstitial lung disease characterized by aberrant extracellular matrix remodeling. While type I and III collagens are known contributors, the broader transcriptional landscape of diverse collagen genes in IPF fibroblasts and their potential associations with clinical outcomes remain incompletely understood. This study aimed to comprehensively characterize gene expression of collagen genes in IPF fibroblasts and to explore its relationship with patient survival.</p>
+<p><strong>Methods: </strong>RNA sequencing was conducted on primary lung fibroblasts from 33 IPF patients and 10 non-fibrotic controls. Differential expression of collagen genes was analyzed using EdgeR’s exact test, with significance defined as false discovery rate-adjusted <em>p</em> &lt; 0.05. Association with mortality was assessed using Cox regression analysis.</p>
+<p><strong>Results:</strong> Among 17 collagen genes, 14 genes — including <em>COL1A1, COL1A2, COL3A1, COL4A4, COL4A5, COL4A6, COL5A2, COL6A6, COL8A1, COL11A1, COL14A1, COL18A1, COL24A1,</em> and <em>COL27A1</em> — were significantly upregulated in IPF fibroblasts, while <em>COL5A3, COL13A1</em>, and <em>COL16A1</em> were downregulated. <em>COL3A1, COL4A</em>4, and <em>COL24A1</em> were associated with reduced survival in both Cox regression analysis and Kaplan–Meier plots. Among them, <em>COL4A4</em> remained association with mortality in multivariable Cox model.</p>
+<p><strong>Conclusions: </strong>This study delineates fibroblast-specific dysregulation across multiple collagen families in IPF, providing mechanistic insight into extracellular matrix remodeling. Although <em>COL4A4</em> remained associated with mortality in multivariable Cox models, this finding should be interpreted as exploratory, given the limited number of events and the absence of experimental validation. Overall, our results highlight collagen transcript signatures as hypothesis-generating markers that warrant further validation to clarify their potential clinical relevance in IPF.</p>
+				</section>
+			
+			
+
+																																																																											
+										<section class="item references">
+					<h2 class="label">
+						References
+					</h2>
+					<div class="value">
+																					<p>1. Jessen H, Hoyer N, Prior TS, Frederiksen P, Karsdal MA, Leeming DJ, et al. Turnover of type I and III collagen predicts progression of idiopathic pulmonary fibrosis. Respir Res. 2021 Jul 15;22(1):205. doi: 10.1186/s12931-021-01801-0. </p>
+															<p>2. Ko SJ, Choi SM, Han KD, Lee CH, Lee J. All-cause mortality of patients with idiopathic pulmonary fibrosis: a nationwide population-based cohort study in Korea. Sci Rep. 2021;11(1):15145. doi: 10.1038/s41598-021-94655-x. </p>
+															<p>3. Gimenez A, Duch P, Puig M, Gabasa M, Xaubet A, Alcaraz J. Dysregulated Collagen Homeostasis by Matrix Stiffening and TGF-beta1 in Fibroblasts from Idiopathic Pulmonary Fibrosis Patients: Role of FAK/Akt. Int J Mol Sci. 2017;18(11). doi: 10.3390/ijms18112431. </p>
+															<p>4. Hardie WD, Glasser SW, Hagood JS. Emerging concepts in the pathogenesis of lung fibrosis. Am J Pathol. 2009;175(1):3-16. doi: 10.2353/ajpath.2009.081170. </p>
+															<p>5. Staab-Weijnitz CA. Fighting the Fiber: Targeting Collagen in Lung Fibrosis. Am J Respir Cell Mol Biol. 2022;66(4):363-81. doi: 10.1165/rcmb.2021-0342TR. </p>
+															<p>6. Ricard-Blum S. The collagen family. Cold Spring Harb Perspect Biol. 2011;3(1):a004978. doi: 10.1101/cshperspect.a004978. </p>
+															<p>7. Gelse K, Poschl E, Aigner T. Collagens--structure, function, and biosynthesis. Adv Drug Deliv Rev. 2003;55(12):1531-46. doi: 10.1016/j.addr.2003.08.002. </p>
+															<p>8. Liu L, Stephens B, Bergman M, May A, Chiang T. Role of Collagen in Airway Mechanics. Bioengineering (Basel). 2021;8(1). doi: 10.3390/bioengineering8010013. </p>
+															<p>9. Hoyer N, Jessen H, Prior TS, Sand JMB, Leeming DJ, Karsdal MA, et al. High turnover of types III and VI collagen in progressive idiopathic pulmonary fibrosis. Respirology. 2021;26(6):582-9. doi: 10.1111/resp.14056. </p>
+															<p>10. Lee JU, Cheong HS, Shim EY, Bae DJ, Chang HS, Uh ST, et al. Gene profile of fibroblasts identify relation of CCL8 with idiopathic pulmonary fibrosis. Respir Res. 2017;18(1):3. doi: 10.1186/s12931-016-0493-6. </p>
+															<p>11. Raghu G, Remy-Jardin M, Myers JL, Richeldi L, Ryerson CJ, Lederer DJ, et al. Diagnosis of Idiopathic Pulmonary Fibrosis. An Official ATS/ERS/JRS/ALAT Clinical Practice Guideline. Am J Respir Crit Care Med. 2018;198(5):e44-e68. doi: 10.1164/rccm.201807-1255ST. </p>
+															<p>12. Raghu G, Collard HR, Egan JJ, Martinez FJ, Behr J, Brown KK, et al. An official ATS/ERS/JRS/ALAT statement: idiopathic pulmonary fibrosis: evidence-based guidelines for diagnosis and management. Am J Respir Crit Care Med. 2011;183(6):788-824. doi: 10.1164/rccm.2009-040GL. </p>
+															<p>13. Birk DE, Fitch JM, Babiarz JP, Doane KJ, Linsenmayer TF. Collagen fibrillogenesis in vitro: interaction of types I and V collagen regulates fibril diameter. J Cell Sci. 1990;95 ( Pt 4):649-57. doi: 10.1242/jcs.95.4.649. </p>
+															<p>14. Peyser R, MacDonnell S, Gao Y, Cheng L, Kim Y, Kaplan T, et al. Defining the Activated Fibroblast Population in Lung Fibrosis Using Single-Cell Sequencing. Am J Respir Cell Mol Biol. 2019;61(1):74-85. doi: 10.1165/rcmb.2018-0313OC. </p>
+															<p>15. Urushiyama H, Terasaki Y, Nagasaka S, Terasaki M, Kunugi S, Nagase T, et al. Role of alpha1 and alpha2 chains of type IV collagen in early fibrotic lesions of idiopathic interstitial pneumonias and migration of lung fibroblasts. Lab Invest. 2015;95(8):872-85. doi: 10.1038/labinvest.2015.66. </p>
+															<p>16. Chen H, Qu J, Huang X, Kurundkar A, Zhu L, Yang N, et al. Mechanosensing by the alpha6-integrin confers an invasive fibroblast phenotype and mediates lung fibrosis. Nat Commun. 2016;7:12564. doi: 10.1038/ncomms12564. </p>
+															<p>17. Li Y, Lacerda DA, Warman ML, Beier DR, Yoshioka H, Ninomiya Y, et al. A fibrillar collagen gene, Col11a1, is essential for skeletal morphogenesis. Cell. 1995;80(3):423-30. doi: 10.1016/0092-8674(95)90492-1. </p>
+															<p>18. Grassel S, Bauer RJ. Collagen XVI in health and disease. Matrix Biol. 2013;32(2):64-73. doi: 10.1016/j.matbio.2012.11.001. </p>
+															<p>19. Li Q, Olsen BR. Increased angiogenic response in aortic explants of collagen XVIII/endostatin-null mice. Am J Pathol. 2004;165(2):415-24. doi: 10.1016/S0002-9440(10)63307-X. </p>
+															<p>20. Hjorten R, Hansen U, Underwood RA, Telfer HE, Fernandes RJ, Krakow D, et al. Type XXVII collagen at the transition of cartilage to bone during skeletogenesis. Bone. 2007;41(4):535-42. doi: 10.1016/j.bone.2007.06.024. </p>
+															<p>21. Loscertales M, Nicolaou F, Jeanne M, Longoni M, Gould DB, Sun Y, et al. Type IV collagen drives alveolar epithelial-endothelial association and the morphogenetic movements of septation. BMC Biol. 2016;14:59. doi: 10.1186/s12915-016-0281-2. </p>
+															<p>22. Abreu-Velez AM, Howard MS. Collagen IV in Normal Skin and in Pathological Processes. N Am J Med Sci. 2012;4(1):1-8. doi: 10.4103/1947-2714.92892. </p>
+															<p>23. Leeming DJ, Sand JM, Nielsen MJ, Genovese F, Martinez FJ, Hogaboam CM, et al. Serological investigation of the collagen degradation profile of patients with chronic obstructive pulmonary disease or idiopathic pulmonary fibrosis. Biomark Insights. 2012;7:119-26. doi: 10.4137/BMI.S9415. </p>
+															<p>24. Organ LA, Duggan AR, Oballa E, Taggart SC, Simpson JK, Kang'ombe AR, et al. Biomarkers of collagen synthesis predict progression in the PROFILE idiopathic pulmonary fibrosis cohort. Respir Res. 2019 Jul 12;20(1):148. doi: 10.1186/s12931-019-1118-7. </p>
+															<p>25. Matsuo N, Tanaka S, Yoshioka H, Koch M, Gordon MK, Ramirez F. Collagen XXIV (Col24a1) gene expression is a specific marker of osteoblast differentiation and bone formation. Connect Tissue Res. 2008;49(2):68-75. doi: 10.1080/03008200801913502. </p>
+															<p>26. Oldham JM, Huang Y, Bose S, Ma SF, Kim JS, Schwab A, et al. Proteomic Biomarkers of Survival in Idiopathic Pulmonary Fibrosis. Am J Respir Crit Care Med. 2024;209(9):1111-20. doi: 10.1164/rccm.202301-0117OC. </p>
+															<p>27. Lavis P, Garabet A, Cardozo AK, Bondue B. The fibroblast activation protein alpha as a biomarker of pulmonary fibrosis. Front Med (Lausanne). 2024;11:1393778. doi: 10.3389/fmed.2024.1393778. </p>
+																		</div>
+				</section>
+			
+		</div><!-- .main_entry -->
+
+		<div class="entry_details"> 
+						
+										<div class="item galleys">
+					<h2 class="pkp_screen_reader">
+						Downloads
+					</h2>
+					<ul class="value galleys_links">
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link btn btn-primary  pdf" href="18053/13363.html">
+
+		
+	PDF
+
+	</a>
+							</li>
+											</ul>
+				</div>
+						
+						<div class="item published">
+				<section class="sub_item">
+					<h2 class="label">
+						Published
+					</h2>
+					<div class="value">
+																			<span>22-06-2026</span>
+																	</div>
+				</section>
+							</div>
+			
+										<div class="item issue">
+
+											<section class="sub_item">
+							<h2 class="label">
+								Issue
+							</h2>
+							<div class="value">
+								<a class="title" href="../../issue/view/1026.html">
+									Vol. 43 No. 2 (2026)
+								</a>
+							</div>
+						</section>
+					
+											<section class="sub_item">
+							<h2 class="label">
+								Section
+							</h2>
+							<div class="value">
+								Original Articles: Laboratory Research
+							</div>
+						</section>
+					
+									</div>
+			
+						
+										<div class="item copyright">
+					<h2 class="label">
+						License
+					</h2>
+																										<p>Copyright (c) 2026 Eun-Jeong Seo, Seung-Lee Park, Min-Kyung Kim, Jae-Sung Choi, Hun-Gyu Hwang, Jung-Hyun Kim, Hun-Soo Chang, Choon-sik Park, Jong-Uk Lee</p>
+														<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="../../../../../licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><p>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+																<p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (<a href="https://creativecommons.org/licenses/by-nc/4.0" target="_blank" rel="noopener">https://creativecommons.org/licenses/by-nc/4.0</a>) which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</p>
+<p><strong>Transfer of Copyright and Permission to Reproduce Parts of Published Papers.</strong> <br />Authors retain the copyright for their published work. No formal permission will be required to reproduce parts (tables or illustrations) of published papers, provided the source is quoted appropriately and reproduction has no commercial intent. <strong>Reproductions with commercial intent will require written permission and payment of royalties.</strong></p>
+<p> </p>
+<p><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license"><img style="border-width: 0;" src="../../../../../licensebuttons.net/l/by-nc/4.0/88x31.png" alt="Creative Commons License" /></a><br />This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+				</div>
+			
+				<div class="item citation">
+		<section class="sub_item citation_display">
+			<h2 class="label">
+				How to Cite
+			</h2>
+			<div class="value">
+				<div id="citationOutput" role="region" aria-live="polite">
+					<div class="csl-bib-body">
+  <div class="csl-entry"><div class="csl-left-margin">1.</div><div class="csl-right-inline">Seo EJ, Park SL, Kim MK, et al. Transcriptomic profiling of collagen gene expression in lung fibroblasts from patients with idiopathic pulmonary fibrosis. <i>Sarcoidosis Vasc Diffuse Lung Dis</i>. 2026;43(2):18053. doi:<a href="https://doi.org/10.36141/svdld.2026.18053">10.36141/svdld.2026.18053</a></div></div>
+</div>
+				</div>
+				<div class="citation_formats">
+					<button class="citation_formats_button label" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">
+						More Citation Formats
+					</button>
+					<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
+						<ul class="citation_formats_styles">
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/acm-sig-proceedings9a8d.html?submissionId=18053&amp;publicationId=22748&amp;issueId=1026"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/acm-sig-proceedingsad0a.json?submissionId=18053&amp;publicationId=22748&amp;issueId=1026&amp;return=json"
+									>
+										ACM
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/acs-nano9a8d.html?submissionId=18053&amp;publicationId=22748&amp;issueId=1026"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/acs-nanoad0a.json?submissionId=18053&amp;publicationId=22748&amp;issueId=1026&amp;return=json"
+									>
+										ACS
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/apa9a8d.html?submissionId=18053&amp;publicationId=22748&amp;issueId=1026"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/apaad0a.json?submissionId=18053&amp;publicationId=22748&amp;issueId=1026&amp;return=json"
+									>
+										APA
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas9a8d.html?submissionId=18053&amp;publicationId=22748&amp;issueId=1026"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/associacao-brasileira-de-normas-tecnicasad0a.json?submissionId=18053&amp;publicationId=22748&amp;issueId=1026&amp;return=json"
+									>
+										ABNT
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/chicago-author-date9a8d.html?submissionId=18053&amp;publicationId=22748&amp;issueId=1026"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/chicago-author-datead0a.json?submissionId=18053&amp;publicationId=22748&amp;issueId=1026&amp;return=json"
+									>
+										Chicago
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/harvard-cite-them-right9a8d.html?submissionId=18053&amp;publicationId=22748&amp;issueId=1026"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/harvard-cite-them-rightad0a.json?submissionId=18053&amp;publicationId=22748&amp;issueId=1026&amp;return=json"
+									>
+										Harvard
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/ieee9a8d.html?submissionId=18053&amp;publicationId=22748&amp;issueId=1026"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/ieeead0a.json?submissionId=18053&amp;publicationId=22748&amp;issueId=1026&amp;return=json"
+									>
+										IEEE
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/modern-language-association9a8d.html?submissionId=18053&amp;publicationId=22748&amp;issueId=1026"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/modern-language-associationad0a.json?submissionId=18053&amp;publicationId=22748&amp;issueId=1026&amp;return=json"
+									>
+										MLA
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/turabian-fullnote-bibliography9a8d.html?submissionId=18053&amp;publicationId=22748&amp;issueId=1026"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/turabian-fullnote-bibliographyad0a.json?submissionId=18053&amp;publicationId=22748&amp;issueId=1026&amp;return=json"
+									>
+										Turabian
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/vancouver9a8d.html?submissionId=18053&amp;publicationId=22748&amp;issueId=1026"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/vancouverad0a.json?submissionId=18053&amp;publicationId=22748&amp;issueId=1026&amp;return=json"
+									>
+										Vancouver
+									</a>
+								</li>
+													</ul>
+													<div class="label">
+								Download Citation
+							</div>
+							<ul class="citation_formats_styles">
+																	<li>
+										<a href="../../citationstylelanguage/download/ris9a8d?submissionId=18053&amp;publicationId=22748&amp;issueId=1026">
+											<span class="fa fa-download"></span>
+											Endnote/Zotero/Mendeley (RIS)
+										</a>
+									</li>
+																	<li>
+										<a href="../../citationstylelanguage/download/bibtex9a8d?submissionId=18053&amp;publicationId=22748&amp;issueId=1026">
+											<span class="fa fa-download"></span>
+											BibTeX
+										</a>
+									</li>
+															</ul>
+											</div>
+				</div>
+			</div>
+		</section>
+	</div>
+<div class="item addthis">
+	<div class="value">
+		<!-- AddThis Button BEGIN -->
+		 			<div class="addthis_toolbox addthis_default_style ">
+			<a class="addthis_button_preferred_1"></a>
+			<a class="addthis_button_preferred_2"></a>
+			<a class="addthis_button_preferred_3"></a>
+			<a class="addthis_button_preferred_4"></a>
+			<a class="addthis_button_compact"></a>
+			<a class="addthis_counter addthis_bubble_style"></a>
+			</div>
+			<script type="text/javascript" src="../../../../../s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+				<!-- AddThis Button END -->
+	</div>
+</div>
+<div id="citation-plugin" class="item citations-container" data-citations-url="https://mattioli1885journals.com/index.php/sarcoidosis/citations/get?doi=10.36141%2Fsvdld.2026.18053" data-img-url="https://mattioli1885journals.com/plugins/generic/citations/images/">
+    <div id="citations-loader"></div>
+    <div class="citations-count">
+        <div class="citations-count-crossref">
+            <img class="img-fluid" src="../../../../plugins/generic/citations/images/crossref.png" alt="Crossref"/>
+            <div class="badge_total"></div>
+        </div>
+        <div class="citations-count-scopus">
+            <img src="../../../../plugins/generic/citations/images/scopus.png" alt="Scopus"/>
+            <br/>
+            <span class="badge_total"></span>
+        </div>
+        <div class="citations-count-google">
+            <a href="https://scholar.google.com/scholar?q=10.36141/svdld.2026.18053" target="_blank" rel="noreferrer">
+                <img src="../../../../plugins/generic/citations/images/scholar.png" alt="Google Scholar"/>
+            </a>
+        </div>
+        <div class="citations-count-europepmc">
+            <a href="https://europepmc.org/search?scope=fulltext&amp;query=10.36141/svdld.2026.18053" target="_blank" rel="noreferrer">
+                <img src="../../../../plugins/generic/citations/images/pmc.png" alt="Europe PMC"/>
+                <br/>
+                <span class="badge_total"></span>
+            </a>
+        </div>
+    </div>
+    <div class="citations-list">
+        <div class="cite-itm cite-prototype" style="display: none">
+            <img class="cite-img img-fluid" src="#" alt="">
+            <div>
+                <span class="cite-author"></span>
+                <span class="cite-date"></span>
+            </div>
+            <div>
+                <span class="cite-title"></span>
+                <span class="cite-info"></span>
+            </div>
+            <div class="cite-doi"></div>
+        </div>
+    </div>
+            <style>
+            .citations-container {
+                overflow-y: auto;
+                overflow-x: hidden;
+                max-height: 300px;
+            }
+        </style>
+    </div>
+
+
+		</div><!-- .entry_details -->
+	</div><!-- .row -->
+
+</article>
+
+	
+
+</div><!-- .page -->
+
+		<!--div class="html-preloader bg-light">
+			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div-->
+
+	
+
+
+    	  	      <div class="mt-2" data-aos="fade-up" id="sidebar" data-aos-delay="200">
+    		<ul class="_pkp_structure_sidebar list-unstyled container" role="complementary" aria-label="Sidebar">
+    			 
+    <div class="pkp_block">
+        <div class="title">Make a Submission</div>
+        <div class="content">
+<li>
+	<a href="../../about/submissions.html" class="font-monospace">
+		Make a Submission
+	</a>
+</li>
+</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-currentissueinfoauthor">
+		<div class="content">
+		<div class="title">Journal Information:</div>
+<div class="content">
+<p style="color: #00417b;">&nbsp;</p>
+<p style="color: #00417b;"><strong>&nbsp; Editors-in-Chief</strong></p>
+<p><strong>&nbsp; Coordinator</strong><strong>: </strong>P. Spagnolo <br><strong>&nbsp; EinC:</strong> R.P. Baughman, A. Caminati,<br>&nbsp; F. Luppi, C. Ravaglia, P. Rottoli,<br>&nbsp; S. Tomassetti, C. Vancheri, A.U. Wells</p>
+<p style="color: #00417b;"><strong>&nbsp; Journal Information</strong></p>
+<p><strong>&nbsp; Languages:</strong> English<br><strong>&nbsp; Frequency:</strong> quarterly (4 issues per year)<br><strong>&nbsp; pISSN: </strong>1124-0490 - <strong>eISSN: </strong>2532-179X</p>
+<p><strong>&nbsp; CiteScore (Scopus) 2025: </strong>2.0<br><strong>&nbsp; Official Impact Factor 2025: </strong>1.8<br>&nbsp; <strong>&nbsp;SJR 2025: </strong>0.500 - <strong>SNIP 2025:</strong> 0.727</p>
+<p><strong>&nbsp; Indexed in:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Sarcoidosis+Vasc+Diffuse+Lung+Dis%22%5Bjour%5D&amp;sort=date&amp;sort_order=desc" target="_blank" rel="noopener">PubMed</a>, <a href="https://pmc.ncbi.nlm.nih.gov/journals/?term=%22Sarcoidosis%2C+Vasculitis%2C+and+Diffuse+Lung+Diseases%22" target="_blank" rel="noopener">PubMedCentral</a>, <a href="https://www.scopus.com/sourceid/19085" target="_blank" rel="noopener">Scopus</a>, Web of Science, Portico, <a href="https://www.scimagojr.com/journalsearch.php?q=19085&amp;tip=sid&amp;exact=no" target="_blank" rel="noopener">SJR (Scimago Journal &amp; Country Rank)</a></p>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-book-of-abstract">
+		<div class="content">
+		<div class="title">BOOK OF ABSTRACTS:</div>
+<div class="content">
+<p style="color: #00417b;">&nbsp;</p>
+<p><a href="https://www.mattioli1885journals.com/index.php/sarcoidosis/article/view/17158" target="_blank" rel="noopener"><strong>AMERICAS ASSOCIATION OF SARCOIDOSIS AND OTHER GRANULOMATOUS DISORDERS</strong></a><br><a href="https://www.mattioli1885journals.com/index.php/sarcoidosis/article/view/17158" target="_blank" rel="noopener"><strong>(AASOG) 2024 CONFERENCE: THE ART OF WORKING TOGETHER FOR PROGRESS</strong></a><br><a href="https://www.mattioli1885journals.com/index.php/sarcoidosis/article/view/17158" target="_blank" rel="noopener"><em>AUGUST 15-16, 2024</em></a></p>
+<p><a href="https://www.mattioli1885journals.com/index.php/sarcoidosis/article/view/17158" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/cbilotto/cover-svdld-s1-2024-200px.png" alt="" width="200" height="272"></a></p>
+<p>&nbsp;</p>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-partnership">
+		<div class="content">
+		<p><span class="title">PROPERTY AND COPYRIGHT</span></p>
+<table style="height: 74px;" width="246">
+<tbody>
+<tr>
+<td><a title="SIP" href="http://www.sipirs.it/cms/" target="_blank" rel="noopener"><img src="../../../../public/site/images/valeriaceci/Logo-SIP-IRS-300dpi-1024x682.jpg" width="77" height="77"></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a title="ITS-AIPO" href="http://www.aiponet.it/" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/admin/logo-aipo-its--ets-ok.png" width="188" height="60"></a></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>OFFICIAL JOURNAL OF WASOG</strong></p>
+<p><a title="WASOG" href="https://www.wasog.org/" target="_blank" rel="noopener"> <img src="../../../../public/site/images/valeriaceci/WASOG-Clinic-Logo.png" width="75" height="82"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+	</div>
+</div>
+
+
+	<!--li>
+		<hr class="dropdown-divider" />
+	</li-->
+	  <div class="pkp_block">
+        <div class="title">information links</div>
+        <div class="content">
+			<li>
+			<a href="../../information/readers.html" class="font-monospace">
+				For Readers
+			</a>
+		</li>
+					<li>
+			<a href="../../information/librarians.html" class="font-monospace">
+				For Librarians
+			</a>
+		</li>
+		<!--li>
+		<hr class="dropdown-divider" />
+	</li-->
+	</div>
+		</div>
+	
+
+    		</ul><!-- pkp_sidebar.left -->
+      </div>
+  	  	<div class="mainContainer container"></div>
+</main><!-- _pkp_structure_main -->
+	</div>
+
+
+	<!-- ======= Footer ======= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+       
+      
+            	<div class="row footer-widgets">
+<div class="col-md-5 col-xs-12">
+<div class="footer-widget contact-widget">
+<h4>Mattioli 1885 / Mattioli HEALTH</h4>
+<p>SCIENTIFIC PUBLISHING, COMMUNICATION AGENCY, CME PROVIDER</p>
+Mattioli1885 has been at the forefront of research and <br />scientific publishing since 1885. Today, Mattioli1885 <br />continues to work with passion and consistency <br />in the fields of communication, publishing, and scientific training.</div>
+</div>
+<div class="footer-widget col-md-4 col-xs-12 social-widget">
+<h4>Journals</h4>
+<ul>
+<li><a href="../../../actabiomedica.html">Acta Biomedica</a></li>
+<li><a href="../../../aestheticmedicine.html">Aesthetic Medicine </a></li>
+<li><a href="../../../EJOEH.html">European Journal of Oncology and Environmental Health </a></li>
+<li><a href="https://dpcj.org/index.php/dpc">Dermatology Practical &amp; Conceptual </a></li>
+<li><a href="../../../JBR.html">Journal of Bioarchaeological Research </a></li>
+<li><a href="../../../lamedicinadellavoro.html">La Medicina del Lavoro | Work, Environment and Health </a></li>
+<li><a href="../../../MedHistor.html">Medicina Historica</a></li>
+<li><a href="https://mrmjournal.org/">Multidisciplinary Respiratory Medicine</a></li>
+<li><a href="../../../perspectivesinpediatricneurology.html">Perspectives in Pediatric Neurology </a></li>
+<li><a href="../../../progressinnutrition.html">Progress in Nutrition</a></li>
+<li><a href="../../../sarcoidosis.html">Sarcoidosis Vasculitis and Diffuse Lung Diseases</a></li>
+</ul>
+</div>
+<div class="footer-widget col-md-3 col-xs-12 social-widget">
+<h4>Contact</h4>
+<ul>
+<li class="show"><span class="fa fa-envelope"> </span>Email: <a href="../../../../cdn-cgi/l/email-protection.html#90e6f1fcf5e2f9f1f3f5f3f9d0fdf1e4e4f9fffcf9f8f5f1fce4f8bef3fffd" target="_blank" rel="noopener"><span class="__cf_email__" data-cfemail="087e69646d7a61696b6d6b614865697c7c61676461606d69647c60266b6765">[email&#160;protected]</span></a></li>
+<li class="show"><span class="fa fa-phone"> </span>Phone: +039 0524 530383</li>
+<li class="show"><span class="fa fa-globe"> </span>Website: <a href="https://mattiolihealth.com/">www.mattiolihealth.com</a></li>
+<li class="show"><span class="fa fa-map-marker"> </span>Address: Mattioli1885 srl - Strada della Lodesana, 649 sx - 43036 Fidenza (PR) Italy</li>
+<li class="show">P. IVA: 00579710344</li>
+</ul>
+<p><a href="http://www.mattiolihealth.com/" target="_blank" rel="noopener"><img src="../../../../public/site/images/valeriaceci/Logo_Mattioli_Health2.png" /></a><br /><br /> <a href="https://www.facebook.com/Mattioli-Health-1682497891769144/" target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip0-72c073ab023a79232f4cac597e8d48a7.png" /></a> <a href="../../../actabiomedica/logind976.html" target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip1.png" /></a> <a href="https://twitter.com/mattioli1885 " target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip2.png" /></a></p>
+<p> </p>
+</div>
+</div>
+      	
+      <div class="row justify-content-center text-center">
+        <div class="col-md-7">
+          
+
+          <div class="credits">
+            OJS Hosting, Support, and Customization by: <a href="https://openjournalsystems.com/">OpenJournalSystems.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+<script data-cfasync="false" src="../../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../../../lib/pkp/lib/vendor/components/jquery/jquery.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../lib/pkp/lib/vendor/components/jqueryui/jquery-ui.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/mdb/js/mdb.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/aos/aos7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/swiper/swiper-bundle.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/js/main7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/generic/citationStyleLanguage/js/articleCitation7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/generic/citations/js/citations7187.js?v=3.4.0.8" type="text/javascript"></script><script type="text/javascript">
+(function (w, d, s, l, i) { w[l] = w[l] || []; var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true;
+j.src = 'https://www.googletagmanager.com/gtag/js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config', i); })
+(window, document, 'script', 'dataLayer', 'UA-42131693-30');
+</script>
+
+
+
+
+ <script type="text/javascript">
+
+    $(function (){
+        $('#sidebar > ul > div .title').click(function (){
+            $(this).closest('.pkp_block').toggleClass('showHide');
+        });
+        
+    // $('#sidebar > ul  li:first a').addClass('btnlink');
+    var hasPageDiv =  $('main > div').hasClass('page');
+   var container = $('main .page:not(.page_login):not(.page_register)').detach();
+    if(!hasPageDiv){
+         container = $('main .page_index_journal').detach();
+    }
+    
+     
+      var sidebar = $('#sidebar').detach();
+
+    $('.mainContainer').append(container);
+     $('.mainContainer').append(sidebar);
+     
+      $('.page_index_site').closest('body').addClass('indexSiteWrapper');
+     $('.indexSiteWrapper #sidebar').remove();
+        
+    });
+    </script>
+  
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"29c8736485c44d66b053a23423099076","r":1}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from mattioli1885journals.com/index.php/sarcoidosis/article/view/18053 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Aug 2026 05:32:55 GMT -->
+</html>

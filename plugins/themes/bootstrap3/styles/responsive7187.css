@@ -1,0 +1,284 @@
+label[for="menuOnTop"]{display: none; font-size: 24px;padding: 3px 10px;   background:#003F7C;  border-radius: 0%; color: #fff; position: fixed; z-index: 1000; top:1px; left: 1px; cursor: pointer; transition:all 0.2s; -webkit-transition:all 0.2s;}
+
+#menuOnTop{display: none;}
+
+.menuOnTopClose{ transition:all 0.2s; -webkit-transition:all 0.2s;box-shadow: 0px 0px 10px rgba(0,0,0,0.5); position: fixed;  top: 0px; background: #fff; color: #333 !important; padding: 10px; font-size: 20px !important; }
+
+.menuOnTopClose{left: -200px;  color: #22483d !important;}
+
+.showOnMobile{display: none !important;}
+
+
+
+@media only screen and (max-width:1024px) {
+    .navbar-form{ float:right !important; }
+    .journals { width: 100% !important;}
+
+    #main-navigation > li > a { font-size: 11px;}
+
+
+
+    .aboutJournalHome .journal-description  { padding-left: 10px;  }
+
+}
+
+@media only screen and (min-width:1024px) and (max-width:1300px)  {
+     .journals { width: 100% !important;}
+	/*.mainNavigation{width: 25%}
+
+    .topHeader, #primaryMenuWrp{width: 75%}*/
+
+}
+
+@media only screen and (max-width:960px) {
+
+    .journals .media-list .media .description{min-height:10px;}
+    .navbar-collapse.collapse {
+
+        display: none !important;
+
+    }
+
+    .navbar-collapse.collapse.in {
+
+        display: block !important;
+
+    }
+
+    .navbar-header .collapse, .navbar-toggle {
+
+        display:block !important;
+
+    }
+
+    .navbar-header {
+
+        float:none;
+
+    }
+
+    .mainNavigation .navbar-header{margin-left: 0px; margin-right: 10px;}
+
+	
+
+   /* #primaryMenuWrp{ box-shadow: 0px 0px 10px rgba(0,0,0,0.5); position: fixed; left: -270px; top: 0px; background: #fff; margin-bottom: 0px; bottom: 0px; z-index: 999; visibility: hidden; width: 200px; transition:all 0.2s; -webkit-transition:all 0.2s; }*/
+
+
+
+   .navbar-form{ border: none !important;}
+
+    #main-navigation, #primaryMenuWrp{background:#fff !important;}
+    #primaryMenuWrp #main-navigation{padding-left: 0px;  padding-right: 0px; margin:0px; width: 100%}
+
+    #primaryMenuWrp #main-navigation li{width: 100%;border-bottom: 1px solid #eee; }
+    
+    #primaryMenuWrp #main-navigation li a{padding: 10px; font-size: 15px; border: 0px; line-height: normal; color:#000 !important; color: #000 !important; /* border-bottom: 1px solid #eee;background: #fff !important*/}
+
+    #primaryMenuWrp #main-navigation .searchBarWrp{display: none;}
+
+    #primaryMenuWrp a{padding-left: 0px; }
+
+	#menuOnTop:checked ~ #headerNavigationContainer #primaryMenuWrp{background: #fff;position: fixed; display: block; left:0px; visibility: visible; overflow: auto;}
+
+	#menuOnTop:checked ~ label[for="menuOnTop"]{left: 200px; color:#fff;    background: #153854;}
+
+	#menuOnTop:checked ~ label[for="menuOnTop"] .fa-bars{display: none;}
+
+	#menuOnTop:checked ~ label[for="menuOnTop"] .fa-times{display: block;}
+
+    #mainContainer{display: block !important;}
+
+    #main-navigation .dropdown .dropdown-menu{ border: 0px;  min-width: auto; visibility: visible; display: block; opacity: 1; width: 100%; padding-left: 0px;background: transparent; /*background: #fff !important;*/ position: relative;}
+
+    #main-navigation .dropdown .dropdown-menu a{padding-left: 30px !important;}
+
+    #main-navigation .dropdown:hover .dropdown-menu{display: block;}
+
+    #primaryMenuWrp:before{display: none;}
+
+    div.searchBarWrp{display: block; top: 40px;     padding: 15px 20px;    right: 0px;}
+
+    .journalInfoWrp > div > div:first-child{    min-width: 458px;}
+
+    .journals .media-list .media{width: 50%; float:left;}
+
+    .journals .media-list .media-left, .journals .media-list .media-body{ width: 50%; }
+    
+     .journals .media-list .media-body p{ font-size:11px !important;}
+     .journals .nav-pills>li>a{ font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 0px 5px !important;  margin-top:5px;}
+
+    .journals .media-list .media-body{padding-top: 0px}
+
+    .publishingHomeSearch{padding: 70px 0px 60px 0px;}
+
+    .publishingHomeSearch h1{font-size: 46px;}
+
+    .publishingHomeSearch h2{    font-size: 24px;}
+
+    .publishingSearchContent, .journals{width: 100%}
+
+    .journals{width: 100%}
+
+
+
+}
+
+@media only screen and (max-width:800px) {
+
+     .navbar-collapse.collapse {
+
+        display: none !important;
+
+    }
+
+    .navbar-collapse.collapse.in {
+
+        display: block !important;
+
+    }
+
+    .navbar-header .collapse, .navbar-toggle {
+
+        display:block !important;
+
+    }
+
+    .navbar-header {
+
+        float:none;
+
+    }
+
+    
+
+    .topnavLogo {width:150px; }
+
+    #topMenuRight .menu > li > a {padding: 5px 5px;  font-size: 14px;}
+
+.socialBread{width: 100%; border-top: 1px solid #ccc; display: none}
+
+.WrpMediaCnt + .galleryLinksWrp{width: 100%; text-align: left; margin-top: 5px;}
+
+.journalInfoWrp > div > div{display: block;     padding: 20px 20px;}
+
+.journalInfoWrp > div > div.infoRelatedJr, .journalInfoWrp > div{width: 100%; display: block;}
+
+.journals .media-list .media{width: 100%; float: left; }
+.journals .media-list .media-body{padding-top:20px;}
+.journals .media-list .media-left{width:25%;}
+
+
+.sliderDescription{font-size: 20px; top: 10px;}
+
+.journalInfoWrp > div > div:first-child{min-width: 100%;}
+
+
+
+.journalInfoCol{ height: auto; flex-wrap:wrap; margin-bottom: 0px;}
+
+.journalInfoCol > div{width: 45% !important; margin-bottom: 20px; float: left; text-align: center;}
+
+.journalInfoCol > div.infojrnl{ height: 300px; width: 100% !important}
+
+.ftLinksWrp ul{width: 50%; margin-bottom: 20px !important;}
+
+.ftLinksWrp > .infoFt {width: 100% ;text-align: left !important;}
+
+
+
+}
+
+@media only screen and (max-width:480px) {
+    
+    .WrpMediaCnt{width:100%; float:left;}
+    .galleryLinksWrp{width:100% !important; float:left !important; position:inherit !important; margin:10px 0;}
+
+    .pkp_structure_main {border:0 !important;}
+    .media-heading .themeEditIcon {display: none;}
+    .media-heading .titleWithThemeEditIcon, .media-body .announcementContent  {margin-left: 0px !important;}
+    .announcementContent, .announcement-full .description{margin-left: 0px !important;}
+
+    .aboutJournalHome .homepage-image  { width: 100%;  float: left;}
+
+    .aboutJournalHome .journal-description  { width: 100%; float: left;  }
+
+    .article-summary .media-left a{
+        float: none;
+        margin: auto;
+    }
+    .media-left, .media-right, .media-body { width:100%; float:left;}
+    .issueTocPublishArticles .media-body { width:100%; float:left; height: auto;}
+    .media-left img{margin: auto;}
+
+    .journalInfoCol .highlightBar h2 { font-size:18px }
+
+    
+
+    .img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img{margin: auto;}
+
+    
+
+    .highlightBar p { font-size:11px; }
+
+    .mainNavigation  a{ font-size: 18px;}
+
+    #topMenuRight .menu {padding: 0}
+
+    #topMenuRight .menu > li > a {padding: 5px 5px;  font-size: 12px;}
+
+    #imageContentWrp > ul > li{width: 100%; margin-right: 0px; margin-bottom: 20px;}
+
+    .journalInfoCol > div{width: 100% !important}
+
+    .mainNavigation, .topHeader{width: 100%}
+    
+    .mainNavigation{padding:5px 20px;}
+    
+    div.searchBarWrp{position: relative !important; width: 100%; top:0px;     clear: both;}
+    
+    .searchBarWrp input{width: 100%}
+
+    .page_index_journal .issue-toc .thumbnail, .page_issue .thumbnail{width: 100%; float: none;}
+    
+    .page_index_journal .issue-toc .thumbnail + .description, .page_issue .thumbnail + .description{margin-left: 0px; margin-top: 10px; clear: both;}
+    
+    .publishingHomeSearch h1{font-size: 30px;}
+    
+    .publishingHomeSearch{padding: 50px 0px 40px 0px;}
+    
+    .publishingHomeSearch h2{font-size: 18px;     margin: 10px 0px;}
+    
+    .sliderDescription{padding: 0px 0px; font-size: 14px; top: 5px; line-height: initial;} 
+    
+    .page_index_site .about_site{padding: 20px 0px;    font-size: 15px;}
+    
+    .journals .media-list .media {width: 100%; height:auto;}
+    .journals .media-list .media .media-left {width: 100%; padding:0 50px; }
+    .journals .media-list .media .media-body {width: 100%; display:block; }
+    .journals .media-list .media .media-left img{max-width: 200px; }
+    
+    .issue-summary .media-left img{max-width: 150px; }
+    
+    .ftLinksWrp ul{width: 100%; margin-bottom: 20px !important;}
+    
+    .footerCopyRight li{display: block !important; text-align: center; line-height: 30px;}
+
+    #relatedTitleWrp li{width: 50% !important; margin-right: 0px; float: left; margin-bottom: 20px;}
+    
+    #relatedTitleWrp li img{display: block; text-align: center; margin: 0 auto}
+
+
+    .btn-primary.read-more{margin-top: -15px;}
+}
+
+
+
+@media only screen and (max-width:360px) {
+
+.pkp_structure_main {border:0 !important;}
+.media-heading .themeEditIcon {display: none;}
+.media-heading .titleWithThemeEditIcon, .media-body .announcementContent  {margin-left: 0px !important;}
+.announcementContent, .announcement-full .description{margin-left: 0px !important;}
+}

@@ -1,0 +1,18 @@
+TY  - JOUR
+AU  - Orsi, Matteo
+AU  - Rossetti, Nicol
+AU  - Taglioretti, Roberto
+AU  - Zito, Silvia
+AU  - Mazzucchi, Alessandra
+TI  - Preliminary study of the point cloud obtained with a low cost structured light scanner of third lower human molars
+PY  - %2024/%08/%09
+Y2  - %2026/%08/%27
+JF  - Journal of Bioarchaeological Research
+JA  - JBR
+VL  - 2
+IS  - 2
+SE  - Original Article: Physical Anthropology
+UR  - https://mattioli1885journals.com/index.php/JBR/article/view/16172
+SP  - e2024009
+AB  - This study presents a preliminary exploration of an objective, operator-independent method for acquiring and analyzing point cloud data from human lower third molars using low-cost equipment. Emphasizing the need for affordability in the field, this research begins the development of a technical protocol for the validation and use of the structured light scanner EinScan-SP V1. Two human mandibular third molars from the crypt of Santa Maria Maggiore in Vercelli (Italy) are digitized. The teeth were scanned, and the resulting point clouds were processed using the Open3D library to extract and normalize digital indexes at different voxel levels. This work also introduces the concept of the Digital HyperUranium (IUD), a digital environment inspired by Platonic philosophy, to contextualize the mathematical processing of point clouds. The ultimate goal is to correlate digital indexes with biological profiles, enhancing the documentation and analysis of Cultural Heritage artifacts through affordable and automated digital acquisition methods.
+ER  -

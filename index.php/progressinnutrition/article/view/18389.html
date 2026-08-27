@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<!-- Mirrored from mattioli1885journals.com/index.php/progressinnutrition/article/view/18389 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Aug 2026 05:21:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Application of Machine Learning Algorithms for Predicting Methylglyoxal Concentration in Processed Packaged Foods
+							| Progress in Nutrition
+			</title>
+
+	
+<meta name="generator" content="Open Journal Systems 3.4.0.8">
+<link rel="schema.DC" href="https://purl.org/dc/elements/1.1/" />
+<meta name="DC.Contributor.Sponsor" xml:lang="en" content="Istanbul Technical University"/>
+<meta name="DC.Creator.PersonalName" content="Busra Yusufoglu"/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2026-07-06"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2025-12-12"/>
+<meta name="DC.Date.issued" scheme="ISO8601" content="2026-02-04"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2026-07-06"/>
+<meta name="DC.Description" xml:lang="en" content="Background and aim: Methylglyoxal (MGO) is a reactive dicarbonyl metabolite of glucose and plays an important role in processed food products. It is formed by the binding of a sugar molecule to a protein or lipid molecule, inside or outside the body. In this study, a tool called predictive (pMGO) is proposed, which aims to accurately predict MGO formation in foods. Methods: Some machine learning (ML) algorithms were evaluated for pMGO based on food composition data. Models were tested using variables such as glucose, fructose, sucrose, total sugar, carbohydrate, protein, fat, fiber and salt. Results: The highest prediction performance among the models was obtained by the CatBoost model with the values of $R^2 = 0.52 \pm 0.30$ and $RMSE = 156.75 \pm 64.92$. While glucose, fructose and saturated fat stood out as the most effective variables, carbohydrates and protein provided more indirect contributions. Conclusion: Findings suggest that focus on some components, especially sugar type and saturated fat predicting MGO exposure."/>
+<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+<meta name="DC.Identifier" content="18389"/>
+<meta name="DC.Identifier.pageNumber" content="18389"/>
+<meta name="DC.Identifier.DOI" content="10.23751/pn.2026.18389"/>
+<meta name="DC.Identifier.URI" content="18389.html"/>
+<meta name="DC.Language" scheme="ISO639-1" content="en"/>
+<meta name="DC.Rights" content="Copyright (c) 2026 Busra Yusufoglu"/>
+<meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc/4.0"/>
+<meta name="DC.Source" content="Progress in Nutrition"/>
+<meta name="DC.Source.ISSN" content="1129-8723"/>
+<meta name="DC.Source.Issue" content="1"/>
+<meta name="DC.Source.Volume" content="28"/>
+<meta name="DC.Source.URI" content="../../../progressinnutrition.html"/>
+<meta name="DC.Subject" xml:lang="en" content="AGEs, Methylglyoxal, predictive MGO concentration, catboost, machine learning"/>
+<meta name="DC.Title" content="Application of Machine Learning Algorithms for Predicting Methylglyoxal Concentration in Processed Packaged Foods"/>
+<meta name="DC.Type" content="Text.Serial.Journal"/>
+<meta name="DC.Type.articleType" content="Original articles"/>
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_journal_title" content="Progress in Nutrition"/>
+<meta name="citation_journal_abbrev" content="Progr Nutr"/>
+<meta name="citation_issn" content="1129-8723"/> 
+<meta name="citation_author" content="Busra Yusufoglu"/>
+<meta name="citation_author_institution" content="Istanbul Technical University"/>
+<meta name="citation_title" content="Application of Machine Learning Algorithms for Predicting Methylglyoxal Concentration in Processed Packaged Foods"/>
+<meta name="citation_language" content="en"/>
+<meta name="citation_date" content="2026/07/06"/>
+<meta name="citation_volume" content="28"/>
+<meta name="citation_issue" content="1"/>
+<meta name="citation_firstpage" content="18389"/>
+<meta name="citation_lastpage" content="18389"/>
+<meta name="citation_doi" content="10.23751/pn.2026.18389"/>
+<meta name="citation_abstract_html_url" content="18389.html"/>
+<meta name="citation_abstract" xml:lang="en" content="Background and aim: Methylglyoxal (MGO) is a reactive dicarbonyl metabolite of glucose and plays an important role in processed food products. It is formed by the binding of a sugar molecule to a protein or lipid molecule, inside or outside the body. In this study, a tool called predictive (pMGO) is proposed, which aims to accurately predict MGO formation in foods. Methods: Some machine learning (ML) algorithms were evaluated for pMGO based on food composition data. Models were tested using variables such as glucose, fructose, sucrose, total sugar, carbohydrate, protein, fat, fiber and salt. Results: The highest prediction performance among the models was obtained by the CatBoost model with the values of $R^2 = 0.52 \pm 0.30$ and $RMSE = 156.75 \pm 64.92$. While glucose, fructose and saturated fat stood out as the most effective variables, carbohydrates and protein provided more indirect contributions. Conclusion: Findings suggest that focus on some components, especially sugar type and saturated fat predicting MGO exposure."/>
+<meta name="citation_keywords" xml:lang="en" content="AGEs, Methylglyoxal, predictive MGO concentration, catboost, machine learning"/>
+<meta name="citation_pdf_url" content="../download/18389/PN_18389.pdf%3bfilename_%3dUTF-8%27%27PN_18389.pdf"/>
+<meta name="citation_reference" content="1. Zheng J, Guo H, Ou J et al. Benefits, deleterious effects and mitigation of methylglyoxal in foods: A critical review. Trends Food Sci Technol 2021; 107: 201–212. doi:10.1016/j.tifs.2020.10.031"/>
+<meta name="citation_reference" content="2. Zheng L, Boeren S, Liu C et al. Proteomics-based identification of biomarkers reflecting endogenous and exogenous exposure to the advanced glycation end product precursor methylglyoxal in SH-SY5Y human neuroblastoma cells. Int J Biol Macromol 2024; 258: 132859. doi:10.1016/j.ijbiomac.2024.132859"/>
+<meta name="citation_reference" content="3. Wang Y, Chen J, Zheng Y et al. Glucose metabolite methylglyoxal induces vascular endothelial cell pyroptosis via NLRP3 inflammasome activation and oxidative stress in vitro and in vivo. Cell Mol Life Sci 2024; 81: 401. doi:10.1007/s00018-024-05432-8"/>
+<meta name="citation_reference" content="4. Scheijen JLJM, Clevers E, Engelen L et al. Analysis of advanced glycation endproducts in selected food items by ultra-performance liquid chromatography tandem mass spectrometry: Presentation of a dietary AGE database. Food Chem 2016; 190: 1145–1150. doi:10.1016/j.foodchem.2015.06.049"/>
+<meta name="citation_reference" content="5. Lai SWT, Lopez Gonzalez EDJ, Zoukari T, Ki P, Shuck SC. Methylglyoxal and Its Adducts: Induction, Repair, and Association with Disease. Chem Res Toxicol 2022; 35: 1720–1746. doi:10.1021/acs.chemrestox.2c00160"/>
+<meta name="citation_reference" content="6. Bellier J, Nokin M-J, Lardé E et al. Methylglyoxal, a potent inducer of AGEs, connects between diabetes and cancer. Diabetes Res Clin Pract 2019; 148: 200–211. doi:10.1016/j.diabres.2019.01.002"/>
+<meta name="citation_reference" content="7. Yusufoğlu B. Evaluation of the Altmetric Attention Score of Recent Hazard Food-Marker: Advanced Glycation End Products. Celal Bayar Univ J Sci 2025; 21: 105-117. doi:10.18466/cbayarfbe.1580554"/>
+<meta name="citation_reference" content="8. Maasen K, Scheijen JLJM, Opperhuizen A, Stehouwer CDA, Van Greevenbroek MM, Schalkwijk CG. Quantification of dicarbonyl compounds in commonly consumed foods and drinks; presentation of a food composition database for dicarbonyls. Food Chem 2021; 339: 128063. doi:10.1016/j.foodchem.2020.128063"/>
+<meta name="citation_reference" content="9. Li C, Zhang L, Gao W, Lai C, Dong H. Robust detection of advanced glycation endproducts in milk powder using ultrahigh performance liquid chromatography tandem mass spectrometry (UHPLC-MS/MS). Food Anal Methods 2021; 14: 1472-1481. doi:10.1007/s12161-021-01986-6"/>
+<meta name="citation_reference" content="10. Tareke E, Forslund A, Lindh CH, Fahlgren C, Östman E. Isotope dilution ESI-LC-MS/MS for quantification of free and total Nε-(1-Carboxymethyl)-l-Lysine and free Nε-(1-Carboxyethyl)-l-Lysine: Comparison of total Nε-(1-Carboxymethyl)-l-Lysine levels measured with new method to ELISA assay in gruel samples. Food Chem 2013; 141: 4253-4259. doi:10.1016/j.foodchem.2013.07.003"/>
+<meta name="citation_reference" content="11. Wei Q, Liu T, Sun DW. Advanced glycation end-products (AGEs) in foods and their detecting techniques and methods: A review. Trends Food Sci Technol 2018; 82: 32-45. doi:10.1016/j.jada.2010.03.018"/>
+<meta name="citation_reference" content="12. Zhu G, Huang X, Peng X, Xu J, Guo S, Zhang H. A deep learning-based quantitative prediction model for the processing potentials of soybeans as soymilk raw materials. Food Chem 2024; 453: 139671. doi:10.1016/j.foodchem.2024.139671"/>
+<meta name="citation_reference" content="13. Rabbani N. AGEomics Biomarkers and Machine Learning—Realizing the Potential of Protein Glycation in Clinical Diagnostics. Int J Mol Sci 2022; 23: 4584. doi:10.3390/ijms23094584"/>
+<meta name="citation_reference" content="14. Yang H, Bai X, Feng B et al. Application of Molecular Transformer approach for predicting the potential reactions to generate advanced glycation end products in infant formula. Food Chem 2023; 407: 135143. doi:10.1016/j.foodchem.2022.135143"/>
+<meta name="citation_reference" content="15. Qian J, Wang X, Song F et al. ChemSweet: An AI-driven computational platform for next-gen sweetener discovery. Food Chem 2025; 463: 141362. doi:10.1016/j.foodchem.2024.141362"/>
+<meta name="citation_reference" content="16. Zhu J, Lian S, Zhong H, Sun R, Xiao Z, Li H. Detection of Advanced Glycosylation End Products in the Cornea Based on Molecular Fluorescence and Machine Learning. Biosensors (Basel) 2023; 13: 170. doi:10.3390/bios13020170"/>
+<meta name="citation_reference" content="17. He H-J, Zhang C, Bian X et al. Improved prediction of vitamin C and reducing sugar content in sweet potatoes using hyperspectral imaging and LARS-enhanced LASSO variable selection. J Food Compos Anal 2024; 132: 106350. doi:10.1016/j.jfca.2024.106350"/>
+<meta name="citation_reference" content="18. Yamasaki Y, Nakamura K, Kashiwabara N, Chiba S, Akiyama H, Tsutsumi T. Development of a processing factor prediction model for pesticides in processed tomato foods using elastic net regularization. Food Chem 2024; 447: 138943. doi:10.1016/j.foodchem.2024.138943"/>
+<meta name="citation_reference" content="19. Yıldırım N, Tapan A. Data Mining and Application of Decision Tree Modelling on Electrochemical Data Used for Damaged Starch Detection. Gazi Univ J Sci Part A Eng Innov 2021; 8: Article 4. doi:10.54287/gujsa.997123"/>
+<meta name="citation_reference" content="20. Yordi E, Koeling R, Mota Y et al. Application of KNN algorithm in determining the total antioxidant capacity of flavonoid-containing foods. Proceedings of the 19th International Electronic Conference on Synthetic Organic Chemistry 2015. doi:10.3390/ecsoc-19-e002"/>
+<meta name="citation_reference" content="21. Dębska B, Guzowska-Świder B. Application of artificial neural network in food classification. Anal Chim Acta 2011; 705: 283–291. doi:10.1016/j.aca.2011.06.033"/>
+<meta name="citation_reference" content="22. Feng J, Cui Y, Jiang C et al. Analysis of sediment re-formation factors after ginseng beverage clarification based on XGBoost machine learning algorithm. Food Chem 2025; 463: 141304. doi:10.1016/j.foodchem.2024.141304"/>
+<meta name="citation_reference" content="23. Chen Q, Li J, Feng J, Qian J. Dynamic comprehensive quality assessment of post-harvest grape in different transportation chains using SAHP–CatBoost machine learning. Food Qual Saf 2024; 8: fyae007. doi:10.1093/fqsafe/fyae007"/>
+<meta name="citation_reference" content="24. Jin J, Liu Y, Li S, Hu J, Liu S, Chen C. Identification of soy sauce using high-field asymmetric waveform ion mobility spectrometry combined with machine learning. Sens Actuators B Chem 2022; 365: 131966. doi:10.1016/j.snb.2022.131966"/>
+<meta name="citation_reference" content="25. Mayr A, Binder H, Gefeller O, Schmid M. The Evolution of Boosting Algorithms—From Machine Learning to Statistical Modelling. Methods Inf Med 2014; 53: 419–427. doi:10.3414/ME13-01-0122"/>
+<meta name="citation_reference" content="26. Zheng R, Jia Y, Ullagaddi C et al. Optimizing feature selection with gradient boosting machines in PLS regression for predicting moisture and protein in multi-country corn kernels via NIR spectroscopy. Food Chem 2024; 456: 140062. doi:10.1016/j.foodchem.2024.140062"/>
+<meta name="citation_reference" content="27. Durmus Y. High accuracy prediction of Thai rice glycemic index using machine learning. Cogent Food Agric 2024; 10: 2411032. doi:10.1080/23311932.2024.2411032"/>
+<meta name="citation_reference" content="28. Bisutti V, Mota LFM, Giannuzzi D et al. Infrared spectroscopy coupled with machine learning algorithms for predicting the detailed milk mineral profile in dairy cattle. Food Chem 2024; 461: 140800. doi:10.1016/j.foodchem.2024.140800"/>
+<meta name="citation_reference" content="29. Gana R, Naha S, Mazumder R, Goldman R, Vasudevan S. Ridge Regression Estimated Linear Probability Model Predictions of N-glycosylation in Proteins with Structural and Sequence Data. arXiv 2018; arXiv:1803.06002. doi:10.48550/arXiv.1803.06002"/>
+<meta name="citation_reference" content="30. Özboy Ö, Köksel H. An application of linear regression technique for predicting bulgur yield and quality of wheat cultivars. Nahrung 2002; 46: 21–24. doi:10.1002/1521-3803"/>
+<meta name="citation_reference" content="31. Tarlak F, Şimşek BB, Şahin M, Pérez-Rodríguez F. Next-Generation Predictive Microbiology: A Software Platform Combining Two-Step, One-Step and Machine Learning Modelling. Foods 2025; 14: 3158. doi:10.3390/foods14183158"/>
+<meta name="citation_reference" content="32. Jović O, Smrečki N, Popović Z. Interval ridge regression (iRR) as a fast and robust method for quantitative prediction and variable selection applied to edible oil adulteration. Talanta 2016; 150: 37–45. doi:10.1016/j.talanta.2015.12.007"/>
+<meta name="citation_reference" content="33. An D, Wang L, He J, Hua Y. A two-step framework integrating lasso and Relaxed Lasso for resolving multidimensional collinearity in Chinese baijiu aging research. Heliyon 2024; 10: e36871. doi:10.1016/j.heliyon.2024.e36871"/>
+<meta name="citation_reference" content="34. Amini F, Hu G. A two-layer feature selection method using Genetic Algorithm and Elastic Net. Expert Syst Appl 2021; 166: 114072. doi:10.1016/j.eswa.2020.114072"/>
+<meta name="citation_reference" content="35. Peng H, Yi L, Fan X, Zhang J, Gu Y, Wang S. Near-infrared spectroscopy assisted by random forest for predicting the physicochemical indicators of yak milk powder. Food Chem 2025; 478: 143555. doi:10.1016/j.foodchem.2025.143555"/>
+<meta name="citation_reference" content="36. Breda LS, de Melo Nascimento JE, Alves V, de Alencar Arnaut de Toledo V, de Lima VA, Felsner ML. Green and fast prediction of crude protein contents in bee pollen based on digital images combined with Random Forest algorithm. Food Res Int 2024; 179: 113958. doi:10.1016/j.foodres.2024.113958"/>
+<meta name="citation_reference" content="37. Wiens M, Verone-Boyle A, Henscheid N, Podichetty JT, Burton J. A Tutorial and Use Case Example of the eXtreme Gradient Boosting (XGBoost) Artificial Intelligence Algorithm for Drug Development Applications. Clin Transl Sci 2025; 18: e70172. doi:10.1111/cts.70172"/>
+<meta name="citation_reference" content="38. Li H, Liu S, Hassan MM et al. Rapid quantitative analysis of Hg2+ residue in dairy products using SERS coupled with ACO-BP-AdaBoost algorithm. Spectrochim Acta A Mol Biomol Spectrosc 2019; 223: 117281. doi:10.1016/j.saa.2019.117281"/>
+<link rel="alternate" type="application/atom+xml" href="../../gateway/plugin/WebFeedGatewayPlugin/atom">
+<link rel="alternate" type="application/rdf+xml" href="../../gateway/plugin/WebFeedGatewayPlugin/rss">
+<link rel="alternate" type="application/rss+xml" href="../../gateway/plugin/WebFeedGatewayPlugin/rss2">
+	<link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css1cc1.css?name=stylesheetless" type="text/css" /><style type="text/css">.hero-section { background: center / cover no-repeat url("../../../../public/journals/7/homepageImage_en.jpg");}</style><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css1e80.css?name=stylesheetless_new" type="text/css" /><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css4a93.css?name=stylesheet" type="text/css" /><link rel="stylesheet" href="../../../../lib/pkp/styles/fontawesome/fontawesome7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/fontawesome/css/all.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/mdb/css/mdb.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/aos/aos7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/swiper/swiper-bundle.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/cssa8ed.css?name=my-custom-layout-new" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/onlineFirst/css/paginationStyle7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/citations/css/citations7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/doiInSummary/styles/doi7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/webOfScience/styles/wos7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/citationStyleLanguage/css/citationStyleLanguagePlugin7187.css?v=3.4.0.8" type="text/css" />
+
+
+</head>
+
+<body class="pkp_page_article pkp_op_view has_site_logo" dir="ltr">
+
+	<!-- ======= Header ======= -->
+	<header id="header" class="fixed-top d-flex align-items-center">
+  		    <div class="container d-flex justify-content-between align-items-center">
+    	<div class="logo">
+    						<a href="../../index.html" class="navbar-brand _is_img">
+					<img
+						src="../../../../public/journals/7/pageHeaderLogoImage_en.png"
+						width="2000"
+						height="313"
+													alt="ss"
+												class="img-fluid"
+						>
+				</a>
+					</div>
+
+		<nav id="navbar" class="navbar navbar-dark flex-row shadow-0">
+			
+											<ul id="_navigationPrimary" class="_pkp_navigation_primary navbar-nav ml-auto">
+
+								<li class=" nav-item">
+														<a href="../../index.html" class="nav-link">
+						Home
+					</a>
+							</li>
+								<li class=" nav-item">
+									<div class="dropdown">
+						<a
+							href="../../about.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							About
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="">
+										<a
+											href="../../about.html"
+											class="dropdown-item">
+											About the Journal
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../publicationfee.html"
+											class="dropdown-item">
+											Article Processing Charge (APC)
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/submissions.html"
+											class="dropdown-item">
+											Submissions
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="https://www.mattioli1885journals.com/index.php/progressinnutrition/Publons"
+											class="dropdown-item">
+											For Reviewers Publons
+										</a>
+									</li>
+																																<li class="">
+										<a href="../../about/submissions.html" class="dropdown-item">
+											Guidelines
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/editorialTeam.html"
+											class="dropdown-item">
+											Editorial Team
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/contact.html"
+											class="dropdown-item">
+											Contact
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class=" nav-item">
+														<a href="../../issue/view/1024.html" class="nav-link">
+						Current
+					</a>
+							</li>
+								<li class=" nav-item">
+														<a href="../../issue/archive.html" class="nav-link">
+						Archives
+					</a>
+							</li>
+								<li class=" nav-item">
+														<a href="../../announcement.html" class="nav-link">
+						Announcements
+					</a>
+							</li>
+			</ul>
+
+			
+      	</nav><!-- .navbar -->
+
+      	<nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar d-flex flex-column shadow-0">
+			<div class="container">
+				<div class="navbar-collapse d-flex justify-content-end">
+					
+<ul class="navbar-nav mr-auto flex-row ">
+		<li class="nav-item ">
+		<div class="dropdown">
+							<a href="#" class="nav-link" type="button" id="dropdownSidebar" data-mdb-toggle="dropdown" aria-expanded="false">
+					<i class="fas fa-globe"></i>
+				</a>
+						<ul class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light" aria-labelledby="dropdownSidebar">
+									<li class="locale_0" lang="0">
+						<a href="18389.html?source=%2Findex.php%2Fprogressinnutrition%2Farticle%2Fview%2F18389" class="dropdown-item">
+							en
+						</a>
+					</li>
+							</ul>
+		</div>
+	</li>
+
+		<li class=" nav-item">
+					<a href="../../search.html" class="nav-link mx-1">
+				<i class="fas fa-search"></i>
+			</a>
+			</li>
+</ul>											<ul id="_navigationUser" class="_pkp_navigation_user flex-row justify-content-end navbar-nav ml-auto">
+
+								<li class="profile px-2 px-md-0 nav-item">
+														<a href="../../user/register.html" class="nav-link">
+						Register
+					</a>
+							</li>
+								<li class="profile px-2 px-md-0 nav-item">
+														<a href="../../login.html" class="nav-link">
+						Login
+					</a>
+							</li>
+										</ul>
+
+				</div>
+			</div>
+		</nav>
+      	<button
+    type="button"
+    class="navbar-toggler text-white d-lg-none"
+    data-mdb-toggle="modal"
+    data-mdb-target="#exampleModal">
+	<i class="fas fa-bars"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel"></h5>
+				<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+	      		<div>
+		      		
+																	<ul id="_navigationPrimary" class="_pkp_navigation_primary d-block navbar-nav ml-auto">
+
+								<li class="text-dark nav-item">
+														<a href="../../index.html" class="nav-link">
+						Home
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+									<div class="dropdown">
+						<a
+							href="../../about.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							About
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="text-dark">
+										<a
+											href="../../about.html"
+											class="dropdown-item">
+											About the Journal
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../publicationfee.html"
+											class="dropdown-item">
+											Article Processing Charge (APC)
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/submissions.html"
+											class="dropdown-item">
+											Submissions
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="https://www.mattioli1885journals.com/index.php/progressinnutrition/Publons"
+											class="dropdown-item">
+											For Reviewers Publons
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a href="../../about/submissions.html" class="dropdown-item">
+											Guidelines
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/editorialTeam.html"
+											class="dropdown-item">
+											Editorial Team
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/contact.html"
+											class="dropdown-item">
+											Contact
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../issue/view/1024.html" class="nav-link">
+						Current
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../issue/archive.html" class="nav-link">
+						Archives
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../announcement.html" class="nav-link">
+						Announcements
+					</a>
+							</li>
+			</ul>
+
+					
+				</div>
+
+				<hr/>
+
+				<div>
+					
+<ul class="navbar-nav mr-auto flex-row d-block">
+		<li class="nav-item mx-0">
+		<div class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownSidebar" data-mdb-toggle="dropdown" aria-expanded="false">
+					Language
+				</a>
+						<ul class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light" aria-labelledby="dropdownSidebar">
+									<li class="locale_0" lang="0">
+						<a href="18389.html?source=%2Findex.php%2Fprogressinnutrition%2Farticle%2Fview%2F18389" class="dropdown-item">
+							en
+						</a>
+					</li>
+							</ul>
+		</div>
+	</li>
+
+		<li class="mx-0 nav-item">
+					<a href="../../search.html" class="nav-link">
+				Search
+			</a>
+			</li>
+</ul>											<ul id="_navigationUser" class="_pkp_navigation_user d-block navbar-nav ml-auto">
+
+								<li class="profile text-dark nav-item">
+														<a href="../../user/register.html" class="nav-link">
+						Register
+					</a>
+							</li>
+								<li class="profile text-dark nav-item">
+														<a href="../../login.html" class="nav-link">
+						Login
+					</a>
+							</li>
+										</ul>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</div>
+	</div>
+</div>    </div>
+  </header><!-- End Header -->
+
+  
+
+
+		
+		<div class="mainWrapper">
+	<main class="" role="main">
+		<a id="pkp_content_main"></a>
+
+				
+			<section class="hero-section inner-page">
+			  <div class="wave">
+
+			    <svg width="1920px" height="90px" viewBox="0 0 1920 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <g id="Apple-TV" transform="translate(0.000000, -402.000000)" fill="#FFFFFF">
+			          <path d="M0,439.134243 C175.04074,464.89273 327.944386,477.771974 458.710937,477.771974 C654.860765,477.771974 870.645295,442.632362 1205.9828,410.192501 C1429.54114,388.565926 1667.54687,411.092417 1920,477.771974 L1920,667 L1017.15166,667 L0,667 L0,439.134243 Z" id="Path"></path>
+			        </g>
+			      </g>
+			    </svg>
+
+			  </div>
+
+			  <div class="container">
+			    <div class="row align-items-center">
+			      <div class="col-12">
+			        <div class="row justify-content-center">
+			          <div class="col-md-10 text-center hero-text">
+			            <h1 data-aos="fade-up" data-aos-delay="">Application of Machine Learning Algorithms for Predicting Methylglyoxal Concentration in Processed Packaged Foods</h1>
+			            <p class="mb-5" data-aos="fade-up" data-aos-delay="100"></p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+
+			</section>
+		
+<div class="page page_article">
+			<nav class="cmp_breadcrumbs" role="navigation" aria-label="You are here:">
+	<ol>
+		<li>
+			<a href="../../index.html">
+				Home
+			</a>
+			<span class="separator">/</span>
+		</li>
+		<li>
+			<a href="../../issue/archive.html">
+				Archives
+			</a>
+			<span class="separator">/</span>
+		</li>
+					<li>
+				<a href="../../issue/view/1024.html">
+					Vol. 28 No. 1 (2026)
+				</a>
+				<span class="separator">/</span>
+			</li>
+				<li class="current" aria-current="page">
+			<span aria-current="page">
+									Original articles
+							</span>
+		</li>
+	</ol>
+</nav>
+	
+		  	 <article class="obj_article_details">
+
+		
+	<div class="d-md-flex">
+		<div class="main_entry">
+			<section class="item">
+				<h3 class="page_title">
+					Application of Machine Learning Algorithms for Predicting Methylglyoxal Concentration in Processed Packaged Foods
+				</h3>
+
+							</section> 
+
+							<section class="item authors">
+					<h2 class="pkp_screen_reader">Authors</h2>
+					<ul class="authors">
+											<li>
+							<span class="name">
+								Busra Yusufoglu
+							</span>
+															<span class="affiliation">
+									Istanbul Technical University
+																	</span>
+																				</li>
+										</ul>
+				</section>
+			
+						
+									<section class="item keywords">
+				<h4 class="_label">
+										Keywords:
+				</h4>
+				<span class="value">
+											AGEs, Methylglyoxal, predictive MGO concentration, catboost, machine learning									</span>
+			</section>
+			
+										<section class="item abstract">
+					<h4 class="_label">Abstract</h4>
+					<p><em>Background and aim:</em><strong> </strong>Methylglyoxal (MGO) is a reactive dicarbonyl metabolite of glucose and plays an important role in processed food products. It is formed by the binding of a sugar molecule to a protein or lipid molecule, inside or outside the body. In this study, a tool called predictive (pMGO) is proposed, which aims to accurately predict MGO formation in foods.<strong> </strong><em>Methods: </em>Some machine learning (ML) algorithms were evaluated for pMGO based on food composition data. Models were tested using variables such as glucose, fructose, sucrose, total sugar, carbohydrate, protein, fat, fiber and salt.<strong> </strong><em>Results: </em>The highest prediction performance among the models was obtained by the CatBoost model with the values of $R^2 = 0.52 \pm 0.30$ and $RMSE = 156.75 \pm 64.92$. While glucose, fructose and saturated fat stood out as the most effective variables, carbohydrates and protein provided more indirect contributions.<strong> </strong><em>Conclusion: </em>Findings suggest that focus on some components, especially sugar type and saturated fat predicting MGO exposure.</p>
+				</section>
+			
+			
+
+																			
+										<section class="item references">
+					<h2 class="label">
+						References
+					</h2>
+					<div class="value">
+																					<p>1. Zheng J, Guo H, Ou J et al. Benefits, deleterious effects and mitigation of methylglyoxal in foods: A critical review. Trends Food Sci Technol 2021; 107: 201–212. doi:10.1016/j.tifs.2020.10.031 </p>
+															<p>2. Zheng L, Boeren S, Liu C et al. Proteomics-based identification of biomarkers reflecting endogenous and exogenous exposure to the advanced glycation end product precursor methylglyoxal in SH-SY5Y human neuroblastoma cells. Int J Biol Macromol 2024; 258: 132859. doi:10.1016/j.ijbiomac.2024.132859 </p>
+															<p>3. Wang Y, Chen J, Zheng Y et al. Glucose metabolite methylglyoxal induces vascular endothelial cell pyroptosis via NLRP3 inflammasome activation and oxidative stress in vitro and in vivo. Cell Mol Life Sci 2024; 81: 401. doi:10.1007/s00018-024-05432-8 </p>
+															<p>4. Scheijen JLJM, Clevers E, Engelen L et al. Analysis of advanced glycation endproducts in selected food items by ultra-performance liquid chromatography tandem mass spectrometry: Presentation of a dietary AGE database. Food Chem 2016; 190: 1145–1150. doi:10.1016/j.foodchem.2015.06.049 </p>
+															<p>5. Lai SWT, Lopez Gonzalez EDJ, Zoukari T, Ki P, Shuck SC. Methylglyoxal and Its Adducts: Induction, Repair, and Association with Disease. Chem Res Toxicol 2022; 35: 1720–1746. doi:10.1021/acs.chemrestox.2c00160 </p>
+															<p>6. Bellier J, Nokin M-J, Lardé E et al. Methylglyoxal, a potent inducer of AGEs, connects between diabetes and cancer. Diabetes Res Clin Pract 2019; 148: 200–211. doi:10.1016/j.diabres.2019.01.002 </p>
+															<p>7. Yusufoğlu B. Evaluation of the Altmetric Attention Score of Recent Hazard Food-Marker: Advanced Glycation End Products. Celal Bayar Univ J Sci 2025; 21: 105-117. doi:10.18466/cbayarfbe.1580554 </p>
+															<p>8. Maasen K, Scheijen JLJM, Opperhuizen A, Stehouwer CDA, Van Greevenbroek MM, Schalkwijk CG. Quantification of dicarbonyl compounds in commonly consumed foods and drinks; presentation of a food composition database for dicarbonyls. Food Chem 2021; 339: 128063. doi:10.1016/j.foodchem.2020.128063 </p>
+															<p>9. Li C, Zhang L, Gao W, Lai C, Dong H. Robust detection of advanced glycation endproducts in milk powder using ultrahigh performance liquid chromatography tandem mass spectrometry (UHPLC-MS/MS). Food Anal Methods 2021; 14: 1472-1481. doi:10.1007/s12161-021-01986-6 </p>
+															<p>10. Tareke E, Forslund A, Lindh CH, Fahlgren C, Östman E. Isotope dilution ESI-LC-MS/MS for quantification of free and total Nε-(1-Carboxymethyl)-l-Lysine and free Nε-(1-Carboxyethyl)-l-Lysine: Comparison of total Nε-(1-Carboxymethyl)-l-Lysine levels measured with new method to ELISA assay in gruel samples. Food Chem 2013; 141: 4253-4259. doi:10.1016/j.foodchem.2013.07.003 </p>
+															<p>11. Wei Q, Liu T, Sun DW. Advanced glycation end-products (AGEs) in foods and their detecting techniques and methods: A review. Trends Food Sci Technol 2018; 82: 32-45. doi:10.1016/j.jada.2010.03.018 </p>
+															<p>12. Zhu G, Huang X, Peng X, Xu J, Guo S, Zhang H. A deep learning-based quantitative prediction model for the processing potentials of soybeans as soymilk raw materials. Food Chem 2024; 453: 139671. doi:10.1016/j.foodchem.2024.139671 </p>
+															<p>13. Rabbani N. AGEomics Biomarkers and Machine Learning—Realizing the Potential of Protein Glycation in Clinical Diagnostics. Int J Mol Sci 2022; 23: 4584. doi:10.3390/ijms23094584 </p>
+															<p>14. Yang H, Bai X, Feng B et al. Application of Molecular Transformer approach for predicting the potential reactions to generate advanced glycation end products in infant formula. Food Chem 2023; 407: 135143. doi:10.1016/j.foodchem.2022.135143 </p>
+															<p>15. Qian J, Wang X, Song F et al. ChemSweet: An AI-driven computational platform for next-gen sweetener discovery. Food Chem 2025; 463: 141362. doi:10.1016/j.foodchem.2024.141362 </p>
+															<p>16. Zhu J, Lian S, Zhong H, Sun R, Xiao Z, Li H. Detection of Advanced Glycosylation End Products in the Cornea Based on Molecular Fluorescence and Machine Learning. Biosensors (Basel) 2023; 13: 170. doi:10.3390/bios13020170 </p>
+															<p>17. He H-J, Zhang C, Bian X et al. Improved prediction of vitamin C and reducing sugar content in sweet potatoes using hyperspectral imaging and LARS-enhanced LASSO variable selection. J Food Compos Anal 2024; 132: 106350. doi:10.1016/j.jfca.2024.106350 </p>
+															<p>18. Yamasaki Y, Nakamura K, Kashiwabara N, Chiba S, Akiyama H, Tsutsumi T. Development of a processing factor prediction model for pesticides in processed tomato foods using elastic net regularization. Food Chem 2024; 447: 138943. doi:10.1016/j.foodchem.2024.138943 </p>
+															<p>19. Yıldırım N, Tapan A. Data Mining and Application of Decision Tree Modelling on Electrochemical Data Used for Damaged Starch Detection. Gazi Univ J Sci Part A Eng Innov 2021; 8: Article 4. doi:10.54287/gujsa.997123 </p>
+															<p>20. Yordi E, Koeling R, Mota Y et al. Application of KNN algorithm in determining the total antioxidant capacity of flavonoid-containing foods. Proceedings of the 19th International Electronic Conference on Synthetic Organic Chemistry 2015. doi:10.3390/ecsoc-19-e002 </p>
+															<p>21. Dębska B, Guzowska-Świder B. Application of artificial neural network in food classification. Anal Chim Acta 2011; 705: 283–291. doi:10.1016/j.aca.2011.06.033 </p>
+															<p>22. Feng J, Cui Y, Jiang C et al. Analysis of sediment re-formation factors after ginseng beverage clarification based on XGBoost machine learning algorithm. Food Chem 2025; 463: 141304. doi:10.1016/j.foodchem.2024.141304 </p>
+															<p>23. Chen Q, Li J, Feng J, Qian J. Dynamic comprehensive quality assessment of post-harvest grape in different transportation chains using SAHP–CatBoost machine learning. Food Qual Saf 2024; 8: fyae007. doi:10.1093/fqsafe/fyae007 </p>
+															<p>24. Jin J, Liu Y, Li S, Hu J, Liu S, Chen C. Identification of soy sauce using high-field asymmetric waveform ion mobility spectrometry combined with machine learning. Sens Actuators B Chem 2022; 365: 131966. doi:10.1016/j.snb.2022.131966 </p>
+															<p>25. Mayr A, Binder H, Gefeller O, Schmid M. The Evolution of Boosting Algorithms—From Machine Learning to Statistical Modelling. Methods Inf Med 2014; 53: 419–427. doi:10.3414/ME13-01-0122 </p>
+															<p>26. Zheng R, Jia Y, Ullagaddi C et al. Optimizing feature selection with gradient boosting machines in PLS regression for predicting moisture and protein in multi-country corn kernels via NIR spectroscopy. Food Chem 2024; 456: 140062. doi:10.1016/j.foodchem.2024.140062 </p>
+															<p>27. Durmus Y. High accuracy prediction of Thai rice glycemic index using machine learning. Cogent Food Agric 2024; 10: 2411032. doi:10.1080/23311932.2024.2411032 </p>
+															<p>28. Bisutti V, Mota LFM, Giannuzzi D et al. Infrared spectroscopy coupled with machine learning algorithms for predicting the detailed milk mineral profile in dairy cattle. Food Chem 2024; 461: 140800. doi:10.1016/j.foodchem.2024.140800 </p>
+															<p>29. Gana R, Naha S, Mazumder R, Goldman R, Vasudevan S. Ridge Regression Estimated Linear Probability Model Predictions of N-glycosylation in Proteins with Structural and Sequence Data. arXiv 2018; arXiv:1803.06002. doi:10.48550/arXiv.1803.06002 </p>
+															<p>30. Özboy Ö, Köksel H. An application of linear regression technique for predicting bulgur yield and quality of wheat cultivars. Nahrung 2002; 46: 21–24. doi:10.1002/1521-3803 </p>
+															<p>31. Tarlak F, Şimşek BB, Şahin M, Pérez-Rodríguez F. Next-Generation Predictive Microbiology: A Software Platform Combining Two-Step, One-Step and Machine Learning Modelling. Foods 2025; 14: 3158. doi:10.3390/foods14183158 </p>
+															<p>32. Jović O, Smrečki N, Popović Z. Interval ridge regression (iRR) as a fast and robust method for quantitative prediction and variable selection applied to edible oil adulteration. Talanta 2016; 150: 37–45. doi:10.1016/j.talanta.2015.12.007 </p>
+															<p>33. An D, Wang L, He J, Hua Y. A two-step framework integrating lasso and Relaxed Lasso for resolving multidimensional collinearity in Chinese baijiu aging research. Heliyon 2024; 10: e36871. doi:10.1016/j.heliyon.2024.e36871 </p>
+															<p>34. Amini F, Hu G. A two-layer feature selection method using Genetic Algorithm and Elastic Net. Expert Syst Appl 2021; 166: 114072. doi:10.1016/j.eswa.2020.114072 </p>
+															<p>35. Peng H, Yi L, Fan X, Zhang J, Gu Y, Wang S. Near-infrared spectroscopy assisted by random forest for predicting the physicochemical indicators of yak milk powder. Food Chem 2025; 478: 143555. doi:10.1016/j.foodchem.2025.143555 </p>
+															<p>36. Breda LS, de Melo Nascimento JE, Alves V, de Alencar Arnaut de Toledo V, de Lima VA, Felsner ML. Green and fast prediction of crude protein contents in bee pollen based on digital images combined with Random Forest algorithm. Food Res Int 2024; 179: 113958. doi:10.1016/j.foodres.2024.113958 </p>
+															<p>37. Wiens M, Verone-Boyle A, Henscheid N, Podichetty JT, Burton J. A Tutorial and Use Case Example of the eXtreme Gradient Boosting (XGBoost) Artificial Intelligence Algorithm for Drug Development Applications. Clin Transl Sci 2025; 18: e70172. doi:10.1111/cts.70172 </p>
+															<p>38. Li H, Liu S, Hassan MM et al. Rapid quantitative analysis of Hg2+ residue in dairy products using SERS coupled with ACO-BP-AdaBoost algorithm. Spectrochim Acta A Mol Biomol Spectrosc 2019; 223: 117281. doi:10.1016/j.saa.2019.117281 </p>
+																		</div>
+				</section>
+			
+		</div><!-- .main_entry -->
+
+		<div class="entry_details"> 
+						
+										<div class="item galleys">
+					<h2 class="pkp_screen_reader">
+						Downloads
+					</h2>
+					<ul class="value galleys_links">
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link btn btn-primary  pdf" href="18389/13407.html">
+
+		
+	PDF
+
+	</a>
+							</li>
+											</ul>
+				</div>
+						
+						<div class="item published">
+				<section class="sub_item">
+					<h2 class="label">
+						Published
+					</h2>
+					<div class="value">
+																			<span>06-07-2026</span>
+																	</div>
+				</section>
+							</div>
+			
+										<div class="item issue">
+
+											<section class="sub_item">
+							<h2 class="label">
+								Issue
+							</h2>
+							<div class="value">
+								<a class="title" href="../../issue/view/1024.html">
+									Vol. 28 No. 1 (2026)
+								</a>
+							</div>
+						</section>
+					
+											<section class="sub_item">
+							<h2 class="label">
+								Section
+							</h2>
+							<div class="value">
+								Original articles
+							</div>
+						</section>
+					
+									</div>
+			
+						
+										<div class="item copyright">
+					<h2 class="label">
+						License
+					</h2>
+																										<p>Copyright (c) 2026 Busra Yusufoglu</p>
+														<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="../../../../../licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><p>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+																<p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (<a href="https://creativecommons.org/licenses/by-nc/4.0" target="_blank" rel="noopener">https://creativecommons.org/licenses/by-nc/4.0</a>) which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</p>
+<p><strong>Transfer of Copyright and Permission to Reproduce Parts of Published Papers.</strong> <br />Authors retain the copyright for their published work. No formal permission will be required to reproduce parts (tables or illustrations) of published papers, provided the source is quoted appropriately and reproduction has no commercial intent. <strong>Reproductions with commercial intent will require written permission and payment of royalties.</strong></p>
+<p> </p>
+<p><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license"><img style="border-width: 0;" src="../../../../../licensebuttons.net/l/by-nc/4.0/88x31.png" alt="Creative Commons License" /></a><br />This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+				</div>
+			
+				<div class="item citation">
+		<section class="sub_item citation_display">
+			<h2 class="label">
+				How to Cite
+			</h2>
+			<div class="value">
+				<div id="citationOutput" role="region" aria-live="polite">
+					<div class="csl-bib-body">
+  <div class="csl-entry"><div class="csl-left-margin">1.</div><div class="csl-right-inline">Yusufoglu B. Application of Machine Learning Algorithms for Predicting Methylglyoxal Concentration in Processed Packaged Foods. <i>Progr Nutr</i>. 2026;28(1):18389. doi:<a href="https://doi.org/10.23751/pn.2026.18389">10.23751/pn.2026.18389</a></div></div>
+</div>
+				</div>
+				<div class="citation_formats">
+					<button class="citation_formats_button label" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">
+						More Citation Formats
+					</button>
+					<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
+						<ul class="citation_formats_styles">
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/acm-sig-proceedings44d9.html?submissionId=18389&amp;publicationId=23084&amp;issueId=1024"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/acm-sig-proceedings9b6c.json?submissionId=18389&amp;publicationId=23084&amp;issueId=1024&amp;return=json"
+									>
+										ACM
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/acs-nano44d9.html?submissionId=18389&amp;publicationId=23084&amp;issueId=1024"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/acs-nano9b6c.json?submissionId=18389&amp;publicationId=23084&amp;issueId=1024&amp;return=json"
+									>
+										ACS
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/apa44d9.html?submissionId=18389&amp;publicationId=23084&amp;issueId=1024"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/apa9b6c.json?submissionId=18389&amp;publicationId=23084&amp;issueId=1024&amp;return=json"
+									>
+										APA
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas44d9.html?submissionId=18389&amp;publicationId=23084&amp;issueId=1024"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas9b6c.json?submissionId=18389&amp;publicationId=23084&amp;issueId=1024&amp;return=json"
+									>
+										ABNT
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/chicago-author-date44d9.html?submissionId=18389&amp;publicationId=23084&amp;issueId=1024"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/chicago-author-date9b6c.json?submissionId=18389&amp;publicationId=23084&amp;issueId=1024&amp;return=json"
+									>
+										Chicago
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/harvard-cite-them-right44d9.html?submissionId=18389&amp;publicationId=23084&amp;issueId=1024"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/harvard-cite-them-right9b6c.json?submissionId=18389&amp;publicationId=23084&amp;issueId=1024&amp;return=json"
+									>
+										Harvard
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/ieee44d9.html?submissionId=18389&amp;publicationId=23084&amp;issueId=1024"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/ieee9b6c.json?submissionId=18389&amp;publicationId=23084&amp;issueId=1024&amp;return=json"
+									>
+										IEEE
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/modern-language-association44d9.html?submissionId=18389&amp;publicationId=23084&amp;issueId=1024"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/modern-language-association9b6c.json?submissionId=18389&amp;publicationId=23084&amp;issueId=1024&amp;return=json"
+									>
+										MLA
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/turabian-fullnote-bibliography44d9.html?submissionId=18389&amp;publicationId=23084&amp;issueId=1024"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/turabian-fullnote-bibliography9b6c.json?submissionId=18389&amp;publicationId=23084&amp;issueId=1024&amp;return=json"
+									>
+										Turabian
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/vancouver44d9.html?submissionId=18389&amp;publicationId=23084&amp;issueId=1024"
+											data-load-citation
+											data-json-href="../../citationstylelanguage/get/vancouver9b6c.json?submissionId=18389&amp;publicationId=23084&amp;issueId=1024&amp;return=json"
+									>
+										Vancouver
+									</a>
+								</li>
+													</ul>
+													<div class="label">
+								Download Citation
+							</div>
+							<ul class="citation_formats_styles">
+																	<li>
+										<a href="../../citationstylelanguage/download/ris44d9?submissionId=18389&amp;publicationId=23084&amp;issueId=1024">
+											<span class="fa fa-download"></span>
+											Endnote/Zotero/Mendeley (RIS)
+										</a>
+									</li>
+																	<li>
+										<a href="../../citationstylelanguage/download/bibtex44d9?submissionId=18389&amp;publicationId=23084&amp;issueId=1024">
+											<span class="fa fa-download"></span>
+											BibTeX
+										</a>
+									</li>
+															</ul>
+											</div>
+				</div>
+			</div>
+		</section>
+	</div>
+<div class="item addthis">
+	<div class="value">
+		<!-- AddThis Button BEGIN -->
+		 			<div class="addthis_toolbox addthis_default_style ">
+			<a class="addthis_button_preferred_1"></a>
+			<a class="addthis_button_preferred_2"></a>
+			<a class="addthis_button_preferred_3"></a>
+			<a class="addthis_button_preferred_4"></a>
+			<a class="addthis_button_compact"></a>
+			<a class="addthis_counter addthis_bubble_style"></a>
+			</div>
+			<script type="text/javascript" src="../../../../../s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+				<!-- AddThis Button END -->
+	</div>
+</div>
+<div id="citation-plugin" class="item citations-container" data-citations-url="https://mattioli1885journals.com/index.php/progressinnutrition/citations/get?doi=10.23751%2Fpn.2026.18389" data-img-url="https://mattioli1885journals.com/plugins/generic/citations/images/">
+    <div id="citations-loader"></div>
+    <div class="citations-count">
+        <div class="citations-count-crossref">
+            <img class="img-fluid" src="../../../../plugins/generic/citations/images/crossref.png" alt="Crossref"/>
+            <div class="badge_total"></div>
+        </div>
+        <div class="citations-count-scopus">
+            <img src="../../../../plugins/generic/citations/images/scopus.png" alt="Scopus"/>
+            <br/>
+            <span class="badge_total"></span>
+        </div>
+        <div class="citations-count-google">
+            <a href="https://scholar.google.com/scholar?q=10.23751/pn.2026.18389" target="_blank" rel="noreferrer">
+                <img src="../../../../plugins/generic/citations/images/scholar.png" alt="Google Scholar"/>
+            </a>
+        </div>
+        <div class="citations-count-europepmc">
+            <a href="https://europepmc.org/search?scope=fulltext&amp;query=10.23751/pn.2026.18389" target="_blank" rel="noreferrer">
+                <img src="../../../../plugins/generic/citations/images/pmc.png" alt="Europe PMC"/>
+                <br/>
+                <span class="badge_total"></span>
+            </a>
+        </div>
+    </div>
+    <div class="citations-list">
+        <div class="cite-itm cite-prototype" style="display: none">
+            <img class="cite-img img-fluid" src="#" alt="">
+            <div>
+                <span class="cite-author"></span>
+                <span class="cite-date"></span>
+            </div>
+            <div>
+                <span class="cite-title"></span>
+                <span class="cite-info"></span>
+            </div>
+            <div class="cite-doi"></div>
+        </div>
+    </div>
+            <style>
+            .citations-container {
+                overflow-y: auto;
+                overflow-x: hidden;
+                max-height: 300px;
+            }
+        </style>
+    </div>
+
+
+		</div><!-- .entry_details -->
+	</div><!-- .row -->
+
+</article>
+
+	
+
+</div><!-- .page -->
+
+		<!--div class="html-preloader bg-light">
+			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div-->
+
+	
+
+
+    	  	      <div class="mt-2" data-aos="fade-up" id="sidebar" data-aos-delay="200">
+    		<ul class="_pkp_structure_sidebar list-unstyled container" role="complementary" aria-label="Sidebar">
+    			 
+    <div class="pkp_block">
+        <div class="title">Make a Submission</div>
+        <div class="content">
+<li>
+	<a href="../../about/submissions.html" class="font-monospace">
+		Make a Submission
+	</a>
+</li>
+</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-journal-information">
+		<div class="content">
+		<div class="title"><strong>Journal Information:</strong></div>
+<div class="content"><br>
+<p style="color: #e79100;"><strong>Editor-in-Chief</strong></p>
+<p>Leone Arsenio</p>
+<p style="color: #e79100;"><strong>Journal Information</strong></p>
+<p><strong>Languages:</strong> English<br><strong>Frequency:</strong> Continuous publishing<br><strong>Format:</strong> 20 x 27 cm</p>
+<p><strong>CiteScore (Scopus):</strong> 1.4 (2024)&nbsp;</p>
+<p><em><strong>Indexed in:</strong> &nbsp;<a href="https://www.scopus.com/sourceid/27995" target="_blank" rel="noopener">Scopus</a>, <a href="https://www.scimagojr.com/journalsearch.php?q=27995&amp;tip=sid&amp;clean=0" target="_blank" rel="noopener">SJR (Scimago Journal &amp; Country Rank)</a><br></em></p>
+<p>&nbsp;</p>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-publons">
+		<div class="content">
+		<div class="title">Publons Reviewer Recognition Service</div>
+<div class="content">
+<p>&nbsp;</p>
+<p><a href="https://www.mattioli1885journals.com/index.php/progressinnutrition/Publons" target="_blank" rel="noopener"><img src="../../../../public/site/images/bdavighi/mceclip0-1ffc714993fb9d8c7c81bcdc6afa9e3c.png" width="129" height="52"></a></p>
+</div>
+	</div>
+</div>
+
+    		</ul><!-- pkp_sidebar.left -->
+      </div>
+  	  	<div class="mainContainer container"></div>
+</main><!-- _pkp_structure_main -->
+	</div>
+
+
+	<!-- ======= Footer ======= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+       
+      
+            	<div class="row footer-widgets">
+<div class="col-md-5 col-xs-12">
+<div class="footer-widget contact-widget">
+<h4>Mattioli 1885 / Mattioli HEALTH</h4>
+<p>SCIENTIFIC PUBLISHING, COMMUNICATION AGENCY, CME PROVIDER</p>
+Mattioli1885 has been at the forefront of research and <br />scientific publishing since 1885. Today, Mattioli1885 <br />continues to work with passion and consistency <br />in the fields of communication, publishing, and scientific training.</div>
+</div>
+<div class="footer-widget col-md-4 col-xs-12 social-widget">
+<h4>Journals</h4>
+<ul>
+<li><a href="../../../actabiomedica.html">Acta Biomedica</a></li>
+<li><a href="../../../aestheticmedicine.html">Aesthetic Medicine </a></li>
+<li><a href="../../../EJOEH.html">European Journal of Oncology and Environmental Health </a></li>
+<li><a href="https://dpcj.org/index.php/dpc">Dermatology Practical &amp; Conceptual </a></li>
+<li><a href="../../../JBR.html">Journal of Bioarchaeological Research </a></li>
+<li><a href="../../../lamedicinadellavoro.html">La Medicina del Lavoro | Work, Environment and Health </a></li>
+<li><a href="../../../MedHistor.html">Medicina Historica</a></li>
+<li><a href="https://mrmjournal.org/">Multidisciplinary Respiratory Medicine</a></li>
+<li><a href="../../../perspectivesinpediatricneurology.html">Perspectives in Pediatric Neurology </a></li>
+<li><a href="../../../progressinnutrition.html">Progress in Nutrition</a></li>
+<li><a href="../../../sarcoidosis.html">Sarcoidosis Vasculitis and Diffuse Lung Diseases</a></li>
+</ul>
+</div>
+<div class="footer-widget col-md-3 col-xs-12 social-widget">
+<h4>Contact</h4>
+<ul>
+<li class="show"><span class="fa fa-envelope"> </span>Email: <a href="../../../../cdn-cgi/l/email-protection.html#1131626570777722517c706565787e7d78202929243f727e7c"><span class="__cf_email__" data-cfemail="4437302522227704292530302d2b282d757c7c716a272b29">[email&#160;protected]</span></a></li>
+<li class="show"><span class="fa fa-phone"> </span>Phone: +039 0524 530383</li>
+<li class="show"><span class="fa fa-globe"> </span>Website: <a href="https://mattiolihealth.com/">www.mattiolihealth.com</a></li>
+<li class="show"><span class="fa fa-map-marker"> </span>Address: Mattioli1885 srl - Strada della Lodesana, 649 sx - 43036 Fidenza (PR) Italy</li>
+<li class="show">P. IVA: 00579710344</li>
+</ul>
+<p><a href="http://www.mattiolihealth.com/" target="_blank" rel="noopener"><img src="../../../../public/site/images/valeriaceci/Logo_Mattioli_Health2.png" /></a><br /><br /> <a href="https://www.facebook.com/Mattioli-Health-1682497891769144/" target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip0-72c073ab023a79232f4cac597e8d48a7.png" /></a> <a href="../../../actabiomedica/logind976.html" target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip1.png" /></a> <a href="https://twitter.com/mattioli1885 " target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip2.png" /></a></p>
+<p> </p>
+</div>
+</div>
+      	
+      <div class="row justify-content-center text-center">
+        <div class="col-md-7">
+          
+
+          <div class="credits">
+            OJS Hosting, Support, and Customization by: <a href="https://openjournalsystems.com/">OpenJournalSystems.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+<script data-cfasync="false" src="../../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../../../lib/pkp/lib/vendor/components/jquery/jquery.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../lib/pkp/lib/vendor/components/jqueryui/jquery-ui.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/mdb/js/mdb.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/aos/aos7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/swiper/swiper-bundle.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/js/main7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/generic/citationStyleLanguage/js/articleCitation7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/generic/citations/js/citations7187.js?v=3.4.0.8" type="text/javascript"></script><script type="text/javascript">
+(function (w, d, s, l, i) { w[l] = w[l] || []; var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true;
+j.src = 'https://www.googletagmanager.com/gtag/js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config', i); })
+(window, document, 'script', 'dataLayer', 'UA-42131693-30');
+</script>
+
+
+
+
+ <script type="text/javascript">
+
+    $(function (){
+        $('#sidebar > ul > div .title').click(function (){
+            $(this).closest('.pkp_block').toggleClass('showHide');
+        });
+        
+    // $('#sidebar > ul  li:first a').addClass('btnlink');
+    var hasPageDiv =  $('main > div').hasClass('page');
+   var container = $('main .page:not(.page_login):not(.page_register)').detach();
+    if(!hasPageDiv){
+         container = $('main .page_index_journal').detach();
+    }
+    
+     
+      var sidebar = $('#sidebar').detach();
+
+    $('.mainContainer').append(container);
+     $('.mainContainer').append(sidebar);
+     
+      $('.page_index_site').closest('body').addClass('indexSiteWrapper');
+     $('.indexSiteWrapper #sidebar').remove();
+        
+    });
+    </script>
+  
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"29c8736485c44d66b053a23423099076","r":1}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from mattioli1885journals.com/index.php/progressinnutrition/article/view/18389 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Aug 2026 05:21:35 GMT -->
+</html>

@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<!-- Mirrored from mattioli1885journals.com/index.php/theultrasoundjournal/article/view/18667 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Aug 2026 05:45:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		A hybrid radiomics framework integrating genetic algorithm-optimized random forest for preoperative identification of Luminal B breast cancer and Ki-67 prediction: A multicenter study
+							| The Ultrasound Journal
+			</title>
+
+	
+<meta name="generator" content="Open Journal Systems 3.4.0.8">
+<link rel="schema.DC" href="https://purl.org/dc/elements/1.1/" />
+<meta name="DC.Creator.PersonalName" content="Zimei Lin"/>
+<meta name="DC.Creator.PersonalName" content="Yi-jie  Chen"/>
+<meta name="DC.Creator.PersonalName" content="Yong-yuan  Xu"/>
+<meta name="DC.Creator.PersonalName" content="Qing  Wen"/>
+<meta name="DC.Creator.PersonalName" content="Ling-ling  Chen"/>
+<meta name="DC.Creator.PersonalName" content="Li-ming  Shao"/>
+<meta name="DC.Creator.PersonalName" content="Xiao-yan  Niu"/>
+<meta name="DC.Creator.PersonalName" content="Li-na  Tang"/>
+<meta name="DC.Creator.PersonalName" content="Pintong Huang"/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2026-05-20"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2026-02-12"/>
+<meta name="DC.Date.issued" scheme="ISO8601" content="2026-01-10"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2026-07-15"/>
+<meta name="DC.Description" xml:lang="en" content="Background: Preoperative identification of Luminal B breast cancer remains a clinical challenge. This study aimed to develop an ultrasound radiomics framework integrating tumoral and peritumoral information for preoperative identification of Luminal B subtype and prediction of Ki-67 status.
+Methods: We retrospectively analyzed 1,944 patients from three centers. The development cohort from Centers One and Two was divided by stratified sampling into a training set (n = 1,434) and an internal test set (n = 253), and an independent cohort from Center Three (n = 257) was used for external validation. Lesion-containing ROIs were processed using deep learning-assisted segmentation and standardized for downstream analysis. Radiomic features were extracted, and a genetic algorithm (GA) was coupled with a random forest (RF) classifier to construct two models: one for Luminal B classification and another for predicting Ki-67 expression.
+Results: The combined tumor-peritumoral model achieved the highest performance, with the Luminal B classifier showing AUCs of 0.876 (training), 0.693 (test), and 0.786 (external validation). The Ki-67 prediction model yielded AUCs of 0.890 (training) and 0.858 (test), though external validation (AUC=0.661) was limited by dataset distribution. The Delong test confirmed that combined ROIs significantly outperformed tumor-only models, with NRI and IDI tests further validating the added value of peritumoral features.
+Conclusions: Ultrasound radiomics integrating tumoral and peritumoral regions can support the preoperative identification of Luminal B breast cancer, and peritumoral region analysis significantly enhances predictive performance. The framework also shows potential for predicting Ki-67 status within this subtype."/>
+<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+<meta name="DC.Identifier" content="18667"/>
+<meta name="DC.Identifier.pageNumber" content="18667"/>
+<meta name="DC.Identifier.DOI" content="10.5826/tuj.2026.18667"/>
+<meta name="DC.Identifier.URI" content="18667.html"/>
+<meta name="DC.Language" scheme="ISO639-1" content="en"/>
+<meta name="DC.Rights" content="Copyright (c) 2026 Zimei Lin, Yi-jie  Chen, Yong-yuan  Xu, Qing  Wen, Ling-ling  Chen, Li-ming  Shao, Xiao-yan  Niu, Li-na  Tang, Pintong Huang (Author)"/>
+<meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc/4.0"/>
+<meta name="DC.Source" content="The Ultrasound Journal"/>
+<meta name="DC.Source.ISSN" content="2524-8987"/>
+<meta name="DC.Source.Issue" content="1"/>
+<meta name="DC.Source.Volume" content="18"/>
+<meta name="DC.Source.URI" content="../../../theultrasoundjournal.html"/>
+<meta name="DC.Subject" xml:lang="en" content="Breast Cancer"/>
+<meta name="DC.Subject" xml:lang="en" content="Radiomics"/>
+<meta name="DC.Subject" xml:lang="en" content="Ultrasound "/>
+<meta name="DC.Title" content="A hybrid radiomics framework integrating genetic algorithm-optimized random forest for preoperative identification of Luminal B breast cancer and Ki-67 prediction: A multicenter study"/>
+<meta name="DC.Type" content="Text.Serial.Journal"/>
+<meta name="DC.Type.articleType" content="Automation in Ultrasound Imaging: AI-driven and Model-based Data Acquisition, Analysis and Classification: Original Research Article"/>
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_journal_title" content="The Ultrasound Journal"/>
+<meta name="citation_journal_abbrev" content="Ultrasound J"/>
+<meta name="citation_issn" content="2524-8987"/> 
+<meta name="citation_author" content="Zimei Lin"/>
+<meta name="citation_author_institution" content=" The Second Affiliated Hospital Zhejiang University School of Medicine"/>
+<meta name="citation_author" content="Yi-jie  Chen"/>
+<meta name="citation_author_institution" content="Fujian Cancer Hospital"/>
+<meta name="citation_author" content="Yong-yuan  Xu"/>
+<meta name="citation_author_institution" content="The Second Affiliated Hospital Zhejiang University School of Medicine"/>
+<meta name="citation_author" content="Qing  Wen"/>
+<meta name="citation_author_institution" content="The Second Affiliated Hospital Zhejiang University School of Medicine"/>
+<meta name="citation_author" content="Ling-ling  Chen"/>
+<meta name="citation_author_institution" content="Cixi Sixth People’s Hospital"/>
+<meta name="citation_author" content="Li-ming  Shao"/>
+<meta name="citation_author_institution" content="The Second Affiliated Hospital Zhejiang University School of Medicine"/>
+<meta name="citation_author" content="Xiao-yan  Niu"/>
+<meta name="citation_author_institution" content="The Affiliated Hospital of Qingdao University"/>
+<meta name="citation_author" content="Li-na  Tang"/>
+<meta name="citation_author_institution" content="Fujian Cancer Hospital"/>
+<meta name="citation_author" content="Pintong Huang"/>
+<meta name="citation_author_institution" content=" The Second Affiliated Hospital Zhejiang University School of Medicine"/>
+<meta name="citation_title" content="A hybrid radiomics framework integrating genetic algorithm-optimized random forest for preoperative identification of Luminal B breast cancer and Ki-67 prediction: A multicenter study"/>
+<meta name="citation_language" content="en"/>
+<meta name="citation_date" content="2026/05/20"/>
+<meta name="citation_volume" content="18"/>
+<meta name="citation_issue" content="1"/>
+<meta name="citation_firstpage" content="18667"/>
+<meta name="citation_lastpage" content="18667"/>
+<meta name="citation_doi" content="10.5826/tuj.2026.18667"/>
+<meta name="citation_abstract_html_url" content="18667.html"/>
+<meta name="citation_abstract" xml:lang="en" content="Background: Preoperative identification of Luminal B breast cancer remains a clinical challenge. This study aimed to develop an ultrasound radiomics framework integrating tumoral and peritumoral information for preoperative identification of Luminal B subtype and prediction of Ki-67 status.
+Methods: We retrospectively analyzed 1,944 patients from three centers. The development cohort from Centers One and Two was divided by stratified sampling into a training set (n = 1,434) and an internal test set (n = 253), and an independent cohort from Center Three (n = 257) was used for external validation. Lesion-containing ROIs were processed using deep learning-assisted segmentation and standardized for downstream analysis. Radiomic features were extracted, and a genetic algorithm (GA) was coupled with a random forest (RF) classifier to construct two models: one for Luminal B classification and another for predicting Ki-67 expression.
+Results: The combined tumor-peritumoral model achieved the highest performance, with the Luminal B classifier showing AUCs of 0.876 (training), 0.693 (test), and 0.786 (external validation). The Ki-67 prediction model yielded AUCs of 0.890 (training) and 0.858 (test), though external validation (AUC=0.661) was limited by dataset distribution. The Delong test confirmed that combined ROIs significantly outperformed tumor-only models, with NRI and IDI tests further validating the added value of peritumoral features.
+Conclusions: Ultrasound radiomics integrating tumoral and peritumoral regions can support the preoperative identification of Luminal B breast cancer, and peritumoral region analysis significantly enhances predictive performance. The framework also shows potential for predicting Ki-67 status within this subtype."/>
+<meta name="citation_keywords" xml:lang="en" content="Breast Cancer"/>
+<meta name="citation_keywords" xml:lang="en" content="Radiomics"/>
+<meta name="citation_keywords" xml:lang="en" content="Ultrasound "/>
+<meta name="citation_pdf_url" content="../download/18667/TUJ_18667.pdf%3bfilename_%3dUTF-8%27%27TUJ_18667.pdf"/>
+<meta name="citation_reference" content="1. Perou CM, Sørlie T, Eisen MB, van de Rijn M, Jeffrey SS, Rees CA, et al. Molecular portraits of human breast tumours. Nature. 2000;406(6797):747-52. doi: 10.1038/35021093."/>
+<meta name="citation_reference" content="2. Cheang MC, Chia SK, Voduc D, Gao D, Leung S, Snider J, et al. Ki67 index, HER2 status, and prognosis of patients with luminal B breast cancer. J Natl Cancer Inst. 2009;101(10):736-50. doi: 10.1093/jnci/djp082."/>
+<meta name="citation_reference" content="3. Ades F, Zardavas D, Bozovic-Spasojevic I, Pugliano L, Fumagalli D, de Azambuja E, et al. Luminal B breast cancer: molecular characterization, clinical management, and future perspectives. J Clin Oncol. 2014;32(25):2794-803. doi: 10.1200/JCO.2013.54.1870."/>
+<meta name="citation_reference" content="4. Loo SK, Yates ME, Yang S, Oesterreich S, Lee AV, Wang XS. Fusion-associated carcinomas of the breast: Diagnostic, prognostic, and therapeutic significance. Genes Chromosomes Cancer. 2022;61(5):261-73. doi: 10.1002/gcc.23020."/>
+<meta name="citation_reference" content="5. Li Y, Du W, Yang R, Wei X, Li H, Zhang X. Copper Chaperone for Superoxide Dismutase Subtypes as a Prognostic Marker in Luminal B Breast Cancer. Clin Med Insights Oncol. 2024;18:11795549231219239. doi: 10.1177/11795549231219239."/>
+<meta name="citation_reference" content="6. Samiei S, Simons JM, Engelen SME, Beets-Tan RGH, Classe JM, Smidt ML. Axillary Pathologic Complete Response After Neoadjuvant Systemic Therapy by Breast Cancer Subtype in Patients With Initially Clinically Node-Positive Disease: A Systematic Review and Meta-analysis. JAMA Surg. 2021;156(6):e210891. doi: 10.1001/jamasurg.2021.0891."/>
+<meta name="citation_reference" content="7. Meyer-Wilmes P, Huober J, Untch M, Blohmer JU, Janni W, Denkert C, et al. Long-term outcomes of a randomized, open-label, phase II study comparing cabazitaxel versus paclitaxel as neoadjuvant treatment in patients with triple-negative or luminal B/HER2-negative breast cancer (GENEVIEVE). ESMO Open. 2024;9(5):103009. doi: 10.1016/j.esmoop.2024.103009."/>
+<meta name="citation_reference" content="8. Camargo-Herrera V, Castellanos G, Rangel N, Jiménez-Tobón GA, Martínez-Agüero M, Rondón-Lagos M. Patterns of Chromosomal Instability and Clonal Heterogeneity in Luminal B Breast Cancer: A Pilot Study. Int J Mol Sci. 2024;25(8):4478. doi: 10.3390/ijms25084478."/>
+<meta name="citation_reference" content="9. Badwe RA, Parmar V, Nair N, Joshi S, Hawaldar R, Pawar S, et al. Effect of Peritumoral Infiltration of Local Anesthetic Before Surgery on Survival in Early Breast Cancer. J Clin Oncol. 2023;41(18):3318-28. doi: 10.1200/JCO.22.01966."/>
+<meta name="citation_reference" content="10. Jiang L, You C, Xiao Y, Wang H, Su GH, Xia BQ, et al. Radiogenomic analysis reveals tumor heterogeneity of triple-negative breast cancer. Cell Rep Med. 2022;3(7):100694. doi: 10.1016/j.xcrm.2022.100694."/>
+<meta name="citation_reference" content="11. Zhang J, Wu J, Zhou XS, Shi F, Shen D. Recent advancements in artificial intelligence for breast cancer: Image augmentation, segmentation, diagnosis, and prognosis approaches. Semin Cancer Biol. 2023;96:11-25. doi: 10.1016/j.semcancer.2023.09.001."/>
+<meta name="citation_reference" content="12. Kurozumi S, Ball GR. Research on biomarkers using innovative artificial intelligence systems in breast cancer. Int J Clin Oncol. 2024;29(11):1669-75. doi: 10.1007/s10147-024-02602-3."/>
+<meta name="citation_reference" content="13. Qi YJ, Su GH, You C, Zhang X, Xiao Y, Jiang YZ, et al. Radiomics in breast cancer: Current advances and future directions. Cell Rep Med. 2024;5(9):101719. doi: 10.1016/j.xcrm.2024.101719."/>
+<meta name="citation_reference" content="14. Conti A, Duggento A, Indovina I, Guerrisi M, Toschi N. Radiomics in breast cancer classification and prediction. Semin Cancer Biol. 2021;72:238-50. doi: 10.1016/j.semcancer.2020.04.002."/>
+<meta name="citation_reference" content="15. Davey MG, Davey MS, Boland MR, Ryan ÉJ, Lowery AJ, Kerin MJ. Radiomic differentiation of breast cancer molecular subtypes using pre-operative breast imaging - A systematic review and meta-analysis. Eur J Radiol. 2021;144:109996. doi: 10.1016/j.ejrad.2021.109996."/>
+<meta name="citation_reference" content="16. Gu X, Angelov PP, Soares EA. A Self-Adaptive Synthetic Over-Sampling Technique for Imbalanced Classification. Int J Intell Syst. 2020;35:923-43. doi: 10.1002/int.22245."/>
+<meta name="citation_reference" content="17. Malik JA, Ahmed S, Jan B, Bender O, Al Hagbani T, Alqarni A, et al. Drugs repurposed: An advanced step towards the treatment of breast cancer and associated challenges. Biomed Pharmacother. 2022;145:112375. doi: 10.1016/j.biopha.2021.112375."/>
+<meta name="citation_reference" content="18. Lin P, Xie W, Li Y, Zhang C, Wu H, Wan H, et al. Intratumoral and peritumoral radiomics of MRIs predicts pathologic complete response to neoadjuvant chemoimmunotherapy in patients with head and neck squamous cell carcinoma. J Immunother Cancer. 2024;12(11):e009616. doi: 10.1136/jitc-2024-009616."/>
+<meta name="citation_reference" content="19. Yao J, Jia X, Zhou W, Zhu Y, Chen X, Zhan W, et al. Predicting axillary response to neoadjuvant chemotherapy using peritumoral and intratumoral ultrasound radiomics in breast cancer subtypes. iScience. 2024;27(9):110716. doi: 10.1016/j.isci.2024.110716."/>
+<meta name="citation_reference" content="20. Luo S, Chen X, Yao M, et al. Intratumoral and peritumoral ultrasound-based radiomics for preoperative prediction of HER2-low breast cancer: a multicenter retrospective study. Insights Imaging. 2025;16(1):53. doi: 10.1186/s13244-025-01934-6."/>
+<meta name="citation_reference" content="21. Luo S, Chen X, Yao M, Ying Y, Huang Z, Zhou X, et al. High Expression of PKCζ And CTNNBIP1 Is Associated With Poor Prognosis in Luminal B Breast Cancer. Cancer Genomics Proteomics. 2025;22(4):538-56. doi: 10.21873/cgp.20520."/>
+<meta name="citation_reference" content="22. Zagami P, Fernandez-Martinez A, Rashid NU, Hoadley KA, Spears PA, Curigliano G, et al. Association of PIK3CA Mutation With Pathologic Complete Response and Outcome by Hormone Receptor Status and Intrinsic Subtype in Early-Stage ERBB2/HER2-Positive Breast Cancer. JAMA Netw Open. 2023;6(12):e2348814. doi: 10.1001/jamanetworkopen.2023.48814."/>
+<meta name="citation_reference" content="23. Du X, Zhou Z, Shao Y, Qian K, Wu Y, Zhang J, et al. Immunoarchitectural patterns as potential prognostic factors for invasive ductal breast cancer. NPJ Breast Cancer. 2022;8(1):26. doi: 10.1038/s41523-022-00389-y."/>
+	<link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css1cc1.css?name=stylesheetless" type="text/css" /><style type="text/css">.hero-section { background: center / cover no-repeat url("../../../../public/journals/26/homepageImage_en.png");}</style><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css1e80.css?name=stylesheetless_new" type="text/css" /><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css4a93.css?name=stylesheet" type="text/css" /><link rel="stylesheet" href="../../../../lib/pkp/styles/fontawesome/fontawesome7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/fontawesome/css/all.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/mdb/css/mdb.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/aos/aos7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/swiper/swiper-bundle.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/cssa8ed.css?name=my-custom-layout-new" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/onlineFirst/css/onlineFirstMain7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/onlineFirst/css/paginationStyle7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/citations/css/citations7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/doiInSummary/styles/doi7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/citationStyleLanguage/css/citationStyleLanguagePlugin7187.css?v=3.4.0.8" type="text/css" />
+
+
+</head>
+
+<body class="pkp_page_article pkp_op_view has_site_logo" dir="ltr">
+
+	<!-- ======= Header ======= -->
+	<header id="header" class="fixed-top d-flex align-items-center">
+  		    <div class="container d-flex justify-content-between align-items-center">
+    	<div class="logo">
+    						<a href="../../index.html" class="navbar-brand _is_img">
+					<img
+						src="../../../../public/journals/26/pageHeaderLogoImage_en.png"
+						width="2000"
+						height="313"
+													alt="TUJ"
+												class="img-fluid"
+						>
+				</a>
+					</div>
+
+		<nav id="navbar" class="navbar navbar-dark flex-row shadow-0">
+			
+											<ul id="_navigationPrimary" class="_pkp_navigation_primary navbar-nav ml-auto">
+
+								<li class=" nav-item">
+														<a href="https://www.mattioli1885journals.com/index.php/theultrasoundjournal/" class="nav-link">
+						Home
+					</a>
+							</li>
+								<li class=" nav-item">
+									<div class="dropdown">
+						<a
+							href="../../about.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							About
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="">
+										<a
+											href="../../about.html"
+											class="dropdown-item">
+											About the Journal
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/editorialTeam.html"
+											class="dropdown-item">
+											Editorial Board
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../aims-and-scope.html"
+											class="dropdown-item">
+											Aims and scope
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../working-rules-and-procedures-for-the-editorial-board-of-TUJ.html"
+											class="dropdown-item">
+											Working Rules and Procedures
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../policies.html"
+											class="dropdown-item">
+											Journal Policies
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../peer-review.html"
+											class="dropdown-item">
+											Peer review
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/privacy.html"
+											class="dropdown-item">
+											Privacy Statement
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../aboutpublisher.html"
+											class="dropdown-item">
+											About the Publisher
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../copyright.html"
+											class="dropdown-item">
+											Copyright
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/contact.html"
+											class="dropdown-item">
+											Contact
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class=" nav-item">
+									<div class="dropdown">
+						<a
+							href="../../for-authors.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							For Authors
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="">
+										<a
+											href="../../about/submissions.html"
+											class="dropdown-item">
+											Submissions
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../author-guidelines.html"
+											class="dropdown-item">
+											Author Guidelines
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../fees-and-funding.html"
+											class="dropdown-item">
+											Fees and funding
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class=" nav-item">
+									<div class="dropdown">
+						<a
+							href="../../collection.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							Collection
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="">
+										<a
+											href="../../specialissue.html"
+											class="dropdown-item">
+											Special issue
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class=" nav-item">
+														<a href="../../issue/view/1020.html" class="nav-link">
+						Current
+					</a>
+							</li>
+								<li class=" nav-item">
+														<a href="../../issue/archive.html" class="nav-link">
+						Archives
+					</a>
+							</li>
+								<li class=" nav-item">
+														<a href="../../announcement.html" class="nav-link">
+						Announcements
+					</a>
+							</li>
+			</ul>
+
+			
+      	</nav><!-- .navbar -->
+
+      	<nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar d-flex flex-column shadow-0">
+			<div class="container">
+				<div class="navbar-collapse d-flex justify-content-end">
+					
+<ul class="navbar-nav mr-auto flex-row ">
+		<li class="nav-item ">
+		<div class="dropdown">
+							<a href="#" class="nav-link" type="button" id="dropdownSidebar" data-mdb-toggle="dropdown" aria-expanded="false">
+					<i class="fas fa-globe"></i>
+				</a>
+						<ul class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light" aria-labelledby="dropdownSidebar">
+									<li class="locale_0" lang="0">
+						<a href="18667.html?source=%2Findex.php%2Ftheultrasoundjournal%2Farticle%2Fview%2F18667" class="dropdown-item">
+							en
+						</a>
+					</li>
+							</ul>
+		</div>
+	</li>
+
+		<li class=" nav-item">
+					<a href="../../search.html" class="nav-link mx-1">
+				<i class="fas fa-search"></i>
+			</a>
+			</li>
+</ul>											<ul id="_navigationUser" class="_pkp_navigation_user flex-row justify-content-end navbar-nav ml-auto">
+
+								<li class="profile px-2 px-md-0 nav-item">
+														<a href="../../user/register.html" class="nav-link">
+						Register
+					</a>
+							</li>
+								<li class="profile px-2 px-md-0 nav-item">
+														<a href="../../login.html" class="nav-link">
+						Login
+					</a>
+							</li>
+										</ul>
+
+				</div>
+			</div>
+		</nav>
+      	<button
+    type="button"
+    class="navbar-toggler text-white d-lg-none"
+    data-mdb-toggle="modal"
+    data-mdb-target="#exampleModal">
+	<i class="fas fa-bars"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel"></h5>
+				<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+	      		<div>
+		      		
+																	<ul id="_navigationPrimary" class="_pkp_navigation_primary d-block navbar-nav ml-auto">
+
+								<li class="text-dark nav-item">
+														<a href="https://www.mattioli1885journals.com/index.php/theultrasoundjournal/" class="nav-link">
+						Home
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+									<div class="dropdown">
+						<a
+							href="../../about.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							About
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="text-dark">
+										<a
+											href="../../about.html"
+											class="dropdown-item">
+											About the Journal
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/editorialTeam.html"
+											class="dropdown-item">
+											Editorial Board
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../aims-and-scope.html"
+											class="dropdown-item">
+											Aims and scope
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../working-rules-and-procedures-for-the-editorial-board-of-TUJ.html"
+											class="dropdown-item">
+											Working Rules and Procedures
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../policies.html"
+											class="dropdown-item">
+											Journal Policies
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../peer-review.html"
+											class="dropdown-item">
+											Peer review
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/privacy.html"
+											class="dropdown-item">
+											Privacy Statement
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../aboutpublisher.html"
+											class="dropdown-item">
+											About the Publisher
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../copyright.html"
+											class="dropdown-item">
+											Copyright
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/contact.html"
+											class="dropdown-item">
+											Contact
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class="text-dark nav-item">
+									<div class="dropdown">
+						<a
+							href="../../for-authors.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							For Authors
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="text-dark">
+										<a
+											href="../../about/submissions.html"
+											class="dropdown-item">
+											Submissions
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../author-guidelines.html"
+											class="dropdown-item">
+											Author Guidelines
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../fees-and-funding.html"
+											class="dropdown-item">
+											Fees and funding
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class="text-dark nav-item">
+									<div class="dropdown">
+						<a
+							href="../../collection.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							Collection
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="text-dark">
+										<a
+											href="../../specialissue.html"
+											class="dropdown-item">
+											Special issue
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../issue/view/1020.html" class="nav-link">
+						Current
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../issue/archive.html" class="nav-link">
+						Archives
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../announcement.html" class="nav-link">
+						Announcements
+					</a>
+							</li>
+			</ul>
+
+					
+				</div>
+
+				<hr/>
+
+				<div>
+					
+<ul class="navbar-nav mr-auto flex-row d-block">
+		<li class="nav-item mx-0">
+		<div class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownSidebar" data-mdb-toggle="dropdown" aria-expanded="false">
+					Language
+				</a>
+						<ul class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light" aria-labelledby="dropdownSidebar">
+									<li class="locale_0" lang="0">
+						<a href="18667.html?source=%2Findex.php%2Ftheultrasoundjournal%2Farticle%2Fview%2F18667" class="dropdown-item">
+							en
+						</a>
+					</li>
+							</ul>
+		</div>
+	</li>
+
+		<li class="mx-0 nav-item">
+					<a href="../../search.html" class="nav-link">
+				Search
+			</a>
+			</li>
+</ul>											<ul id="_navigationUser" class="_pkp_navigation_user d-block navbar-nav ml-auto">
+
+								<li class="profile text-dark nav-item">
+														<a href="../../user/register.html" class="nav-link">
+						Register
+					</a>
+							</li>
+								<li class="profile text-dark nav-item">
+														<a href="../../login.html" class="nav-link">
+						Login
+					</a>
+							</li>
+										</ul>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</div>
+	</div>
+</div>    </div>
+  </header><!-- End Header -->
+
+  
+
+
+		
+		<div class="mainWrapper">
+	<main class="" role="main">
+		<a id="pkp_content_main"></a>
+
+				
+			<section class="hero-section inner-page">
+			  <div class="wave">
+
+			    <svg width="1920px" height="90px" viewBox="0 0 1920 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <g id="Apple-TV" transform="translate(0.000000, -402.000000)" fill="#FFFFFF">
+			          <path d="M0,439.134243 C175.04074,464.89273 327.944386,477.771974 458.710937,477.771974 C654.860765,477.771974 870.645295,442.632362 1205.9828,410.192501 C1429.54114,388.565926 1667.54687,411.092417 1920,477.771974 L1920,667 L1017.15166,667 L0,667 L0,439.134243 Z" id="Path"></path>
+			        </g>
+			      </g>
+			    </svg>
+
+			  </div>
+
+			  <div class="container">
+			    <div class="row align-items-center">
+			      <div class="col-12">
+			        <div class="row justify-content-center">
+			          <div class="col-md-10 text-center hero-text">
+			            <h1 data-aos="fade-up" data-aos-delay="">A hybrid radiomics framework integrating genetic algorithm-optimized random forest for preoperative identification of Luminal B breast cancer and Ki-67 prediction: A multicenter study</h1>
+			            <p class="mb-5" data-aos="fade-up" data-aos-delay="100"></p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+
+			</section>
+		
+<div class="page page_article">
+			<nav class="cmp_breadcrumbs" role="navigation" aria-label="You are here:">
+	<ol>
+		<li>
+			<a href="../../index.html">
+				Home
+			</a>
+			<span class="separator">/</span>
+		</li>
+		<li>
+			<a href="../../issue/archive.html">
+				Archives
+			</a>
+			<span class="separator">/</span>
+		</li>
+					<li>
+				<a href="../../issue/view/1020.html">
+					Vol. 18 No. 1 (2026): The Ultrasound Journal 2026; volume 18
+				</a>
+				<span class="separator">/</span>
+			</li>
+				<li class="current" aria-current="page">
+			<span aria-current="page">
+									Automation in Ultrasound Imaging: AI-driven and Model-based Data Acquisition, Analysis and Classification: Original Research Article
+							</span>
+		</li>
+	</ol>
+</nav>
+	
+		  	 <article class="obj_article_details">
+
+		
+	<div class="d-md-flex">
+		<div class="main_entry">
+			<section class="item">
+				<h3 class="page_title">
+					A hybrid radiomics framework integrating genetic algorithm-optimized random forest for preoperative identification of Luminal B breast cancer and Ki-67 prediction: A multicenter study
+				</h3>
+
+							</section> 
+
+							<section class="item authors">
+					<h2 class="pkp_screen_reader">Authors</h2>
+					<ul class="authors">
+											<li>
+							<span class="name">
+								Zimei Lin
+							</span>
+															<span class="affiliation">
+									 The Second Affiliated Hospital Zhejiang University School of Medicine
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Yi-jie  Chen
+							</span>
+															<span class="affiliation">
+									Fujian Cancer Hospital
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Yong-yuan  Xu
+							</span>
+															<span class="affiliation">
+									The Second Affiliated Hospital Zhejiang University School of Medicine
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Qing  Wen
+							</span>
+															<span class="affiliation">
+									The Second Affiliated Hospital Zhejiang University School of Medicine
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Ling-ling  Chen
+							</span>
+															<span class="affiliation">
+									Cixi Sixth People’s Hospital
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Li-ming  Shao
+							</span>
+															<span class="affiliation">
+									The Second Affiliated Hospital Zhejiang University School of Medicine
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Xiao-yan  Niu
+							</span>
+															<span class="affiliation">
+									The Affiliated Hospital of Qingdao University
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Li-na  Tang
+							</span>
+															<span class="affiliation">
+									Fujian Cancer Hospital
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Pintong Huang
+							</span>
+															<span class="affiliation">
+									 The Second Affiliated Hospital Zhejiang University School of Medicine
+																	</span>
+																				</li>
+										</ul>
+				</section>
+			
+						
+									<section class="item keywords">
+				<h4 class="_label">
+										Keywords:
+				</h4>
+				<span class="value">
+											Breast Cancer, 											Radiomics, 											Ultrasound 									</span>
+			</section>
+			
+										<section class="item abstract">
+					<h4 class="_label">Abstract</h4>
+					<p><strong>Background</strong>: Preoperative identification of Luminal B breast cancer remains a clinical challenge. This study aimed to develop an ultrasound radiomics framework integrating tumoral and peritumoral information for preoperative identification of Luminal B subtype and prediction of Ki-67 status.</p>
+<p><strong>Methods</strong>: We retrospectively analyzed 1,944 patients from three centers. The development cohort from Centers One and Two was divided by stratified sampling into a training set (n = 1,434) and an internal test set (n = 253), and an independent cohort from Center Three (n = 257) was used for external validation. Lesion-containing ROIs were processed using deep learning-assisted segmentation and standardized for downstream analysis. Radiomic features were extracted, and a genetic algorithm (GA) was coupled with a random forest (RF) classifier to construct two models: one for Luminal B classification and another for predicting Ki-67 expression.</p>
+<p><strong>Results</strong>: The combined tumor-peritumoral model achieved the highest performance, with the Luminal B classifier showing AUCs of 0.876 (training), 0.693 (test), and 0.786 (external validation). The Ki-67 prediction model yielded AUCs of 0.890 (training) and 0.858 (test), though external validation (AUC=0.661) was limited by dataset distribution. The Delong test confirmed that combined ROIs significantly outperformed tumor-only models, with NRI and IDI tests further validating the added value of peritumoral features.</p>
+<p><strong>Conclusions</strong>: Ultrasound radiomics integrating tumoral and peritumoral regions can support the preoperative identification of Luminal B breast cancer, and peritumoral region analysis significantly enhances predictive performance. The framework also shows potential for predicting Ki-67 status within this subtype.</p>
+				</section>
+			
+			
+
+																																																																											
+										<section class="item references">
+					<h2 class="label">
+						References
+					</h2>
+					<div class="value">
+																					<p>1. Perou CM, Sørlie T, Eisen MB, van de Rijn M, Jeffrey SS, Rees CA, et al. Molecular portraits of human breast tumours. Nature. 2000;406(6797):747-52. doi: 10.1038/35021093. </p>
+															<p>2. Cheang MC, Chia SK, Voduc D, Gao D, Leung S, Snider J, et al. Ki67 index, HER2 status, and prognosis of patients with luminal B breast cancer. J Natl Cancer Inst. 2009;101(10):736-50. doi: 10.1093/jnci/djp082. </p>
+															<p>3. Ades F, Zardavas D, Bozovic-Spasojevic I, Pugliano L, Fumagalli D, de Azambuja E, et al. Luminal B breast cancer: molecular characterization, clinical management, and future perspectives. J Clin Oncol. 2014;32(25):2794-803. doi: 10.1200/JCO.2013.54.1870. </p>
+															<p>4. Loo SK, Yates ME, Yang S, Oesterreich S, Lee AV, Wang XS. Fusion-associated carcinomas of the breast: Diagnostic, prognostic, and therapeutic significance. Genes Chromosomes Cancer. 2022;61(5):261-73. doi: 10.1002/gcc.23020. </p>
+															<p>5. Li Y, Du W, Yang R, Wei X, Li H, Zhang X. Copper Chaperone for Superoxide Dismutase Subtypes as a Prognostic Marker in Luminal B Breast Cancer. Clin Med Insights Oncol. 2024;18:11795549231219239. doi: 10.1177/11795549231219239. </p>
+															<p>6. Samiei S, Simons JM, Engelen SME, Beets-Tan RGH, Classe JM, Smidt ML. Axillary Pathologic Complete Response After Neoadjuvant Systemic Therapy by Breast Cancer Subtype in Patients With Initially Clinically Node-Positive Disease: A Systematic Review and Meta-analysis. JAMA Surg. 2021;156(6):e210891. doi: 10.1001/jamasurg.2021.0891. </p>
+															<p>7. Meyer-Wilmes P, Huober J, Untch M, Blohmer JU, Janni W, Denkert C, et al. Long-term outcomes of a randomized, open-label, phase II study comparing cabazitaxel versus paclitaxel as neoadjuvant treatment in patients with triple-negative or luminal B/HER2-negative breast cancer (GENEVIEVE). ESMO Open. 2024;9(5):103009. doi: 10.1016/j.esmoop.2024.103009. </p>
+															<p>8. Camargo-Herrera V, Castellanos G, Rangel N, Jiménez-Tobón GA, Martínez-Agüero M, Rondón-Lagos M. Patterns of Chromosomal Instability and Clonal Heterogeneity in Luminal B Breast Cancer: A Pilot Study. Int J Mol Sci. 2024;25(8):4478. doi: 10.3390/ijms25084478. </p>
+															<p>9. Badwe RA, Parmar V, Nair N, Joshi S, Hawaldar R, Pawar S, et al. Effect of Peritumoral Infiltration of Local Anesthetic Before Surgery on Survival in Early Breast Cancer. J Clin Oncol. 2023;41(18):3318-28. doi: 10.1200/JCO.22.01966. </p>
+															<p>10. Jiang L, You C, Xiao Y, Wang H, Su GH, Xia BQ, et al. Radiogenomic analysis reveals tumor heterogeneity of triple-negative breast cancer. Cell Rep Med. 2022;3(7):100694. doi: 10.1016/j.xcrm.2022.100694. </p>
+															<p>11. Zhang J, Wu J, Zhou XS, Shi F, Shen D. Recent advancements in artificial intelligence for breast cancer: Image augmentation, segmentation, diagnosis, and prognosis approaches. Semin Cancer Biol. 2023;96:11-25. doi: 10.1016/j.semcancer.2023.09.001. </p>
+															<p>12. Kurozumi S, Ball GR. Research on biomarkers using innovative artificial intelligence systems in breast cancer. Int J Clin Oncol. 2024;29(11):1669-75. doi: 10.1007/s10147-024-02602-3. </p>
+															<p>13. Qi YJ, Su GH, You C, Zhang X, Xiao Y, Jiang YZ, et al. Radiomics in breast cancer: Current advances and future directions. Cell Rep Med. 2024;5(9):101719. doi: 10.1016/j.xcrm.2024.101719. </p>
+															<p>14. Conti A, Duggento A, Indovina I, Guerrisi M, Toschi N. Radiomics in breast cancer classification and prediction. Semin Cancer Biol. 2021;72:238-50. doi: 10.1016/j.semcancer.2020.04.002. </p>
+															<p>15. Davey MG, Davey MS, Boland MR, Ryan ÉJ, Lowery AJ, Kerin MJ. Radiomic differentiation of breast cancer molecular subtypes using pre-operative breast imaging - A systematic review and meta-analysis. Eur J Radiol. 2021;144:109996. doi: 10.1016/j.ejrad.2021.109996. </p>
+															<p>16. Gu X, Angelov PP, Soares EA. A Self-Adaptive Synthetic Over-Sampling Technique for Imbalanced Classification. Int J Intell Syst. 2020;35:923-43. doi: 10.1002/int.22245. </p>
+															<p>17. Malik JA, Ahmed S, Jan B, Bender O, Al Hagbani T, Alqarni A, et al. Drugs repurposed: An advanced step towards the treatment of breast cancer and associated challenges. Biomed Pharmacother. 2022;145:112375. doi: 10.1016/j.biopha.2021.112375. </p>
+															<p>18. Lin P, Xie W, Li Y, Zhang C, Wu H, Wan H, et al. Intratumoral and peritumoral radiomics of MRIs predicts pathologic complete response to neoadjuvant chemoimmunotherapy in patients with head and neck squamous cell carcinoma. J Immunother Cancer. 2024;12(11):e009616. doi: 10.1136/jitc-2024-009616. </p>
+															<p>19. Yao J, Jia X, Zhou W, Zhu Y, Chen X, Zhan W, et al. Predicting axillary response to neoadjuvant chemotherapy using peritumoral and intratumoral ultrasound radiomics in breast cancer subtypes. iScience. 2024;27(9):110716. doi: 10.1016/j.isci.2024.110716. </p>
+															<p>20. Luo S, Chen X, Yao M, et al. Intratumoral and peritumoral ultrasound-based radiomics for preoperative prediction of HER2-low breast cancer: a multicenter retrospective study. Insights Imaging. 2025;16(1):53. doi: 10.1186/s13244-025-01934-6. </p>
+															<p>21. Luo S, Chen X, Yao M, Ying Y, Huang Z, Zhou X, et al. High Expression of PKCζ And CTNNBIP1 Is Associated With Poor Prognosis in Luminal B Breast Cancer. Cancer Genomics Proteomics. 2025;22(4):538-56. doi: 10.21873/cgp.20520. </p>
+															<p>22. Zagami P, Fernandez-Martinez A, Rashid NU, Hoadley KA, Spears PA, Curigliano G, et al. Association of PIK3CA Mutation With Pathologic Complete Response and Outcome by Hormone Receptor Status and Intrinsic Subtype in Early-Stage ERBB2/HER2-Positive Breast Cancer. JAMA Netw Open. 2023;6(12):e2348814. doi: 10.1001/jamanetworkopen.2023.48814. </p>
+															<p>23. Du X, Zhou Z, Shao Y, Qian K, Wu Y, Zhang J, et al. Immunoarchitectural patterns as potential prognostic factors for invasive ductal breast cancer. NPJ Breast Cancer. 2022;8(1):26. doi: 10.1038/s41523-022-00389-y. </p>
+																		</div>
+				</section>
+			
+		</div><!-- .main_entry -->
+
+		<div class="entry_details"> 
+										<div class="item cover_image">
+					<div class="sub_item">
+																				<img
+								src="../../../../public/journals/26/submission_18667_23362_coverImage_en.png"
+								alt="."
+							>
+											</div>
+				</div>
+			
+										<div class="item galleys">
+					<h2 class="pkp_screen_reader">
+						Downloads
+					</h2>
+					<ul class="value galleys_links">
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link btn btn-primary  pdf" href="18667/13301.html">
+
+		
+	PDF
+
+	</a>
+							</li>
+											</ul>
+				</div>
+						
+						<div class="item published">
+				<section class="sub_item">
+					<h2 class="label">
+						Published
+					</h2>
+					<div class="value">
+																			<span>2026-05-20</span>
+																	</div>
+				</section>
+							</div>
+			
+										<div class="item issue">
+
+											<section class="sub_item">
+							<h2 class="label">
+								Issue
+							</h2>
+							<div class="value">
+								<a class="title" href="../../issue/view/1020.html">
+									Vol. 18 No. 1 (2026): The Ultrasound Journal 2026; volume 18
+								</a>
+							</div>
+						</section>
+					
+											<section class="sub_item">
+							<h2 class="label">
+								Section
+							</h2>
+							<div class="value">
+								Automation in Ultrasound Imaging: AI-driven and Model-based Data Acquisition, Analysis and Classification: Original Research Article
+							</div>
+						</section>
+					
+									</div>
+			
+						
+										<div class="item copyright">
+					<h2 class="label">
+						License
+					</h2>
+																										<p>Copyright (c) 2026 Zimei Lin, Yi-jie  Chen, Yong-yuan  Xu, Qing  Wen, Ling-ling  Chen, Li-ming  Shao, Xiao-yan  Niu, Li-na  Tang, Pintong Huang (Author)</p>
+														<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="../../../../../licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><p>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+																<p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (<a href="https://creativecommons.org/licenses/by-nc/4.0" target="_blank" rel="noopener">https://creativecommons.org/licenses/by-nc/4.0</a>) which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.<br />Authors retain the copyright for their published work. No formal permission will be required to reproduce parts (tables or illustrations) of published papers, provided the source is quoted appropriately and reproduction has no commercial intent. </p>
+				</div>
+			
+				<div class="item citation">
+		<section class="sub_item citation_display">
+			<h2 class="label">
+				How to Cite
+			</h2>
+			<div class="value">
+				<div id="citationOutput" role="region" aria-live="polite">
+					<div class="csl-bib-body">
+  <div class="csl-entry"><div class="csl-left-margin">1.</div><div class="csl-right-inline">Lin Z, Chen Y jie, Xu Y yuan, et al. A hybrid radiomics framework integrating genetic algorithm-optimized random forest for preoperative identification of Luminal B breast cancer and Ki-67 prediction: A multicenter study. <i>Ultrasound J</i>. 2026;18(1):18667. doi:<a href="https://doi.org/10.5826/tuj.2026.18667">10.5826/tuj.2026.18667</a></div></div>
+</div>
+				</div>
+				<div class="citation_formats">
+					<button class="citation_formats_button label" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">
+						More Citation Formats
+					</button>
+					<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
+						<ul class="citation_formats_styles">
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/acm-sig-proceedingsec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/acm-sig-proceedings?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										ACM
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/acs-nanoec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/acs-nano?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										ACS
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/apaec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/apa?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										APA
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/associacao-brasileira-de-normas-tecnicasec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										ABNT
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/chicago-author-dateec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/chicago-author-date?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										Chicago
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/harvard-cite-them-rightec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/harvard-cite-them-right?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										Harvard
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/ieeeec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/ieee?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										IEEE
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/modern-language-associationec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/modern-language-association?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										MLA
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/turabian-fullnote-bibliographyec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										Turabian
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/vancouverec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/vancouver?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										Vancouver
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/amaec48.html?submissionId=18667&amp;publicationId=23362&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/ama?submissionId=18667&amp;publicationId=23362&amp;issueId=1020&amp;return=json"
+									>
+										AMA
+									</a>
+								</li>
+													</ul>
+													<div class="label">
+								Download Citation
+							</div>
+							<ul class="citation_formats_styles">
+																	<li>
+										<a href="../../citationstylelanguage/download/risec48?submissionId=18667&amp;publicationId=23362&amp;issueId=1020">
+											<span class="fa fa-download"></span>
+											Endnote/Zotero/Mendeley (RIS)
+										</a>
+									</li>
+																	<li>
+										<a href="../../citationstylelanguage/download/bibtexec48?submissionId=18667&amp;publicationId=23362&amp;issueId=1020">
+											<span class="fa fa-download"></span>
+											BibTeX
+										</a>
+									</li>
+															</ul>
+											</div>
+				</div>
+			</div>
+		</section>
+	</div>
+<div class="item addthis">
+	<div class="value">
+		<!-- AddThis Button BEGIN -->
+		 			<div class="addthis_toolbox addthis_default_style ">
+			<a class="addthis_button_preferred_1"></a>
+			<a class="addthis_button_preferred_2"></a>
+			<a class="addthis_button_preferred_3"></a>
+			<a class="addthis_button_preferred_4"></a>
+			<a class="addthis_button_compact"></a>
+			<a class="addthis_counter addthis_bubble_style"></a>
+			</div>
+			<script type="text/javascript" src="../../../../../s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+				<!-- AddThis Button END -->
+	</div>
+</div>
+<div id="citation-plugin" class="item citations-container" data-citations-url="https://mattioli1885journals.com/index.php/theultrasoundjournal/citations/get?doi=10.5826%2Ftuj.2026.18667" data-img-url="https://mattioli1885journals.com/plugins/generic/citations/images/">
+    <div id="citations-loader"></div>
+    <div class="citations-count">
+        <div class="citations-count-crossref">
+            <img class="img-fluid" src="../../../../plugins/generic/citations/images/crossref.png" alt="Crossref"/>
+            <div class="badge_total"></div>
+        </div>
+        <div class="citations-count-scopus">
+            <img src="../../../../plugins/generic/citations/images/scopus.png" alt="Scopus"/>
+            <br/>
+            <span class="badge_total"></span>
+        </div>
+        <div class="citations-count-google">
+            <a href="https://scholar.google.com/scholar?q=10.5826/tuj.2026.18667" target="_blank" rel="noreferrer">
+                <img src="../../../../plugins/generic/citations/images/scholar.png" alt="Google Scholar"/>
+            </a>
+        </div>
+        <div class="citations-count-europepmc">
+            <a href="https://europepmc.org/search?scope=fulltext&amp;query=10.5826/tuj.2026.18667" target="_blank" rel="noreferrer">
+                <img src="../../../../plugins/generic/citations/images/pmc.png" alt="Europe PMC"/>
+                <br/>
+                <span class="badge_total"></span>
+            </a>
+        </div>
+    </div>
+    <div class="citations-list">
+        <div class="cite-itm cite-prototype" style="display: none">
+            <img class="cite-img img-fluid" src="#" alt="">
+            <div>
+                <span class="cite-author"></span>
+                <span class="cite-date"></span>
+            </div>
+            <div>
+                <span class="cite-title"></span>
+                <span class="cite-info"></span>
+            </div>
+            <div class="cite-doi"></div>
+        </div>
+    </div>
+            <style>
+            .citations-container {
+                overflow-y: auto;
+                overflow-x: hidden;
+                max-height: 300px;
+            }
+        </style>
+    </div>
+
+
+		</div><!-- .entry_details -->
+	</div><!-- .row -->
+
+</article>
+
+	
+
+</div><!-- .page -->
+
+		<!--div class="html-preloader bg-light">
+			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div-->
+
+	
+
+
+    	  	      <div class="mt-2" data-aos="fade-up" id="sidebar" data-aos-delay="200">
+    		<ul class="_pkp_structure_sidebar list-unstyled container" role="complementary" aria-label="Sidebar">
+    			 
+    <div class="pkp_block">
+        <div class="title">Make a Submission</div>
+        <div class="content">
+<li>
+	<a href="../../about/submissions.html" class="font-monospace">
+		Make a Submission
+	</a>
+</li>
+</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-journal-information">
+		<div class="content">
+		<div class="title">Journal Information:</div>
+<div class="content">
+<p>&nbsp;</p>
+<p><strong><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/copertina.jpg" alt="" width="182" height="238"><br></strong></p>
+<p><strong>Editor-in-Chief: </strong>Francesco Corradi<strong><br>Language: </strong>English<br><strong>Frequency:&nbsp;</strong>Continuous publishing<br><strong>eISSN:</strong> 2524-8987<br><br><strong>Impact Factor 2025:</strong> 3.6&nbsp;<br><strong>CiteScore 2025:</strong> 5.1<br><strong>SNIP 2025: </strong>1.617 - <strong>SJR 2025: </strong>0.766</p>
+<p><br><strong>Indexed in:</strong> UGC-CARE List (India), TD Net Discovery Service, Semantic Scholar, SCOPUS, SCImago, Reaxys, PubMedCentral, ProQuest, OCLC WorldCat Discovery Service, Naver, Google Scholar, Emerging Sources Citation Index, EMBASE, EBSCO, Dimensions, DOAJ, Chinese Academy of Sciences (CAS) - GoOA, CNKI, Baidu, CLOCKSS, CNPIEC, Portico, WTI AG, Wanfang<br><br></p>
+<p><strong>Speed&nbsp;</strong></p>
+<div>Publishing model: Open access</div>
+<div>Submission to first editorial decision (median days): 6 <br>Submission to acceptance (median days): 57</div>
+<div>&nbsp;</div>
+<div>
+<p class="p1"><span class="s1">Acceptance Rate: 39%<br></span><span class="s1">Rejection Rate: 61%</span></p>
+<p class="p1"><span class="s1">&nbsp;</span></p>
+</div>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-special-issue">
+		<div class="content">
+		<div class="title">Special issue:</div>
+<div class="content">
+<p><br><a href="../../issue/view/1020.html" target="_blank" rel="noopener"><strong>AUTOMATION IN ULTRASOUND IMAGING: AI DRIVEN AND MODEL BASED DATA ACQUISITION, ANALYSIS AND CLASSIFICATION</strong></a></p>
+<div class="content">
+<p data-start="1112" data-end="1242">A collection focused on automated interpretation, real-time guidance and AI-based diagnostic tools.<br><span aria-current="page">Editors: Libertario Demi, Riccardo Inchingolo, Federico Mento </span></p>
+<p style="color: #00417b;"><a href="../../issue/view/1020.html" target="_blank" rel="noopener"><strong>Read the articles &gt;&gt;</strong></a></p>
+</div>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-webinar">
+		<div class="content">
+		<div class="title"><strong>Webinar</strong></div>
+<div class="content">
+<p>&nbsp;</p>
+<p><a href="https://www.winfocus.org/the-ultrasound-journal/" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/immagine-webinar-tuj-winfocus.png" alt="" width="350" height="197"></a></p>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-partnership">
+		<div class="content">
+		<div class="title">Official Journal of:</div>
+<div class="content">
+<p>&nbsp;</p>
+</div>
+<p><a href="https://www.winfocus.org/" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/logo-winfocus-per-sito-banner.png" alt="" width="275" height="88"></a></p>
+<div class="wpb_text_column wpb_content_element  introtext">
+<div class="wpb_wrapper"><em><br>The Ultrasound Journal</em> is the official journal of <a class="is-external" href="http://www.winfocus.org/" target="_blank" rel="noopener">World Interactive Network Focused on Critical UltraSound (WINFOCUS)</a></div>
+<div class="wpb_wrapper">&nbsp;</div>
+<div class="wpb_wrapper"><strong>About <a href="https://www.winfocus.org/" target="_blank" rel="noopener">WINFOCUS</a></strong></div>
+</div>
+<p>The World Interactive Network Focused On Critical UltraSound (WINFOCUS) is the world leader scientific network committed to develop Point-of-Care Ultrasound practice, research, education, technology, and networking, addressing the needs of patients, institutions, services, and communities living in out-of-hospital and in-hospital critical scenarios.</p>
+<p><a href="https://www.winfocus.org/" target="_blank" rel="noopener"><strong>DISCOVER MORE</strong></a></p>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-winfocus">
+		<div class="content">
+		<div class="title"><strong>Connect with WINFOCUS</strong></div>
+<div class="content">
+<p>&nbsp;</p>
+<p><a href="https://www.winfocus.org/#calendar" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/check-all-the-winfocus.png" alt="" width="330" height="76"></a><br><a href="https://www.facebook.com/winfocus?utm_source=TEST%20LIST&amp;utm_campaign=52b7e1511c-EMAIL_CAMPAIGN_2017_03_29&amp;utm_medium=email&amp;utm_term=0_0d1dbe7d5c-52b7e1511c-209403905" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/follow-winfocus.png" alt="" width="330" height="76"></a><br><a href="https://x.com/winfocus?utm_source=TEST+LIST&amp;utm_campaign=52b7e1511c-EMAIL_CAMPAIGN_2017_03_29&amp;utm_medium=email&amp;utm_term=0_0d1dbe7d5c-52b7e1511c-209403905" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/follow-winfocus-twitter.png" alt="" width="330" height="76"></a></p>
+<p><strong><br>Find us on Facebook</strong></p>
+<p><a href="https://www.facebook.com/winfocus?ref=embed_page" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/facebook-winfocus.png" alt="" width="272" height="64"></a></p>
+</div>
+	</div>
+</div>
+
+    		</ul><!-- pkp_sidebar.left -->
+      </div>
+  	  	<div class="mainContainer container"></div>
+</main><!-- _pkp_structure_main -->
+	</div>
+
+
+	<!-- ======= Footer ======= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+       
+      
+            	<div class="row footer-widgets">
+<div class="col-md-5 col-xs-12">
+<div class="footer-widget contact-widget">
+<h4>Mattioli 1885 / Mattioli HEALTH</h4>
+<p>SCIENTIFIC PUBLISHING, COMMUNICATION AGENCY, CME PROVIDER</p>
+Mattioli1885 has been at the forefront of research and <br />scientific publishing since 1885. Today, Mattioli1885 <br />continues to work with passion and consistency <br />in the fields of communication, publishing, and scientific training.</div>
+</div>
+<div class="footer-widget col-md-4 col-xs-12 social-widget">
+<h4>Journals</h4>
+<ul>
+<li><a href="../../../actabiomedica.html">Acta Biomedica</a></li>
+<li><a href="../../../annali-igiene.html" target="_blank" rel="noopener">Annali di Igiene</a></li>
+<li><a href="../../../aestheticmedicine.html">Aesthetic Medicine </a></li>
+<li><a href="../../../EJOEH.html">European Journal of Oncology and Environmental Health </a></li>
+<li><a href="https://dpcj.org/index.php/dpc">Dermatology Practical &amp; Conceptual </a></li>
+<li><a href="../../../JBR.html">Journal of Bioarchaeological Research </a></li>
+<li><a href="../../../lamedicinadellavoro.html">La Medicina del Lavoro | Work, Environment and Health </a></li>
+<li><a href="../../../MedHistor.html">Medicina Historica</a></li>
+<li><a href="https://mrmjournal.org/">Multidisciplinary Respiratory Medicine</a></li>
+<li><a href="../../../perspectivesinpediatricneurology.html">Perspectives in Pediatric Neurology </a></li>
+<li><a href="../../../progressinnutrition.html">Progress in Nutrition</a></li>
+<li><a href="../../../sarcoidosis.html">Sarcoidosis Vasculitis and Diffuse Lung Diseases</a></li>
+</ul>
+</div>
+<div class="footer-widget col-md-3 col-xs-12 social-widget">
+<h4>Contact</h4>
+<ul>
+<li class="show"><span class="fa fa-envelope"> </span>Email: <a href="../../../../cdn-cgi/l/email-protection.html#80f6e1ece5f2e9e1e3e5e3e9c0ede1f4f4e9efece9e8e5e1ecf4e8aee3efed" target="_blank" rel="noopener"><span class="__cf_email__" data-cfemail="b0c6d1dcd5c2d9d1d3d5d3d9f0ddd1c4c4d9dfdcd9d8d5d1dcc4d89ed3dfdd">[email&#160;protected]</span></a></li>
+<li class="show"><span class="fa fa-phone"> </span>Phone: +039 0524 530383</li>
+<li class="show"><span class="fa fa-globe"> </span>Website: <a href="https://mattiolihealth.com/">www.mattiolihealth.com</a></li>
+<li class="show"><span class="fa fa-map-marker"> </span>Address: Mattioli1885 srl - Strada della Lodesana, 649 sx - 43036 Fidenza (PR) Italy</li>
+<li class="show">P. IVA: 00579710344</li>
+</ul>
+<p><a href="http://www.mattiolihealth.com/" target="_blank" rel="noopener"><img src="../../../../public/site/images/valeriaceci/Logo_Mattioli_Health2.png" /></a><br /><br /> <a href="https://www.facebook.com/Mattioli-Health-1682497891769144/" target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip0-72c073ab023a79232f4cac597e8d48a7.png" /></a> <a href="../../../actabiomedica/logind976.html" target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip1.png" /></a> <a href="https://twitter.com/mattioli1885 " target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip2.png" /></a></p>
+<p> </p>
+</div>
+</div>
+      	
+      <div class="row justify-content-center text-center">
+        <div class="col-md-7">
+          
+
+          <div class="credits">
+            OJS Hosting, Support, and Customization by: <a href="https://openjournalsystems.com/">OpenJournalSystems.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+<script data-cfasync="false" src="../../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../../../lib/pkp/lib/vendor/components/jquery/jquery.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../lib/pkp/lib/vendor/components/jqueryui/jquery-ui.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/mdb/js/mdb.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/aos/aos7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/swiper/swiper-bundle.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/js/main7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/generic/citationStyleLanguage/js/articleCitation7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/generic/citations/js/citations7187.js?v=3.4.0.8" type="text/javascript"></script>
+
+
+
+
+ <script type="text/javascript">
+
+    $(function (){
+        $('#sidebar > ul > div .title').click(function (){
+            $(this).closest('.pkp_block').toggleClass('showHide');
+        });
+        
+    // $('#sidebar > ul  li:first a').addClass('btnlink');
+    var hasPageDiv =  $('main > div').hasClass('page');
+   var container = $('main .page:not(.page_login):not(.page_register)').detach();
+    if(!hasPageDiv){
+         container = $('main .page_index_journal').detach();
+    }
+    
+     
+      var sidebar = $('#sidebar').detach();
+
+    $('.mainContainer').append(container);
+     $('.mainContainer').append(sidebar);
+     
+      $('.page_index_site').closest('body').addClass('indexSiteWrapper');
+     $('.indexSiteWrapper #sidebar').remove();
+        
+    });
+    </script>
+  
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"29c8736485c44d66b053a23423099076","r":1}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from mattioli1885journals.com/index.php/theultrasoundjournal/article/view/18667 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Aug 2026 05:45:55 GMT -->
+</html>

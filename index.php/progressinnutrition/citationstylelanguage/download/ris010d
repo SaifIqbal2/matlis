@@ -1,0 +1,15 @@
+TY  - JOUR
+AU  - Yusufoglu, Busra
+TI  - Estimated Glyoxal Concentrations in Foods with Machine Learning-Based Transformation Strategies
+PY  - %2026/%06/%26
+Y2  - %2026/%08/%27
+JF  - Progress in Nutrition
+JA  - Progr Nutr
+VL  - 28
+IS  - 1
+SE  - Original articles
+DO  - 10.23751/pn.2026.18386
+UR  - https://doi.org/10.23751/pn.2026.18386
+SP  - 18386
+AB  - Background and aim: Glyoxal (GO), which naturally occurs in biological systems and forms during food processing, is a highly toxic reactive glucose compound and precursor formation of advanced glycation end products (AGEs).  Estimating GO concentration in food products plays a pivotal role in improving food safety. Methods: This study used machine learning (ML) regression models to estimate the GO content (µg/100 g) in foods via information on nutrients such as carbohydrates, protein, fat, and sugars obtained from studies in the literature. Fourteen algorithms, including tree-based, ensemble, and regularized linear methods, were tested under different target transformation strategies, such as the Yeo–Johnson, quantile, standard, root-mean-square, and logarithmic shift strategies. Coefficient of determination (R²), root mean square error (RMSE), and mean absolute error (MAE) metrics were used to compare the model findings. Results: The LightGBM exhibited the lowest MAE value (13.63) under the Yeo–Johnson transformation, whereas the square-root-transformed CatBoost model presented the highest prediction accuracy (R² = 0.53, RMSE = 22.24) among all the configurations. Findings of the study have indicated that preprocessing significantly improved prediction robustness and that model performance was highly sensitive to the chosen transformation type, suggesting that a concept such as estimated GO (eGO) could be introduced into the literature. The study also demonstrated that the concept of eGO was introduced, while fat content was the most influential variable in the CatBoost models, whereas LightGBM exhibited a more balanced feature contribution, with sugars and carbohydrates prominent under certain transformations. Conclusion: These findings provide useful methodological guidance for data science and food safety professionals when selecting appropriate modeling techniques for chemical prediction in food science.
+ER  -

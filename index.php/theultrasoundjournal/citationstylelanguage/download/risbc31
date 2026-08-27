@@ -1,0 +1,21 @@
+TY  - JOUR
+AU  - Perpenti, Mattia
+AU  - Balzani, Eleonora 
+AU  - Mento, Federico 
+AU  - Marinaro, Claudia
+AU  - Bellani , Giacomo
+AU  - Perrone, Tiziano
+AU  - Demi, Libertario
+TI  - Quantitative lung ultrasound spectroscopy: First comparison with gold standard computed tomography scan and standard lung ultrasound for diagnosis of pneumonia versus cardiogenic pulmonary edema
+PY  - %2026/%06/%10
+Y2  - %2026/%08/%27
+JF  - The Ultrasound Journal
+JA  - Ultrasound J
+VL  - 18
+IS  - 1
+SE  - Automation in Ultrasound Imaging: AI-driven and Model-based Data Acquisition, Analysis and Classification: Original Research Article
+DO  - 10.5826/tuj.2026.18605
+UR  - https://doi.org/10.5826/tuj.2026.18605
+SP  - 18605
+AB  - Background: Pneumonia (PNE) and cardiogenic pulmonary edema (CPE) are characterized by reduced air-spaces dimension and edema. Their distinction through gold standard computed tomography (CT) is challenging due to their pattern similarity. Lung Ultrasound (LUS) is a tool for monitoring the progression of lung pathologies. LUS is portable, real-time, and non-ionized; however, standard LUS (S-LUS) relies on the subjective visualization of imaging patterns, leading to poor reproducibility and lack of diagnostic specificity. To enhance LUS diagnostic utility, quantitative LUS (Q-LUS) was developed. Q-LUS quantifies imaging patterns and explores their correlation to different pathophysiological conditions. In literature, vertical artifacts (VA) quantification proved capable of differentiating PNE and CPE, however, this approach was never compared with gold standard.Methods: We statistically investigate and compare the clinical significance of CT, S-LUS, and Q-LUS, in differentiating PNE and CPE. From a cohort of 55 patients, CT, S-LUS, and Q-LUS data are acquired. CT and S-LUS data of each patient are evaluated to assign a semi-quantitative CT-score and S-LUS-score. Q-LUS radiofrequency data are acquired in multifrequency with convex (2, 3, and 4 MHz) and linear (3, 4, 5, and 6 MHz) probes. VA are manually segmented, quantified into three spectral quantities, and statistically analyzed to extract 15 features for each patient. The diagnostic significance of the scores is tested through Generalized Estimating Equation models.Results & Conclusions: Results show areas under the curve of 74%, 72%, 65%, and 53% for Q-LUS linear, Q-LUS convex, CT-score, and S-LUS-score, respectively, highlighting Q-LUS as the most significant tool.
+ER  -

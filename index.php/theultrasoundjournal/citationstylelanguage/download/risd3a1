@@ -1,0 +1,20 @@
+TY  - JOUR
+AU  - Xie, Michael
+AU  - Kim, Justin JY
+AU  - Im, James HB
+AU  - Dennett, Liz
+AU  - Hareendranathan, Abhilash
+AU  - Jaremko, Jacob L
+TI  - Diagnostic performance of artificial intelligence in fracture detection with ultrasound: A systematic review and meta-analysis
+PY  - %2026/%05/%20
+Y2  - %2026/%08/%27
+JF  - The Ultrasound Journal
+JA  - Ultrasound J
+VL  - 18
+IS  - 1
+SE  - Review Articles / Systematic Reviews / Meta-Analyses
+DO  - 10.5826/tuj.2026.18778
+UR  - https://doi.org/10.5826/tuj.2026.18778
+SP  - 18778
+AB  - Background: Bone fractures are common in acute care, and point-of-care ultrasound (POCUS) is an emerging diagnostic tool that can be complementary to or even in some cases an alternative to X-ray imaging. With the rise of artificial intelligence (AI) model incorporation in diagnostic interpretations, this systematic review and meta-analysis aimed to evaluate the diagnostic performance of deep learning models for detecting bone fractures on ultrasound images, using radiographic imaging with expert interpretation as the reference standard.Methods: Comprehensive literature searches were conducted from inception to 15 August 2025, in databases including MEDLINE (Ovid interface), Embase (Ovid interface), CINAHL Plus with Full Text (EBSCOhost interface), Web of Science, ACM Digital Library, Scopus, and Google Scholar. We included studies evaluating deep learning models applied to ultrasound images or sweeps for fracture classification. The included studies predominantly evaluated pediatric cohorts presenting to emergency departments with suspected upper extremity fractures. Sensitivity and specificity were pooled using a bivariate random-effects model on the logit scale, and summary receiver operating characteristic (sROC) curve was constructed. Risk of bias was assessed using the Quality Assessment of Diagnostic Accuracy Studies 2 (QUADAS-2) tool.Results: A total of 580 papers were identified in the preliminary literature search, and 333 studies were screened after duplicate removal. Screening 27 full-text articles resulted in eight studies that were included in the review. Across 21 reported model evaluations from five studies with extractable diagnostic data, pooled sensitivity was 0.77 (95% CI: 0.69-0.83) and pooled specificity was 0.90 (95% CI: 0.86-0.94), with an overall sROC AUC of 0.91. Patient-level evaluations yielded higher pooled sensitivity (0.89; 95% CI: 0.81-0.94) and specificity (0.94; 95% CI: 0.81-0.98) compared to video-level analyses.Conclusions: AI-assisted ultrasound demonstrates promising diagnostic performance for fracture detection with generally high specificity and variable sensitivity across architectures and anatomic targets. Future work should prioritize prospective, externally validated studies with standardized acquisition protocols and clinically meaningful reporting at the patient level. 
+ER  -

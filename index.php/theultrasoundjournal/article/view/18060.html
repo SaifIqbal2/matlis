@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<!-- Mirrored from mattioli1885journals.com/index.php/theultrasoundjournal/article/view/18060 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Aug 2026 05:38:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Towards reduced ultrasound localization microscopy acquisition times by uncoupling a bi-disperse microbubble population
+							| The Ultrasound Journal
+			</title>
+
+	
+<meta name="generator" content="Open Journal Systems 3.4.0.8">
+<link rel="schema.DC" href="https://purl.org/dc/elements/1.1/" />
+<meta name="DC.Creator.PersonalName" content="Giulia Tuccio"/>
+<meta name="DC.Creator.PersonalName" content="Lisa te Winkel"/>
+<meta name="DC.Creator.PersonalName" content="Corinne Bruggeman"/>
+<meta name="DC.Creator.PersonalName" content="Wim van Hoeve"/>
+<meta name="DC.Creator.PersonalName" content="Libertario Demi"/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2026-04-01"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2025-10-17"/>
+<meta name="DC.Date.issued" scheme="ISO8601" content="2026-01-10"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2026-07-15"/>
+<meta name="DC.Description" xml:lang="en" content="Background : Ultrasound Localization Microscopy (ULM) is a milestone in the medical vascular imaging context, enabling the precise characterization of micro-vascular structures using ultrasound imaging. By accurately localizing contrast microbubbles (MBs) flowing in the circulatory system, ULM generates micro-resolved vascular images, overcoming the ultrasonic diffraction limit. However, as ULM relies on precise localization and tracking of individual MBs, high MB concentrations yield to increased localization errors and, ultimately, ULM failure. This constraint limits ULM to low MB concentrations, resulting in long acquisition times that pose challenges in clinical settings.  Methods: Here, we show the feasibility of uncoupling a bi-disperse MB population, composed of two monodisperse MB populations. The uncoupling is performed through a signal processing pipeline that exploits the strong nonlinear response of MBs having resonance frequency tuned with the transmission frequency. After uncoupling, ULM density and velocity flow maps are generated. Results: Density and velocity maps are generated after uncoupling, when injecting the bi-disperse population individually and simultaneously in a vascular 3D-printed phantom. Furthermore, density maps generated after uncoupling are compared with the one obtained using standard ULM. Results demonstrate the capability of the proposed uncoupling pipeline to separate the bi-disperse population.   Conclusion: This work presents a signal processing pipeline to uncouple a bi-disperse MB population, formed by two monodisperse MB populations. Results are validated in a 3D-printed phantom and demonstrate the feasibility of the uncoupling which, in turn, would enable higher concentrations and reduce acquisition times for micro-vascular imaging. "/>
+<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+<meta name="DC.Format" scheme="IMT" content="image/gif"/>
+<meta name="DC.Format" scheme="IMT" content="image/gif"/>
+<meta name="DC.Format" scheme="IMT" content="image/emf"/>
+<meta name="DC.Identifier" content="18060"/>
+<meta name="DC.Identifier.pageNumber" content="18060"/>
+<meta name="DC.Identifier.DOI" content="10.5826/tuj.2026.18060"/>
+<meta name="DC.Identifier.URI" content="18060.html"/>
+<meta name="DC.Language" scheme="ISO639-1" content="en"/>
+<meta name="DC.Rights" content="Copyright (c) 2026 Giulia Tuccio, Lisa te Winkel, Corinne Bruggeman, Wim van Hoeve, Libertario Demi (Author)"/>
+<meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc/4.0"/>
+<meta name="DC.Source" content="The Ultrasound Journal"/>
+<meta name="DC.Source.ISSN" content="2524-8987"/>
+<meta name="DC.Source.Issue" content="1"/>
+<meta name="DC.Source.Volume" content="18"/>
+<meta name="DC.Source.URI" content="../../../theultrasoundjournal.html"/>
+<meta name="DC.Subject" xml:lang="en" content="Ultrasound Localization Microscopy"/>
+<meta name="DC.Subject" xml:lang="en" content="Ultrasound Contrast Agents"/>
+<meta name="DC.Subject" xml:lang="en" content="Microbubble Uncoupling"/>
+<meta name="DC.Subject" xml:lang="en" content="Monodisperse Microbubble Populations"/>
+<meta name="DC.Subject" xml:lang="en" content="Signal Processing"/>
+<meta name="DC.Title" content="Towards reduced ultrasound localization microscopy acquisition times by uncoupling a bi-disperse microbubble population"/>
+<meta name="DC.Type" content="Text.Serial.Journal"/>
+<meta name="DC.Type.articleType" content="Original Research Papers"/>
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_journal_title" content="The Ultrasound Journal"/>
+<meta name="citation_journal_abbrev" content="Ultrasound J"/>
+<meta name="citation_issn" content="2524-8987"/> 
+<meta name="citation_author" content="Giulia Tuccio"/>
+<meta name="citation_author_institution" content="Department of Information Engineering and Computer Science, University of Trento, Trento, Italy"/>
+<meta name="citation_author" content="Lisa te Winkel"/>
+<meta name="citation_author_institution" content="Solstice Pharmaceuticals, Enschede, The Netherlands"/>
+<meta name="citation_author" content="Corinne Bruggeman"/>
+<meta name="citation_author_institution" content="Solstice Pharmaceuticals, Enschede, The Netherlands"/>
+<meta name="citation_author" content="Wim van Hoeve"/>
+<meta name="citation_author_institution" content="Solstice Pharmaceuticals, Enschede, The Netherlands"/>
+<meta name="citation_author" content="Libertario Demi"/>
+<meta name="citation_author_institution" content="Department of Information Engineering and Computer Science, University of Trento, Trento, Italy"/>
+<meta name="citation_title" content="Towards reduced ultrasound localization microscopy acquisition times by uncoupling a bi-disperse microbubble population"/>
+<meta name="citation_language" content="en"/>
+<meta name="citation_date" content="2026/04/01"/>
+<meta name="citation_volume" content="18"/>
+<meta name="citation_issue" content="1"/>
+<meta name="citation_firstpage" content="18060"/>
+<meta name="citation_lastpage" content="18060"/>
+<meta name="citation_doi" content="10.5826/tuj.2026.18060"/>
+<meta name="citation_abstract_html_url" content="18060.html"/>
+<meta name="citation_abstract" xml:lang="en" content="Background : Ultrasound Localization Microscopy (ULM) is a milestone in the medical vascular imaging context, enabling the precise characterization of micro-vascular structures using ultrasound imaging. By accurately localizing contrast microbubbles (MBs) flowing in the circulatory system, ULM generates micro-resolved vascular images, overcoming the ultrasonic diffraction limit. However, as ULM relies on precise localization and tracking of individual MBs, high MB concentrations yield to increased localization errors and, ultimately, ULM failure. This constraint limits ULM to low MB concentrations, resulting in long acquisition times that pose challenges in clinical settings.  Methods: Here, we show the feasibility of uncoupling a bi-disperse MB population, composed of two monodisperse MB populations. The uncoupling is performed through a signal processing pipeline that exploits the strong nonlinear response of MBs having resonance frequency tuned with the transmission frequency. After uncoupling, ULM density and velocity flow maps are generated. Results: Density and velocity maps are generated after uncoupling, when injecting the bi-disperse population individually and simultaneously in a vascular 3D-printed phantom. Furthermore, density maps generated after uncoupling are compared with the one obtained using standard ULM. Results demonstrate the capability of the proposed uncoupling pipeline to separate the bi-disperse population.   Conclusion: This work presents a signal processing pipeline to uncouple a bi-disperse MB population, formed by two monodisperse MB populations. Results are validated in a 3D-printed phantom and demonstrate the feasibility of the uncoupling which, in turn, would enable higher concentrations and reduce acquisition times for micro-vascular imaging. "/>
+<meta name="citation_keywords" xml:lang="en" content="Ultrasound Localization Microscopy"/>
+<meta name="citation_keywords" xml:lang="en" content="Ultrasound Contrast Agents"/>
+<meta name="citation_keywords" xml:lang="en" content="Microbubble Uncoupling"/>
+<meta name="citation_keywords" xml:lang="en" content="Monodisperse Microbubble Populations"/>
+<meta name="citation_keywords" xml:lang="en" content="Signal Processing"/>
+<meta name="citation_pdf_url" content="../download/18060/TUJ_18060.pdf%3bfilename_%3dUTF-8%27%27TUJ_18060.pdf"/>
+<meta name="citation_reference" content="Heiles B, Chavignon A, Hingot V, Lopez P, Teston E, Couture O. Performance benchmarking of microbubble-localization algorithms for ultrasound localization microscopy. Nat Biomed Eng. 2022 May;6(5):605-616. doi: 10.1038/s41551-021-00824-8. Epub 2022 Feb 17. PMID: 35177778."/>
+<meta name="citation_reference" content="Song P, Rubin JM, Lowerison MR. Super-resolution ultrasound microvascular imaging: Is it ready for clinical use? Z Med Phys. 2023 Aug;33(3):309-323. doi: 10.1016/j.zemedi.2023.04.001. Epub 2023 May 20. PMID: 37211457; PMCID: PMC10517403."/>
+<meta name="citation_reference" content="Carovac A, Smajlovic F, Junuzovic D. Application of ultrasound in medicine. Acta Inform Med. 2011 Sep;19(3):168-71. doi: 10.5455/aim.2011.19.168-171. PMID: 23408755; PMCID: PMC3564184."/>
+<meta name="citation_reference" content="Couture O, Besson B, Montaldo G, Fink M, Tanter M. Microbubble ultrasound super-localization imaging (MUSLI). 2011 IEEE International Ultrasonics Symposium. 2011 Oct;1285–7."/>
+<meta name="citation_reference" content="Christensen-Jeffries K, Couture O, Dayton PA, Eldar YC, Hynynen K, Kiessling F, O&#039;Reilly M, Pinton GF, Schmitz G, Tang MX, Tanter M, van Sloun RJG. Super-resolution Ultrasound Imaging. Ultrasound Med Biol. 2020 Apr;46(4):865-891. doi: 10.1016/j.ultrasmedbio.2019.11.013. Epub 2020 Jan 21. PMID: 31973952; PMCID: PMC8388823."/>
+<meta name="citation_reference" content="Siepmann M, Schmitz G, Bzyl J, Palmowski M, Kiessling F. Imaging tumor vascularity by tracing single microbubbles. 2011 IEEE International Ultrasonics Symposium. 2011 Oct;1906–9."/>
+<meta name="citation_reference" content="Dencks S, Schmitz G. Ultrasound localization microscopy. Z Med Phys. 2023 Aug;33(3):292-308. doi: 10.1016/j.zemedi.2023.02.004. Epub 2023 Jun 15. PMID: 37328329; PMCID: PMC10517400."/>
+<meta name="citation_reference" content="Dollet B, van der Meer SM, Garbin V, de Jong N, Lohse D, Versluis M. Nonspherical oscillations of ultrasound contrast agent microbubbles. Ultrasound Med Biol. 2008 Sep;34(9):1465-73. doi: 10.1016/j.ultrasmedbio.2008.01.020. Epub 2008 May 1. PMID: 18450362."/>
+<meta name="citation_reference" content="Desailly Y, Pierre J, Couture O, Tanter M. Resolution limits of ultrafast ultrasound localization microscopy. Phys Med Biol. 2015 Nov 21;60(22):8723-40. doi: 10.1088/0031-9155/60/22/8723. Epub 2015 Oct 28. PMID: 26509596."/>
+<meta name="citation_reference" content="Huang C, Lowerison MR, Trzasko JD, Manduca A, Bresler Y, Tang S, Gong P, Lok UW, Song P, Chen S. Short Acquisition Time Super-Resolution Ultrasound Microvessel Imaging via Microbubble Separation. Sci Rep. 2020 Apr 7;10(1):6007. doi: 10.1038/s41598-020-62898-9. PMID: 32265457; PMCID: PMC7138805."/>
+<meta name="citation_reference" content="Tang S, Song P, Trzasko JD, Lowerison M, Huang C, Gong P, Lok UW, Manduca A, Chen S. Kalman Filter-Based Microbubble Tracking for Robust Super-Resolution Ultrasound Microvessel Imaging. IEEE Trans Ultrason Ferroelectr Freq Control. 2020 Sep;67(9):1738-1751. doi: 10.1109/TUFFC.2020.2984384. Epub 2020 Mar 31. PMID: 32248099; PMCID: PMC7485263."/>
+<meta name="citation_reference" content="Errico C, Pierre J, Pezet S, Desailly Y, Lenkei Z, Couture O, Tanter M. Ultrafast ultrasound localization microscopy for deep super-resolution vascular imaging. Nature. 2015 Nov 26;527(7579):499-502. doi: 10.1038/nature16066. PMID: 26607546."/>
+<meta name="citation_reference" content="Deffieux T, Demene C, Pernot M, Tanter M. Functional ultrasound neuroimaging: a review of the preclinical and clinical state of the art. Current Opinion in Neurobiology. 2018 Jun;50:128-135. DOI: 10.1016/j.conb.2018.02.001. PMID: 29477979."/>
+<meta name="citation_reference" content="Lin F, Shelton SE, Espíndola D, Rojas JD, Pinton G, Dayton PA. 3-D Ultrasound Localization Microscopy for Identifying Microvascular Morphology Features of Tumor Angiogenesis at a Resolution Beyond the Diffraction Limit of Conventional Ultrasound. Theranostics. 2017 Jan 1;7(1):196-204. doi: 10.7150/thno.16899. PMID: 28042327; PMCID: PMC5196896."/>
+<meta name="citation_reference" content="Li T, Sun H, Gai Y, Zhu L, Yang J, Ma C. Ultrasound Localization Microscopy for the Assessment of Microvascular Abnormalities in Transplant Renal Artery Stenosis. Ultrasound Med Biol. 2025 Nov;51(11):2120-2124. doi: 10.1016/j.ultrasmedbio.2025.07.032. Epub 2025 Aug 26. PMID: 40866163."/>
+<meta name="citation_reference" content="Hu X et al. Microvascular heterogeneity exploration in core and invasive zones of orthotopic rat glioblastoma via ultrasound localization microscopy. Eur Radiol Exp. 2025 Mar 5;9(1):30. doi: 10.1186/s41747-025-00555-4. PMID: 40045008; PMCID: PMC11882483."/>
+<meta name="citation_reference" content="Josquin Foiret, Zhang H, Tali Ilovitsh, Mahakian LM, Tam S, Ferrara KW. Ultrasound localization microscopy to image and assess microvasculature in a rat kidney. Scientific Reports. 2017 Oct 20;7(1)."/>
+<meta name="citation_reference" content="Hingot V, Errico C, Heiles B, Rahal L, Tanter M, Couture O. Microvascular flow dictates the compromise between spatial resolution and acquisition time in Ultrasound Localization Microscopy. Sci Rep. 2019 Feb 21;9(1):2456. doi: 10.1038/s41598-018-38349-x. PMID: 30792398; PMCID: PMC6385220."/>
+<meta name="citation_reference" content="Li Y, Huang L, Zhang J, Huang C, Chen S, Luo J. Localization of High-concentration Microbubbles for Ultrasound Localization Microscopy by Self-Supervised Deep Learning. 2021 Sep 11;1–4."/>
+<meta name="citation_reference" content="Shin Y, et al. Context-aware deep learning enables high-efficacy localization of high concentration microbubbles for super-resolution ultrasound localization microscopy. Nat Commun. 2024 Apr 4;15(1):2932. doi: 10.1038/s41467-024-47154-2. PMID: 38575577; PMCID: PMC10995206."/>
+<meta name="citation_reference" content="van Sloun RJG, et al. Super-Resolution Ultrasound Localization Microscopy Through Deep Learning. IEEE Trans Med Imaging. 2021 Mar;40(3):829-839. doi: 10.1109/TMI.2020.3037790. Epub 2021 Mar 2."/>
+<meta name="citation_reference" content="Lerendegui M, et al. ULTRA-SR Challenge: Assessment of Ultrasound Localization and TRacking Algorithms for Super-Resolution Imaging. IEEE Trans Med Imaging. 2024 Aug;43(8):2970-2987. doi: 10.1109/TMI.2024.3388048. Epub 2024 Aug 1. PMID: 38607705."/>
+<meta name="citation_reference" content="Helbert A, Gaud E, Segers T, Botteron C, Frinking P, Jeannot V. Monodisperse versus Polydisperse Ultrasound Contrast Agents: In Vivo Sensitivity and safety in Rat and Pig. Ultrasound Med Biol. 2020 Dec;46(12):3339-3352. doi: 10.1016/j.ultrasmedbio.2020.07.031. Epub 2020 Sep 30. PMID: 33008649."/>
+<meta name="citation_reference" content="Segers T, Kruizinga P, Kok MP, Lajoinie G, de Jong N, Versluis M. Monodisperse Versus Polydisperse Ultrasound Contrast Agents: Non-Linear Response, Sensitivity, and Deep Tissue Imaging Potential. Ultrasound Med Biol. 2018 Jul;44(7):1482-1492. doi: 10.1016/j.ultrasmedbio.2018.03.019. Epub 2018 Apr 25. PMID: 29705522."/>
+<meta name="citation_reference" content="van Elburg B, et al. Dependence of sonoporation efficiency on microbubble size: An in vitro monodisperse microbubble study. J Control Release. 2023 Nov;363:747-755. doi: 10.1016/j.jconrel.2023.09.047. Epub 2023 Oct 21. PMID: 37778466."/>
+<meta name="citation_reference" content="Kanoulas E, et al. Super-Resolution Contrast-Enhanced Ultrasound Methodology for the Identification of In Vivo Vascular Dynamics in 2D. Invest Radiol. 2019 Aug;54(8):500-516. doi: 10.1097/RLI.0000000000000565. PMID: 31058661; PMCID: PMC6661242."/>
+<meta name="citation_reference" content="van Hoeve W, et al. Improved Sensitivity of Ultrasound-Based Subharmonic Aided Pressure Estimation Using Monodisperse Microbubbles. J Ultrasound Med. 2022 Jul;41(7):1781-1789. doi: 10.1002/jum.15861. Epub 2021 Nov 1. PMID: 34724241."/>
+<meta name="citation_reference" content="Castro-Hernández E, van Hoeve W, Lohse D, Gordillo JM. Microbubble generation in a co-flow device operated in a new regime. Lab on a Chip. 2011;11(12):2023."/>
+<meta name="citation_reference" content="de Jong N, Hoff L, Skotland T, Bom N. Absorption and scatter of encapsulated gas filled microspheres: theoretical considerations and some measurements. Ultrasonics. 1992 Mar;30(2):95-103. doi: 10.1016/0041-624x(92)90041-j. PMID: 1557838."/>
+<meta name="citation_reference" content="Kumar M.B., Sathiya P., Varatharajulu M. Selective Laser Sintering. BENTHAM SCIENCE PUBLISHERS eBooks. 2021 Nov 29;28–47."/>
+<meta name="citation_reference" content="Interventional [Internet]. Esaote.com. 2026 [cited 2026 Mar 3]. Available from: https://www.esaote.com/en-BE/interventional/probes"/>
+<meta name="citation_reference" content="Song P, et al. Improved Super-Resolution Ultrasound Microvessel Imaging With Spatiotemporal Nonlocal Means Filtering and Bipartite Graph-Based Microbubble Tracking. IEEE Trans Ultrason Ferroelectr Freq Control. 2018 Feb;65(2):149-167. doi: 10.1109/TUFFC.2017.2778941. PMID: 29389649; PMCID: PMC5798010."/>
+<meta name="citation_reference" content="Kuhn HW. The Hungarian method for the assignment problem. Naval Research Logistics [Internet]. 2005 Feb [cited 2020 Oct 10];52(1):7–21. Available from: https://web.eecs.umich.edu/~pettie/matching/Kuhn-hungarian-assignment.pdf"/>
+<meta name="citation_reference" content="McCall JR, Santibanez F, Belgharbi H, Pinton GF, Dayton PA. Non-invasive transcranial volumetric ultrasound localization microscopy of the rat brain with continuous, high volume-rate acquisition. Theranostics. 2023 Feb 5;13(4):1235-1246. doi: 10.7150/thno.79189. PMID: 36923540; PMCID: PMC10008741."/>
+	<link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css1cc1.css?name=stylesheetless" type="text/css" /><style type="text/css">.hero-section { background: center / cover no-repeat url("../../../../public/journals/26/homepageImage_en.png");}</style><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css1e80.css?name=stylesheetless_new" type="text/css" /><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/css4a93.css?name=stylesheet" type="text/css" /><link rel="stylesheet" href="../../../../lib/pkp/styles/fontawesome/fontawesome7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/fontawesome/css/all.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/mdb/css/mdb.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/aos/aos7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/themes/material/vendor/swiper/swiper-bundle.min7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../%24%24%24call%24%24%24/page/page/cssa8ed.css?name=my-custom-layout-new" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/onlineFirst/css/onlineFirstMain7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/onlineFirst/css/paginationStyle7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/citations/css/citations7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/doiInSummary/styles/doi7187.css?v=3.4.0.8" type="text/css" /><link rel="stylesheet" href="../../../../plugins/generic/citationStyleLanguage/css/citationStyleLanguagePlugin7187.css?v=3.4.0.8" type="text/css" />
+
+
+</head>
+
+<body class="pkp_page_article pkp_op_view has_site_logo" dir="ltr">
+
+	<!-- ======= Header ======= -->
+	<header id="header" class="fixed-top d-flex align-items-center">
+  		    <div class="container d-flex justify-content-between align-items-center">
+    	<div class="logo">
+    						<a href="../../index.html" class="navbar-brand _is_img">
+					<img
+						src="../../../../public/journals/26/pageHeaderLogoImage_en.png"
+						width="2000"
+						height="313"
+													alt="TUJ"
+												class="img-fluid"
+						>
+				</a>
+					</div>
+
+		<nav id="navbar" class="navbar navbar-dark flex-row shadow-0">
+			
+											<ul id="_navigationPrimary" class="_pkp_navigation_primary navbar-nav ml-auto">
+
+								<li class=" nav-item">
+														<a href="https://www.mattioli1885journals.com/index.php/theultrasoundjournal/" class="nav-link">
+						Home
+					</a>
+							</li>
+								<li class=" nav-item">
+									<div class="dropdown">
+						<a
+							href="../../about.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							About
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="">
+										<a
+											href="../../about.html"
+											class="dropdown-item">
+											About the Journal
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/editorialTeam.html"
+											class="dropdown-item">
+											Editorial Board
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../aims-and-scope.html"
+											class="dropdown-item">
+											Aims and scope
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../working-rules-and-procedures-for-the-editorial-board-of-TUJ.html"
+											class="dropdown-item">
+											Working Rules and Procedures
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../policies.html"
+											class="dropdown-item">
+											Journal Policies
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../peer-review.html"
+											class="dropdown-item">
+											Peer review
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/privacy.html"
+											class="dropdown-item">
+											Privacy Statement
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../aboutpublisher.html"
+											class="dropdown-item">
+											About the Publisher
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../copyright.html"
+											class="dropdown-item">
+											Copyright
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../about/contact.html"
+											class="dropdown-item">
+											Contact
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class=" nav-item">
+									<div class="dropdown">
+						<a
+							href="../../for-authors.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							For Authors
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="">
+										<a
+											href="../../about/submissions.html"
+											class="dropdown-item">
+											Submissions
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../author-guidelines.html"
+											class="dropdown-item">
+											Author Guidelines
+										</a>
+									</li>
+																																<li class="">
+										<a
+											href="../../fees-and-funding.html"
+											class="dropdown-item">
+											Fees and funding
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class=" nav-item">
+									<div class="dropdown">
+						<a
+							href="../../collection.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							Collection
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="">
+										<a
+											href="../../specialissue.html"
+											class="dropdown-item">
+											Special issue
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class=" nav-item">
+														<a href="../../issue/view/1020.html" class="nav-link">
+						Current
+					</a>
+							</li>
+								<li class=" nav-item">
+														<a href="../../issue/archive.html" class="nav-link">
+						Archives
+					</a>
+							</li>
+								<li class=" nav-item">
+														<a href="../../announcement.html" class="nav-link">
+						Announcements
+					</a>
+							</li>
+			</ul>
+
+			
+      	</nav><!-- .navbar -->
+
+      	<nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar d-flex flex-column shadow-0">
+			<div class="container">
+				<div class="navbar-collapse d-flex justify-content-end">
+					
+<ul class="navbar-nav mr-auto flex-row ">
+		<li class="nav-item ">
+		<div class="dropdown">
+							<a href="#" class="nav-link" type="button" id="dropdownSidebar" data-mdb-toggle="dropdown" aria-expanded="false">
+					<i class="fas fa-globe"></i>
+				</a>
+						<ul class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light" aria-labelledby="dropdownSidebar">
+									<li class="locale_0" lang="0">
+						<a href="18060.html?source=%2Findex.php%2Ftheultrasoundjournal%2Farticle%2Fview%2F18060" class="dropdown-item">
+							en
+						</a>
+					</li>
+							</ul>
+		</div>
+	</li>
+
+		<li class=" nav-item">
+					<a href="../../search.html" class="nav-link mx-1">
+				<i class="fas fa-search"></i>
+			</a>
+			</li>
+</ul>											<ul id="_navigationUser" class="_pkp_navigation_user flex-row justify-content-end navbar-nav ml-auto">
+
+								<li class="profile px-2 px-md-0 nav-item">
+														<a href="../../user/register.html" class="nav-link">
+						Register
+					</a>
+							</li>
+								<li class="profile px-2 px-md-0 nav-item">
+														<a href="../../login.html" class="nav-link">
+						Login
+					</a>
+							</li>
+										</ul>
+
+				</div>
+			</div>
+		</nav>
+      	<button
+    type="button"
+    class="navbar-toggler text-white d-lg-none"
+    data-mdb-toggle="modal"
+    data-mdb-target="#exampleModal">
+	<i class="fas fa-bars"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel"></h5>
+				<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+	      		<div>
+		      		
+																	<ul id="_navigationPrimary" class="_pkp_navigation_primary d-block navbar-nav ml-auto">
+
+								<li class="text-dark nav-item">
+														<a href="https://www.mattioli1885journals.com/index.php/theultrasoundjournal/" class="nav-link">
+						Home
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+									<div class="dropdown">
+						<a
+							href="../../about.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							About
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="text-dark">
+										<a
+											href="../../about.html"
+											class="dropdown-item">
+											About the Journal
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/editorialTeam.html"
+											class="dropdown-item">
+											Editorial Board
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../aims-and-scope.html"
+											class="dropdown-item">
+											Aims and scope
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../working-rules-and-procedures-for-the-editorial-board-of-TUJ.html"
+											class="dropdown-item">
+											Working Rules and Procedures
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../policies.html"
+											class="dropdown-item">
+											Journal Policies
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../peer-review.html"
+											class="dropdown-item">
+											Peer review
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/privacy.html"
+											class="dropdown-item">
+											Privacy Statement
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../aboutpublisher.html"
+											class="dropdown-item">
+											About the Publisher
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../copyright.html"
+											class="dropdown-item">
+											Copyright
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../about/contact.html"
+											class="dropdown-item">
+											Contact
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class="text-dark nav-item">
+									<div class="dropdown">
+						<a
+							href="../../for-authors.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							For Authors
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="text-dark">
+										<a
+											href="../../about/submissions.html"
+											class="dropdown-item">
+											Submissions
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../author-guidelines.html"
+											class="dropdown-item">
+											Author Guidelines
+										</a>
+									</li>
+																																<li class="text-dark">
+										<a
+											href="../../fees-and-funding.html"
+											class="dropdown-item">
+											Fees and funding
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class="text-dark nav-item">
+									<div class="dropdown">
+						<a
+							href="../../collection.html"
+							class="dropdown-toggle nav-link"
+							type="button"
+							id="_navigationPrimary"
+							data-mdb-toggle="dropdown"
+							aria-expanded="false" >
+							Collection
+						</a>
+						<ul
+							class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light"
+							aria-labelledby="_navigationPrimary">
+																								<li class="text-dark">
+										<a
+											href="../../specialissue.html"
+											class="dropdown-item">
+											Special issue
+										</a>
+									</li>
+																					</ul>
+					</div>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../issue/view/1020.html" class="nav-link">
+						Current
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../issue/archive.html" class="nav-link">
+						Archives
+					</a>
+							</li>
+								<li class="text-dark nav-item">
+														<a href="../../announcement.html" class="nav-link">
+						Announcements
+					</a>
+							</li>
+			</ul>
+
+					
+				</div>
+
+				<hr/>
+
+				<div>
+					
+<ul class="navbar-nav mr-auto flex-row d-block">
+		<li class="nav-item mx-0">
+		<div class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownSidebar" data-mdb-toggle="dropdown" aria-expanded="false">
+					Language
+				</a>
+						<ul class="dropdown-menu dropdown-menu-xxl-end dropdown-menu-light" aria-labelledby="dropdownSidebar">
+									<li class="locale_0" lang="0">
+						<a href="18060.html?source=%2Findex.php%2Ftheultrasoundjournal%2Farticle%2Fview%2F18060" class="dropdown-item">
+							en
+						</a>
+					</li>
+							</ul>
+		</div>
+	</li>
+
+		<li class="mx-0 nav-item">
+					<a href="../../search.html" class="nav-link">
+				Search
+			</a>
+			</li>
+</ul>											<ul id="_navigationUser" class="_pkp_navigation_user d-block navbar-nav ml-auto">
+
+								<li class="profile text-dark nav-item">
+														<a href="../../user/register.html" class="nav-link">
+						Register
+					</a>
+							</li>
+								<li class="profile text-dark nav-item">
+														<a href="../../login.html" class="nav-link">
+						Login
+					</a>
+							</li>
+										</ul>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</div>
+	</div>
+</div>    </div>
+  </header><!-- End Header -->
+
+  
+
+
+		
+		<div class="mainWrapper">
+	<main class="" role="main">
+		<a id="pkp_content_main"></a>
+
+				
+			<section class="hero-section inner-page">
+			  <div class="wave">
+
+			    <svg width="1920px" height="90px" viewBox="0 0 1920 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <g id="Apple-TV" transform="translate(0.000000, -402.000000)" fill="#FFFFFF">
+			          <path d="M0,439.134243 C175.04074,464.89273 327.944386,477.771974 458.710937,477.771974 C654.860765,477.771974 870.645295,442.632362 1205.9828,410.192501 C1429.54114,388.565926 1667.54687,411.092417 1920,477.771974 L1920,667 L1017.15166,667 L0,667 L0,439.134243 Z" id="Path"></path>
+			        </g>
+			      </g>
+			    </svg>
+
+			  </div>
+
+			  <div class="container">
+			    <div class="row align-items-center">
+			      <div class="col-12">
+			        <div class="row justify-content-center">
+			          <div class="col-md-10 text-center hero-text">
+			            <h1 data-aos="fade-up" data-aos-delay="">Towards reduced ultrasound localization microscopy acquisition times by uncoupling a bi-disperse microbubble population</h1>
+			            <p class="mb-5" data-aos="fade-up" data-aos-delay="100"></p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+
+			</section>
+		
+<div class="page page_article">
+			<nav class="cmp_breadcrumbs" role="navigation" aria-label="You are here:">
+	<ol>
+		<li>
+			<a href="../../index.html">
+				Home
+			</a>
+			<span class="separator">/</span>
+		</li>
+		<li>
+			<a href="../../issue/archive.html">
+				Archives
+			</a>
+			<span class="separator">/</span>
+		</li>
+					<li>
+				<a href="../../issue/view/1020.html">
+					Vol. 18 No. 1 (2026): The Ultrasound Journal 2026; volume 18
+				</a>
+				<span class="separator">/</span>
+			</li>
+				<li class="current" aria-current="page">
+			<span aria-current="page">
+									Original Research Papers
+							</span>
+		</li>
+	</ol>
+</nav>
+	
+		  	 <article class="obj_article_details">
+
+		
+	<div class="d-md-flex">
+		<div class="main_entry">
+			<section class="item">
+				<h3 class="page_title">
+					Towards reduced ultrasound localization microscopy acquisition times by uncoupling a bi-disperse microbubble population
+				</h3>
+
+							</section> 
+
+							<section class="item authors">
+					<h2 class="pkp_screen_reader">Authors</h2>
+					<ul class="authors">
+											<li>
+							<span class="name">
+								Giulia Tuccio
+							</span>
+															<span class="affiliation">
+									Department of Information Engineering and Computer Science, University of Trento, Trento, Italy
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0000-0001-5419-5892" target="_blank">
+										https://orcid.org/0000-0001-5419-5892
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Lisa te Winkel
+							</span>
+															<span class="affiliation">
+									Solstice Pharmaceuticals, Enschede, The Netherlands
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Corinne Bruggeman
+							</span>
+															<span class="affiliation">
+									Solstice Pharmaceuticals, Enschede, The Netherlands
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Wim van Hoeve
+							</span>
+															<span class="affiliation">
+									Solstice Pharmaceuticals, Enschede, The Netherlands
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Libertario Demi
+							</span>
+															<span class="affiliation">
+									Department of Information Engineering and Computer Science, University of Trento, Trento, Italy
+																	</span>
+																						<span class="orcid">
+									
+									<a href="https://orcid.org/0000-0002-0635-2133" target="_blank">
+										https://orcid.org/0000-0002-0635-2133
+									</a>
+								</span>
+													</li>
+										</ul>
+				</section>
+			
+						
+									<section class="item keywords">
+				<h4 class="_label">
+										Keywords:
+				</h4>
+				<span class="value">
+											Ultrasound Localization Microscopy, 											Ultrasound Contrast Agents, 											Microbubble Uncoupling, 											Monodisperse Microbubble Populations, 											Signal Processing									</span>
+			</section>
+			
+										<section class="item abstract">
+					<h4 class="_label">Abstract</h4>
+					<p><strong>Background </strong>: Ultrasound Localization Microscopy (ULM) is a milestone in the medical vascular imaging context, enabling the precise characterization of micro-vascular structures using ultrasound imaging. By accurately localizing contrast microbubbles (MBs) flowing in the circulatory system, ULM generates micro-resolved vascular images, overcoming the ultrasonic diffraction limit. However, as ULM relies on precise localization and tracking of individual MBs, high MB concentrations yield to increased localization errors and, ultimately, ULM failure. This constraint limits ULM to low MB concentrations, resulting in long acquisition times that pose challenges in clinical settings. <br> <br><strong>Methods</strong>: Here, we show the feasibility of uncoupling a bi-disperse MB population, composed of two monodisperse MB populations. The uncoupling is performed through a signal processing pipeline that exploits the strong nonlinear response of MBs having resonance frequency tuned with the transmission frequency. After uncoupling, ULM density and velocity flow maps are generated.<br> <br><strong>Results</strong>: Density and velocity maps are generated after uncoupling, when injecting the bi-disperse population individually and simultaneously in a vascular 3D-printed phantom. Furthermore, density maps generated after uncoupling are compared with the one obtained using standard ULM. Results demonstrate the capability of the proposed uncoupling pipeline to separate the bi-disperse population.  <br> <br><strong>Conclusion</strong>: This work presents a signal processing pipeline to uncouple a bi-disperse MB population, formed by two monodisperse MB populations. Results are validated in a 3D-printed phantom and demonstrate the feasibility of the uncoupling which, in turn, would enable higher concentrations and reduce acquisition times for micro-vascular imaging. </p>
+				</section>
+			
+			
+
+																																															
+										<section class="item references">
+					<h2 class="label">
+						References
+					</h2>
+					<div class="value">
+																					<p>Heiles B, Chavignon A, Hingot V, Lopez P, Teston E, Couture O. Performance benchmarking of microbubble-localization algorithms for ultrasound localization microscopy. Nat Biomed Eng. 2022 May;6(5):605-616. doi: 10.1038/s41551-021-00824-8. Epub 2022 Feb 17. PMID: 35177778. </p>
+															<p>Song P, Rubin JM, Lowerison MR. Super-resolution ultrasound microvascular imaging: Is it ready for clinical use? Z Med Phys. 2023 Aug;33(3):309-323. doi: 10.1016/j.zemedi.2023.04.001. Epub 2023 May 20. PMID: 37211457; PMCID: PMC10517403. </p>
+															<p>Carovac A, Smajlovic F, Junuzovic D. Application of ultrasound in medicine. Acta Inform Med. 2011 Sep;19(3):168-71. doi: 10.5455/aim.2011.19.168-171. PMID: 23408755; PMCID: PMC3564184. </p>
+															<p>Couture O, Besson B, Montaldo G, Fink M, Tanter M. Microbubble ultrasound super-localization imaging (MUSLI). 2011 IEEE International Ultrasonics Symposium. 2011 Oct;1285–7. </p>
+															<p>Christensen-Jeffries K, Couture O, Dayton PA, Eldar YC, Hynynen K, Kiessling F, O'Reilly M, Pinton GF, Schmitz G, Tang MX, Tanter M, van Sloun RJG. Super-resolution Ultrasound Imaging. Ultrasound Med Biol. 2020 Apr;46(4):865-891. doi: 10.1016/j.ultrasmedbio.2019.11.013. Epub 2020 Jan 21. PMID: 31973952; PMCID: PMC8388823. </p>
+															<p>Siepmann M, Schmitz G, Bzyl J, Palmowski M, Kiessling F. Imaging tumor vascularity by tracing single microbubbles. 2011 IEEE International Ultrasonics Symposium. 2011 Oct;1906–9. </p>
+															<p>Dencks S, Schmitz G. Ultrasound localization microscopy. Z Med Phys. 2023 Aug;33(3):292-308. doi: 10.1016/j.zemedi.2023.02.004. Epub 2023 Jun 15. PMID: 37328329; PMCID: PMC10517400. </p>
+															<p>Dollet B, van der Meer SM, Garbin V, de Jong N, Lohse D, Versluis M. Nonspherical oscillations of ultrasound contrast agent microbubbles. Ultrasound Med Biol. 2008 Sep;34(9):1465-73. doi: 10.1016/j.ultrasmedbio.2008.01.020. Epub 2008 May 1. PMID: 18450362. </p>
+															<p>Desailly Y, Pierre J, Couture O, Tanter M. Resolution limits of ultrafast ultrasound localization microscopy. Phys Med Biol. 2015 Nov 21;60(22):8723-40. doi: 10.1088/0031-9155/60/22/8723. Epub 2015 Oct 28. PMID: 26509596. </p>
+															<p>Huang C, Lowerison MR, Trzasko JD, Manduca A, Bresler Y, Tang S, Gong P, Lok UW, Song P, Chen S. Short Acquisition Time Super-Resolution Ultrasound Microvessel Imaging via Microbubble Separation. Sci Rep. 2020 Apr 7;10(1):6007. doi: 10.1038/s41598-020-62898-9. PMID: 32265457; PMCID: PMC7138805. </p>
+															<p>Tang S, Song P, Trzasko JD, Lowerison M, Huang C, Gong P, Lok UW, Manduca A, Chen S. Kalman Filter-Based Microbubble Tracking for Robust Super-Resolution Ultrasound Microvessel Imaging. IEEE Trans Ultrason Ferroelectr Freq Control. 2020 Sep;67(9):1738-1751. doi: 10.1109/TUFFC.2020.2984384. Epub 2020 Mar 31. PMID: 32248099; PMCID: PMC7485263. </p>
+															<p>Errico C, Pierre J, Pezet S, Desailly Y, Lenkei Z, Couture O, Tanter M. Ultrafast ultrasound localization microscopy for deep super-resolution vascular imaging. Nature. 2015 Nov 26;527(7579):499-502. doi: 10.1038/nature16066. PMID: 26607546. </p>
+															<p>Deffieux T, Demene C, Pernot M, Tanter M. Functional ultrasound neuroimaging: a review of the preclinical and clinical state of the art. Current Opinion in Neurobiology. 2018 Jun;50:128-135. DOI: 10.1016/j.conb.2018.02.001. PMID: 29477979. </p>
+															<p>Lin F, Shelton SE, Espíndola D, Rojas JD, Pinton G, Dayton PA. 3-D Ultrasound Localization Microscopy for Identifying Microvascular Morphology Features of Tumor Angiogenesis at a Resolution Beyond the Diffraction Limit of Conventional Ultrasound. Theranostics. 2017 Jan 1;7(1):196-204. doi: 10.7150/thno.16899. PMID: 28042327; PMCID: PMC5196896. </p>
+															<p>Li T, Sun H, Gai Y, Zhu L, Yang J, Ma C. Ultrasound Localization Microscopy for the Assessment of Microvascular Abnormalities in Transplant Renal Artery Stenosis. Ultrasound Med Biol. 2025 Nov;51(11):2120-2124. doi: 10.1016/j.ultrasmedbio.2025.07.032. Epub 2025 Aug 26. PMID: 40866163. </p>
+															<p>Hu X et al. Microvascular heterogeneity exploration in core and invasive zones of orthotopic rat glioblastoma via ultrasound localization microscopy. Eur Radiol Exp. 2025 Mar 5;9(1):30. doi: 10.1186/s41747-025-00555-4. PMID: 40045008; PMCID: PMC11882483. </p>
+															<p>Josquin Foiret, Zhang H, Tali Ilovitsh, Mahakian LM, Tam S, Ferrara KW. Ultrasound localization microscopy to image and assess microvasculature in a rat kidney. Scientific Reports. 2017 Oct 20;7(1). </p>
+															<p>Hingot V, Errico C, Heiles B, Rahal L, Tanter M, Couture O. Microvascular flow dictates the compromise between spatial resolution and acquisition time in Ultrasound Localization Microscopy. Sci Rep. 2019 Feb 21;9(1):2456. doi: 10.1038/s41598-018-38349-x. PMID: 30792398; PMCID: PMC6385220. </p>
+															<p>Li Y, Huang L, Zhang J, Huang C, Chen S, Luo J. Localization of High-concentration Microbubbles for Ultrasound Localization Microscopy by Self-Supervised Deep Learning. 2021 Sep 11;1–4. </p>
+															<p>Shin Y, et al. Context-aware deep learning enables high-efficacy localization of high concentration microbubbles for super-resolution ultrasound localization microscopy. Nat Commun. 2024 Apr 4;15(1):2932. doi: 10.1038/s41467-024-47154-2. PMID: 38575577; PMCID: PMC10995206. </p>
+															<p>van Sloun RJG, et al. Super-Resolution Ultrasound Localization Microscopy Through Deep Learning. IEEE Trans Med Imaging. 2021 Mar;40(3):829-839. doi: 10.1109/TMI.2020.3037790. Epub 2021 Mar 2. </p>
+															<p>Lerendegui M, et al. ULTRA-SR Challenge: Assessment of Ultrasound Localization and TRacking Algorithms for Super-Resolution Imaging. IEEE Trans Med Imaging. 2024 Aug;43(8):2970-2987. doi: 10.1109/TMI.2024.3388048. Epub 2024 Aug 1. PMID: 38607705. </p>
+															<p>Helbert A, Gaud E, Segers T, Botteron C, Frinking P, Jeannot V. Monodisperse versus Polydisperse Ultrasound Contrast Agents: In Vivo Sensitivity and safety in Rat and Pig. Ultrasound Med Biol. 2020 Dec;46(12):3339-3352. doi: 10.1016/j.ultrasmedbio.2020.07.031. Epub 2020 Sep 30. PMID: 33008649. </p>
+															<p>Segers T, Kruizinga P, Kok MP, Lajoinie G, de Jong N, Versluis M. Monodisperse Versus Polydisperse Ultrasound Contrast Agents: Non-Linear Response, Sensitivity, and Deep Tissue Imaging Potential. Ultrasound Med Biol. 2018 Jul;44(7):1482-1492. doi: 10.1016/j.ultrasmedbio.2018.03.019. Epub 2018 Apr 25. PMID: 29705522. </p>
+															<p>van Elburg B, et al. Dependence of sonoporation efficiency on microbubble size: An in vitro monodisperse microbubble study. J Control Release. 2023 Nov;363:747-755. doi: 10.1016/j.jconrel.2023.09.047. Epub 2023 Oct 21. PMID: 37778466. </p>
+															<p>Kanoulas E, et al. Super-Resolution Contrast-Enhanced Ultrasound Methodology for the Identification of In Vivo Vascular Dynamics in 2D. Invest Radiol. 2019 Aug;54(8):500-516. doi: 10.1097/RLI.0000000000000565. PMID: 31058661; PMCID: PMC6661242. </p>
+															<p>van Hoeve W, et al. Improved Sensitivity of Ultrasound-Based Subharmonic Aided Pressure Estimation Using Monodisperse Microbubbles. J Ultrasound Med. 2022 Jul;41(7):1781-1789. doi: 10.1002/jum.15861. Epub 2021 Nov 1. PMID: 34724241. </p>
+															<p>Castro-Hernández E, van Hoeve W, Lohse D, Gordillo JM. Microbubble generation in a co-flow device operated in a new regime. Lab on a Chip. 2011;11(12):2023. </p>
+															<p>de Jong N, Hoff L, Skotland T, Bom N. Absorption and scatter of encapsulated gas filled microspheres: theoretical considerations and some measurements. Ultrasonics. 1992 Mar;30(2):95-103. doi: 10.1016/0041-624x(92)90041-j. PMID: 1557838. </p>
+															<p>Kumar M.B., Sathiya P., Varatharajulu M. Selective Laser Sintering. BENTHAM SCIENCE PUBLISHERS eBooks. 2021 Nov 29;28–47. </p>
+															<p>Interventional [Internet]. Esaote.com. 2026 [cited 2026 Mar 3]. Available from: <a href="https://www.esaote.com/en-BE/interventional/probes">https://www.esaote.com/en-BE/interventional/probes</a> </p>
+															<p>Song P, et al. Improved Super-Resolution Ultrasound Microvessel Imaging With Spatiotemporal Nonlocal Means Filtering and Bipartite Graph-Based Microbubble Tracking. IEEE Trans Ultrason Ferroelectr Freq Control. 2018 Feb;65(2):149-167. doi: 10.1109/TUFFC.2017.2778941. PMID: 29389649; PMCID: PMC5798010. </p>
+															<p>Kuhn HW. The Hungarian method for the assignment problem. Naval Research Logistics [Internet]. 2005 Feb [cited 2020 Oct 10];52(1):7–21. Available from: <a href="https://web.eecs.umich.edu/~pettie/matching/Kuhn-hungarian-assignment.pdf">https://web.eecs.umich.edu/~pettie/matching/Kuhn-hungarian-assignment.pdf</a> </p>
+															<p>McCall JR, Santibanez F, Belgharbi H, Pinton GF, Dayton PA. Non-invasive transcranial volumetric ultrasound localization microscopy of the rat brain with continuous, high volume-rate acquisition. Theranostics. 2023 Feb 5;13(4):1235-1246. doi: 10.7150/thno.79189. PMID: 36923540; PMCID: PMC10008741. </p>
+																		</div>
+				</section>
+			
+		</div><!-- .main_entry -->
+
+		<div class="entry_details"> 
+										<div class="item cover_image">
+					<div class="sub_item">
+																				<img
+								src="../../../../public/journals/26/submission_18060_22755_coverImage_en.jpg"
+								alt="."
+							>
+											</div>
+				</div>
+			
+										<div class="item galleys">
+					<h2 class="pkp_screen_reader">
+						Downloads
+					</h2>
+					<ul class="value galleys_links">
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link btn btn-primary  pdf" href="18060/13218.html">
+
+		
+	PDF
+
+	</a>
+							</li>
+											</ul>
+				</div>
+										<div class="item galleys">
+					<h3 class="pkp_screen_reader">
+						Additional Files
+					</h3>
+					<ul class="value supplementary_galleys_links">
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link_supplementary btn btn-light text-primary file" href="../download/18060/tuj-18-1-18060-Video%2b1.gif%3bfilename_%3dUTF-8%27%27tuj-18-1-18060-Video%2b1.gif">
+
+		
+	Supplementary file: Video 1
+
+	</a>
+							</li>
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link_supplementary btn btn-light text-primary file" href="../download/18060/tuj-18-1-18060-Video%2b2.gif%3bfilename_%3dUTF-8%27%27tuj-18-1-18060-Video%2b2.gif">
+
+		
+	Supplementary file: Video 2
+
+	</a>
+							</li>
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link_supplementary btn btn-light text-primary file" href="../download/18060/tuj-18-1-18060-Figure%2bS1.emf%3bfilename_%3dUTF-8%27%27tuj-18-1-18060-Figure%2bS1.emf">
+
+		
+	Supplementary Figure 1
+
+	</a>
+							</li>
+											</ul>
+				</div>
+			
+						<div class="item published">
+				<section class="sub_item">
+					<h2 class="label">
+						Published
+					</h2>
+					<div class="value">
+																			<span>2026-04-01</span>
+																	</div>
+				</section>
+							</div>
+			
+										<div class="item issue">
+
+											<section class="sub_item">
+							<h2 class="label">
+								Issue
+							</h2>
+							<div class="value">
+								<a class="title" href="../../issue/view/1020.html">
+									Vol. 18 No. 1 (2026): The Ultrasound Journal 2026; volume 18
+								</a>
+							</div>
+						</section>
+					
+											<section class="sub_item">
+							<h2 class="label">
+								Section
+							</h2>
+							<div class="value">
+								Original Research Papers
+							</div>
+						</section>
+					
+									</div>
+			
+						
+										<div class="item copyright">
+					<h2 class="label">
+						License
+					</h2>
+																										<p>Copyright (c) 2026 Giulia Tuccio, Lisa te Winkel, Corinne Bruggeman, Wim van Hoeve, Libertario Demi (Author)</p>
+														<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="../../../../../licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><p>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+																<p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (<a href="https://creativecommons.org/licenses/by-nc/4.0" target="_blank" rel="noopener">https://creativecommons.org/licenses/by-nc/4.0</a>) which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.<br />Authors retain the copyright for their published work. No formal permission will be required to reproduce parts (tables or illustrations) of published papers, provided the source is quoted appropriately and reproduction has no commercial intent. </p>
+				</div>
+			
+				<div class="item citation">
+		<section class="sub_item citation_display">
+			<h2 class="label">
+				How to Cite
+			</h2>
+			<div class="value">
+				<div id="citationOutput" role="region" aria-live="polite">
+					<div class="csl-bib-body">
+  <div class="csl-entry"><div class="csl-left-margin">1.</div><div class="csl-right-inline">Tuccio G, te Winkel L, Bruggeman C, van Hoeve W, Demi L. Towards reduced ultrasound localization microscopy acquisition times by uncoupling a bi-disperse microbubble population. <i>Ultrasound J</i>. 2026;18(1):18060. doi:<a href="https://doi.org/10.5826/tuj.2026.18060">10.5826/tuj.2026.18060</a></div></div>
+</div>
+				</div>
+				<div class="citation_formats">
+					<button class="citation_formats_button label" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">
+						More Citation Formats
+					</button>
+					<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
+						<ul class="citation_formats_styles">
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/acm-sig-proceedings37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/acm-sig-proceedings?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										ACM
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/acs-nano37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/acs-nano?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										ACS
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/apa37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/apa?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										APA
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										ABNT
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/chicago-author-date37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/chicago-author-date?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										Chicago
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/harvard-cite-them-right37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/harvard-cite-them-right?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										Harvard
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/ieee37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/ieee?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										IEEE
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/modern-language-association37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/modern-language-association?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										MLA
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/turabian-fullnote-bibliography37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										Turabian
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/vancouver37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/vancouver?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										Vancouver
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="../../citationstylelanguage/get/ama37f1.html?submissionId=18060&amp;publicationId=22755&amp;issueId=1020"
+											data-load-citation
+											data-json-href="https://mattioli1885journals.com/index.php/theultrasoundjournal/citationstylelanguage/get/ama?submissionId=18060&amp;publicationId=22755&amp;issueId=1020&amp;return=json"
+									>
+										AMA
+									</a>
+								</li>
+													</ul>
+													<div class="label">
+								Download Citation
+							</div>
+							<ul class="citation_formats_styles">
+																	<li>
+										<a href="../../citationstylelanguage/download/ris37f1?submissionId=18060&amp;publicationId=22755&amp;issueId=1020">
+											<span class="fa fa-download"></span>
+											Endnote/Zotero/Mendeley (RIS)
+										</a>
+									</li>
+																	<li>
+										<a href="../../citationstylelanguage/download/bibtex37f1?submissionId=18060&amp;publicationId=22755&amp;issueId=1020">
+											<span class="fa fa-download"></span>
+											BibTeX
+										</a>
+									</li>
+															</ul>
+											</div>
+				</div>
+			</div>
+		</section>
+	</div>
+<div class="item addthis">
+	<div class="value">
+		<!-- AddThis Button BEGIN -->
+		 			<div class="addthis_toolbox addthis_default_style ">
+			<a class="addthis_button_preferred_1"></a>
+			<a class="addthis_button_preferred_2"></a>
+			<a class="addthis_button_preferred_3"></a>
+			<a class="addthis_button_preferred_4"></a>
+			<a class="addthis_button_compact"></a>
+			<a class="addthis_counter addthis_bubble_style"></a>
+			</div>
+			<script type="text/javascript" src="../../../../../s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+				<!-- AddThis Button END -->
+	</div>
+</div>
+<div id="citation-plugin" class="item citations-container" data-citations-url="https://mattioli1885journals.com/index.php/theultrasoundjournal/citations/get?doi=10.5826%2Ftuj.2026.18060" data-img-url="https://mattioli1885journals.com/plugins/generic/citations/images/">
+    <div id="citations-loader"></div>
+    <div class="citations-count">
+        <div class="citations-count-crossref">
+            <img class="img-fluid" src="../../../../plugins/generic/citations/images/crossref.png" alt="Crossref"/>
+            <div class="badge_total"></div>
+        </div>
+        <div class="citations-count-scopus">
+            <img src="../../../../plugins/generic/citations/images/scopus.png" alt="Scopus"/>
+            <br/>
+            <span class="badge_total"></span>
+        </div>
+        <div class="citations-count-google">
+            <a href="https://scholar.google.com/scholar?q=10.5826/tuj.2026.18060" target="_blank" rel="noreferrer">
+                <img src="../../../../plugins/generic/citations/images/scholar.png" alt="Google Scholar"/>
+            </a>
+        </div>
+        <div class="citations-count-europepmc">
+            <a href="https://europepmc.org/search?scope=fulltext&amp;query=10.5826/tuj.2026.18060" target="_blank" rel="noreferrer">
+                <img src="../../../../plugins/generic/citations/images/pmc.png" alt="Europe PMC"/>
+                <br/>
+                <span class="badge_total"></span>
+            </a>
+        </div>
+    </div>
+    <div class="citations-list">
+        <div class="cite-itm cite-prototype" style="display: none">
+            <img class="cite-img img-fluid" src="#" alt="">
+            <div>
+                <span class="cite-author"></span>
+                <span class="cite-date"></span>
+            </div>
+            <div>
+                <span class="cite-title"></span>
+                <span class="cite-info"></span>
+            </div>
+            <div class="cite-doi"></div>
+        </div>
+    </div>
+            <style>
+            .citations-container {
+                overflow-y: auto;
+                overflow-x: hidden;
+                max-height: 300px;
+            }
+        </style>
+    </div>
+
+
+		</div><!-- .entry_details -->
+	</div><!-- .row -->
+
+</article>
+
+	
+
+</div><!-- .page -->
+
+		<!--div class="html-preloader bg-light">
+			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div-->
+
+	
+
+
+    	  	      <div class="mt-2" data-aos="fade-up" id="sidebar" data-aos-delay="200">
+    		<ul class="_pkp_structure_sidebar list-unstyled container" role="complementary" aria-label="Sidebar">
+    			 
+    <div class="pkp_block">
+        <div class="title">Make a Submission</div>
+        <div class="content">
+<li>
+	<a href="../../about/submissions.html" class="font-monospace">
+		Make a Submission
+	</a>
+</li>
+</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-journal-information">
+		<div class="content">
+		<div class="title">Journal Information:</div>
+<div class="content">
+<p>&nbsp;</p>
+<p><strong><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/copertina.jpg" alt="" width="182" height="238"><br></strong></p>
+<p><strong>Editor-in-Chief: </strong>Francesco Corradi<strong><br>Language: </strong>English<br><strong>Frequency:&nbsp;</strong>Continuous publishing<br><strong>eISSN:</strong> 2524-8987<br><br><strong>Impact Factor 2025:</strong> 3.6&nbsp;<br><strong>CiteScore 2025:</strong> 5.1<br><strong>SNIP 2025: </strong>1.617 - <strong>SJR 2025: </strong>0.766</p>
+<p><br><strong>Indexed in:</strong> UGC-CARE List (India), TD Net Discovery Service, Semantic Scholar, SCOPUS, SCImago, Reaxys, PubMedCentral, ProQuest, OCLC WorldCat Discovery Service, Naver, Google Scholar, Emerging Sources Citation Index, EMBASE, EBSCO, Dimensions, DOAJ, Chinese Academy of Sciences (CAS) - GoOA, CNKI, Baidu, CLOCKSS, CNPIEC, Portico, WTI AG, Wanfang<br><br></p>
+<p><strong>Speed&nbsp;</strong></p>
+<div>Publishing model: Open access</div>
+<div>Submission to first editorial decision (median days): 6 <br>Submission to acceptance (median days): 57</div>
+<div>&nbsp;</div>
+<div>
+<p class="p1"><span class="s1">Acceptance Rate: 39%<br></span><span class="s1">Rejection Rate: 61%</span></p>
+<p class="p1"><span class="s1">&nbsp;</span></p>
+</div>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-special-issue">
+		<div class="content">
+		<div class="title">Special issue:</div>
+<div class="content">
+<p><br><a href="../../issue/view/1020.html" target="_blank" rel="noopener"><strong>AUTOMATION IN ULTRASOUND IMAGING: AI DRIVEN AND MODEL BASED DATA ACQUISITION, ANALYSIS AND CLASSIFICATION</strong></a></p>
+<div class="content">
+<p data-start="1112" data-end="1242">A collection focused on automated interpretation, real-time guidance and AI-based diagnostic tools.<br><span aria-current="page">Editors: Libertario Demi, Riccardo Inchingolo, Federico Mento </span></p>
+<p style="color: #00417b;"><a href="../../issue/view/1020.html" target="_blank" rel="noopener"><strong>Read the articles &gt;&gt;</strong></a></p>
+</div>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-webinar">
+		<div class="content">
+		<div class="title"><strong>Webinar</strong></div>
+<div class="content">
+<p>&nbsp;</p>
+<p><a href="https://www.winfocus.org/the-ultrasound-journal/" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/immagine-webinar-tuj-winfocus.png" alt="" width="350" height="197"></a></p>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-partnership">
+		<div class="content">
+		<div class="title">Official Journal of:</div>
+<div class="content">
+<p>&nbsp;</p>
+</div>
+<p><a href="https://www.winfocus.org/" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/logo-winfocus-per-sito-banner.png" alt="" width="275" height="88"></a></p>
+<div class="wpb_text_column wpb_content_element  introtext">
+<div class="wpb_wrapper"><em><br>The Ultrasound Journal</em> is the official journal of <a class="is-external" href="http://www.winfocus.org/" target="_blank" rel="noopener">World Interactive Network Focused on Critical UltraSound (WINFOCUS)</a></div>
+<div class="wpb_wrapper">&nbsp;</div>
+<div class="wpb_wrapper"><strong>About <a href="https://www.winfocus.org/" target="_blank" rel="noopener">WINFOCUS</a></strong></div>
+</div>
+<p>The World Interactive Network Focused On Critical UltraSound (WINFOCUS) is the world leader scientific network committed to develop Point-of-Care Ultrasound practice, research, education, technology, and networking, addressing the needs of patients, institutions, services, and communities living in out-of-hospital and in-hospital critical scenarios.</p>
+<p><a href="https://www.winfocus.org/" target="_blank" rel="noopener"><strong>DISCOVER MORE</strong></a></p>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-winfocus">
+		<div class="content">
+		<div class="title"><strong>Connect with WINFOCUS</strong></div>
+<div class="content">
+<p>&nbsp;</p>
+<p><a href="https://www.winfocus.org/#calendar" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/check-all-the-winfocus.png" alt="" width="330" height="76"></a><br><a href="https://www.facebook.com/winfocus?utm_source=TEST%20LIST&amp;utm_campaign=52b7e1511c-EMAIL_CAMPAIGN_2017_03_29&amp;utm_medium=email&amp;utm_term=0_0d1dbe7d5c-52b7e1511c-209403905" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/follow-winfocus.png" alt="" width="330" height="76"></a><br><a href="https://x.com/winfocus?utm_source=TEST+LIST&amp;utm_campaign=52b7e1511c-EMAIL_CAMPAIGN_2017_03_29&amp;utm_medium=email&amp;utm_term=0_0d1dbe7d5c-52b7e1511c-209403905" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/follow-winfocus-twitter.png" alt="" width="330" height="76"></a></p>
+<p><strong><br>Find us on Facebook</strong></p>
+<p><a href="https://www.facebook.com/winfocus?ref=embed_page" target="_blank" rel="noopener"><img src="../../../../../www.mattioli1885journals.com/public/site/images/valeriaceci/facebook-winfocus.png" alt="" width="272" height="64"></a></p>
+</div>
+	</div>
+</div>
+
+    		</ul><!-- pkp_sidebar.left -->
+      </div>
+  	  	<div class="mainContainer container"></div>
+</main><!-- _pkp_structure_main -->
+	</div>
+
+
+	<!-- ======= Footer ======= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+       
+      
+            	<div class="row footer-widgets">
+<div class="col-md-5 col-xs-12">
+<div class="footer-widget contact-widget">
+<h4>Mattioli 1885 / Mattioli HEALTH</h4>
+<p>SCIENTIFIC PUBLISHING, COMMUNICATION AGENCY, CME PROVIDER</p>
+Mattioli1885 has been at the forefront of research and <br />scientific publishing since 1885. Today, Mattioli1885 <br />continues to work with passion and consistency <br />in the fields of communication, publishing, and scientific training.</div>
+</div>
+<div class="footer-widget col-md-4 col-xs-12 social-widget">
+<h4>Journals</h4>
+<ul>
+<li><a href="../../../actabiomedica.html">Acta Biomedica</a></li>
+<li><a href="../../../annali-igiene.html" target="_blank" rel="noopener">Annali di Igiene</a></li>
+<li><a href="../../../aestheticmedicine.html">Aesthetic Medicine </a></li>
+<li><a href="../../../EJOEH.html">European Journal of Oncology and Environmental Health </a></li>
+<li><a href="https://dpcj.org/index.php/dpc">Dermatology Practical &amp; Conceptual </a></li>
+<li><a href="../../../JBR.html">Journal of Bioarchaeological Research </a></li>
+<li><a href="../../../lamedicinadellavoro.html">La Medicina del Lavoro | Work, Environment and Health </a></li>
+<li><a href="../../../MedHistor.html">Medicina Historica</a></li>
+<li><a href="https://mrmjournal.org/">Multidisciplinary Respiratory Medicine</a></li>
+<li><a href="../../../perspectivesinpediatricneurology.html">Perspectives in Pediatric Neurology </a></li>
+<li><a href="../../../progressinnutrition.html">Progress in Nutrition</a></li>
+<li><a href="../../../sarcoidosis.html">Sarcoidosis Vasculitis and Diffuse Lung Diseases</a></li>
+</ul>
+</div>
+<div class="footer-widget col-md-3 col-xs-12 social-widget">
+<h4>Contact</h4>
+<ul>
+<li class="show"><span class="fa fa-envelope"> </span>Email: <a href="../../../../cdn-cgi/l/email-protection.html#a4d2c5c8c1d6cdc5c7c1c7cde4c9c5d0d0cdcbc8cdccc1c5c8d0cc8ac7cbc9" target="_blank" rel="noopener"><span class="__cf_email__" data-cfemail="fd8b9c91988f949c9e989e94bd909c89899492919495989c918995d39e9290">[email&#160;protected]</span></a></li>
+<li class="show"><span class="fa fa-phone"> </span>Phone: +039 0524 530383</li>
+<li class="show"><span class="fa fa-globe"> </span>Website: <a href="https://mattiolihealth.com/">www.mattiolihealth.com</a></li>
+<li class="show"><span class="fa fa-map-marker"> </span>Address: Mattioli1885 srl - Strada della Lodesana, 649 sx - 43036 Fidenza (PR) Italy</li>
+<li class="show">P. IVA: 00579710344</li>
+</ul>
+<p><a href="http://www.mattiolihealth.com/" target="_blank" rel="noopener"><img src="../../../../public/site/images/valeriaceci/Logo_Mattioli_Health2.png" /></a><br /><br /> <a href="https://www.facebook.com/Mattioli-Health-1682497891769144/" target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip0-72c073ab023a79232f4cac597e8d48a7.png" /></a> <a href="../../../actabiomedica/logind976.html" target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip1.png" /></a> <a href="https://twitter.com/mattioli1885 " target="_blank" rel="noopener"><img src="../../../../public/site/images/admin/mceclip2.png" /></a></p>
+<p> </p>
+</div>
+</div>
+      	
+      <div class="row justify-content-center text-center">
+        <div class="col-md-7">
+          
+
+          <div class="credits">
+            OJS Hosting, Support, and Customization by: <a href="https://openjournalsystems.com/">OpenJournalSystems.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+<script data-cfasync="false" src="../../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../../../lib/pkp/lib/vendor/components/jquery/jquery.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../lib/pkp/lib/vendor/components/jqueryui/jquery-ui.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/mdb/js/mdb.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/aos/aos7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/vendor/swiper/swiper-bundle.min7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/themes/material/js/main7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/generic/citationStyleLanguage/js/articleCitation7187.js?v=3.4.0.8" type="text/javascript"></script><script src="../../../../plugins/generic/citations/js/citations7187.js?v=3.4.0.8" type="text/javascript"></script>
+
+
+
+
+ <script type="text/javascript">
+
+    $(function (){
+        $('#sidebar > ul > div .title').click(function (){
+            $(this).closest('.pkp_block').toggleClass('showHide');
+        });
+        
+    // $('#sidebar > ul  li:first a').addClass('btnlink');
+    var hasPageDiv =  $('main > div').hasClass('page');
+   var container = $('main .page:not(.page_login):not(.page_register)').detach();
+    if(!hasPageDiv){
+         container = $('main .page_index_journal').detach();
+    }
+    
+     
+      var sidebar = $('#sidebar').detach();
+
+    $('.mainContainer').append(container);
+     $('.mainContainer').append(sidebar);
+     
+      $('.page_index_site').closest('body').addClass('indexSiteWrapper');
+     $('.indexSiteWrapper #sidebar').remove();
+        
+    });
+    </script>
+  
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"29c8736485c44d66b053a23423099076","r":1}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from mattioli1885journals.com/index.php/theultrasoundjournal/article/view/18060 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Aug 2026 05:38:26 GMT -->
+</html>

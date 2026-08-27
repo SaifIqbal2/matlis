@@ -1,0 +1,80 @@
+.citations-count {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+    text-align: center;
+    font-weight: bold;
+}
+
+.citations-count > div {
+    display: none;
+}
+
+.citations-container .badge_total {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    background-color: #646464;
+    color: #fff;
+}
+
+.citations-count img {
+    width: 90%;
+    max-width: 200px;
+}
+
+.citations-list {
+    margin-top: 30px;
+}
+
+.citations-list > div {
+    margin: 15px 5px;
+}
+
+.citations-list a {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.citations-list img {
+    max-width: 80px;
+}
+
+.citations-table tr {
+    margin: 0;
+}
+
+#citations-loader {
+    margin: auto;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,26 @@
+TY  - JOUR
+AU  - Shen, Hui
+AU  - Shen, Jianming
+AU  - Wang, Lin
+AU  - Lin, Kehan
+AU  - Zhang, Yi
+AU  - Xiao, Mingyue
+AU  - Tan, Yang
+AU  - Huang, Tongyi
+AU  - Wu, Lili
+AU  - Xie, Xiaoyan
+AU  - Huang, Guangliang
+AU  - Liu, Baoxian
+TI  - Predicting preoperative lymph node metastasis of hilar cholangiocarcinoma based on deep learning radiomics
+PY  - %2026/%07/%15
+Y2  - %2026/%08/%27
+JF  - The Ultrasound Journal
+JA  - Ultrasound J
+VL  - 18
+IS  - 1
+SE  - Automation in Ultrasound Imaging: AI-driven and Model-based Data Acquisition, Analysis and Classification: Original Research Article
+DO  - 10.5826/tuj.2026.18276
+UR  - https://doi.org/10.5826/tuj.2026.18276
+SP  - 18276
+AB  - Background: The objective of this study was to evaluate whether deep learning radiomic (DLR) models utilizing B-mode ultrasound (BUS) and contrast-enhanced ultrasound (CEUS) could improve the preoperative prediction of lymph node metastasis (LNM) in patients with hilar cholangiocarcinoma (HCCA).Methods: The study included 110 HCCA patients from two clinical centers, divided into primary and external validation cohorts. Pathological verification of lymph node status was performed, and the ResNet101 architecture was used to extract deep learning features (DLFs) from BUS and CEUS images. The Genetic Programming-based Symbolic Regression (GPSR) algorithm was applied to integrate radiomic features (RadFs) and DLFs, generating deep learning radiomic features (DLRFs). DLR models were subsequently constructed using the eXtreme Gradient Boosting (XGBoost) algorithm.Results: Lymph node metastasis was identified in 48 out of 110 patients (43.64%). No significant differences in clinical characteristics were observed between LNM-positive and LNM-negative groups (P-values ranging from 0.14 to 0.98). A total of 837 RadFs and 4095 DLFs were initially extracted from each tumor region of interest (ROI). After feature selection, 10 RadFs (4 from BUS, 6 from CEUS) and 27 DLFs (5 from BUS, 22 from CEUS) were retained. Using the GPSR algorithm, 5 BUS-DLRFs, 10 CEUS-DLRFs, and 15 Combination-DLRFs were generated, leading to the development of three corresponding DLR models. In internal validation, the AUC values were 0.70 for the BUS-DLR model, 0.77 for the CEUS-DLR model, and 0.83 for the Combination-DLR model. In external validation, the AUC values were 0.66, 0.68, and 0.72, respectively. These results indicate that the integration of multiphasic CEUS and BUS data is essential for more comprehensively identifying LNM and achieving precise preoperative staging. Conclusions: The DLR models based on DLRFs demonstrated an enhanced ability to preoperatively predict LNM in HCCA patients, indicating that the integration of deep learning and RadFs from BUS and CEUS may offer improved predictive performance for LNM.
+ER  -

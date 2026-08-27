@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journal Control Panel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section id="loginView" class="panel auth-panel">
+      <p class="eyebrow">Mattioli 1885 Journals</p>
+      <h1>Control panel</h1>
+      <p class="muted">Sign in to manage journals and PDF publications.</p>
+      <form id="loginForm">
+        <label>Email<input id="email" type="email" autocomplete="email" required></label>
+        <label>Password<input id="password" type="password" autocomplete="current-password" required></label>
+        <button type="submit">Sign in</button>
+      </form>
+      <p id="loginMessage" class="message" role="status"></p>
+    </section>
+
+    <section id="dashboardView" hidden>
+      <header class="topbar">
+        <div><p class="eyebrow">Mattioli 1885 Journals</p><h1>Control panel</h1></div>
+        <button id="logoutButton" class="button-secondary">Sign out</button>
+      </header>
+      <p id="dashboardMessage" class="message" role="status"></p>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Add journal</h2>
+          <form id="journalForm">
+            <label>Name<input id="journalName" required></label>
+            <label>Slug<input id="journalSlug" pattern="[a-z0-9-]+" placeholder="acta-biomedica" required></label>
+            <label>Website URL<input id="journalUrl" type="url" placeholder="https://"></label>
+            <label>Description<textarea id="journalDescription" rows="3"></textarea></label>
+            <button type="submit">Create journal</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Upload PDF</h2>
+          <form id="pdfForm">
+            <label>Journal<select id="journalSelect" required></select></label>
+            <label>Title<input id="pdfTitle" required></label>
+            <label>Issue<input id="pdfIssue" placeholder="Vol. 95, No. 1"></label>
+            <label>PDF file<input id="pdfFile" type="file" accept="application/pdf" required></label>
+            <button type="submit">Upload PDF</button>
+          </form>
+        </section>
+      </div>
+
+      <section class="panel records-panel">
+        <div class="section-heading"><h2>Journals and PDFs</h2><button id="refreshButton" class="button-secondary">Refresh</button></div>
+        <div id="records" class="records"></div>
+      </section>
+    </section>
+  </main>
+  <script src="../supabase/config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>

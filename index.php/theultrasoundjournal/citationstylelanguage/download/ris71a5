@@ -1,0 +1,22 @@
+TY  - JOUR
+AU  - Cheng, Anyi
+AU  - Huang, Yizhou
+AU  - Rees, Connie
+AU  - Blank, Celine
+AU  - Christoforidis, Nikos 
+AU  - Schoot, Dick
+AU  - Xu, Lin
+AU  - Mischi , Massimo 
+TI  - Prediction of in-vitro fertilization outcome by ultrasound strain analysis and machine learning: A multi-center study
+PY  - %2026/%02/%24
+Y2  - %2026/%08/%27
+JF  - The Ultrasound Journal
+JA  - Ultrasound J
+VL  - 18
+IS  - 1
+SE  - Original Research Papers
+DO  - 10.5826/tuj.2026.18257
+UR  - https://doi.org/10.5826/tuj.2026.18257
+SP  - 18257
+AB  - Background: In-vitro-fertilization (IVF) failure rates remain above 65% with unknown causes. Uterine receptivity, largely determined by uterine peristalsis, is believed to play a key role in the IVF success. Accurate assessment of uterine peristalsis holds the potential for improving the success rate of embryo implantation.Methods: This prospective study includes 62 IVF patients from multiple fertility centers under three different clinical settings. Four-minute B-mode transvaginal ultrasound (TVUS) scans were performed one hour before embryo transfer (ET). 25 features related to frequency, amplitude, power, velocity, and coordination were extracted using strain analysis from TVUS speckle tracking results. Three probabilistic classifiers, i.e., support vector machine (SVM), K-nearest neighbors (KNN), and adaptive boosting (AdaBoost), were employed to discriminate uterine activity as either favorable or adverse to clinical pregnancy rate. Prior to machine learning, feature selection was performed by categorized feature ranking and sequential forward selection. The proposed method was evaluated by a nested 8-fold cross validation. Results: Our results suggest that features related to coordination and frequency of the uterine peristalsis are strongly associated with clinical pregnancy. SVM demonstrates the best classification performance between successful and unsuccessful pregnancies, with an average area under the ROC curve of 0.81.Conclusions: We developed a machine learning framework to improve the prediction of IVF outcome based on multi-center TVUS recordings. Our SVM model identified significant uterine motion features and demonstrated reliable and generalizable classification performance. This work can provide useful means to support clinicians for clinical decision-making prior to ET and possibly enhance IVF success rates.
+ER  -
