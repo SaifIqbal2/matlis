@@ -18,9 +18,22 @@ function escapeHtml(value) {
 }
 
 async function showDashboard() {
+  const { data: sessionData } = await client.auth.getSession();
+  if (!sessionData.session) return redirectToLogin();
+
+  const { data: profile, error } = await client.from('profiles').select('role').eq('id', sessionData.session.user.id).maybeSingle();
+  if (error) return setMessage(loginMessage, error.message, true);
+  if (!profile || !['admin', 'editor'].includes(profile.role)) {
+    await client.auth.signOut();
+    return setMessage(loginMessage, 'This account is not approved for the control panel.', true);
+  }
   loginView.hidden = true;
   dashboardView.hidden = false;
   await loadData();
+}
+
+function redirectToLogin() {
+  window.location.replace('/auth/?mode=login&journal=admin');
 }
 
 async function loadData() {
@@ -41,7 +54,7 @@ function renderJournal(journal) {
 document.querySelector('#loginForm').addEventListener('submit', async event => {
   event.preventDefault();
   setMessage(loginMessage, 'Signing in...');
-  const { error } = await client.auth.signInWithPassword({ email: document.querySelector('#email').value, password: document.querySelector('#password').value });
+  const { error } = await client.auth.signInWithPassword({ email: document.querySelector('#email').value.trim(), password: document.querySelector('#password').value });
   if (error) return setMessage(loginMessage, error.message, true);
   await showDashboard();
 });
@@ -89,11 +102,7 @@ records.addEventListener('click', async event => {
   }
 });
 
-client.auth.getSession().then(({ data }) => { 
-  if (data.session) { 
-    showDashboard(); 
-  } else {
-    // Redirect to unified Supabase auth if not logged in
-    window.location.href = '/auth/?mode=login&journal=admin';
-  }
+client.auth.getSession().then(({ data }) => {
+  if (data.session) showDashboard();
+  else redirectToLogin();
 });

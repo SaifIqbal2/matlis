@@ -1,5 +1,4 @@
-const { createClient } = window.supabase;
-const client = createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
 const params = new URLSearchParams(window.location.search);
 let registerMode = params.get('mode') === 'register';
 const title = document.querySelector('#title');
@@ -11,11 +10,12 @@ const switchButton = document.querySelector('#switchButton');
 const forgotButton = document.querySelector('#forgotButton');
 const message = document.querySelector('#message');
 
-// Check if already logged in - redirect to admin
+function redirectToAdmin() {
+  window.location.replace('/admin/');
+}
+
 client.auth.getSession().then(({ data }) => {
-  if (data.session) {
-    window.location.href = '/admin/';
-  }
+  if (data.session) redirectToAdmin();
 });
 
 function setMessage(text, error = false) {
@@ -55,9 +55,9 @@ document.querySelector('#authForm').addEventListener('submit', async event => {
     setMessage('Account created. Check your email if confirmation is enabled.');
     return;
   }
-  const { error } = await client.auth.signInWithPassword({ email, password });
+  const { data, error } = await client.auth.signInWithPassword({ email, password });
   if (error) return setMessage(error.message, true);
-  window.location.href = '/admin/';
+  if (data.session) redirectToAdmin();
 });
 
 renderMode();
