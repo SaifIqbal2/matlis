@@ -1,0 +1,18 @@
+:root { --ink:#303636; --muted:#71807d; --line:#dfe6e3; --accent:#b7441c; --paper:#fff; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:#fff; font:16px/1.65 Georgia,serif; }
+.site-header { display:flex; justify-content:space-between; gap:20px; padding:22px max(24px,calc((100% - 1180px)/2)); background:#b7441c; }
+.site-header a { color:#fff; text-decoration:none; font:700 1rem Arial,sans-serif; }
+.article-page { width:min(100% - 48px,900px); margin:0 auto; padding:70px 0; }
+.eyebrow { margin:0 0 12px; color:var(--accent); font:700 .78rem Arial,sans-serif; letter-spacing:.14em; text-transform:uppercase; }
+.journal,.issue { color:var(--muted); font-family:Arial,sans-serif; }
+h1 { margin:0 0 20px; max-width:850px; color:#111; font-size:clamp(2rem,5vw,4rem); line-height:1.08; font-weight:500; }
+.authors { margin:0 0 8px; color:#4f5957; font-size:1.1rem; }
+.doi { color:var(--accent); font-family:Arial,sans-serif; }
+.actions { margin:30px 0 46px; }
+.pdf-button { display:inline-block; padding:11px 24px; background:var(--accent); color:#fff; text-decoration:none; font:700 .85rem Arial,sans-serif; }
+section { max-width:760px; padding:26px 0; border-top:1px solid var(--line); }
+h2 { margin:0 0 8px; color:#111; font-size:1.3rem; }
+section p { margin:0; color:#4f5957; white-space:pre-line; }
+.message { margin:30px auto; width:min(100% - 48px,900px); color:var(--accent); font-family:Arial,sans-serif; }
+@media(max-width:560px){.article-page{padding:44px 0}.site-header{padding:18px 24px;}.site-header a:last-child{font-size:.8rem;}}

@@ -15,14 +15,14 @@
     const { data: journal, error: journalError } = await client.from('journals').select('id').eq('slug', journalSlug).eq('is_published', true).maybeSingle();
     if (journalError || !journal) return;
 
-    let pdfQuery = client.from('journal_pdfs').select('title, issue, file_path, created_at').eq('journal_id', journal.id).eq('is_published', true).order('created_at', { ascending: false });
+    let pdfQuery = client.from('journal_pdfs').select('id, title, authors, issue, doi, file_path, created_at').eq('journal_id', journal.id).eq('is_published', true).order('created_at', { ascending: false });
     if (issueId) pdfQuery = pdfQuery.eq('issue', issueId);
     const { data: pdfs, error: pdfError } = await pdfQuery;
     if (pdfError || !pdfs?.length) return;
 
     const uploadedItems = pdfs.map(pdf => {
-      const url = client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl;
-      return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(pdf.title)}</a></h2><div class="meta"><div class="authors">Mattioli 1885 Journals</div><div class="pages">${escapeHtml(pdf.issue || 'PDF')}</div></div><div class="doiInSummary"><strong>PDF:</strong> <a href="${escapeHtml(url)}" target="_blank" rel="noopener">Download PDF</a></div></div></li>`;
+      const detailUrl = `/uploaded-article.html?id=${encodeURIComponent(pdf.id)}`;
+      return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${detailUrl}">${escapeHtml(pdf.title)}</a></h2><div class="meta"><div class="authors">${escapeHtml(pdf.authors || 'Mattioli 1885 Journals')}</div><div class="pages">${escapeHtml(pdf.issue || 'PDF')}</div></div>${pdf.doi ? `<div class="doiInSummary"><strong>DOI:</strong> ${escapeHtml(pdf.doi)}</div>` : ''}</div></li>`;
     }).join('');
 
     list.insertAdjacentHTML('afterbegin', uploadedItems);
