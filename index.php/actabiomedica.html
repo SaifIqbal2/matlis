@@ -1074,38 +1074,38 @@
 			</div>
 			<div id="pagination">
 			<input type="hidden" name="rowcount" id="rowcount" />
-			<div id="pagelink"><span class="disabled"><<</span><span class="disabled"><</span><span id=1 class="current">1</span><a class="link" onclick="getresult('actabiomedica/onlinefirst/pagination4658.html?page=2')" >2</a><a class="link" onclick="getresult('actabiomedica/onlinefirst/pagination9ba9.html?page=3')" >3</a>...<a class="link" onclick="getresult('actabiomedica/onlinefirst/pagination0b08.html?page=9')" >9</a><a  class="link" onclick="getresult('actabiomedica/onlinefirst/pagination4658.html?page=2')" >></a><a  class="link" onclick="getresult('actabiomedica/onlinefirst/pagination0b08.html?page=9')" >>></a></div>
+			<div id="pagelink"><span class="disabled"><<</span><span class="disabled"><</span><span id=1 class="current">1</span><a class="link" onclick="getresult('onlinefirst/pagination4658.html?page=2')" >2</a><a class="link" onclick="getresult('onlinefirst/pagination9ba9.html?page=3')" >3</a>...<a class="link" onclick="getresult('onlinefirst/pagination0b08.html?page=9')" >9</a><a  class="link" onclick="getresult('onlinefirst/pagination4658.html?page=2')" >></a><a  class="link" onclick="getresult('onlinefirst/pagination0b08.html?page=9')" >>></a></div>
 			</div>
 		
 	</div><!-- .sections -->
 </div>
 
 <script>
-
-$(document).ready(function(){
-	
-	$(document).on('click','a#load_more',function(e){
-		e.preventDefault();
-		var url=$(this).attr("href");
-		getresult(url);
-	});
-	
-});
 function getresult(url){
-	$.ajax({
-		url:url,
-		type: 'POST',
-		data: {rowcount:$("#rowcount").val()},
-		beforeSend: function(){
-			$(".online_first_issue_toc > .issueTocPublishArticles > .section").addClass("OF-loading");
-		},
-		success: function(data){
-			
-			$(".online_first_issue_toc > .issueTocPublishArticles").html(data);
-			$(".online_first_issue_toc > .issueTocPublishArticles > .section").removeClass("OF-loading");
-		}
-	});
+	var requestUrl = new URL(url, window.location.origin + '/index.php/actabiomedica/').href;
+	var container = document.querySelector('.online_first_issue_toc > .issueTocPublishArticles');
+	if (!container) return;
+	var section = container.querySelector('.section');
+	if (section) section.classList.add('OF-loading');
+	fetch(requestUrl)
+		.then(function(response) {
+			if (!response.ok) throw new Error('Unable to load the next page.');
+			return response.text();
+		})
+		.then(function(data) { container.innerHTML = data; })
+		.catch(function(error) { console.error(error); })
+		.finally(function() {
+			var currentSection = container.querySelector('.section');
+			if (currentSection) currentSection.classList.remove('OF-loading');
+		});
 }
+
+document.addEventListener('click', function(event) {
+	var link = event.target.closest('#load_more');
+	if (!link) return;
+	event.preventDefault();
+	getresult(link.getAttribute('href'));
+});
 
 </script>
 <style>
