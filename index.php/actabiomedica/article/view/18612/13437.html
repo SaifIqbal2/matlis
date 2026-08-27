@@ -58,7 +58,7 @@ function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config
 			// Convert same-origin absolute PDF URLs to relative URLs.
 			// This avoids server security rules treating file=https://... as RFI.
 			try {
-			        var parsedPdfUrl = new URL(pdfUrl%2c%20window.location.html);
+					var parsedPdfUrl = new URL(pdfUrl, window.location.href);
 			        if (parsedPdfUrl.origin === window.location.origin) {
 			                pdfUrl = parsedPdfUrl.pathname + parsedPdfUrl.search + parsedPdfUrl.hash;
 			        }
