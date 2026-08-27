@@ -1094,14 +1094,16 @@ $(document).ready(function(){
 function getresult(url){
 	$.ajax({
 		url:url,
-		type: 'POST',
-		data: {rowcount:$("#rowcount").val()},
+		type: 'GET',
 		beforeSend: function(){
 			$(".online_first_issue_toc > .issueTocPublishArticles > .section").addClass("OF-loading");
 		},
 		success: function(data){
 			
 			$(".online_first_issue_toc > .issueTocPublishArticles").html(data);
+			$(".online_first_issue_toc > .issueTocPublishArticles > .section").removeClass("OF-loading");
+		},
+		error: function(){
 			$(".online_first_issue_toc > .issueTocPublishArticles > .section").removeClass("OF-loading");
 		}
 	});
