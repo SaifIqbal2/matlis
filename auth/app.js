@@ -23,6 +23,16 @@ function setMessage(text, error = false) {
   message.style.color = error ? '#a52c2c' : '';
 }
 
+function getAuthErrorMessage(error) {
+  if (error?.status === 400 || error?.message === 'Invalid login credentials') {
+    return 'Email ya password ghalat hai, ya account email confirm nahi hua. Supabase Authentication > Users mein account check karein.';
+  }
+  if (error?.message?.toLowerCase().includes('email not confirmed')) {
+    return 'Pehle apni email confirm karein, phir dobara sign in karein.';
+  }
+  return error?.message || 'Sign in failed. Please try again.';
+}
+
 function renderMode() {
   title.textContent = registerMode ? 'Create account' : 'Sign in';
   subtitle.textContent = registerMode ? 'Create one account for journal access.' : 'Access your journal account.';
@@ -51,12 +61,12 @@ document.querySelector('#authForm').addEventListener('submit', async event => {
   if (registerMode) {
     if (password !== document.querySelector('#confirmPassword').value) return setMessage('Passwords do not match.', true);
     const { error } = await client.auth.signUp({ email, password, options: { data: { full_name: document.querySelector('#fullName').value.trim() } } });
-    if (error) return setMessage(error.message, true);
-    setMessage('Account created. Check your email if confirmation is enabled.');
+    if (error) return setMessage(getAuthErrorMessage(error), true);
+    setMessage('Account created. Email confirmation required ho to inbox check karein.');
     return;
   }
   const { data, error } = await client.auth.signInWithPassword({ email, password });
-  if (error) return setMessage(error.message, true);
+  if (error) return setMessage(getAuthErrorMessage(error), true);
   if (data.session) redirectToAdmin();
 });
 
