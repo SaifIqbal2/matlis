@@ -2,7 +2,7 @@
   if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase) return;
 
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
-  const list = document.querySelector('.cmp_article_list.articles');
+  const list = document.querySelector('.online_first_issue_toc .cmp_article_list.articles');
   const journalSlug = document.body.dataset.journalSlug;
   if (!list || !journalSlug) return;
 
