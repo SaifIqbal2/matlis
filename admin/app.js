@@ -79,7 +79,8 @@ document.querySelector('#pdfForm').addEventListener('submit', async event => {
   setMessage(dashboardMessage, 'Uploading PDF...');
   const upload = await client.storage.from('journal-pdfs').upload(filePath, file, { contentType: 'application/pdf', upsert: false });
   if (upload.error) return setMessage(dashboardMessage, upload.error.message, true);
-  const insert = await client.from('journal_pdfs').insert({ journal_id: journal.id, title: document.querySelector('#pdfTitle').value, issue: document.querySelector('#pdfIssue').value || null, file_path: filePath, file_size: file.size });
+  const { data: sessionData } = await client.auth.getSession();
+  const insert = await client.from('journal_pdfs').insert({ journal_id: journal.id, title: document.querySelector('#pdfTitle').value.trim(), issue: document.querySelector('#pdfIssue').value.trim() || null, file_path: filePath, file_size: file.size, created_by: sessionData.session?.user.id });
   if (insert.error) { await client.storage.from('journal-pdfs').remove([filePath]); return setMessage(dashboardMessage, insert.error.message, true); }
   event.target.reset(); await loadData();
 });

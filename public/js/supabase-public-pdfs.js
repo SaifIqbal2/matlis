@@ -2,8 +2,9 @@
   if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase) return;
 
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
-  const list = document.querySelector('.online_first_issue_toc .cmp_article_list.articles');
   const journalSlug = document.body.dataset.journalSlug;
+  const issueId = document.body.dataset.issueId;
+  const list = document.querySelector(issueId ? '.cmp_article_list.articles' : '.online_first_issue_toc .cmp_article_list.articles');
   if (!list || !journalSlug) return;
 
   function escapeHtml(value) {
@@ -14,7 +15,9 @@
     const { data: journal, error: journalError } = await client.from('journals').select('id').eq('slug', journalSlug).eq('is_published', true).maybeSingle();
     if (journalError || !journal) return;
 
-    const { data: pdfs, error: pdfError } = await client.from('journal_pdfs').select('title, issue, file_path, created_at').eq('journal_id', journal.id).eq('is_published', true).order('created_at', { ascending: false });
+    let pdfQuery = client.from('journal_pdfs').select('title, issue, file_path, created_at').eq('journal_id', journal.id).eq('is_published', true).order('created_at', { ascending: false });
+    if (issueId) pdfQuery = pdfQuery.eq('issue', issueId);
+    const { data: pdfs, error: pdfError } = await pdfQuery;
     if (pdfError || !pdfs?.length) return;
 
     const uploadedItems = pdfs.map(pdf => {
