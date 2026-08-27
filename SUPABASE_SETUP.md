@@ -38,7 +38,7 @@ alter table public.journal_pdfs add column if not exists doi text;
 
 ## 3. Use the control panel
 
-Open `/admin/`, sign in with the admin user, create journals, then upload PDF files. Use issue page ID `963` for Acta Biomedica Volume 96 No. 4 (2025). Files are stored in the `journal-pdfs` Supabase Storage bucket. Uploaded PDFs open through an OJS-style article page before the PDF. Deleting a PDF removes both its Storage object and database record.
+Open `/admin/`, sign in with the admin user, create journals, then upload PDF files. Enter the article page number in the Page number field; `963` is the number currently shown for the Acta upload. Files are stored in the `journal-pdfs` Supabase Storage bucket. Uploaded PDFs open through the existing OJS-style article page before the PDF. Deleting a PDF removes both its Storage object and database record.
 
 ## 4. Deploy on Vercel
 

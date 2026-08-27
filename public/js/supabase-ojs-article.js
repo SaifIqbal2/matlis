@@ -25,7 +25,7 @@
     const doi = document.querySelector('meta[name="DC.Identifier.DOI"]');
     if (doi && data.doi) doi.setAttribute('content', data.doi);
     const details = document.querySelector('.entry_details');
-    if (details) details.insertAdjacentHTML('afterbegin', `<div class="item"><strong>Issue:</strong> ${escapeHtml(data.issue || 'Online First')}</div><p><a class="obj_galley_link btn btn-primary pdf" href="${escapeHtml(pdfUrl)}" target="_blank" rel="noopener">PDF</a></p>`);
+    if (details) details.insertAdjacentHTML('afterbegin', `<div class="item"><strong>Pages:</strong> ${escapeHtml(data.issue || 'Online First')}</div><p><a class="obj_galley_link btn btn-primary pdf" href="${escapeHtml(pdfUrl)}" target="_blank" rel="noopener">PDF</a></p>`);
   }
 
   loadUploadedArticle();
