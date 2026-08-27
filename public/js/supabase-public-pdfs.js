@@ -23,7 +23,8 @@
     const uploadedItems = pdfs.map(pdf => {
       const url = client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl;
       const detailUrl = `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
-      return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${detailUrl}">${escapeHtml(pdf.title)}</a></h2><div class="meta"><div class="authors">${escapeHtml(pdf.authors || 'Mattioli 1885 Journals')}</div><div class="pages">${escapeHtml(pdf.issue || 'PDF')}</div></div>${pdf.doi ? `<div class="doiInSummary"><strong>DOI:</strong> ${escapeHtml(pdf.doi)}</div>` : ''}<a class="obj_galley_link btn btn-primary pdf" href="${escapeHtml(url)}" target="_blank" rel="noopener">PDF</a></div></li>`;
+      const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';
+      return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${detailUrl}">${escapeHtml(pdf.title)}</a></h2><div class="meta"><div class="authors">${escapeHtml(pdf.authors || 'Mattioli 1885 Journals')}</div></div>${pdf.doi ? `<div class="doiInSummary"><strong>DOI:</strong> <a href="${escapeHtml(doiUrl)}" target="_blank" rel="noopener">${escapeHtml(pdf.doi)}</a></div>` : ''}<div class="meta"><div class="pages">${escapeHtml(pdf.issue || 'PDF')}</div></div><a class="obj_galley_link btn btn-primary pdf" href="${escapeHtml(url)}" target="_blank" rel="noopener">PDF</a></div></li>`;
     }).join('');
 
     list.insertAdjacentHTML('afterbegin', uploadedItems);
