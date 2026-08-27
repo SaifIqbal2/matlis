@@ -7,6 +7,8 @@
     { "source": "/auth/", "destination": "/auth/index.html" },
     { "source": "/admin", "destination": "/admin/index.html" },
     { "source": "/admin/", "destination": "/admin/index.html" },
+    { "source": "/archives", "destination": "/archives/index.html" },
+    { "source": "/archives/", "destination": "/archives/index.html" },
     { "source": "/index.php/:journal/search/index", "destination": "/index.php/:journal/search.html" },
     { "source": "/index.php/:journal/search/index.html", "destination": "/index.php/:journal/search.html" }
   ],
