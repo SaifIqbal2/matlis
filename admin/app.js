@@ -8,6 +8,25 @@ const records = document.querySelector('#records');
 const journalSelect = document.querySelector('#journalSelect');
 let journals = [];
 
+const existingJournals = [
+  ['actabiomedica', 'Acta Biomedica Atenei Parmensis'],
+  ['aestheticmedicine', 'Aesthetic Medicine'],
+  ['annali-igiene', 'Annali di Igiene'],
+  ['BE', 'Biomedical Engineering'],
+  ['DPCJ', 'Disaster and Critical Care Journal'],
+  ['EJOEH', 'European Journal of Occupational and Environmental Hygiene'],
+  ['JBR', 'Journal of Biological Research'],
+  ['lamedicinadellavoro', 'La Medicina del Lavoro'],
+  ['MedHistor', 'Medical History'],
+  ['MJHID', 'Mediterranean Journal of Hematology and Infectious Diseases'],
+  ['MRM', 'Multidisciplinary Respiratory Medicine'],
+  ['MRMedizioneitaliana', 'Multidisciplinary Respiratory Medicine Edizione Italiana'],
+  ['perspectivespediatricneurology', 'Perspectives in Pediatric Neurology'],
+  ['progressinnutrition', 'Progress in Nutrition'],
+  ['sarcoidosis', 'Sarcoidosis'],
+  ['theultrasoundjournal', 'The Ultrasound Journal']
+];
+
 function setMessage(element, message, error = false) {
   element.textContent = message;
   element.style.color = error ? '#a52c2c' : '';
@@ -38,6 +57,11 @@ function redirectToLogin() {
 
 async function loadData() {
   setMessage(dashboardMessage, 'Loading...');
+  const { error: syncError } = await client.from('journals').upsert(
+    existingJournals.map(([slug, name]) => ({ slug, name, is_published: true })),
+    { onConflict: 'slug', ignoreDuplicates: true }
+  );
+  if (syncError) return setMessage(dashboardMessage, syncError.message, true);
   const { data, error } = await client.from('journals').select('*, journal_pdfs(*)').order('name');
   if (error) return setMessage(dashboardMessage, error.message, true);
   journals = data || [];
