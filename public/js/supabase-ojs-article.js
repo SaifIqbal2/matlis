@@ -17,8 +17,8 @@
 
     const authors = document.querySelector('section.item.authors ul.authors');
     if (authors) authors.innerHTML = `<li><span class="name">${escapeHtml(data.authors || 'Mattioli 1885 Journals')}</span></li>`;
-    const keywords = document.querySelector('section.item.keywords .value');
-    if (keywords) keywords.textContent = data.keywords || '';
+    const keywordsSection = document.querySelector('section.item.keywords');
+    if (keywordsSection) keywordsSection.remove();
     const abstract = document.querySelector('section.item.abstract');
     if (abstract) abstract.innerHTML = `<h2 class="label">Abstract</h2><p>${escapeHtml(data.abstract || 'PDF publication')}</p>`;
 
