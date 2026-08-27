@@ -6,7 +6,12 @@ const loginMessage = document.querySelector('#loginMessage');
 const dashboardMessage = document.querySelector('#dashboardMessage');
 const records = document.querySelector('#records');
 const journalSelect = document.querySelector('#journalSelect');
+const journalForm = document.querySelector('#journalForm');
+const journalFormTitle = document.querySelector('#journalFormTitle');
+const journalSubmit = document.querySelector('#journalSubmit');
+const cancelJournalEdit = document.querySelector('#cancelJournalEdit');
 let journals = [];
+let editingJournalId = null;
 
 const existingJournals = [
   ['actabiomedica', 'Acta Biomedica Atenei Parmensis'],
@@ -34,6 +39,17 @@ function setMessage(element, message, error = false) {
 
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
+}
+
+function setJournalEditMode(journal) {
+  editingJournalId = journal?.id || null;
+  journalFormTitle.textContent = journal ? 'Edit journal' : 'Add journal';
+  journalSubmit.textContent = journal ? 'Save changes' : 'Create journal';
+  cancelJournalEdit.hidden = !journal;
+  document.querySelector('#journalName').value = journal?.name || '';
+  document.querySelector('#journalSlug').value = journal?.slug || '';
+  document.querySelector('#journalUrl').value = journal?.website_url || '';
+  document.querySelector('#journalDescription').value = journal?.description || '';
 }
 
 async function showDashboard() {
@@ -72,7 +88,7 @@ async function loadData() {
 
 function renderJournal(journal) {
   const pdfs = (journal.journal_pdfs || []).sort((a, b) => a.title.localeCompare(b.title));
-  return `<article class="record"><div class="record-header"><div><h3>${escapeHtml(journal.name)}</h3><small>${escapeHtml(journal.slug)}${journal.description ? ` · ${escapeHtml(journal.description)}` : ''}</small></div><button class="danger" data-delete-journal="${journal.id}">Delete journal</button></div><div class="pdf-list">${pdfs.length ? pdfs.map(pdf => `<div class="pdf-row"><a href="${client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl}" target="_blank" rel="noreferrer">${escapeHtml(pdf.title)}</a><span>${escapeHtml(pdf.issue || '')} <button class="danger" data-delete-pdf="${pdf.id}" data-file-path="${escapeHtml(pdf.file_path)}">Delete</button></span></div>`).join('') : '<small>No PDFs uploaded.</small>'}</div></article>`;
+  return `<article class="record"><div class="record-header"><div><h3>${escapeHtml(journal.name)}</h3><small>${escapeHtml(journal.slug)}${journal.description ? ` · ${escapeHtml(journal.description)}` : ''}</small></div><div><button class="button-secondary" data-edit-journal="${journal.id}">Edit</button> <button class="danger" data-delete-journal="${journal.id}">Delete journal</button></div></div><div class="pdf-list">${pdfs.length ? pdfs.map(pdf => `<div class="pdf-row"><a href="${client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl}" target="_blank" rel="noreferrer">${escapeHtml(pdf.title)}</a><span>${escapeHtml(pdf.issue || '')} <button class="danger" data-delete-pdf="${pdf.id}" data-file-path="${escapeHtml(pdf.file_path)}">Delete</button></span></div>`).join('') : '<small>No PDFs uploaded.</small>'}</div></article>`;
 }
 
 document.querySelector('#loginForm').addEventListener('submit', async event => {
@@ -86,12 +102,16 @@ document.querySelector('#loginForm').addEventListener('submit', async event => {
 document.querySelector('#logoutButton').addEventListener('click', async () => { await client.auth.signOut(); dashboardView.hidden = true; loginView.hidden = false; });
 document.querySelector('#refreshButton').addEventListener('click', loadData);
 
-document.querySelector('#journalForm').addEventListener('submit', async event => {
+journalForm.addEventListener('submit', async event => {
   event.preventDefault();
-  const { error } = await client.from('journals').insert({ name: document.querySelector('#journalName').value, slug: document.querySelector('#journalSlug').value, website_url: document.querySelector('#journalUrl').value || null, description: document.querySelector('#journalDescription').value || null });
+  const values = { name: document.querySelector('#journalName').value.trim(), slug: document.querySelector('#journalSlug').value.trim(), website_url: document.querySelector('#journalUrl').value.trim() || null, description: document.querySelector('#journalDescription').value.trim() || null };
+  const query = editingJournalId ? client.from('journals').update(values).eq('id', editingJournalId) : client.from('journals').insert(values);
+  const { error } = await query;
   if (error) return setMessage(dashboardMessage, error.message, true);
-  event.target.reset(); await loadData();
+  event.target.reset(); setJournalEditMode(null); await loadData();
 });
+
+cancelJournalEdit.addEventListener('click', () => { journalForm.reset(); setJournalEditMode(null); });
 
 document.querySelector('#pdfForm').addEventListener('submit', async event => {
   event.preventDefault();
@@ -111,7 +131,13 @@ document.querySelector('#pdfForm').addEventListener('submit', async event => {
 
 records.addEventListener('click', async event => {
   const journalId = event.target.dataset.deleteJournal;
+  const editJournalId = event.target.dataset.editJournal;
   const pdfId = event.target.dataset.deletePdf;
+  if (editJournalId) {
+    const journal = journals.find(item => item.id === editJournalId);
+    if (journal) setJournalEditMode(journal);
+    return;
+  }
   if (journalId && confirm('Delete this journal and its PDF records?')) {
     const { error } = await client.from('journals').delete().eq('id', journalId);
     if (error) return setMessage(dashboardMessage, error.message, true);

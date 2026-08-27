@@ -29,13 +29,14 @@
 
       <div class="grid">
         <section class="panel">
-          <h2>Add journal</h2>
+          <h2 id="journalFormTitle">Add journal</h2>
           <form id="journalForm">
             <label>Name<input id="journalName" required></label>
             <label>Slug<input id="journalSlug" pattern="[a-z0-9-]+" placeholder="acta-biomedica" required></label>
             <label>Website URL<input id="journalUrl" type="url" placeholder="https://"></label>
             <label>Description<textarea id="journalDescription" rows="3"></textarea></label>
-            <button type="submit">Create journal</button>
+            <button id="journalSubmit" type="submit">Create journal</button>
+            <button id="cancelJournalEdit" class="button-secondary" type="button" hidden>Cancel edit</button>
           </form>
         </section>
 
