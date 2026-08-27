@@ -21,7 +21,7 @@
     if (pdfError || !pdfs?.length) return;
 
     const uploadedItems = pdfs.map(pdf => {
-      const detailUrl = `/uploaded-article.html?id=${encodeURIComponent(pdf.id)}`;
+      const detailUrl = `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${detailUrl}">${escapeHtml(pdf.title)}</a></h2><div class="meta"><div class="authors">${escapeHtml(pdf.authors || 'Mattioli 1885 Journals')}</div><div class="pages">${escapeHtml(pdf.issue || 'PDF')}</div></div>${pdf.doi ? `<div class="doiInSummary"><strong>DOI:</strong> ${escapeHtml(pdf.doi)}</div>` : ''}</div></li>`;
     }).join('');
 
