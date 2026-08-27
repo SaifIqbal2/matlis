@@ -10,8 +10,11 @@ const journalForm = document.querySelector('#journalForm');
 const journalFormTitle = document.querySelector('#journalFormTitle');
 const journalSubmit = document.querySelector('#journalSubmit');
 const cancelJournalEdit = document.querySelector('#cancelJournalEdit');
+const pdfEditPanel = document.querySelector('#pdfEditPanel');
+const pdfEditForm = document.querySelector('#pdfEditForm');
 let journals = [];
 let editingJournalId = null;
+let editingPdfId = null;
 
 const existingJournals = [
   ['actabiomedica', 'Acta Biomedica Atenei Parmensis'],
@@ -88,7 +91,20 @@ async function loadData() {
 
 function renderJournal(journal) {
   const pdfs = (journal.journal_pdfs || []).sort((a, b) => a.title.localeCompare(b.title));
-  return `<article class="record"><div class="record-header"><div><h3>${escapeHtml(journal.name)}</h3><small>${escapeHtml(journal.slug)}${journal.description ? ` · ${escapeHtml(journal.description)}` : ''}</small></div><div><button class="button-secondary" data-edit-journal="${journal.id}">Edit</button> <button class="danger" data-delete-journal="${journal.id}">Delete journal</button></div></div><div class="pdf-list">${pdfs.length ? pdfs.map(pdf => `<div class="pdf-row"><a href="${client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl}" target="_blank" rel="noreferrer">${escapeHtml(pdf.title)}</a><span>${escapeHtml(pdf.issue || '')} <button class="danger" data-delete-pdf="${pdf.id}" data-file-path="${escapeHtml(pdf.file_path)}">Delete</button></span></div>`).join('') : '<small>No PDFs uploaded.</small>'}</div></article>`;
+  return `<article class="record"><div class="record-header"><div><h3>${escapeHtml(journal.name)}</h3><small>${escapeHtml(journal.slug)}${journal.description ? ` · ${escapeHtml(journal.description)}` : ''}</small></div><div><button class="button-secondary" data-edit-journal="${journal.id}">Edit</button> <button class="danger" data-delete-journal="${journal.id}">Delete journal</button></div></div><div class="pdf-list">${pdfs.length ? pdfs.map(pdf => `<div class="pdf-row"><a href="${client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl}" target="_blank" rel="noreferrer">${escapeHtml(pdf.title)}</a><span>${escapeHtml(pdf.issue || '')} <button class="button-secondary" data-edit-pdf="${pdf.id}">Edit</button> <button class="danger" data-delete-pdf="${pdf.id}" data-file-path="${escapeHtml(pdf.file_path)}">Delete</button></span></div>`).join('') : '<small>No PDFs uploaded.</small>'}</div></article>`;
+}
+
+function setPdfEditMode(pdf) {
+  editingPdfId = pdf?.id || null;
+  pdfEditPanel.hidden = !pdf;
+  if (!pdf) return;
+  document.querySelector('#editPdfTitle').value = pdf.title || '';
+  document.querySelector('#editPdfAuthors').value = pdf.authors || '';
+  document.querySelector('#editPdfIssue').value = pdf.issue || '';
+  document.querySelector('#editPdfDoi').value = pdf.doi || '';
+  document.querySelector('#editPdfAbstract').value = pdf.abstract || '';
+  document.querySelector('#editPdfKeywords').value = pdf.keywords || '';
+  pdfEditPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 document.querySelector('#loginForm').addEventListener('submit', async event => {
@@ -113,6 +129,25 @@ journalForm.addEventListener('submit', async event => {
 
 cancelJournalEdit.addEventListener('click', () => { journalForm.reset(); setJournalEditMode(null); });
 
+pdfEditForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (!editingPdfId) return;
+  const values = {
+    title: document.querySelector('#editPdfTitle').value.trim(),
+    authors: document.querySelector('#editPdfAuthors').value.trim() || null,
+    issue: document.querySelector('#editPdfIssue').value.trim() || null,
+    doi: document.querySelector('#editPdfDoi').value.trim() || null,
+    abstract: document.querySelector('#editPdfAbstract').value.trim() || null,
+    keywords: document.querySelector('#editPdfKeywords').value.trim() || null
+  };
+  const { error } = await client.from('journal_pdfs').update(values).eq('id', editingPdfId);
+  if (error) return setMessage(dashboardMessage, error.message, true);
+  setPdfEditMode(null);
+  await loadData();
+});
+
+document.querySelector('#cancelPdfEdit').addEventListener('click', () => { pdfEditForm.reset(); setPdfEditMode(null); });
+
 document.querySelector('#pdfForm').addEventListener('submit', async event => {
   event.preventDefault();
   const file = document.querySelector('#pdfFile').files[0];
@@ -132,7 +167,13 @@ document.querySelector('#pdfForm').addEventListener('submit', async event => {
 records.addEventListener('click', async event => {
   const journalId = event.target.dataset.deleteJournal;
   const editJournalId = event.target.dataset.editJournal;
+  const editPdfId = event.target.dataset.editPdf;
   const pdfId = event.target.dataset.deletePdf;
+  if (editPdfId) {
+    const pdf = journals.flatMap(item => item.journal_pdfs || []).find(item => item.id === editPdfId);
+    if (pdf) setPdfEditMode(pdf);
+    return;
+  }
   if (editJournalId) {
     const journal = journals.find(item => item.id === editJournalId);
     if (journal) setJournalEditMode(journal);

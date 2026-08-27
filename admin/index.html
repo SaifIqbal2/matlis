@@ -60,6 +60,20 @@
         <div class="section-heading"><h2>Journals and PDFs</h2><button id="refreshButton" class="button-secondary">Refresh</button></div>
         <div id="records" class="records"></div>
       </section>
+
+      <section id="pdfEditPanel" class="panel" hidden>
+        <h2>Edit PDF article</h2>
+        <form id="pdfEditForm">
+          <label>Title<input id="editPdfTitle" required></label>
+          <label>Authors<input id="editPdfAuthors"></label>
+          <label>Issue page ID<input id="editPdfIssue"></label>
+          <label>DOI<input id="editPdfDoi"></label>
+          <label>Abstract<textarea id="editPdfAbstract" rows="5"></textarea></label>
+          <label>Keywords<input id="editPdfKeywords"></label>
+          <button type="submit">Save PDF changes</button>
+          <button id="cancelPdfEdit" class="button-secondary" type="button">Cancel</button>
+        </form>
+      </section>
     </section>
   </main>
   <script src="/supabase/config.js"></script>
