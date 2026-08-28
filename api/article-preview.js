@@ -25,7 +25,7 @@ module.exports = async function handler(request, response) {
   const articleId = articles[0].id;
   const title = escapeHtml(articles[0].title || 'Article');
   const returnUrl = typeof request.query?.returnUrl === 'string' ? `&returnUrl=${encodeURIComponent(request.query.returnUrl)}` : '';
-  const viewerUrl = `https://www.mattioli1885journls.com/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(articleId)}${returnUrl}`;
+  const viewerUrl = `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(articleId)}${returnUrl}`;
   const absoluteViewerUrl = viewerUrl;
   response.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300');
   response.setHeader('Content-Type', 'text/html; charset=utf-8');
