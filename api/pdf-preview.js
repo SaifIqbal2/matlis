@@ -16,7 +16,7 @@ module.exports = async function handler(request, response) {
 
   const article = articles[0];
   if (article.ojs_article_id && article.ojs_galley_id) {
-    return response.redirect(302, `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/${article.ojs_article_id}/${article.ojs_galley_id}.html`);
+    return response.redirect(302, `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/${article.ojs_article_id}/${article.ojs_galley_id}.html?uploadedId=${encodeURIComponent(id)}`);
   }
 
   const pdfUrl = `${supabaseUrl}/storage/v1/object/public/journal-pdfs/${article.file_path}`;
