@@ -13,9 +13,14 @@
 
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
     const title = data.title || 'Article PDF';
+    const requestedReturnUrl = new URLSearchParams(window.location.search).get('returnUrl');
+    const referrerUrl = document.referrer ? new URL(document.referrer) : null;
+    const returnUrl = requestedReturnUrl || (referrerUrl && referrerUrl.origin === window.location.origin ? `${referrerUrl.pathname}${referrerUrl.search}` : '/index.php/actabiomedica/issue/view/963.html');
     const titleLink = document.querySelector('.header_view .title');
+    const returnLink = document.querySelector('.header_view .return');
     const downloadLink = document.querySelector('.header_view .download');
     if (titleLink) titleLink.textContent = title;
+    if (returnLink) returnLink.href = returnUrl;
     if (downloadLink) downloadLink.href = pdfUrl;
     document.title = `View of ${title}`;
 

@@ -22,7 +22,8 @@ module.exports = async function handler(request, response) {
   if (!articles.length) return response.status(404).send('Article not found.');
 
   const title = escapeHtml(articles[0].title || 'Article');
-  const viewerUrl = `/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(id)}`;
+  const returnUrl = typeof request.query?.returnUrl === 'string' && request.query.returnUrl.startsWith('/') ? `&returnUrl=${encodeURIComponent(request.query.returnUrl)}` : '';
+  const viewerUrl = `/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(id)}${returnUrl}`;
   const absoluteViewerUrl = `https://${request.headers.host}${viewerUrl}`;
   response.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300');
   response.setHeader('Content-Type', 'text/html; charset=utf-8');
