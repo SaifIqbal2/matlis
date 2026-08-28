@@ -29,6 +29,7 @@ create table public.journal_pdfs (
   abstract text,
   keywords text,
   doi text,
+  citation text,
   alternate_url text,
   conflict_of_interest text,
   ai_declaration text,

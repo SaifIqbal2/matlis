@@ -34,6 +34,7 @@ alter table public.journal_pdfs add column if not exists authors text;
 alter table public.journal_pdfs add column if not exists abstract text;
 alter table public.journal_pdfs add column if not exists keywords text;
 alter table public.journal_pdfs add column if not exists doi text;
+alter table public.journal_pdfs add column if not exists citation text;
 alter table public.journal_pdfs add column if not exists alternate_url text;
 alter table public.journal_pdfs add column if not exists conflict_of_interest text;
 alter table public.journal_pdfs add column if not exists ai_declaration text;
