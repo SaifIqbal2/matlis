@@ -15,10 +15,9 @@ module.exports = async function handler(request, response) {
   if (!articles.length || !articles[0].file_path) return response.status(404).send('PDF not found.');
 
   const article = articles[0];
-  if (article.ojs_article_id && article.ojs_galley_id) {
-    return response.redirect(302, `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/${article.ojs_article_id}/${article.ojs_galley_id}.html?uploadedId=${encodeURIComponent(id)}`);
+  if (!article.ojs_article_id || !article.ojs_galley_id) {
+    return response.status(409).send('OJS preview is not configured for this article.');
   }
 
-  const pdfUrl = `${supabaseUrl}/storage/v1/object/public/journal-pdfs/${article.file_path}`;
-  return response.redirect(302, pdfUrl);
+  return response.redirect(302, `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/${article.ojs_article_id}/${article.ojs_galley_id}.html?uploadedId=${encodeURIComponent(id)}`);
 };
