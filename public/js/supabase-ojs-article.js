@@ -47,7 +47,7 @@
     const details = document.querySelector('.entry_details');
     const pageNumber = data.page_number || (data.doi || '').replace(/\/$/, '').split('/').pop() || 'Online First';
     if (details) {
-      const viewerUrl = `/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(id)}`;
+      const viewerUrl = `/api/article-preview?uploadedId=${encodeURIComponent(id)}`;
       details.insertAdjacentHTML('afterbegin', `<div class="item"><strong>Pages:</strong> ${escapeHtml(pageNumber)}</div><p><a class="obj_galley_link btn btn-primary pdf" href="${viewerUrl}" target="_blank" rel="noopener">PDF</a></p>`);
     }
   }
