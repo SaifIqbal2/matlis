@@ -2,7 +2,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; }
 #pdfCanvasContainer.pdfjs-viewer { position: fixed; top: 30px; right: 0; bottom: 0; left: 0; overflow: auto; background: #252525; text-align: center; }
 .pdfjs-toolbar { position: fixed; top: 30px; right: 0; left: 0; z-index: 5; height: 38px; display: flex; align-items: center; gap: 6px; padding: 0 8px; background: #323639; color: #fff; font: 14px Arial, sans-serif; }
 .pdfjs-toolbar-group { display: flex; align-items: center; gap: 4px; }
-.pdfjs-toolbar-group:first-child::before { content: "\\f002"; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; color: #fff; font-family: FontAwesome; font-size: 15px; }
+.pdfjs-toolbar-group:first-child::before { content: ""; display: inline-block; width: 12px; height: 12px; margin: 0 8px 2px 2px; border: 2px solid #fff; border-radius: 50%; box-sizing: border-box; }
+.pdfjs-toolbar-group:first-child::after { content: ""; display: block; width: 7px; height: 2px; margin: 17px 0 0 -14px; background: #fff; transform: rotate(45deg); transform-origin: left center; }
 .pdfjs-toolbar-group.center { margin: 0 auto; }
 .pdfjs-toolbar button, .pdfjs-toolbar a { height: 28px; min-width: 28px; padding: 0 6px; border: 0; background: transparent; color: #fff; cursor: pointer; text-decoration: none; }
 .pdfjs-toolbar button:hover, .pdfjs-toolbar a:hover { background: #4b5053; }

@@ -36,13 +36,18 @@
       for (let number = 1; number <= pdf.numPages; number += 1) {
         const page = await pdf.getPage(number);
         const viewport = page.getViewport({ scale });
+        const dpr = window.devicePixelRatio || 1;
         const canvas = document.createElement('canvas');
         canvas.className = 'pdfjs-page';
         canvas.dataset.page = number;
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
+        canvas.width = Math.ceil(viewport.width * dpr);
+        canvas.height = Math.ceil(viewport.height * dpr);
+        canvas.style.width = `${viewport.width}px`;
+        canvas.style.height = `${viewport.height}px`;
         pages.appendChild(canvas);
-        await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+        const context = canvas.getContext('2d');
+        context.scale(dpr, dpr);
+        await page.render({ canvasContext: context, viewport }).promise;
       }
       pageInput.value = currentPage;
       zoomLabel.textContent = scale === 1 ? 'Automatic' : `${Math.round(scale * 100)}%`;
