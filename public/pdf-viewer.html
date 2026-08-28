@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF viewer</title>
+  <link rel="stylesheet" href="/plugins/themes/bootstrap3/styles/boot-custom7187.css">
+  <style>
+    html, body { height: 100%; margin: 0; overflow: hidden; }
+    .header_view { position: fixed; top: 0; left: 0; right: 0; height: 30px; background: #1b5083; color: #fff; z-index: 1; }
+    .header_view .return, .header_view .download { position: absolute; top: 0; height: 30px; line-height: 30px; background: #fff; color: #1b5083; text-decoration: none; }
+    .header_view .return { left: 0; width: 30px; text-align: center; }
+    .header_view .return::before { content: "\\f060"; font-family: FontAwesome; }
+    .header_view .title { display: block; overflow: hidden; padding: 0 150px 0 40px; color: #fff; line-height: 30px; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+    .header_view .download { right: 0; padding: 0 20px; }
+    .header_view .download::before { content: "\\f019"; font-family: FontAwesome; margin-right: 6px; }
+    .header_view .label { color: #1b5083; }
+    #pdfCanvasContainer { position: absolute; inset: 0; overflow: hidden; }
+    #pdfCanvasContainer iframe { width: 100%; height: 100%; padding-top: 30px; border: 0; box-sizing: border-box; }
+    .message { padding: 48px 24px; font: 16px sans-serif; }
+  </style>
+</head>
+<body>
+  <header class="header_view">
+    <a id="returnLink" class="return" href="/" aria-label="Return to article details"></a>
+    <a id="titleLink" class="title" href="/"></a>
+    <a id="downloadLink" class="download" href="#" target="_blank" rel="noopener" download><span class="label">Download</span></a>
+  </header>
+  <div id="pdfCanvasContainer"><p class="message">Loading PDF...</p></div>
+  <script src="/supabase/config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/public/js/supabase-pdf-viewer.js"></script>
+</body>
+</html>
