@@ -15,9 +15,9 @@
     const { data: journal, error: journalError } = await client.from('journals').select('id').eq('slug', journalSlug).eq('is_published', true).maybeSingle();
     if (journalError || !journal) return;
 
-    let pdfQuery = client.from('journal_pdfs').select('id, title, authors, issue, page_number, doi, file_path, created_at').eq('journal_id', journal.id).eq('is_published', true).order('created_at', { ascending: false });
+    let pdfQuery = client.from('journal_pdfs').select('id, title, authors, issue, page_number, sort_order, doi, file_path, created_at').eq('journal_id', journal.id).eq('is_published', true);
     if (issueId) pdfQuery = pdfQuery.eq('issue', issueId);
-    const { data: pdfs, error: pdfError } = await pdfQuery;
+    const { data: pdfs, error: pdfError } = await pdfQuery.order('sort_order', { ascending: true, nullsFirst: false });
     if (pdfError || !pdfs?.length) return;
 
     const uploadedItems = pdfs.map(pdf => {

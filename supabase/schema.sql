@@ -30,6 +30,7 @@ create table public.journal_pdfs (
   doi text,
   issue text,
   page_number text,
+  sort_order integer,
   file_path text not null unique,
   file_size bigint,
   is_published boolean not null default true,

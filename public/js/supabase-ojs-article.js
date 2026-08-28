@@ -7,7 +7,7 @@
   const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
 
   async function loadUploadedArticle() {
-    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, doi, abstract, keywords, file_path, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
+    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, sort_order, doi, abstract, keywords, file_path, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
     if (error || !data) return;
 
     const pdfUrl = client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl;

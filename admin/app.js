@@ -60,6 +60,10 @@ function doiPageNumber(doi) {
   return value.split('/').pop() || '';
 }
 
+function sortOrderValue(pdf) {
+  return Number.isFinite(Number(pdf.sort_order)) ? Number(pdf.sort_order) : Number.MAX_SAFE_INTEGER;
+}
+
 async function showDashboard() {
   const { data: sessionData } = await client.auth.getSession();
   if (!sessionData.session) return redirectToLogin();
@@ -95,7 +99,7 @@ async function loadData() {
 }
 
 function renderJournal(journal) {
-  const pdfs = (journal.journal_pdfs || []).sort((a, b) => a.title.localeCompare(b.title));
+  const pdfs = (journal.journal_pdfs || []).sort((a, b) => sortOrderValue(a) - sortOrderValue(b) || a.title.localeCompare(b.title));
   return `<article class="record"><div class="record-header"><div><h3>${escapeHtml(journal.name)}</h3><small>${escapeHtml(journal.slug)}${journal.description ? ` · ${escapeHtml(journal.description)}` : ''}</small></div><div><button class="button-secondary" data-edit-journal="${journal.id}">Edit</button> <button class="danger" data-delete-journal="${journal.id}">Delete journal</button></div></div><div class="pdf-list">${pdfs.length ? pdfs.map(pdf => `<div class="pdf-row"><a href="${client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl}" target="_blank" rel="noreferrer">${escapeHtml(pdf.title)}</a><span>${escapeHtml(pdf.issue || '')} <button class="button-secondary" data-edit-pdf="${pdf.id}">Edit</button> <button class="danger" data-delete-pdf="${pdf.id}" data-file-path="${escapeHtml(pdf.file_path)}">Delete</button></span></div>`).join('') : '<small>No PDFs uploaded.</small>'}</div></article>`;
 }
 
@@ -107,6 +111,7 @@ function setPdfEditMode(pdf) {
   document.querySelector('#editPdfAuthors').value = pdf.authors || '';
   document.querySelector('#editPdfIssue').value = pdf.issue || '';
   document.querySelector('#editPdfPageNumber').value = pdf.page_number || doiPageNumber(pdf.doi);
+  document.querySelector('#editPdfSortOrder').value = pdf.sort_order || '';
   document.querySelector('#editPdfDoi').value = pdf.doi || '';
   document.querySelector('#editPdfAbstract').value = pdf.abstract || '';
   document.querySelector('#editPdfKeywords').value = pdf.keywords || '';
@@ -143,6 +148,7 @@ pdfEditForm.addEventListener('submit', async event => {
     authors: document.querySelector('#editPdfAuthors').value.trim() || null,
     issue: document.querySelector('#editPdfIssue').value.trim() || null,
     page_number: document.querySelector('#editPdfPageNumber').value.trim() || doiPageNumber(document.querySelector('#editPdfDoi').value) || null,
+    sort_order: Number(document.querySelector('#editPdfSortOrder').value),
     doi: document.querySelector('#editPdfDoi').value.trim() || null,
     abstract: document.querySelector('#editPdfAbstract').value.trim() || null,
     keywords: document.querySelector('#editPdfKeywords').value.trim() || null
@@ -167,7 +173,7 @@ document.querySelector('#pdfForm').addEventListener('submit', async event => {
   if (upload.error) return setMessage(dashboardMessage, upload.error.message, true);
   const { data: sessionData } = await client.auth.getSession();
   const doi = document.querySelector('#pdfDoi').value.trim();
-  const insert = await client.from('journal_pdfs').insert({ journal_id: journal.id, title: document.querySelector('#pdfTitle').value.trim(), authors: document.querySelector('#pdfAuthors').value.trim() || null, issue: document.querySelector('#pdfIssue').value.trim() || null, page_number: document.querySelector('#pdfPageNumber').value.trim() || doiPageNumber(doi) || null, doi: doi || null, abstract: document.querySelector('#pdfAbstract').value.trim() || null, keywords: document.querySelector('#pdfKeywords').value.trim() || null, file_path: filePath, file_size: file.size, created_by: sessionData.session?.user.id });
+  const insert = await client.from('journal_pdfs').insert({ journal_id: journal.id, title: document.querySelector('#pdfTitle').value.trim(), authors: document.querySelector('#pdfAuthors').value.trim() || null, issue: document.querySelector('#pdfIssue').value.trim() || null, page_number: document.querySelector('#pdfPageNumber').value.trim() || doiPageNumber(doi) || null, sort_order: Number(document.querySelector('#pdfSortOrder').value), doi: doi || null, abstract: document.querySelector('#pdfAbstract').value.trim() || null, keywords: document.querySelector('#pdfKeywords').value.trim() || null, file_path: filePath, file_size: file.size, created_by: sessionData.session?.user.id });
   if (insert.error) { await client.storage.from('journal-pdfs').remove([filePath]); return setMessage(dashboardMessage, insert.error.message, true); }
   event.target.reset(); await loadData();
 });

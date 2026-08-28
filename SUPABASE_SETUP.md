@@ -35,11 +35,12 @@ alter table public.journal_pdfs add column if not exists abstract text;
 alter table public.journal_pdfs add column if not exists keywords text;
 alter table public.journal_pdfs add column if not exists doi text;
 alter table public.journal_pdfs add column if not exists page_number text;
+alter table public.journal_pdfs add column if not exists sort_order integer;
 ```
 
 ## 3. Use the control panel
 
-Open `/admin/`, sign in with the admin user, create journals, then upload PDF files. Enter the article page number in the Page number field; `963` is the number currently shown for the Acta upload. Files are stored in the `journal-pdfs` Supabase Storage bucket. Uploaded PDFs open through the existing OJS-style article page before the PDF. Deleting a PDF removes both its Storage object and database record.
+Open `/admin/`, sign in with the admin user, create journals, then upload PDF files. Use Issue page ID `963` for the Acta issue and set Display order to `1`, `2`, `3` to control article sequence. Enter the article page number separately; it is shown on the right. Files are stored in the `journal-pdfs` Supabase Storage bucket. Uploaded PDFs open through the existing OJS-style article page before the PDF. Deleting a PDF removes both its Storage object and database record.
 
 ## 4. Deploy on Vercel
 
