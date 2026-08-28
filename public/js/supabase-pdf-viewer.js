@@ -15,7 +15,7 @@
     const title = data.title || 'Article PDF';
     const requestedReturnUrl = new URLSearchParams(window.location.search).get('returnUrl');
     const referrerUrl = document.referrer ? new URL(document.referrer) : null;
-    const returnUrl = requestedReturnUrl || (referrerUrl && referrerUrl.origin === window.location.origin ? `${referrerUrl.pathname}${referrerUrl.search}` : '/index.php/actabiomedica/issue/view/963.html');
+    const returnUrl = requestedReturnUrl || (referrerUrl && referrerUrl.origin === window.location.origin ? `${referrerUrl.pathname}${referrerUrl.search}` : `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(id)}`);
     const titleLink = document.querySelector('.header_view .title');
     const returnLink = document.querySelector('.header_view .return');
     const downloadLink = document.querySelector('.header_view .download');
