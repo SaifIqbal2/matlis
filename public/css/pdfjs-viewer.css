@@ -9,6 +9,7 @@
 .pdfjs-zoom-status { min-width: 54px; text-align: center; }
 .pdfjs-zoom-select { height: 34px; min-width: 190px; padding: 0 10px; border: 0; background: #4a4a4a; color: #fff; font-size: 16px; }
 .pdfjs-download { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; color: #fff; font-size: 18px; text-decoration: none; }
-.pdfjs-canvas-wrap { display: inline-block; margin: 58px auto 24px; background: #fff; box-shadow: 0 1px 8px #111; }
+.pdfjs-pages { padding-top: 58px; }
+.pdfjs-canvas-wrap { display: block; width: max-content; margin: 0 auto 24px; background: #fff; box-shadow: 0 1px 8px #111; }
 .pdfjs-canvas-wrap canvas { display: block; }
 @media (max-width: 600px) { .pdfjs-controls { gap: 4px; padding: 5px; } .pdfjs-controls button { width: 30px; } .pdfjs-page-status, .pdfjs-zoom-status { min-width: 0; } .pdfjs-zoom-select { min-width: 100px; } }
