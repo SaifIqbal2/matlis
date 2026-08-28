@@ -159,19 +159,31 @@ pdfEditForm.addEventListener('submit', async event => {
     keywords: document.querySelector('#editPdfKeywords').value.trim() || null
   };
   let replacementPath = null;
+  let movedExistingFile = false;
   if (replacementFile) {
     const journal = journals.find(item => (item.journal_pdfs || []).some(pdf => pdf.id === editingPdfId));
     const pageNumber = values.page_number || doiPageNumber(values.doi);
     const fileName = pageNumber ? `ABM_${pageNumber}.pdf` : `ABM_${crypto.randomUUID()}.pdf`;
-    replacementPath = `${journal.slug}/${crypto.randomUUID()}-${fileName}`;
+    replacementPath = `${journal.slug}/${fileName}`;
     const upload = await client.storage.from('journal-pdfs').upload(replacementPath, replacementFile, { contentType: 'application/pdf', upsert: false });
     if (upload.error) return setMessage(dashboardMessage, upload.error.message, true);
     values.file_path = replacementPath;
     values.file_size = replacementFile.size;
+  } else if (currentPdf?.file_path) {
+    const journal = journals.find(item => (item.journal_pdfs || []).some(pdf => pdf.id === editingPdfId));
+    const pageNumber = values.page_number || doiPageNumber(values.doi);
+    if (pageNumber && !currentPdf.file_path.endsWith(`ABM_${pageNumber}.pdf`)) {
+      const normalizedPath = `${journal.slug}/ABM_${pageNumber}.pdf`;
+      const move = await client.storage.from('journal-pdfs').move(currentPdf.file_path, normalizedPath);
+      if (move.error) return setMessage(dashboardMessage, move.error.message, true);
+      values.file_path = normalizedPath;
+      movedExistingFile = true;
+    }
   }
   const { error } = await client.from('journal_pdfs').update(values).eq('id', editingPdfId);
   if (error) {
     if (replacementPath) await client.storage.from('journal-pdfs').remove([replacementPath]);
+    if (movedExistingFile) await client.storage.from('journal-pdfs').move(values.file_path, currentPdf.file_path);
     return setMessage(dashboardMessage, error.message, true);
   }
   if (replacementPath && currentPdf?.file_path) await client.storage.from('journal-pdfs').remove([currentPdf.file_path]);
