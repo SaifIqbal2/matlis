@@ -45,10 +45,9 @@
     const doi = document.querySelector('meta[name="DC.Identifier.DOI"]');
     if (doi && data.doi) doi.setAttribute('content', data.doi);
     const details = document.querySelector('.entry_details');
-    const pageNumber = data.page_number || (data.doi || '').replace(/\/$/, '').split('/').pop() || 'Online First';
     if (details) {
       const viewerUrl = data.ojs_article_id && data.ojs_galley_id ? `/index.php/actabiomedica/article/view/${data.ojs_article_id}/${data.ojs_galley_id}.html` : `/api/article-preview?uploadedId=${encodeURIComponent(id)}`;
-      details.insertAdjacentHTML('afterbegin', `<div class="item"><strong>Pages:</strong> ${escapeHtml(pageNumber)}</div><p><a class="obj_galley_link btn btn-primary pdf" href="${viewerUrl}">PDF</a></p>`);
+      details.insertAdjacentHTML('afterbegin', `<p><a class="obj_galley_link btn btn-primary pdf" href="${viewerUrl}">PDF</a></p>`);
     }
   }
 
