@@ -29,7 +29,14 @@
     const zoomLabel = document.querySelector('#pdfZoom');
     let currentPage = 1;
     let scale = 1;
+    let automaticZoom = true;
     total.textContent = pdf.numPages;
+
+    async function automaticScale() {
+      const firstPage = await pdf.getPage(1);
+      const baseViewport = firstPage.getViewport({ scale: 1 });
+      return Math.min(1, Math.max(.25, (container.clientWidth - 24) / baseViewport.width));
+    }
 
     async function renderPages() {
       pages.replaceChildren();
@@ -50,7 +57,7 @@
         await page.render({ canvasContext: context, viewport }).promise;
       }
       pageInput.value = currentPage;
-      zoomLabel.textContent = scale === 1 ? 'Automatic' : `${Math.round(scale * 100)}%`;
+      zoomLabel.textContent = automaticZoom ? 'Automatic' : `${Math.round(scale * 100)}%`;
       pages.querySelector(`[data-page="${currentPage}"]`)?.scrollIntoView({ block: 'start' });
     }
 
@@ -58,14 +65,24 @@
       const action = event.target.closest('[data-action]')?.dataset.action;
       if (action === 'previous') currentPage = Math.max(1, currentPage - 1);
       if (action === 'next') currentPage = Math.min(pdf.numPages, currentPage + 1);
-      if (action === 'zoom-out') scale = Math.max(.5, scale - .1);
-      if (action === 'zoom-in') scale = Math.min(3, scale + .1);
+      if (action === 'zoom-out') { automaticZoom = false; scale = Math.max(.5, scale - .1); }
+      if (action === 'zoom-in') { automaticZoom = false; scale = Math.min(3, scale + .1); }
       if (action === 'print') window.print();
       if (action === 'previous' || action === 'next') pages.querySelector(`[data-page="${currentPage}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       if (action === 'zoom-out' || action === 'zoom-in') renderPages();
     });
-    document.querySelector('#pdfZoomSelect').addEventListener('change', event => { scale = event.target.value === 'auto' ? 1 : Number(event.target.value); renderPages(); });
+    document.querySelector('#pdfZoomSelect').addEventListener('change', async event => {
+      automaticZoom = event.target.value === 'auto';
+      scale = automaticZoom ? await automaticScale() : Number(event.target.value);
+      renderPages();
+    });
     pageInput.addEventListener('change', () => { currentPage = Math.min(pdf.numPages, Math.max(1, Number(pageInput.value) || 1)); pages.querySelector(`[data-page="${currentPage}"]`)?.scrollIntoView({ behavior: 'smooth' }); });
+    window.addEventListener('resize', async () => {
+      if (!automaticZoom) return;
+      scale = await automaticScale();
+      renderPages();
+    });
+    scale = await automaticScale();
     await renderPages();
   }
 
