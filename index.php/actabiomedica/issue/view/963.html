@@ -3323,6 +3323,14 @@ function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config
 <script src="/public/js/supabase-public-pdfs.js"></script>
 <script src="/public/js/supabase-issue-alternate-links.js"></script>
 <script>
+var uploadedArticleUrl = 'https://www.mattioli1885journls.com/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=c60b3ca1-ddd4-4f6a-a192-bb8552cd6f1c';
+var uploadedArticleDoi = document.querySelector('#doi_article-16425 a');
+if (uploadedArticleDoi) {
+	uploadedArticleDoi.addEventListener('click', function (event) {
+		event.preventDefault();
+		window.location.href = uploadedArticleUrl;
+	});
+}
 document.querySelectorAll('.obj_article_summary').forEach(function (summary) {
 	var doiLink = summary.querySelector('.doiInSummary a[href*="doi.org"]');
 	if (!doiLink) return;
