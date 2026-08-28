@@ -32,11 +32,6 @@
     }
     if (downloadLink) downloadLink.href = pdfUrl;
     document.title = `View of ${title}`;
-    const cleanArticleId = numericArticleId > 0 ? numericArticleId : Number(data.ojs_article_id);
-    const cleanGalleyId = numericGalleyId > 0 ? numericGalleyId : Number(data.ojs_galley_id);
-    if (id && cleanArticleId > 0 && cleanGalleyId > 0) {
-      window.history.replaceState({}, document.title, `/index.php/actabiomedica/article/view/${cleanArticleId}/${cleanGalleyId}.html`);
-    }
 
     container.classList.add('pdfjs-viewer');
     container.innerHTML = '<div class="pdfjs-toolbar" role="toolbar" aria-label="PDF controls"><div class="pdfjs-toolbar-group"><button data-action="previous" aria-label="Previous page">&#8249;</button><button data-action="next" aria-label="Next page">&#8250;</button></div><div class="pdfjs-toolbar-group center"><input id="pdfPage" type="number" min="1" value="1" aria-label="Page number"><span>of <b id="pdfTotal">0</b></span><button data-action="zoom-out" aria-label="Zoom out">−</button><span id="pdfZoom">Automatic</span><button data-action="zoom-in" aria-label="Zoom in">+</button><select id="pdfZoomSelect" aria-label="Zoom"><option value="auto">Automatic Zoom</option><option value="1">100%</option><option value="1.5">150%</option><option value="2">200%</option></select></div><div class="pdfjs-toolbar-group"><button data-action="print" aria-label="Print">&#128438;</button><a href="' + pdfUrl + '" download aria-label="Download PDF">&#8681;</a></div></div><div class="pdfjs-pages" id="pdfPages"></div>';

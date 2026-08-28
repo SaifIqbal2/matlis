@@ -26,7 +26,7 @@
       const viewerUrl = `${productionHost}/api/article-preview?uploadedId=${encodeURIComponent(pdf.id)}`;
       const numericPdfUrl = pdf.ojs_article_id && pdf.ojs_galley_id ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}/${pdf.ojs_galley_id}.html` : '';
       const detailUrl = `${productionHost}/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
-      const viewerLink = numericPdfUrl ? `${numericPdfUrl}?uploadedId=${encodeURIComponent(pdf.id)}` : `${viewerUrl}&returnUrl=${encodeURIComponent(detailUrl)}`;
+      const viewerLink = numericPdfUrl || `${viewerUrl}&returnUrl=${encodeURIComponent(detailUrl)}`;
       const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';
       const articleUrl = viewerUrl;
       const pageNumber = pdf.page_number || (pdf.doi || '').replace(/\/$/, '').split('/').pop() || 'PDF';
