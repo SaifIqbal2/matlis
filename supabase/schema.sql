@@ -38,6 +38,8 @@ create table public.journal_pdfs (
   accepted_date text,
   first_author_name text,
   first_author_affiliation text,
+  ojs_article_id integer,
+  ojs_galley_id integer,
   issue text,
   page_number text,
   sort_order integer,

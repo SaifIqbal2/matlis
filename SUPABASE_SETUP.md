@@ -43,6 +43,8 @@ alter table public.journal_pdfs add column if not exists received_date text;
 alter table public.journal_pdfs add column if not exists accepted_date text;
 alter table public.journal_pdfs add column if not exists first_author_name text;
 alter table public.journal_pdfs add column if not exists first_author_affiliation text;
+alter table public.journal_pdfs add column if not exists ojs_article_id integer;
+alter table public.journal_pdfs add column if not exists ojs_galley_id integer;
 alter table public.journal_pdfs add column if not exists page_number text;
 alter table public.journal_pdfs add column if not exists sort_order integer;
 alter table public.journal_pdfs add column if not exists updated_at timestamptz not null default now();

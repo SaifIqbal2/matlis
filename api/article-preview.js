@@ -9,11 +9,12 @@ function escapeHtml(value) {
 
 module.exports = async function handler(request, response) {
   const id = request.query?.uploadedId;
-  if (!id || !/^[0-9a-f-]{36}$/i.test(id)) {
-    return response.status(400).send('Missing or invalid article ID.');
-  }
+  const numericArticleId = Number(request.query?.articleId);
+  const numericGalleyId = Number(request.query?.galleyId);
+  if (!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) return response.status(400).send('Missing or invalid article ID.');
 
-  const result = await fetch(`${supabaseUrl}/rest/v1/journal_pdfs?select=title&id=eq.${encodeURIComponent(id)}&is_published=eq.true`, {
+  const filter = id ? `id=eq.${encodeURIComponent(id)}` : `ojs_article_id=eq.${numericArticleId}&ojs_galley_id=eq.${numericGalleyId}`;
+  const result = await fetch(`${supabaseUrl}/rest/v1/journal_pdfs?select=id,title,ojs_article_id,ojs_galley_id&${filter}&is_published=eq.true`, {
     headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` }
   });
   if (!result.ok) return response.status(502).send('Could not load article.');
@@ -21,9 +22,10 @@ module.exports = async function handler(request, response) {
   const articles = await result.json();
   if (!articles.length) return response.status(404).send('Article not found.');
 
+  const articleId = articles[0].id;
   const title = escapeHtml(articles[0].title || 'Article');
-  const returnUrl = typeof request.query?.returnUrl === 'string' && request.query.returnUrl.startsWith('/') ? `&returnUrl=${encodeURIComponent(request.query.returnUrl)}` : '';
-  const viewerUrl = `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(id)}${returnUrl}`;
+  const returnUrl = typeof request.query?.returnUrl === 'string' ? `&returnUrl=${encodeURIComponent(request.query.returnUrl)}` : '';
+  const viewerUrl = `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(articleId)}${returnUrl}`;
   const absoluteViewerUrl = viewerUrl;
   response.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300');
   response.setHeader('Content-Type', 'text/html; charset=utf-8');
