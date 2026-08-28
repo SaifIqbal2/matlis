@@ -40,6 +40,14 @@ function setMessage(element, message, error = false) {
   element.style.color = error ? '#a52c2c' : '';
 }
 
+function withTimeout(promise, message = 'Supabase request timed out. Check your internet connection and Supabase project.') {
+  let timeoutId;
+  const timeout = new Promise((resolve, reject) => {
+    timeoutId = setTimeout(() => reject(new Error(message)), 15000);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timeoutId));
+}
+
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
 }
@@ -65,11 +73,11 @@ function sortOrderValue(pdf) {
 }
 
 async function showDashboard() {
-  const { data: sessionData, error: sessionError } = await client.auth.getSession();
+  const { data: sessionData, error: sessionError } = await withTimeout(client.auth.getSession());
   if (sessionError) return setMessage(loginMessage, sessionError.message, true);
   if (!sessionData.session) return redirectToLogin();
 
-  const { data: profile, error } = await client.from('profiles').select('role').eq('id', sessionData.session.user.id).maybeSingle();
+  const { data: profile, error } = await withTimeout(client.from('profiles').select('role').eq('id', sessionData.session.user.id).maybeSingle());
   if (error) return setMessage(loginMessage, error.message, true);
   if (!profile || !['admin', 'editor'].includes(profile.role)) {
     await client.auth.signOut();
@@ -133,7 +141,7 @@ document.querySelector('#loginForm').addEventListener('submit', async event => {
   event.preventDefault();
   setMessage(loginMessage, 'Signing in...');
   try {
-    const { error } = await client.auth.signInWithPassword({ email: document.querySelector('#email').value.trim(), password: document.querySelector('#password').value });
+    const { error } = await withTimeout(client.auth.signInWithPassword({ email: document.querySelector('#email').value.trim(), password: document.querySelector('#password').value }));
     if (error) return setMessage(loginMessage, error.message, true);
     await showDashboard();
   } catch (error) {
@@ -259,6 +267,6 @@ records.addEventListener('click', async event => {
 });
 
 client.auth.getSession().then(({ data }) => {
-  if (data.session) showDashboard();
+  if (data.session) showDashboard().catch(error => setMessage(loginMessage, error.message || 'Could not load the dashboard.', true));
   else redirectToLogin();
-});
+}).catch(error => setMessage(loginMessage, error.message || 'Could not connect to Supabase.', true));
