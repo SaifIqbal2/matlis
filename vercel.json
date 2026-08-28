@@ -9,7 +9,7 @@
     { "source": "/admin/", "destination": "/admin/index.html" },
     { "source": "/index.php/:journal/search/index", "destination": "/index.php/:journal/search.html" },
     { "source": "/index.php/:journal/search/index.html", "destination": "/index.php/:journal/search.html" }
-    , { "source": "/index.php/:journal/article/view/:articleId/:galleyId.html", "has": [{ "type": "query", "key": "uploadedId", "value": "(?<uploadedId>.*)" }], "destination": "/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=:uploadedId" }
+    , { "source": "/index.php/:journal/article/view/:articleId/:galleyId.html", "has": [{ "type": "query", "key": "uploadedId", "value": "(?<uploadedId>[^&]+)" }], "destination": "/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=:uploadedId" }
   ],
   "redirects": [
     { "source": "/index.php/:journal/login", "destination": "/auth/?mode=login&journal=:journal", "permanent": false },
