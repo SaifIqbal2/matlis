@@ -65,7 +65,8 @@ function sortOrderValue(pdf) {
 }
 
 async function showDashboard() {
-  const { data: sessionData } = await client.auth.getSession();
+  const { data: sessionData, error: sessionError } = await client.auth.getSession();
+  if (sessionError) return setMessage(loginMessage, sessionError.message, true);
   if (!sessionData.session) return redirectToLogin();
 
   const { data: profile, error } = await client.from('profiles').select('role').eq('id', sessionData.session.user.id).maybeSingle();
@@ -76,7 +77,13 @@ async function showDashboard() {
   }
   loginView.hidden = true;
   dashboardView.hidden = false;
-  await loadData();
+  try {
+    await loadData();
+  } catch (error) {
+    loginView.hidden = false;
+    dashboardView.hidden = true;
+    setMessage(loginMessage, error.message || 'Could not load the dashboard.', true);
+  }
 }
 
 function redirectToLogin() {
@@ -125,9 +132,13 @@ function setPdfEditMode(pdf) {
 document.querySelector('#loginForm').addEventListener('submit', async event => {
   event.preventDefault();
   setMessage(loginMessage, 'Signing in...');
-  const { error } = await client.auth.signInWithPassword({ email: document.querySelector('#email').value.trim(), password: document.querySelector('#password').value });
-  if (error) return setMessage(loginMessage, error.message, true);
-  await showDashboard();
+  try {
+    const { error } = await client.auth.signInWithPassword({ email: document.querySelector('#email').value.trim(), password: document.querySelector('#password').value });
+    if (error) return setMessage(loginMessage, error.message, true);
+    await showDashboard();
+  } catch (error) {
+    setMessage(loginMessage, error.message || 'Sign-in failed. Check the Supabase connection.', true);
+  }
 });
 
 document.querySelector('#logoutButton').addEventListener('click', async () => { await client.auth.signOut(); dashboardView.hidden = true; loginView.hidden = false; });
