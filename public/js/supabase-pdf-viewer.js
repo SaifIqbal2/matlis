@@ -14,24 +14,16 @@
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
     const title = data.title || 'Article PDF';
     const requestedReturnUrl = new URLSearchParams(window.location.search).get('returnUrl');
-    const referrerUrl = document.referrer ? new URL(document.referrer) : null;
-    const returnUrl = requestedReturnUrl || (referrerUrl && referrerUrl.origin === window.location.origin ? `${referrerUrl.pathname}${referrerUrl.search}` : `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(id)}`);
+    const returnUrl = requestedReturnUrl || `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(id)}`;
     const titleLink = document.querySelector('.header_view .title');
     const returnLink = document.querySelector('.header_view .return');
     const downloadLink = document.querySelector('.header_view .download');
-    const goBackToArticle = event => {
-      event.preventDefault();
-      if (window.history.length > 1) window.history.back();
-      else window.location.href = returnUrl;
-    };
     if (titleLink) {
       titleLink.textContent = title;
       titleLink.href = returnUrl;
-      titleLink.addEventListener('click', goBackToArticle);
     }
     if (returnLink) {
       returnLink.href = returnUrl;
-      returnLink.addEventListener('click', goBackToArticle);
     }
     if (downloadLink) downloadLink.href = pdfUrl;
     document.title = `View of ${title}`;
