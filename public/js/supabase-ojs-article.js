@@ -2,14 +2,18 @@
   if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase) return;
   const queryId = new URLSearchParams(window.location.search).get('uploadedId');
   const id = queryId || window.sessionStorage.getItem('uploadedArticleId');
-  if (!id) return;
+  const numericArticleId = Number(new URLSearchParams(window.location.search).get('articleId'));
+  const numericGalleyId = Number(new URLSearchParams(window.location.search).get('galleyId'));
+  if (!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) return;
   if (queryId) window.sessionStorage.setItem('uploadedArticleId', queryId);
 
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
   const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
 
   async function loadUploadedArticle() {
-    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, citation, alternate_url, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
+    let articleQuery = client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, citation, alternate_url, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('is_published', true);
+    articleQuery = id ? articleQuery.eq('id', id) : articleQuery.eq('ojs_article_id', numericArticleId).eq('ojs_galley_id', numericGalleyId);
+    const { data, error } = await articleQuery.maybeSingle();
     if (error || !data) return;
 
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
@@ -69,7 +73,7 @@
     }
     const details = document.querySelector('.entry_details');
     if (details) {
-      const viewerUrl = data.ojs_article_id && data.ojs_galley_id ? `/index.php/actabiomedica/article/view/${data.ojs_article_id}/${data.ojs_galley_id}.html?uploadedId=${encodeURIComponent(id)}` : `/api/pdf-preview?uploadedId=${encodeURIComponent(id)}`;
+      const viewerUrl = data.ojs_article_id && data.ojs_galley_id ? `/index.php/actabiomedica/article/view/${data.ojs_article_id}/${data.ojs_galley_id}.html` : `/api/pdf-preview?uploadedId=${encodeURIComponent(id)}`;
       details.insertAdjacentHTML('afterbegin', `<p><a class="obj_galley_link btn btn-primary pdf" href="${escapeHtml(viewerUrl)}">PDF</a></p>`);
     }
   }
