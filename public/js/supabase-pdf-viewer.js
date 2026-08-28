@@ -29,12 +29,23 @@
     container.classList.add('pdfjs-viewer');
     container.innerHTML = `
       <div class="pdfjs-controls" role="toolbar" aria-label="PDF controls">
-        <button type="button" data-pdf-action="previous">Previous</button>
-        <span class="pdfjs-page-status" aria-live="polite">Page 1 of 1</span>
-        <button type="button" data-pdf-action="next">Next</button>
-        <button type="button" data-pdf-action="zoom-out">Zoom out</button>
-        <span class="pdfjs-zoom-status">100%</span>
-        <button type="button" data-pdf-action="zoom-in">Zoom in</button>
+        <div class="pdfjs-toolbar-group">
+          <button type="button" aria-label="Show thumbnails" title="Show thumbnails"><span class="fa fa-bars"></span></button>
+          <button type="button" aria-label="Search" title="Search"><span class="fa fa-search"></span></button>
+          <button type="button" data-pdf-action="previous" aria-label="Previous page" title="Previous page"><span class="fa fa-chevron-up"></span></button>
+          <button type="button" data-pdf-action="next" aria-label="Next page" title="Next page"><span class="fa fa-chevron-down"></span></button>
+        </div>
+        <div class="pdfjs-toolbar-group">
+          <input class="pdfjs-page-input" type="number" min="1" value="1" aria-label="Page number">
+          <span class="pdfjs-page-status" aria-live="polite">of 1</span>
+          <button type="button" data-pdf-action="zoom-out" aria-label="Zoom out" title="Zoom out"><span class="fa fa-minus"></span></button>
+          <span class="pdfjs-zoom-status">100%</span>
+          <button type="button" data-pdf-action="zoom-in" aria-label="Zoom in" title="Zoom in"><span class="fa fa-plus"></span></button>
+        </div>
+        <div class="pdfjs-toolbar-group">
+          <button type="button" data-pdf-action="print" aria-label="Print" title="Print"><span class="fa fa-print"></span></button>
+          <a class="pdfjs-download" href="${escapeHtml(pdfUrl)}" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><span class="fa fa-download"></span></a>
+        </div>
       </div>
       <div class="pdfjs-canvas-wrap"><canvas aria-label="PDF page"></canvas></div>`;
 
@@ -42,6 +53,7 @@
     const canvas = container.querySelector('canvas');
     const canvasContext = canvas.getContext('2d');
     const pageStatus = container.querySelector('.pdfjs-page-status');
+    const pageInput = container.querySelector('.pdfjs-page-input');
     const zoomStatus = container.querySelector('.pdfjs-zoom-status');
     let pageNumber = 1;
     let scale = 1;
@@ -52,18 +64,28 @@
       canvas.width = viewport.width;
       canvas.height = viewport.height;
       await page.render({ canvasContext, viewport }).promise;
-      pageStatus.textContent = `Page ${pageNumber} of ${pdf.numPages}`;
+      pageStatus.textContent = `of ${pdf.numPages}`;
+      pageInput.value = pageNumber;
       zoomStatus.textContent = `${Math.round(scale * 100)}%`;
       container.querySelector('[data-pdf-action="previous"]').disabled = pageNumber <= 1;
       container.querySelector('[data-pdf-action="next"]').disabled = pageNumber >= pdf.numPages;
     }
 
+    container.addEventListener('change', event => {
+      if (event.target === pageInput) {
+        pageNumber = Math.min(pdf.numPages, Math.max(1, Number(pageInput.value) || 1));
+        renderPage();
+      }
+    });
+
     container.addEventListener('click', event => {
-      const action = event.target.dataset.pdfAction;
+      const control = event.target.closest('[data-pdf-action]');
+      const action = control?.dataset.pdfAction;
       if (action === 'previous' && pageNumber > 1) pageNumber -= 1;
       if (action === 'next' && pageNumber < pdf.numPages) pageNumber += 1;
       if (action === 'zoom-out') scale = Math.max(.5, scale - .1);
       if (action === 'zoom-in') scale = Math.min(3, scale + .1);
+      if (action === 'print') window.print();
       if (action) renderPage();
     });
 
