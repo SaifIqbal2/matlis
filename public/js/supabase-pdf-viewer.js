@@ -1,20 +1,25 @@
 (function () {
   if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase || !window.pdfjsLib) return;
-  const id = new URLSearchParams(window.location.search).get('uploadedId');
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('uploadedId');
+  const numericArticleId = Number(params.get('articleId'));
+  const numericGalleyId = Number(params.get('galleyId'));
   const container = document.querySelector('#pdfCanvasContainer');
-  if (!id || !container) return;
+  if ((!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) || !container) return;
 
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
   window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
   async function loadPdf() {
-    const { data, error } = await client.from('journal_pdfs').select('title, file_path, created_at, updated_at').eq('id', id).eq('is_published', true).maybeSingle();
+    let query = client.from('journal_pdfs').select('id, title, file_path, ojs_article_id, ojs_galley_id, created_at, updated_at').eq('is_published', true);
+    query = id ? query.eq('id', id) : query.eq('ojs_article_id', numericArticleId).eq('ojs_galley_id', numericGalleyId);
+    const { data, error } = await query.maybeSingle();
     if (error || !data) return;
 
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
     const title = data.title || 'Article PDF';
-    const requestedReturnUrl = new URLSearchParams(window.location.search).get('returnUrl');
-    const returnUrl = requestedReturnUrl || `https://www.mattioli1885journls.com/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(id)}`;
+    const requestedReturnUrl = params.get('returnUrl');
+    const returnUrl = requestedReturnUrl || `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(data.id)}`;
     const titleLink = document.querySelector('.header_view .title');
     const returnLink = document.querySelector('.header_view .return');
     const downloadLink = document.querySelector('.header_view .download');
