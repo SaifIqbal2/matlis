@@ -53,6 +53,9 @@
             <label>Alternate article link<input id="pdfAlternateUrl" type="url" placeholder="https://" /></label>
             <label>Abstract<textarea id="pdfAbstract" rows="4"></textarea></label>
             <label>Keywords<input id="pdfKeywords" placeholder="keyword one, keyword two"></label>
+            <label>Conflict of Interest<textarea id="pdfConflictOfInterest" rows="2">The authors declare that they have no conflict of interest.</textarea></label>
+            <label>Declaration on the Use of AI<textarea id="pdfAiDeclaration" rows="2">None.</textarea></label>
+            <label>Funding<textarea id="pdfFunding" rows="2">No funding was received for this study.</textarea></label>
             <label>PDF file<input id="pdfFile" type="file" accept="application/pdf" required></label>
             <button type="submit">Upload PDF</button>
           </form>
@@ -77,6 +80,9 @@
           <label>Replace PDF file<input id="editPdfFile" type="file" accept="application/pdf"></label>
           <label>Abstract<textarea id="editPdfAbstract" rows="5"></textarea></label>
           <label>Keywords<input id="editPdfKeywords"></label>
+          <label>Conflict of Interest<textarea id="editPdfConflictOfInterest" rows="2"></textarea></label>
+          <label>Declaration on the Use of AI<textarea id="editPdfAiDeclaration" rows="2"></textarea></label>
+          <label>Funding<textarea id="editPdfFunding" rows="2"></textarea></label>
           <button type="submit">Save PDF changes</button>
           <button id="cancelPdfEdit" class="button-secondary" type="button">Cancel</button>
         </form>

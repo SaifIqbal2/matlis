@@ -7,7 +7,7 @@
   const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
 
   async function loadUploadedArticle() {
-    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, sort_order, doi, abstract, keywords, file_path, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
+    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, sort_order, doi, abstract, keywords, conflict_of_interest, ai_declaration, funding, file_path, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
     if (error || !data) return;
 
     const pdfUrl = client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl;
@@ -21,6 +21,16 @@
     if (keywordsSection) keywordsSection.remove();
     const abstract = document.querySelector('section.item.abstract');
     if (abstract) abstract.innerHTML = `<h2 class="label">Abstract</h2><p>${escapeHtml(data.abstract || 'PDF publication')}</p>`;
+
+    const declarations = [
+      ['Conflict of Interest', data.conflict_of_interest],
+      ['Declaration on the Use of AI', data.ai_declaration],
+      ['Funding', data.funding]
+    ].filter(([, value]) => value);
+    const references = document.querySelector('section.item.references');
+    if (references && declarations.length) {
+      references.insertAdjacentHTML('afterend', `<section class="item article-declarations"><div class="value">${declarations.map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong><br>${escapeHtml(value).replace(/\n/g, '<br>')}</p>`).join('')}</div></section>`);
+    }
 
     const doi = document.querySelector('meta[name="DC.Identifier.DOI"]');
     if (doi && data.doi) doi.setAttribute('content', data.doi);
