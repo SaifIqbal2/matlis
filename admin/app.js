@@ -161,8 +161,9 @@ pdfEditForm.addEventListener('submit', async event => {
   let replacementPath = null;
   if (replacementFile) {
     const journal = journals.find(item => (item.journal_pdfs || []).some(pdf => pdf.id === editingPdfId));
-    const safeName = replacementFile.name.toLowerCase().replace(/[^a-z0-9._-]+/g, '-');
-    replacementPath = `${journal.slug}/${crypto.randomUUID()}-${safeName}`;
+    const pageNumber = values.page_number || doiPageNumber(values.doi);
+    const fileName = pageNumber ? `ABM_${pageNumber}.pdf` : `ABM_${crypto.randomUUID()}.pdf`;
+    replacementPath = `${journal.slug}/${crypto.randomUUID()}-${fileName}`;
     const upload = await client.storage.from('journal-pdfs').upload(replacementPath, replacementFile, { contentType: 'application/pdf', upsert: false });
     if (upload.error) return setMessage(dashboardMessage, upload.error.message, true);
     values.file_path = replacementPath;
@@ -185,13 +186,14 @@ document.querySelector('#pdfForm').addEventListener('submit', async event => {
   const file = document.querySelector('#pdfFile').files[0];
   if (!file || file.type !== 'application/pdf') return setMessage(dashboardMessage, 'Please select a PDF file.', true);
   const journal = journals.find(item => item.id === journalSelect.value);
-  const safeName = file.name.toLowerCase().replace(/[^a-z0-9._-]+/g, '-');
-  const filePath = `${journal.slug}/${crypto.randomUUID()}-${safeName}`;
   setMessage(dashboardMessage, 'Uploading PDF...');
-  const upload = await client.storage.from('journal-pdfs').upload(filePath, file, { contentType: 'application/pdf', upsert: false });
-  if (upload.error) return setMessage(dashboardMessage, upload.error.message, true);
   const { data: sessionData } = await client.auth.getSession();
   const doi = document.querySelector('#pdfDoi').value.trim();
+  const pageNumber = document.querySelector('#pdfPageNumber').value.trim() || doiPageNumber(doi);
+  const fileName = pageNumber ? `ABM_${pageNumber}.pdf` : `ABM_${crypto.randomUUID()}.pdf`;
+  const filePath = `${journal.slug}/${crypto.randomUUID()}-${fileName}`;
+  const upload = await client.storage.from('journal-pdfs').upload(filePath, file, { contentType: 'application/pdf', upsert: false });
+  if (upload.error) return setMessage(dashboardMessage, upload.error.message, true);
   const insert = await client.from('journal_pdfs').insert({ journal_id: journal.id, title: document.querySelector('#pdfTitle').value.trim(), authors: document.querySelector('#pdfAuthors').value.trim() || null, issue: document.querySelector('#pdfIssue').value.trim() || null, page_number: document.querySelector('#pdfPageNumber').value.trim() || doiPageNumber(doi) || null, sort_order: Number(document.querySelector('#pdfSortOrder').value), doi: doi || null, alternate_url: document.querySelector('#pdfAlternateUrl').value.trim() || null, abstract: document.querySelector('#pdfAbstract').value.trim() || null, keywords: document.querySelector('#pdfKeywords').value.trim() || null, file_path: filePath, file_size: file.size, created_by: sessionData.session?.user.id });
   if (insert.error) { await client.storage.from('journal-pdfs').remove([filePath]); return setMessage(dashboardMessage, insert.error.message, true); }
   event.target.reset(); await loadData();
