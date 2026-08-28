@@ -14,7 +14,7 @@
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
     const title = data.title || 'Article PDF';
     const requestedReturnUrl = new URLSearchParams(window.location.search).get('returnUrl');
-    const returnUrl = requestedReturnUrl || `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(id)}`;
+    const returnUrl = requestedReturnUrl || `https://www.mattioli1885journls.com/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(id)}`;
     const titleLink = document.querySelector('.header_view .title');
     const returnLink = document.querySelector('.header_view .return');
     const downloadLink = document.querySelector('.header_view .download');

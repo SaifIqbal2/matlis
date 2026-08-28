@@ -23,8 +23,8 @@ module.exports = async function handler(request, response) {
 
   const title = escapeHtml(articles[0].title || 'Article');
   const returnUrl = typeof request.query?.returnUrl === 'string' && request.query.returnUrl.startsWith('/') ? `&returnUrl=${encodeURIComponent(request.query.returnUrl)}` : '';
-  const viewerUrl = `/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(id)}${returnUrl}`;
-  const absoluteViewerUrl = `https://${request.headers.host}${viewerUrl}`;
+  const viewerUrl = `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(id)}${returnUrl}`;
+  const absoluteViewerUrl = viewerUrl;
   response.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300');
   response.setHeader('Content-Type', 'text/html; charset=utf-8');
   return response.status(200).send(`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>View of ${title}</title><meta property="og:title" content="View of ${title}"><meta property="og:description" content="Read this article PDF from Mattioli 1885 Journals."><meta property="og:type" content="article"><meta property="og:url" content="${absoluteViewerUrl}"><link rel="canonical" href="${absoluteViewerUrl}"><meta http-equiv="refresh" content="0;url=${viewerUrl}"></head><body><p>Opening <a href="${viewerUrl}">${title}</a>...</p><script>window.location.replace(${JSON.stringify(viewerUrl)});</script></body></html>`);
