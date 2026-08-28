@@ -3330,6 +3330,26 @@ function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config
 <script src="/supabase/config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/public/js/supabase-public-pdfs.js"></script>
+<script>
+document.querySelectorAll('.obj_article_summary').forEach(function (summary) {
+	var doiLink = summary.querySelector('.doiInSummary a[href*="doi.org"]');
+	if (!doiLink) return;
+	var articleLink = summary.querySelector('.title a');
+	var pdfLink = summary.querySelector('.galleys_links a.pdf');
+	if (articleLink && articleLink.getAttribute('href').indexOf('/article/view/') !== -1) {
+		articleLink.href = doiLink.href;
+		articleLink.target = '_blank';
+		articleLink.rel = 'noopener';
+	}
+	if (pdfLink && pdfLink.getAttribute('href').indexOf('/article/view/') !== -1) {
+		pdfLink.href = doiLink.href;
+		pdfLink.target = '_blank';
+		pdfLink.rel = 'noopener';
+		pdfLink.textContent = 'Article';
+		pdfLink.classList.remove('pdf');
+	}
+});
+</script>
 </body>
 
 <!-- Mirrored from mattioli1885journls.com/index.php/actabiomedica/issue/view/963 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Aug 2026 16:31:28 GMT -->
