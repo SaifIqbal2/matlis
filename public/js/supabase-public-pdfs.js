@@ -25,7 +25,7 @@
       const detailUrl = `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       const viewerUrl = `/public/pdf-viewer.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';
-      const articleUrl = pdf.alternate_url || doiUrl;
+      const articleUrl = viewerUrl;
       const pageNumber = pdf.page_number || (pdf.doi || '').replace(/\/$/, '').split('/').pop() || 'PDF';
       return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${detailUrl}">${escapeHtml(pdf.title)}</a></h2>${pdf.doi ? `<div class="doiInSummary"><strong>DOI:</strong> <a href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener">${escapeHtml(pdf.doi)}</a></div>` : (pdf.alternate_url ? `<div class="doiInSummary"><strong>Article link:</strong> <a href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener">${escapeHtml(articleUrl)}</a></div>` : '')}<div class="meta"><div class="authors">${escapeHtml(pdf.authors || 'Mattioli 1885 Journals')}</div><div class="pages">${escapeHtml(pageNumber)}</div></div><a class="obj_galley_link btn btn-primary pdf" href="${viewerUrl}" target="_blank" rel="noopener">PDF</a></div></li>`;
     });
