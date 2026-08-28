@@ -16,12 +16,14 @@
 
     const pdfUrl = client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl;
     const title = data.title || 'Article PDF';
-    const articleUrl = `/index.php/${encodeURIComponent(data.journals?.slug || 'actabiomedica')}/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(id)}`;
+    const returnUrl = `/index.php/actabiomedica/issue/view/963.html`;
     document.title = `View of ${title}`;
-    document.querySelector('#titleLink').textContent = title;
-    document.querySelector('#titleLink').href = articleUrl;
-    document.querySelector('#returnLink').href = articleUrl;
-    document.querySelector('#downloadLink').href = pdfUrl;
+    const titleLink = document.querySelector('#titleLink, .header_view .title');
+    const returnLink = document.querySelector('#returnLink, .header_view .return');
+    const downloadLink = document.querySelector('#downloadLink, .header_view .download');
+    if (titleLink) { titleLink.textContent = title; titleLink.href = returnUrl; }
+    if (returnLink) returnLink.href = returnUrl;
+    if (downloadLink) downloadLink.href = pdfUrl;
     container.innerHTML = `<iframe src="${escapeHtml(pdfUrl)}" title="PDF of ${escapeHtml(title)}" allowfullscreen></iframe>`;
   }
 

@@ -23,7 +23,7 @@
     const uploadedItems = pdfs.map(pdf => {
       const url = client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl;
       const detailUrl = `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
-      const viewerUrl = `/public/pdf-viewer.html?uploadedId=${encodeURIComponent(pdf.id)}`;
+      const viewerUrl = `/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';
       const articleUrl = viewerUrl;
       const pageNumber = pdf.page_number || (pdf.doi || '').replace(/\/$/, '').split('/').pop() || 'PDF';
