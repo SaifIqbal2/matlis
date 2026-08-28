@@ -19,7 +19,10 @@
     const titleLink = document.querySelector('.header_view .title');
     const returnLink = document.querySelector('.header_view .return');
     const downloadLink = document.querySelector('.header_view .download');
-    if (titleLink) titleLink.textContent = title;
+    if (titleLink) {
+      titleLink.textContent = title;
+      titleLink.href = returnUrl;
+    }
     if (returnLink) returnLink.href = returnUrl;
     if (downloadLink) downloadLink.href = pdfUrl;
     document.title = `View of ${title}`;
