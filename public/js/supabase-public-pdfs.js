@@ -23,7 +23,7 @@
     const uploadedItems = pdfs.map(pdf => {
       const url = `${client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl}?v=${encodeURIComponent(pdf.updated_at || pdf.created_at || Date.now())}`;
       const viewerUrl = `/api/article-preview?uploadedId=${encodeURIComponent(pdf.id)}`;
-      const detailUrl = `https://matlis-git-main-saifs-projects-1df1acbf.vercel.app/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
+      const detailUrl = `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       const viewerLink = `${viewerUrl}&returnUrl=${encodeURIComponent(detailUrl)}`;
       const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';
       const articleUrl = viewerUrl;

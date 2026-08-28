@@ -14,7 +14,7 @@
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
     const title = data.title || 'Article PDF';
     const requestedReturnUrl = new URLSearchParams(window.location.search).get('returnUrl');
-    const returnUrl = requestedReturnUrl || `https://matlis-git-main-saifs-projects-1df1acbf.vercel.app/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(id)}`;
+    const returnUrl = requestedReturnUrl || `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(id)}`;
     const titleLink = document.querySelector('.header_view .title');
     const returnLink = document.querySelector('.header_view .return');
     const downloadLink = document.querySelector('.header_view .download');
