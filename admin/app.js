@@ -200,7 +200,7 @@ pdfEditForm.addEventListener('submit', async event => {
     const pageNumber = values.page_number || doiPageNumber(values.doi);
     const fileName = pageNumber ? `ABM_${pageNumber}.pdf` : `ABM_${crypto.randomUUID()}.pdf`;
     replacementPath = `${journal.slug}/${fileName}`;
-    const upload = await client.storage.from('journal-pdfs').upload(replacementPath, replacementFile, { contentType: 'application/pdf', upsert: false });
+    const upload = await client.storage.from('journal-pdfs').upload(replacementPath, replacementFile, { contentType: 'application/pdf', upsert: true });
     if (upload.error) return setMessage(dashboardMessage, upload.error.message, true);
     values.file_path = replacementPath;
     values.file_size = replacementFile.size;
@@ -221,7 +221,7 @@ pdfEditForm.addEventListener('submit', async event => {
     if (movedExistingFile) await client.storage.from('journal-pdfs').move(values.file_path, currentPdf.file_path);
     return setMessage(dashboardMessage, error.message, true);
   }
-  if (replacementPath && currentPdf?.file_path) await client.storage.from('journal-pdfs').remove([currentPdf.file_path]);
+  if (replacementPath && currentPdf?.file_path && currentPdf.file_path !== replacementPath) await client.storage.from('journal-pdfs').remove([currentPdf.file_path]);
   setPdfEditMode(null);
   await loadData();
 });
