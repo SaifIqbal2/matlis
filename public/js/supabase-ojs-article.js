@@ -48,7 +48,7 @@
     const pageNumber = data.page_number || (data.doi || '').replace(/\/$/, '').split('/').pop() || 'Online First';
     if (details) {
       const viewerUrl = `/api/article-preview?uploadedId=${encodeURIComponent(id)}`;
-      details.insertAdjacentHTML('afterbegin', `<div class="item"><strong>Pages:</strong> ${escapeHtml(pageNumber)}</div><p><a class="obj_galley_link btn btn-primary pdf" href="${viewerUrl}" target="_blank" rel="noopener">PDF</a></p>`);
+      details.insertAdjacentHTML('afterbegin', `<div class="item"><strong>Pages:</strong> ${escapeHtml(pageNumber)}</div><p><a class="obj_galley_link btn btn-primary pdf" href="${viewerUrl}">PDF</a></p>`);
     }
   }
 
