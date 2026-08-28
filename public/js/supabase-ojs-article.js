@@ -29,7 +29,7 @@
     ].filter(([, value]) => value);
     const references = document.querySelector('section.item.references');
     if (references && declarations.length) {
-      references.insertAdjacentHTML('afterend', `<section class="item article-declarations"><div class="value">${declarations.map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong><br>${escapeHtml(value).replace(/\n/g, '<br>')}</p>`).join('')}</div></section>`);
+      references.insertAdjacentHTML('beforebegin', `<section class="item article-declarations"><div class="value">${declarations.map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong><br>${escapeHtml(value).replace(/\n/g, '<br>')}</p>`).join('')}</div></section>`);
     }
 
     const doi = document.querySelector('meta[name="DC.Identifier.DOI"]');
