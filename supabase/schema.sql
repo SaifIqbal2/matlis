@@ -28,6 +28,7 @@ create table public.journal_pdfs (
   abstract text,
   keywords text,
   doi text,
+  alternate_url text,
   issue text,
   page_number text,
   sort_order integer,

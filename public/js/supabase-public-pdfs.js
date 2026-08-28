@@ -15,7 +15,7 @@
     const { data: journal, error: journalError } = await client.from('journals').select('id').eq('slug', journalSlug).eq('is_published', true).maybeSingle();
     if (journalError || !journal) return;
 
-    let pdfQuery = client.from('journal_pdfs').select('id, title, authors, issue, page_number, sort_order, doi, file_path, created_at').eq('journal_id', journal.id).eq('is_published', true);
+    let pdfQuery = client.from('journal_pdfs').select('id, title, authors, issue, page_number, sort_order, doi, alternate_url, file_path, created_at').eq('journal_id', journal.id).eq('is_published', true);
     if (issueId) pdfQuery = pdfQuery.eq('issue', issueId);
     const { data: pdfs, error: pdfError } = await pdfQuery.order('sort_order', { ascending: true, nullsFirst: false });
     if (pdfError || !pdfs?.length) return;
@@ -24,8 +24,9 @@
       const url = client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl;
       const detailUrl = `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';
+      const articleUrl = pdf.alternate_url || doiUrl;
       const pageNumber = pdf.page_number || (pdf.doi || '').replace(/\/$/, '').split('/').pop() || 'PDF';
-      return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${detailUrl}">${escapeHtml(pdf.title)}</a></h2>${pdf.doi ? `<div class="doiInSummary"><strong>DOI:</strong> <a href="${escapeHtml(doiUrl)}" target="_blank" rel="noopener">${escapeHtml(pdf.doi)}</a></div>` : ''}<div class="meta"><div class="authors">${escapeHtml(pdf.authors || 'Mattioli 1885 Journals')}</div><div class="pages">${escapeHtml(pageNumber)}</div></div><a class="obj_galley_link btn btn-primary pdf" href="${escapeHtml(url)}" target="_blank" rel="noopener">PDF</a></div></li>`;
+      return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${detailUrl}">${escapeHtml(pdf.title)}</a></h2>${pdf.doi ? `<div class="doiInSummary"><strong>DOI:</strong> <a href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener">${escapeHtml(pdf.doi)}</a></div>` : (pdf.alternate_url ? `<div class="doiInSummary"><strong>Article link:</strong> <a href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener">${escapeHtml(articleUrl)}</a></div>` : '')}<div class="meta"><div class="authors">${escapeHtml(pdf.authors || 'Mattioli 1885 Journals')}</div><div class="pages">${escapeHtml(pageNumber)}</div></div><a class="obj_galley_link btn btn-primary pdf" href="${detailUrl}" target="_blank" rel="noopener">PDF</a></div></li>`;
     });
 
     const fragment = document.createDocumentFragment();
