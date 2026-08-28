@@ -1,7 +1,9 @@
 (function () {
   if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase) return;
-  const id = new URLSearchParams(window.location.search).get('uploadedId');
+  const queryId = new URLSearchParams(window.location.search).get('uploadedId');
+  const id = queryId || window.sessionStorage.getItem('uploadedArticleId');
   if (!id) return;
+  if (queryId) window.sessionStorage.setItem('uploadedArticleId', queryId);
 
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
   const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
@@ -9,6 +11,10 @@
   async function loadUploadedArticle() {
     const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, citation, alternate_url, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
     if (error || !data) return;
+
+    const cleanUrl = new URL(window.location.href);
+    cleanUrl.searchParams.delete('uploadedId');
+    window.history.replaceState({}, document.title, cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
 
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
     document.title = `${data.title} | ${data.journals?.name || 'Mattioli 1885 Journals'}`;
