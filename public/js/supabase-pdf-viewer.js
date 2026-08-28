@@ -1,11 +1,18 @@
 (function () {
   if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase || !window.pdfjsLib) return;
   const params = new URLSearchParams(window.location.search);
-  const id = params.get('uploadedId');
+  const queryId = params.get('uploadedId');
+  const id = queryId || window.sessionStorage.getItem('uploadedArticleId');
   const numericArticleId = Number(params.get('articleId'));
   const numericGalleyId = Number(params.get('galleyId'));
   const container = document.querySelector('#pdfCanvasContainer');
   if ((!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) || !container) return;
+  if (queryId) {
+    window.sessionStorage.setItem('uploadedArticleId', queryId);
+    const cleanUrl = new URL(window.location.href);
+    cleanUrl.searchParams.delete('uploadedId');
+    window.history.replaceState({}, document.title, cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
+  }
 
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
   window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
