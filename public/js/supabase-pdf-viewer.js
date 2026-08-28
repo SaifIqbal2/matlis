@@ -9,9 +9,6 @@
   if ((!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) || !container) return;
   if (queryId) {
     window.sessionStorage.setItem('uploadedArticleId', queryId);
-    const cleanUrl = new URL(window.location.href);
-    cleanUrl.searchParams.delete('uploadedId');
-    window.history.replaceState({}, document.title, cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
   }
 
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
