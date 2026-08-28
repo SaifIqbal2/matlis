@@ -6,8 +6,7 @@
   async function updateAlternateLinks() {
     const { data, error } = await client
       .from('journal_pdfs')
-      .select('ojs_article_id, doi, alternate_url, journals!inner(slug)')
-      .eq('journals.slug', 'actabiomedica')
+      .select('ojs_article_id, doi, alternate_url')
       .eq('is_published', true)
       .not('alternate_url', 'is', null);
     if (error || !data) return;
@@ -28,6 +27,10 @@
         doiLink.href = alternateUrl;
         doiLink.target = '_blank';
         doiLink.rel = 'noopener';
+        doiLink.addEventListener('click', function (event) {
+          event.preventDefault();
+          window.location.href = alternateUrl;
+        });
       }
     });
   }
