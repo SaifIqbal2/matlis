@@ -7,7 +7,7 @@
   const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
 
   async function loadUploadedArticle() {
-    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, citation, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
+    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, citation, alternate_url, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
     if (error || !data) return;
 
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
@@ -48,6 +48,21 @@
       document.querySelectorAll('#citationOutput').forEach(output => {
         output.textContent = data.citation;
         output.style.whiteSpace = 'pre-wrap';
+        if (data.alternate_url) {
+          const link = document.createElement('a');
+          link.href = data.alternate_url;
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.textContent = data.doi || data.alternate_url;
+          output.append(document.createTextNode(' '), link);
+        }
+      });
+    }
+    if (data.alternate_url) {
+      document.querySelectorAll('#citationOutput a[href*="doi.org"]').forEach(link => {
+        link.href = data.alternate_url;
+        link.target = '_blank';
+        link.rel = 'noopener';
       });
     }
     const details = document.querySelector('.entry_details');
