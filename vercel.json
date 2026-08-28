@@ -9,9 +9,9 @@
     { "source": "/admin/", "destination": "/admin/index.html" },
     { "source": "/index.php/:journal/search/index", "destination": "/index.php/:journal/search.html" },
     { "source": "/index.php/:journal/search/index.html", "destination": "/index.php/:journal/search.html" }
-    , { "source": "/index.php/:journal/article/view/:articleId/:galleyId.html", "destination": "/index.php/actabiomedica/article/view/18612/13437.html?articleId=:articleId&galleyId=:galleyId" }
   ],
   "redirects": [
+    { "source": "/index.php/actabiomedica/article/view/18612/13437.html", "destination": "https://www.mattioli1885journls.com/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=b55ab609-2ff1-4fac-bc03-11edbec9943f", "permanent": false },
     { "source": "/index.php/:journal/login", "destination": "/auth/?mode=login&journal=:journal", "permanent": false },
     { "source": "/index.php/:journal/login.html", "destination": "/auth/?mode=login&journal=:journal", "permanent": false },
     { "source": "/index.php/:journal/user/register", "destination": "/auth/?mode=register&journal=:journal", "permanent": false },
