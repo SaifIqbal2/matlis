@@ -23,7 +23,7 @@
     const uploadedItems = pdfs.map(pdf => {
       const url = `${client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl}?v=${encodeURIComponent(pdf.updated_at || pdf.created_at || Date.now())}`;
       const productionHost = 'https://www.mattioli1885journls.com';
-      const viewerUrl = `${productionHost}/api/article-preview?uploadedId=${encodeURIComponent(pdf.id)}`;
+      const viewerUrl = `${productionHost}/api/pdf-preview?uploadedId=${encodeURIComponent(pdf.id)}`;
       const numericPdfUrl = pdf.ojs_article_id && pdf.ojs_galley_id ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}/${pdf.ojs_galley_id}.html?uploadedId=${encodeURIComponent(pdf.id)}` : '';
       const detailUrl = `${productionHost}/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       const viewerLink = numericPdfUrl || `${viewerUrl}&returnUrl=${encodeURIComponent(detailUrl)}`;
