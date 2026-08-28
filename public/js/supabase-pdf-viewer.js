@@ -32,8 +32,10 @@
     }
     if (downloadLink) downloadLink.href = pdfUrl;
     document.title = `View of ${title}`;
-    if (id && Number.isInteger(numericArticleId) && Number.isInteger(numericGalleyId)) {
-      window.history.replaceState({}, document.title, `/index.php/actabiomedica/article/view/${numericArticleId}/${numericGalleyId}.html`);
+    const cleanArticleId = numericArticleId > 0 ? numericArticleId : Number(data.ojs_article_id);
+    const cleanGalleyId = numericGalleyId > 0 ? numericGalleyId : Number(data.ojs_galley_id);
+    if (id && cleanArticleId > 0 && cleanGalleyId > 0) {
+      window.history.replaceState({}, document.title, `/index.php/actabiomedica/article/view/${cleanArticleId}/${cleanGalleyId}.html`);
     }
 
     container.classList.add('pdfjs-viewer');
