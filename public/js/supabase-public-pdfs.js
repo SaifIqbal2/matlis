@@ -15,13 +15,13 @@
     const { data: journal, error: journalError } = await client.from('journals').select('id').eq('slug', journalSlug).eq('is_published', true).maybeSingle();
     if (journalError || !journal) return;
 
-    let pdfQuery = client.from('journal_pdfs').select('id, title, authors, issue, page_number, sort_order, doi, alternate_url, file_path, created_at').eq('journal_id', journal.id).eq('is_published', true);
+    let pdfQuery = client.from('journal_pdfs').select('id, title, authors, issue, page_number, sort_order, doi, alternate_url, file_path, created_at, updated_at').eq('journal_id', journal.id).eq('is_published', true);
     if (issueId) pdfQuery = pdfQuery.eq('issue', issueId);
     const { data: pdfs, error: pdfError } = await pdfQuery.order('sort_order', { ascending: true, nullsFirst: false });
     if (pdfError || !pdfs?.length) return;
 
     const uploadedItems = pdfs.map(pdf => {
-      const url = client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl;
+      const url = `${client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl}?v=${encodeURIComponent(pdf.updated_at || pdf.created_at || Date.now())}`;
       const detailUrl = `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       const viewerUrl = `/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';

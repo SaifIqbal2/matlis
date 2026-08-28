@@ -8,10 +8,10 @@
   window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
   async function loadPdf() {
-    const { data, error } = await client.from('journal_pdfs').select('title, file_path').eq('id', id).eq('is_published', true).maybeSingle();
+    const { data, error } = await client.from('journal_pdfs').select('title, file_path, created_at, updated_at').eq('id', id).eq('is_published', true).maybeSingle();
     if (error || !data) return;
 
-    const pdfUrl = client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl;
+    const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
     const title = data.title || 'Article PDF';
     const titleLink = document.querySelector('.header_view .title');
     const downloadLink = document.querySelector('.header_view .download');

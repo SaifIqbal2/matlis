@@ -6,7 +6,8 @@ create table public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   full_name text,
   role public.app_role not null default 'editor',
-  created_at timestamptz not null default now()
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
 );
 
 create table public.journals (

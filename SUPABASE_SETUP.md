@@ -45,6 +45,7 @@ alter table public.journal_pdfs add column if not exists first_author_name text;
 alter table public.journal_pdfs add column if not exists first_author_affiliation text;
 alter table public.journal_pdfs add column if not exists page_number text;
 alter table public.journal_pdfs add column if not exists sort_order integer;
+alter table public.journal_pdfs add column if not exists updated_at timestamptz not null default now();
 ```
 
 ## 3. Use the control panel
