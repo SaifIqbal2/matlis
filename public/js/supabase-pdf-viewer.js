@@ -19,11 +19,20 @@
     const titleLink = document.querySelector('.header_view .title');
     const returnLink = document.querySelector('.header_view .return');
     const downloadLink = document.querySelector('.header_view .download');
+    const goBackToArticle = event => {
+      event.preventDefault();
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = returnUrl;
+    };
     if (titleLink) {
       titleLink.textContent = title;
       titleLink.href = returnUrl;
+      titleLink.addEventListener('click', goBackToArticle);
     }
-    if (returnLink) returnLink.href = returnUrl;
+    if (returnLink) {
+      returnLink.href = returnUrl;
+      returnLink.addEventListener('click', goBackToArticle);
+    }
     if (downloadLink) downloadLink.href = pdfUrl;
     document.title = `View of ${title}`;
 
