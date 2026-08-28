@@ -48,6 +48,7 @@
 .pdfjs-page-status { min-width: 72px; text-align: center; }
 .pdfjs-page-input { width: 36px; height: 30px; padding: 0 4px; border: 1px solid #666; background: #222; color: #fff; text-align: center; }
 .pdfjs-zoom-status { min-width: 54px; text-align: center; }
+.pdfjs-zoom-select { height: 34px; min-width: 190px; padding: 0 10px; border: 0; background: #4a4a4a; color: #fff; font-size: 16px; }
 
 .pdfjs-canvas-wrap {
   display: inline-block;

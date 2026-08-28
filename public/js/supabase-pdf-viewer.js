@@ -41,10 +41,20 @@
           <button type="button" data-pdf-action="zoom-out" aria-label="Zoom out" title="Zoom out"><span class="fa fa-minus"></span></button>
           <span class="pdfjs-zoom-status">100%</span>
           <button type="button" data-pdf-action="zoom-in" aria-label="Zoom in" title="Zoom in"><span class="fa fa-plus"></span></button>
+          <select class="pdfjs-zoom-select" aria-label="Zoom preset">
+            <option>Automatic Zoom</option>
+            <option value="1">100%</option>
+            <option value="1.5">150%</option>
+            <option value="2">200%</option>
+          </select>
         </div>
         <div class="pdfjs-toolbar-group">
+          <button type="button" aria-label="Annotation" title="Annotation"><span class="fa fa-pencil"></span></button>
+          <button type="button" aria-label="Text selection" title="Text selection"><span class="fa fa-font"></span></button>
+          <button type="button" aria-label="Image tools" title="Image tools"><span class="fa fa-picture-o"></span></button>
           <button type="button" data-pdf-action="print" aria-label="Print" title="Print"><span class="fa fa-print"></span></button>
           <a class="pdfjs-download" href="${escapeHtml(pdfUrl)}" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><span class="fa fa-download"></span></a>
+          <button type="button" aria-label="More tools" title="More tools"><span class="fa fa-ellipsis-v"></span></button>
         </div>
       </div>
       <div class="pdfjs-canvas-wrap"><canvas aria-label="PDF page"></canvas></div>`;
@@ -55,6 +65,7 @@
     const pageStatus = container.querySelector('.pdfjs-page-status');
     const pageInput = container.querySelector('.pdfjs-page-input');
     const zoomStatus = container.querySelector('.pdfjs-zoom-status');
+    const zoomSelect = container.querySelector('.pdfjs-zoom-select');
     let pageNumber = 1;
     let scale = 1;
 
@@ -74,6 +85,10 @@
     container.addEventListener('change', event => {
       if (event.target === pageInput) {
         pageNumber = Math.min(pdf.numPages, Math.max(1, Number(pageInput.value) || 1));
+        renderPage();
+      }
+      if (event.target === zoomSelect && zoomSelect.value !== 'Automatic Zoom') {
+        scale = Number(zoomSelect.value);
         renderPage();
       }
     });
