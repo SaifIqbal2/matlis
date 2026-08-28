@@ -1,9 +1,10 @@
 (function () {
   if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase) return;
   const queryId = new URLSearchParams(window.location.search).get('uploadedId');
-  const id = queryId || window.sessionStorage.getItem('uploadedArticleId');
   const numericArticleId = Number(new URLSearchParams(window.location.search).get('articleId'));
   const numericGalleyId = Number(new URLSearchParams(window.location.search).get('galleyId'));
+  const hasNumericIds = Number.isInteger(numericArticleId) && Number.isInteger(numericGalleyId);
+  const id = queryId || (!hasNumericIds ? window.sessionStorage.getItem('uploadedArticleId') : null);
   if (!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) return;
   if (queryId) window.sessionStorage.setItem('uploadedArticleId', queryId);
 

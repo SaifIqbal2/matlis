@@ -2,9 +2,10 @@
   if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase || !window.pdfjsLib) return;
   const params = new URLSearchParams(window.location.search);
   const queryId = params.get('uploadedId');
-  const id = queryId || window.sessionStorage.getItem('uploadedArticleId');
   const numericArticleId = Number(params.get('articleId'));
   const numericGalleyId = Number(params.get('galleyId'));
+  const hasNumericIds = Number.isInteger(numericArticleId) && Number.isInteger(numericGalleyId);
+  const id = queryId || (!hasNumericIds ? window.sessionStorage.getItem('uploadedArticleId') : null);
   const container = document.querySelector('#pdfCanvasContainer');
   if ((!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) || !container) return;
   if (queryId) {
