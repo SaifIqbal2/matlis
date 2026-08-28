@@ -7,7 +7,7 @@
   const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
 
   async function loadUploadedArticle() {
-    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, sort_order, doi, abstract, keywords, conflict_of_interest, ai_declaration, funding, file_path, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
+    const { data, error } = await client.from('journal_pdfs').select('title, authors, issue, page_number, sort_order, doi, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, journals(name)').eq('id', id).eq('is_published', true).maybeSingle();
     if (error || !data) return;
 
     const pdfUrl = client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl;
@@ -27,7 +27,17 @@
       ['Declaration on the Use of AI', data.ai_declaration],
       ['Funding', data.funding]
     ].filter(([, value]) => value);
+    const correspondence = [
+      ['Correspondence', data.correspondence],
+      ['Received', data.received_date],
+      ['Accepted', data.accepted_date],
+      ['First author name', data.first_author_name],
+      ['Affiliation', data.first_author_affiliation]
+    ].filter(([, value]) => value);
     const references = document.querySelector('section.item.references');
+    if (references && correspondence.length) {
+      references.insertAdjacentHTML('afterend', `<section class="item article-correspondence"><div class="value">${correspondence.map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong><br>${escapeHtml(value).replace(/\n/g, '<br>')}</p>`).join('')}</div></section>`);
+    }
     if (references && declarations.length) {
       references.insertAdjacentHTML('beforebegin', `<section class="item article-declarations"><div class="value">${declarations.map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong><br>${escapeHtml(value).replace(/\n/g, '<br>')}</p>`).join('')}</div></section>`);
     }

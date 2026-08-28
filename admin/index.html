@@ -56,6 +56,11 @@
             <label>Conflict of Interest<textarea id="pdfConflictOfInterest" rows="2">The authors declare that they have no conflict of interest.</textarea></label>
             <label>Declaration on the Use of AI<textarea id="pdfAiDeclaration" rows="2">None.</textarea></label>
             <label>Funding<textarea id="pdfFunding" rows="2">No funding was received for this study.</textarea></label>
+            <label>Correspondence<textarea id="pdfCorrespondence" rows="2"></textarea></label>
+            <label>Received<input id="pdfReceived" placeholder="05 March 2025"></label>
+            <label>Accepted<input id="pdfAccepted" placeholder="02 July 2025"></label>
+            <label>First author name<input id="pdfFirstAuthor"></label>
+            <label>First author affiliation<textarea id="pdfFirstAuthorAffiliation" rows="2"></textarea></label>
             <label>PDF file<input id="pdfFile" type="file" accept="application/pdf" required></label>
             <button type="submit">Upload PDF</button>
           </form>
@@ -83,6 +88,11 @@
           <label>Conflict of Interest<textarea id="editPdfConflictOfInterest" rows="2"></textarea></label>
           <label>Declaration on the Use of AI<textarea id="editPdfAiDeclaration" rows="2"></textarea></label>
           <label>Funding<textarea id="editPdfFunding" rows="2"></textarea></label>
+          <label>Correspondence<textarea id="editPdfCorrespondence" rows="2"></textarea></label>
+          <label>Received<input id="editPdfReceived"></label>
+          <label>Accepted<input id="editPdfAccepted"></label>
+          <label>First author name<input id="editPdfFirstAuthor"></label>
+          <label>First author affiliation<textarea id="editPdfFirstAuthorAffiliation" rows="2"></textarea></label>
           <button type="submit">Save PDF changes</button>
           <button id="cancelPdfEdit" class="button-secondary" type="button">Cancel</button>
         </form>
