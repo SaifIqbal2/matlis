@@ -67,7 +67,7 @@
     }
     const details = document.querySelector('.entry_details');
     if (details) {
-      const viewerUrl = data.ojs_article_id && data.ojs_galley_id ? `/index.php/actabiomedica/article/view/${data.ojs_article_id}/${data.ojs_galley_id}.html` : `/api/pdf-preview?uploadedId=${encodeURIComponent(id)}`;
+      const viewerUrl = data.ojs_article_id && data.ojs_galley_id ? `/index.php/actabiomedica/article/view/${data.ojs_article_id}/${data.ojs_galley_id}.html?uploadedId=${encodeURIComponent(id)}` : `/api/pdf-preview?uploadedId=${encodeURIComponent(id)}`;
       details.insertAdjacentHTML('afterbegin', `<p><a class="obj_galley_link btn btn-primary pdf" href="${escapeHtml(viewerUrl)}">PDF</a></p>`);
     }
   }
