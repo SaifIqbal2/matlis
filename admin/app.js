@@ -200,7 +200,6 @@ pdfEditForm.addEventListener('submit', async event => {
     , accepted_date: document.querySelector('#editPdfAccepted').value.trim() || null
     , first_author_name: document.querySelector('#editPdfFirstAuthor').value.trim() || null
     , first_author_affiliation: document.querySelector('#editPdfFirstAuthorAffiliation').value.trim() || null
-    , updated_at: new Date().toISOString()
   };
   let replacementPath = null;
   let movedExistingFile = false;
