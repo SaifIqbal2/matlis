@@ -28,6 +28,7 @@
 
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
     const title = data.title || 'Article PDF';
+    const downloadName = data.file_path.split('/').pop() || 'article.pdf';
     const requestedReturnUrl = params.get('returnUrl');
     const returnUrl = requestedReturnUrl || `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(data.id)}`;
     const titleLink = document.querySelector('.header_view .title');
@@ -40,11 +41,14 @@
     if (returnLink) {
       returnLink.href = returnUrl;
     }
-    if (downloadLink) downloadLink.href = pdfUrl;
+    if (downloadLink) {
+      downloadLink.href = pdfUrl;
+      downloadLink.setAttribute('download', downloadName);
+    }
     document.title = `View of ${title}`;
 
     container.classList.add('pdfjs-viewer');
-    container.innerHTML = '<div class="pdfjs-toolbar" role="toolbar" aria-label="PDF controls"><div class="pdfjs-toolbar-group"><button data-action="previous" aria-label="Previous page">&#8249;</button><button data-action="next" aria-label="Next page">&#8250;</button></div><div class="pdfjs-toolbar-group center"><input id="pdfPage" type="number" min="1" value="1" aria-label="Page number"><span>of <b id="pdfTotal">0</b></span><button data-action="zoom-out" aria-label="Zoom out">−</button><span id="pdfZoom">Automatic</span><button data-action="zoom-in" aria-label="Zoom in">+</button><select id="pdfZoomSelect" aria-label="Zoom"><option value="auto">Automatic Zoom</option><option value="1">100%</option><option value="1.5">150%</option><option value="2">200%</option></select></div><div class="pdfjs-toolbar-group"><button data-action="print" aria-label="Print">&#128438;</button><a href="' + pdfUrl + '" download aria-label="Download PDF">&#8681;</a></div></div><div class="pdfjs-pages" id="pdfPages"></div>';
+    container.innerHTML = '<div class="pdfjs-toolbar" role="toolbar" aria-label="PDF controls"><div class="pdfjs-toolbar-group"><button data-action="previous" aria-label="Previous page">&#8249;</button><button data-action="next" aria-label="Next page">&#8250;</button></div><div class="pdfjs-toolbar-group center"><input id="pdfPage" type="number" min="1" value="1" aria-label="Page number"><span>of <b id="pdfTotal">0</b></span><button data-action="zoom-out" aria-label="Zoom out">−</button><span id="pdfZoom">Automatic</span><button data-action="zoom-in" aria-label="Zoom in">+</button><select id="pdfZoomSelect" aria-label="Zoom"><option value="auto">Automatic Zoom</option><option value="1">100%</option><option value="1.5">150%</option><option value="2">200%</option></select></div><div class="pdfjs-toolbar-group"><button data-action="print" aria-label="Print">&#128438;</button><a href="' + pdfUrl + '" download="' + downloadName + '" aria-label="Download PDF">&#8681;</a></div></div><div class="pdfjs-pages" id="pdfPages"></div>';
 
     const pdf = await window.pdfjsLib.getDocument(pdfUrl).promise;
     const pages = document.querySelector('#pdfPages');
