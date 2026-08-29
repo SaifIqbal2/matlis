@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article view | Acta Biomedica</title>
+  <link rel="icon" href="../../../../public/journals/2/favicon_en_US.png">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; color: #222; }
+    .loader { max-width: 720px; margin: 60px auto; background: #fff; padding: 24px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+    .loader h1 { font-size: 22px; margin-bottom: 12px; }
+    .loader p { margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <h1>Opening article…</h1>
+    <p>Resolving the correct PDF galley for this article.</p>
+  </div>
+
+  <script src="/supabase/config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    (function () {
+      const articleId = 17049;
+      const targetUrl = 'https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/17049/12923.html';
+      const fallbackUrl = 'https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/17049.html';
+
+      function redirectToPdfViewer(url) {
+        window.location.replace(url);
+      }
+
+      if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase) {
+        redirectToPdfViewer(targetUrl);
+        return;
+      }
+
+      const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+      client
+        .from('journal_pdfs')
+        .select('id, file_path, ojs_article_id, ojs_galley_id, updated_at, created_at')
+        .eq('ojs_article_id', articleId)
+        .eq('is_published', true)
+        .order('sort_order', { ascending: true, nullsFirst: false })
+        .limit(1)
+        .then(({ data, error }) => {
+          if (error || !data || !data.length) {
+            redirectToPdfViewer(targetUrl);
+            return;
+          }
+
+          const pdf = data[0];
+          const pdfUrl = pdf.ojs_article_id && pdf.ojs_galley_id
+            ? `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/${pdf.ojs_article_id}/${pdf.ojs_galley_id}.html`
+            : targetUrl;
+          redirectToPdfViewer(pdfUrl);
+        })
+        .catch(() => {
+          redirectToPdfViewer(targetUrl);
+        });
+    }());
+  </script>
+</body>
+</html>
