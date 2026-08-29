@@ -6,76 +6,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		html.uploaded-article-loading .mainWrapper { visibility: hidden; }
-		html.uploaded-article-loading .uploaded-content-slot { display: none; }
-		html.uploaded-article-ready .uploaded-content-slot { display: block; }
-	</style>
-	<script>
-		(function () {
-			const params = new URLSearchParams(window.location.search);
-			const uploadedId = params.get('uploadedId');
-			if (!uploadedId) return;
-
-			document.documentElement.classList.add('uploaded-article-loading');
-
-			function removeStaleArticleShell() {
-				const shellSelectors = [
-					'.obj_article_summary',
-					'.page_title',
-					'.hero-section h1',
-					'.item.abstract',
-					'.item.authors',
-					'.item.references',
-					'.entry_details',
-					'.item.keywords'
-				];
-
-				shellSelectors.forEach(selector => {
-					document.querySelectorAll(selector).forEach(node => {
-						if (!node.closest('[data-uploaded-content="true"]')) {
-							node.remove();
-						}
-					});
-				});
-
-				document.querySelectorAll(
-					'meta[name="DC.Identifier"], meta[name="DC.Identifier.pageNumber"], meta[name="DC.Identifier.DOI"]'
-				).forEach(node => node.remove());
-			}
-
-			function revealUploadedArticle() {
-				document.documentElement.classList.remove('uploaded-article-loading');
-				if (document.body) document.body.classList.add('uploaded-article-ready');
-			}
-
-			function applyUploadedArticleMode() {
-				removeStaleArticleShell();
-				const observer = new MutationObserver(() => {
-					const articleRoot = document.querySelector('[data-uploaded-content="true"]');
-					const titleNode = document.querySelector('.hero-section h1');
-					if (articleRoot || titleNode) {
-						revealUploadedArticle();
-						observer.disconnect();
-					}
-				});
-
-				observer.observe(document.body || document.documentElement, {
-					childList: true,
-					subtree: true
-				});
-
-				setTimeout(() => {
-					revealUploadedArticle();
-					observer.disconnect();
-				}, 1200);
-			}
-
-			applyUploadedArticleMode();
-		})();
-	</script>
 	<title>
-	
+		Association Between Serum Type III Collagen N-Terminal Propeptide (PRO-C3) Levels and Liver Fibrosis Severity in Patients with Chronic Hepatitis B
+							| Acta Biomedica Atenei Parmensis
 			</title>
 
 	
@@ -778,8 +711,8 @@ Conclusions: Serum PRO-C3 was significantly associated with liver fibrosis sever
 			<span class="separator">/</span>
 		</li>
 		<li>
-			<a href="../../issue/view/968.html">
-				Vol. 96 No. 5 (2025)
+			<a href="../../issue/view/963.html">
+				Vol. 96 No. 4 (2025)
 			</a>
 			<span class="separator">/</span>
 		</li>
@@ -1103,7 +1036,7 @@ Conclusions: Serum PRO-C3 was significantly associated with liver fibrosis sever
 													Published
 												</h2>
 												<div class="value">
-													<span>28-10-2025</span>
+													<span>05-08-2025</span>
 												</div>
 											</section>
 										</div>
@@ -1114,8 +1047,8 @@ Conclusions: Serum PRO-C3 was significantly associated with liver fibrosis sever
 								Issue
 							</h2>
 							<div class="value">
-															<a class="title" href="../../issue/view/968.html">
-																Vol. 96 No. 5 (2025)
+															<a class="title" href="../../issue/view/963.html">
+																Vol. 96 No. 4 (2025)
 								</a>
 							</div>
 						</section>
