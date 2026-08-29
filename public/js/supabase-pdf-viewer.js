@@ -44,6 +44,23 @@
     if (downloadLink) {
       downloadLink.href = pdfUrl;
       downloadLink.setAttribute('download', downloadName);
+      downloadLink.addEventListener('click', async event => {
+        event.preventDefault();
+        try {
+          const download = await fetch(pdfUrl);
+          if (!download.ok) throw new Error('PDF download failed');
+          const blobUrl = URL.createObjectURL(await download.blob());
+          const link = document.createElement('a');
+          link.href = blobUrl;
+          link.download = downloadName;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(blobUrl);
+        } catch {
+          window.alert('PDF download failed. Please try again.');
+        }
+      });
     }
     document.title = `View of ${title}`;
 
