@@ -21,7 +21,7 @@
   window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
   async function loadPdf() {
-    let query = client.from('journal_pdfs').select('id, title, file_path, ojs_article_id, ojs_galley_id, created_at, updated_at').eq('is_published', true);
+    let query = client.from('journal_pdfs').select('id, title, file_path, ojs_article_id, ojs_galley_id, alternate_url, created_at, updated_at').eq('is_published', true);
     query = id ? query.eq('id', id) : query.eq('ojs_article_id', resolvedArticleId).eq('ojs_galley_id', resolvedGalleyId);
     const { data, error } = await query.maybeSingle();
     if (error || !data) return;
@@ -30,7 +30,7 @@
     const title = data.title || 'Article PDF';
     const downloadName = data.file_path.split('/').pop() || 'article.pdf';
     const requestedReturnUrl = params.get('returnUrl');
-    const returnUrl = requestedReturnUrl || `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(data.id)}`;
+    const returnUrl = data.alternate_url || requestedReturnUrl || `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(data.id)}`;
     const titleLink = document.querySelector('.header_view .title');
     const returnLink = document.querySelector('.header_view .return');
     const downloadLink = document.querySelector('.header_view .download');
