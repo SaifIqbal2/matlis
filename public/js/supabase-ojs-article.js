@@ -11,8 +11,26 @@
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
   const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
 
+  function renderReferencesHtml(value) {
+    const rawValue = String(value ?? '').trim();
+    if (!rawValue) return '';
+    if (/<\/?[a-z][\s\S]*>/i.test(rawValue)) return rawValue;
+
+    const entries = rawValue
+      .replace(/\r\n/g, '\n')
+      .split(/\n\s*\n/)
+      .map(entry => entry.trim())
+      .filter(Boolean);
+
+    if (!entries.length) return '';
+
+    return entries
+      .map(entry => `<p>${escapeHtml(entry).replace(/\n/g, '<br>')}</p>`)
+      .join('');
+  }
+
   async function loadUploadedArticle() {
-    let articleQuery = client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, citation, alternate_url, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('is_published', true);
+    let articleQuery = client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, citation, references, alternate_url, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('is_published', true);
     articleQuery = id ? articleQuery.eq('id', id) : articleQuery.eq('ojs_article_id', numericArticleId).eq('ojs_galley_id', numericGalleyId);
     const { data, error } = await articleQuery.maybeSingle();
     if (error || !data) return;
@@ -42,6 +60,12 @@
       ['Affiliation', data.first_author_affiliation]
     ].filter(([, value]) => value);
     const references = document.querySelector('section.item.references');
+    if (references) {
+      const renderedReferences = renderReferencesHtml(data.references);
+      if (renderedReferences) {
+        references.innerHTML = `<h2 class="label">References</h2><div class="value">${renderedReferences}</div>`;
+      }
+    }
     if (references && correspondence.length) {
       references.insertAdjacentHTML('afterend', `<section class="item article-correspondence"><div class="value">${correspondence.map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong><br>${escapeHtml(value).replace(/\n/g, '<br>')}</p>`).join('')}</div></section>`);
     }
