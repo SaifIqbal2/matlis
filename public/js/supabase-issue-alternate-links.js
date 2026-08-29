@@ -32,6 +32,10 @@
           window.location.href = alternateUrl;
         });
       }
+      if (articleLink && articleLink.getAttribute('href')?.includes('/article/view/')) {
+        articleLink.removeAttribute('target');
+        articleLink.removeAttribute('rel');
+      }
     });
   }
 

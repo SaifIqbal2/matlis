@@ -3473,9 +3473,8 @@ document.querySelectorAll('.obj_article_summary').forEach(function (summary) {
 	if (!doiLink) return;
 	var articleLink = summary.querySelector('.title a');
 	if (articleLink && articleLink.getAttribute('href').indexOf('/article/view/') !== -1) {
-		articleLink.href = doiLink.href;
-		articleLink.target = '_blank';
-		articleLink.rel = 'noopener';
+		articleLink.removeAttribute('target');
+		articleLink.removeAttribute('rel');
 	}
 });
 </script>
