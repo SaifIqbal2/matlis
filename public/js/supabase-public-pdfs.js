@@ -5,10 +5,35 @@
   const journalSlug = document.body.dataset.journalSlug;
   const issueId = document.body.dataset.issueId;
   const list = document.querySelector(issueId ? '.cmp_article_list.articles' : '.online_first_issue_toc .cmp_article_list.articles');
+  const isIssue968 = window.location.pathname.includes('/issue/view/968');
+  const forceIssue968Url = 'https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/17657.html';
   if (!list || !journalSlug) return;
 
   function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
+  }
+
+  function applyIssue968Override(node) {
+    if (!isIssue968) return;
+    const container = node && node.closest ? node.closest('.uploaded-publication') : null;
+    const link = container ? container.querySelector('.title a') : null;
+    if (!link) return;
+    link.href = forceIssue968Url;
+    link.setAttribute('data-force-968', 'true');
+    link.removeAttribute('target');
+    link.onclick = function (event) {
+      event.preventDefault();
+      window.location.assign(forceIssue968Url);
+      return false;
+    };
+  }
+
+  function hydrateIssue968Links() {
+    if (!isIssue968) return;
+    document.querySelectorAll('.uploaded-publication .title a').forEach(applyIssue968Override);
+    if (list) {
+      list.querySelectorAll('.uploaded-publication .title a').forEach(applyIssue968Override);
+    }
   }
 
   async function addUploadedPdfs() {
@@ -47,7 +72,14 @@
       list.insertBefore(node, list.children[position] || null);
       existingNodes.splice(position, 0, node);
     });
+
+    hydrateIssue968Links();
+    if (isIssue968) {
+      const observer = new MutationObserver(() => hydrateIssue968Links());
+      observer.observe(list, { childList: true, subtree: true });
+    }
   }
 
+  hydrateIssue968Links();
   addUploadedPdfs();
 }());

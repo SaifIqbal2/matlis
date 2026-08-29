@@ -3464,7 +3464,7 @@ var uploadedArticleUrl = 'https://www.mattioli1885journls.com/index.php/actabiom
 var forceIssue968ArticleUrl = 'https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/17657.html';
 
 function forceIssue968TitleLinks() {
-  document.querySelectorAll('.obj_article_summary .title a').forEach(function (articleLink) {
+  document.querySelectorAll('.uploaded-publication .title a').forEach(function (articleLink) {
     articleLink.href = forceIssue968ArticleUrl;
     articleLink.setAttribute('data-force-968', 'true');
     articleLink.target = '_self';
@@ -3488,7 +3488,7 @@ if (uploadedArticleDoi) {
 if (window.location.pathname.indexOf('/issue/view/968') !== -1) {
   forceIssue968TitleLinks();
   document.addEventListener('click', function (event) {
-    var clickedLink = event.target.closest('.obj_article_summary .title a');
+    var clickedLink = event.target.closest('.uploaded-publication .title a');
     if (!clickedLink || clickedLink.getAttribute('data-force-968') !== 'true') return;
     event.preventDefault();
     window.location.assign(forceIssue968ArticleUrl);
