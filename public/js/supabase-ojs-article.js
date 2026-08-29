@@ -15,7 +15,10 @@
     let articleQuery = client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, citation, alternate_url, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('is_published', true);
     articleQuery = id ? articleQuery.eq('id', id) : articleQuery.eq('ojs_article_id', numericArticleId).eq('ojs_galley_id', numericGalleyId);
     const { data, error } = await articleQuery.maybeSingle();
-    if (error || !data) return;
+    if (error || !data) {
+      document.documentElement.classList.remove('uploaded-article-loading');
+      return;
+    }
 
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
     document.title = `${data.title} | ${data.journals?.name || 'Mattioli 1885 Journals'}`;
@@ -77,6 +80,7 @@
       const viewerUrl = data.ojs_article_id && data.ojs_galley_id ? `/index.php/actabiomedica/article/view/${data.ojs_article_id}/${data.ojs_galley_id}.html` : `/api/pdf-preview?uploadedId=${encodeURIComponent(id)}`;
       details.insertAdjacentHTML('afterbegin', `<p><a class="obj_galley_link btn btn-primary pdf" href="${escapeHtml(viewerUrl)}">PDF</a></p>`);
     }
+    document.documentElement.classList.remove('uploaded-article-loading');
   }
 
   loadUploadedArticle();
