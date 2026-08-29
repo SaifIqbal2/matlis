@@ -30,7 +30,9 @@
     const title = data.title || 'Article PDF';
     const downloadName = data.file_path.split('/').pop() || 'article.pdf';
     const requestedReturnUrl = params.get('returnUrl');
-    const returnUrl = requestedReturnUrl || `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(data.id)}`;
+    const currentJournalPath = window.location.pathname.split('/').slice(0, 3).join('/');
+    const fallbackReturnUrl = currentJournalPath ? `${currentJournalPath}/index.html` : '/index.php/actabiomedica/index.html';
+    const returnUrl = requestedReturnUrl || `${fallbackReturnUrl}?uploadedId=${encodeURIComponent(data.id)}`;
     const titleLink = document.querySelector('.header_view .title');
     const returnLink = document.querySelector('.header_view .return');
     const downloadLink = document.querySelector('.header_view .download');

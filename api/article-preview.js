@@ -22,10 +22,14 @@ module.exports = async function handler(request, response) {
   const articles = await result.json();
   if (!articles.length) return response.status(404).send('Article not found.');
 
-  const articleId = articles[0].id;
-  const title = escapeHtml(articles[0].title || 'Article');
+  const article = articles[0];
+  const articleId = article.id;
+  const title = escapeHtml(article.title || 'Article');
+  const fallbackViewerUrl = article.ojs_article_id && article.ojs_galley_id
+    ? `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/${encodeURIComponent(article.ojs_article_id)}/${encodeURIComponent(article.ojs_galley_id)}.html?uploadedId=${encodeURIComponent(articleId)}`
+    : `https://www.mattioli1885journls.com/index.php/actabiomedica/index.html?uploadedId=${encodeURIComponent(articleId)}`;
   const returnUrl = typeof request.query?.returnUrl === 'string' ? `&returnUrl=${encodeURIComponent(request.query.returnUrl)}` : '';
-  const viewerUrl = `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(articleId)}${returnUrl}`;
+  const viewerUrl = `${fallbackViewerUrl}${returnUrl ? '&' : '?'}${returnUrl.replace(/^&/, '')}`;
   const absoluteViewerUrl = viewerUrl;
   response.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300');
   response.setHeader('Content-Type', 'text/html; charset=utf-8');
