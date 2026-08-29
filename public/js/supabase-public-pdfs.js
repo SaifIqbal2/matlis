@@ -23,12 +23,10 @@
     const uploadedItems = pdfs.map(pdf => {
       const url = `${client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl}?v=${encodeURIComponent(pdf.updated_at || pdf.created_at || Date.now())}`;
       const productionHost = 'https://www.mattioli1885journls.com';
-      const articleViewUrl = pdf.ojs_article_id && pdf.ojs_galley_id
-        ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}/${pdf.ojs_galley_id}.html`
-        : `${productionHost}/index.php/${journalSlug}/index.html`;
       const viewerUrl = `${productionHost}/api/pdf-preview?uploadedId=${encodeURIComponent(pdf.id)}`;
-      const detailUrl = articleViewUrl;
-      const viewerLink = `${viewerUrl}&returnUrl=${encodeURIComponent(detailUrl)}`;
+      const numericPdfUrl = pdf.ojs_article_id && pdf.ojs_galley_id ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}/${pdf.ojs_galley_id}.html` : '';
+      const detailUrl = `${productionHost}/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
+      const viewerLink = numericPdfUrl || `${viewerUrl}&returnUrl=${encodeURIComponent(detailUrl)}`;
       const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';
       const articleUrl = pdf.alternate_url || doiUrl || detailUrl;
       const pageNumber = pdf.page_number || (pdf.doi || '').replace(/\/$/, '').split('/').pop() || 'PDF';

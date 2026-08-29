@@ -23,28 +23,13 @@
       const articleId = articleLink?.id?.match(/^article-(\d+)$/)?.[1];
       const doi = doiLink?.href.match(/doi\.org\/(.+)$/)?.[1];
       const alternateUrl = articles.get(articleId) || articles.get(doi);
-
-      if (articleLink) {
-        const articleHref = articleLink.getAttribute('href') || '';
-        const normalizedArticleHref = articleHref.match(/\/article\/view\/(\d+)\/(\d+)\.html$/)
-          ? articleHref.replace(/\/article\/view\/\d+\/\d+\.html$/, '/article/view/$1.html')
-          : articleHref;
-
-        if (normalizedArticleHref) {
-          articleLink.setAttribute('href', normalizedArticleHref);
-        }
-
-        articleLink.removeAttribute('target');
-        articleLink.removeAttribute('rel');
-      }
-
       if (alternateUrl && doiLink && doiLink.href.includes('doi.org')) {
         doiLink.href = alternateUrl;
         doiLink.target = '_blank';
         doiLink.rel = 'noopener';
         doiLink.addEventListener('click', function (event) {
           event.preventDefault();
-          window.open(alternateUrl, '_blank', 'noopener,noreferrer');
+          window.location.href = alternateUrl;
         });
       }
     });
