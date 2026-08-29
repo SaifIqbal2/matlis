@@ -3465,13 +3465,15 @@ var forceIssue968ArticleUrl = 'https://www.mattioli1885journls.com/index.php/act
 
 function forceIssue968TitleLinks() {
   document.querySelectorAll('.uploaded-publication .title a').forEach(function (articleLink) {
-    articleLink.href = forceIssue968ArticleUrl;
+    var uploadedId = articleLink.getAttribute('data-uploaded-id');
+    var targetUrl = uploadedId ? forceIssue968ArticleUrl + '?uploadedId=' + encodeURIComponent(uploadedId) : forceIssue968ArticleUrl;
+    articleLink.href = targetUrl;
     articleLink.setAttribute('data-force-968', 'true');
     articleLink.target = '_self';
     articleLink.rel = 'noopener';
     articleLink.onclick = function (event) {
       event.preventDefault();
-      window.location.assign(forceIssue968ArticleUrl);
+      window.location.assign(targetUrl);
       return false;
     };
   });
