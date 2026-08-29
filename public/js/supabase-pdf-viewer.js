@@ -4,7 +4,12 @@
   const queryId = params.get('uploadedId');
   const numericArticleId = Number(params.get('articleId'));
   const numericGalleyId = Number(params.get('galleyId'));
-  const hasNumericIds = Number.isInteger(numericArticleId) && Number.isInteger(numericGalleyId);
+  const pathIds = window.location.pathname.match(/\/article\/view\/(\d+)\/(\d+)\.html$/);
+  const pathArticleId = Number(pathIds?.[1]);
+  const pathGalleyId = Number(pathIds?.[2]);
+  const resolvedArticleId = numericArticleId || pathArticleId;
+  const resolvedGalleyId = numericGalleyId || pathGalleyId;
+  const hasNumericIds = Number.isInteger(resolvedArticleId) && Number.isInteger(resolvedGalleyId);
   const id = queryId || (!hasNumericIds ? window.sessionStorage.getItem('uploadedArticleId') : null);
   const container = document.querySelector('#pdfCanvasContainer');
   if ((!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) || !container) return;
@@ -17,7 +22,7 @@
 
   async function loadPdf() {
     let query = client.from('journal_pdfs').select('id, title, file_path, ojs_article_id, ojs_galley_id, created_at, updated_at').eq('is_published', true);
-    query = id ? query.eq('id', id) : query.eq('ojs_article_id', numericArticleId).eq('ojs_galley_id', numericGalleyId);
+    query = id ? query.eq('id', id) : query.eq('ojs_article_id', resolvedArticleId).eq('ojs_galley_id', resolvedGalleyId);
     const { data, error } = await query.maybeSingle();
     if (error || !data) return;
 
