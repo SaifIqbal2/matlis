@@ -80,7 +80,16 @@
       const position = Number.isFinite(order) && order > 0 ? Math.min(order - 1, existingNodes.length) : existingNodes.length;
       const referenceNode = existingNodes[position];
       if (referenceNode) {
-        referenceNode.parentNode.insertBefore(node, referenceNode);
+        const referenceList = referenceNode.parentNode;
+        const referenceSection = referenceList.closest('.section');
+        const isFirstArticleInSection = referenceNode === referenceList.firstElementChild;
+        const previousSection = referenceSection && referenceSection.previousElementSibling;
+        const previousList = previousSection && previousSection.querySelector('.cmp_article_list.articles');
+        if (isFirstArticleInSection && previousList) {
+          previousList.appendChild(node);
+        } else {
+          referenceList.insertBefore(node, referenceNode);
+        }
       } else {
         fallbackList.appendChild(node);
       }
