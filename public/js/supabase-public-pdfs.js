@@ -4,7 +4,8 @@
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
   const journalSlug = document.body.dataset.journalSlug;
   const issueId = document.body.dataset.issueId;
-  const list = document.querySelector(issueId ? '.cmp_article_list.articles' : '.online_first_issue_toc .cmp_article_list.articles');
+  const articleLists = Array.from(document.querySelectorAll(issueId ? '.cmp_article_list.articles' : '.online_first_issue_toc .cmp_article_list.articles'));
+  const list = articleLists[0];
   const isIssue968 = window.location.pathname.includes('/issue/view/968');
   const isIssue928 = window.location.pathname.includes('/issue/view/928');
   const isIssue963 = window.location.pathname.includes('/issue/view/963');
@@ -72,11 +73,17 @@
       fragment.appendChild(wrapper.firstElementChild);
     });
     const uploadedNodes = Array.from(fragment.children);
-    const existingNodes = Array.from(list.children);
+    const existingNodes = articleLists.flatMap(articleList => Array.from(articleList.children));
+    const fallbackList = articleLists[articleLists.length - 1] || list;
     uploadedNodes.forEach((node, index) => {
       const order = Number(pdfs[index].sort_order);
       const position = Number.isFinite(order) && order > 0 ? Math.min(order - 1, existingNodes.length) : existingNodes.length;
-      list.insertBefore(node, list.children[position] || null);
+      const referenceNode = existingNodes[position];
+      if (referenceNode) {
+        referenceNode.parentNode.insertBefore(node, referenceNode);
+      } else {
+        fallbackList.appendChild(node);
+      }
       existingNodes.splice(position, 0, node);
     });
 
