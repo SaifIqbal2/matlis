@@ -45,7 +45,7 @@
     const keywordsSection = document.querySelector('section.item.keywords');
     if (keywordsSection) keywordsSection.remove();
     const abstract = document.querySelector('section.item.abstract');
-    if (abstract) abstract.innerHTML = `<h2 class="label">Abstract</h2><p>${escapeHtml(data.abstract || 'PDF publication')}</p>`;
+    if (abstract) abstract.innerHTML = `<h2 class="label">Abstract</h2><p style="text-align: justify;">${escapeHtml(data.abstract || 'PDF publication')}</p>`;
 
     const declarations = [
       ['Conflict of Interest', data.conflict_of_interest],
@@ -63,7 +63,7 @@
     if (references) {
       const renderedReferences = renderReferencesHtml(data.references);
       if (renderedReferences) {
-        references.innerHTML = `<h2 class="label">References</h2><div class="value">${renderedReferences}</div>`;
+        references.innerHTML = `<h2 class="label">References</h2><div class="value" style="text-align: justify;">${renderedReferences}</div>`;
       }
     }
     if (references && correspondence.length) {
