@@ -1,110 +1,135 @@
 (function () {
-  if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase) return;
+  if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase || !window.pdfjsLib) return;
+  const params = new URLSearchParams(window.location.search);
+  const queryId = params.get('uploadedId');
+  const numericArticleId = Number(params.get('articleId'));
+  const numericGalleyId = Number(params.get('galleyId'));
+  const pathIds = window.location.pathname.match(/\/article\/view\/(\d+)\/(\d+)\.html$/);
+  const pathArticleId = Number(pathIds?.[1]);
+  const pathGalleyId = Number(pathIds?.[2]);
+  const resolvedArticleId = numericArticleId || pathArticleId;
+  const resolvedGalleyId = numericGalleyId || pathGalleyId;
+  const hasNumericIds = Number.isInteger(resolvedArticleId) && Number.isInteger(resolvedGalleyId);
+  const id = queryId || (!hasNumericIds ? window.sessionStorage.getItem('uploadedArticleId') : null);
+  const container = document.querySelector('#pdfCanvasContainer');
+  if ((!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) || !container) return;
+  if (queryId) {
+    window.sessionStorage.setItem('uploadedArticleId', queryId);
+  }
 
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
-  const journalSlug = document.body.dataset.journalSlug;
-  const issueId = document.body.dataset.issueId;
-  const articleLists = Array.from(document.querySelectorAll(issueId ? '.cmp_article_list.articles' : '.online_first_issue_toc .cmp_article_list.articles'));
-  const list = articleLists[0];
-  const isIssue968 = window.location.pathname.includes('/issue/view/968');
-  const isIssue928 = window.location.pathname.includes('/issue/view/928');
-  const isIssue963 = window.location.pathname.includes('/issue/view/963');
-  const isIssue955 = window.location.pathname.includes('/issue/view/955');
-  const forceIssue968Url = 'https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/17657.html';
-  const forceIssue955Url = 'https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/16256.html';
-  if (!list || !journalSlug) return;
+  window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-  function escapeHtml(value) {
-    return String(value ?? '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
-  }
+  async function loadPdf() {
+    let query = client.from('journal_pdfs').select('id, title, file_path, ojs_article_id, ojs_galley_id, alternate_url, created_at, updated_at').eq('is_published', true);
+    query = id ? query.eq('id', id) : query.eq('ojs_article_id', resolvedArticleId).eq('ojs_galley_id', resolvedGalleyId);
+    const { data, error } = await query.maybeSingle();
+    if (error || !data) return;
 
-  function applyIssue968Override(node) {
-    if (!isIssue968) return;
-    const container = node && node.closest ? node.closest('.uploaded-publication') : null;
-    const link = container ? container.querySelector('.title a') : null;
-    if (!link) return;
-    const uploadedId = link.getAttribute('data-uploaded-id');
-    const targetUrl = uploadedId ? `${forceIssue968Url}?uploadedId=${encodeURIComponent(uploadedId)}` : forceIssue968Url;
-    link.href = targetUrl;
-    link.setAttribute('data-force-968', 'true');
-    link.removeAttribute('target');
-    link.onclick = function (event) {
-      event.preventDefault();
-      window.location.assign(targetUrl);
-      return false;
-    };
-  }
-
-  function hydrateIssue968Links() {
-    if (!isIssue968) return;
-    document.querySelectorAll('.uploaded-publication .title a').forEach(applyIssue968Override);
-    if (list) {
-      list.querySelectorAll('.uploaded-publication .title a').forEach(applyIssue968Override);
+    const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
+    const title = data.title || 'Article PDF';
+    const downloadName = data.file_path.split('/').pop() || 'article.pdf';
+    const requestedReturnUrl = params.get('returnUrl');
+    const returnUrl = data.alternate_url || requestedReturnUrl || `/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(data.id)}`;
+    const titleLink = document.querySelector('.header_view .title');
+    const returnLink = document.querySelector('.header_view .return');
+    const downloadLink = document.querySelector('.header_view .download');
+    if (titleLink) {
+      titleLink.textContent = title;
+      titleLink.href = returnUrl;
     }
-  }
-
-  async function addUploadedPdfs() {
-    const { data: journal, error: journalError } = await client.from('journals').select('id').eq('slug', journalSlug).eq('is_published', true).maybeSingle();
-    if (journalError || !journal) return;
-
-    let pdfQuery = client.from('journal_pdfs').select('id, title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, alternate_url, file_path, created_at, updated_at').eq('journal_id', journal.id).eq('is_published', true);
-    if (issueId) pdfQuery = pdfQuery.eq('issue', issueId);
-    const { data: pdfs, error: pdfError } = await pdfQuery.order('sort_order', { ascending: true, nullsFirst: false });
-    if (pdfError || !pdfs?.length) return;
-
-    const uploadedItems = pdfs.map(pdf => {
-      const url = `${client.storage.from('journal-pdfs').getPublicUrl(pdf.file_path).data.publicUrl}?v=${encodeURIComponent(pdf.updated_at || pdf.created_at || Date.now())}`;
-      const productionHost = 'https://www.mattioli1885journls.com';
-      const viewerUrl = `${productionHost}/api/pdf-preview?uploadedId=${encodeURIComponent(pdf.id)}`;
-      const numericPdfUrl = pdf.ojs_article_id && pdf.ojs_galley_id ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}/${pdf.ojs_galley_id}.html` : '';
-      const detailUrl = `${productionHost}/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
-      const issue928DetailUrl = `${productionHost}/index.php/actabiomedica/onlinefirst/view/16515.html?uploadedId=${encodeURIComponent(pdf.id)}`;
-      const titleUrl = pdf.ojs_article_id ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}.html?uploadedId=${encodeURIComponent(pdf.id)}` : detailUrl;
-      const viewerLink = pdf.file_path ? url : (numericPdfUrl || `${viewerUrl}&returnUrl=${encodeURIComponent(detailUrl)}`);
-      const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';
-      const articleUrl = pdf.alternate_url || doiUrl || detailUrl;
-      const pageNumber = pdf.page_number || (pdf.doi || '').replace(/\/$/, '').split('/').pop() || 'PDF';
-      const uploadedTitleUrl = isIssue968 ? `${forceIssue968Url}?uploadedId=${encodeURIComponent(pdf.id)}` : (isIssue955 ? `${forceIssue955Url}?uploadedId=${encodeURIComponent(pdf.id)}` : (isIssue928 ? issue928DetailUrl : (isIssue963 ? detailUrl : titleUrl)));
-      return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${uploadedTitleUrl}" data-uploaded-id="${escapeHtml(pdf.id)}">${escapeHtml(pdf.title)}</a></h2>${pdf.doi ? `<div class="doiInSummary"><strong>DOI:</strong> <a href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener">${escapeHtml(pdf.doi)}</a></div>` : (pdf.alternate_url ? `<div class="doiInSummary"><strong>Article link:</strong> <a href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener">${escapeHtml(articleUrl)}</a></div>` : '')}<div class="meta"><div class="authors">${escapeHtml(pdf.authors || 'Mattioli 1885 Journals')}</div><div class="pages">${escapeHtml(pageNumber)}</div></div><a class="obj_galley_link btn btn-primary pdf" href="${viewerLink}">PDF</a></div></li>`;
-    });
-
-    const fragment = document.createDocumentFragment();
-    uploadedItems.forEach(item => {
-      const wrapper = document.createElement('div');
-      wrapper.innerHTML = item;
-      fragment.appendChild(wrapper.firstElementChild);
-    });
-    const uploadedNodes = Array.from(fragment.children);
-    const existingNodes = articleLists.flatMap(articleList => Array.from(articleList.children));
-    const fallbackList = articleLists[articleLists.length - 1] || list;
-    uploadedNodes.forEach((node, index) => {
-      const order = Number(pdfs[index].sort_order);
-      const position = Number.isFinite(order) && order > 0 ? Math.min(order - 1, existingNodes.length) : existingNodes.length;
-      const referenceNode = existingNodes[position];
-      if (referenceNode) {
-        const referenceList = referenceNode.parentNode;
-        const referenceSection = referenceList.closest('.section');
-        const isFirstArticleInSection = referenceNode === referenceList.firstElementChild;
-        const previousSection = referenceSection && referenceSection.previousElementSibling;
-        const previousList = previousSection && previousSection.querySelector('.cmp_article_list.articles');
-        if (isFirstArticleInSection && previousList) {
-          previousList.appendChild(node);
-        } else {
-          referenceList.insertBefore(node, referenceNode);
+    if (returnLink) {
+      returnLink.href = returnUrl;
+    }
+    if (downloadLink) {
+      downloadLink.href = pdfUrl;
+      downloadLink.setAttribute('download', downloadName);
+      downloadLink.addEventListener('click', async event => {
+        event.preventDefault();
+        try {
+          const download = await fetch(pdfUrl);
+          if (!download.ok) throw new Error('PDF download failed');
+          const blobUrl = URL.createObjectURL(await download.blob());
+          const link = document.createElement('a');
+          link.href = blobUrl;
+          link.download = downloadName;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(blobUrl);
+        } catch {
+          window.alert('PDF download failed. Please try again.');
         }
-      } else {
-        fallbackList.appendChild(node);
-      }
-      existingNodes.splice(position, 0, node);
-    });
-
-    hydrateIssue968Links();
-    if (isIssue968) {
-      const observer = new MutationObserver(() => hydrateIssue968Links());
-      observer.observe(list, { childList: true, subtree: true });
+      });
     }
+    document.title = `View of ${title}`;
+
+    container.classList.add('pdfjs-viewer');
+    container.innerHTML = '<div class="pdfjs-toolbar" role="toolbar" aria-label="PDF controls"><div class="pdfjs-toolbar-group"><button data-action="previous" aria-label="Previous page">&#8249;</button><button data-action="next" aria-label="Next page">&#8250;</button></div><div class="pdfjs-toolbar-group center"><input id="pdfPage" type="number" min="1" value="1" aria-label="Page number"><span>of <b id="pdfTotal">0</b></span><button data-action="zoom-out" aria-label="Zoom out">−</button><span id="pdfZoom">Automatic</span><button data-action="zoom-in" aria-label="Zoom in">+</button><select id="pdfZoomSelect" aria-label="Zoom"><option value="auto">Automatic Zoom</option><option value="1">100%</option><option value="1.5">150%</option><option value="2">200%</option></select></div><div class="pdfjs-toolbar-group"><button data-action="print" aria-label="Print">&#128438;</button><a href="' + pdfUrl + '" download="' + downloadName + '" aria-label="Download PDF">&#8681;</a></div></div><div class="pdfjs-pages" id="pdfPages"></div>';
+
+    const pdf = await window.pdfjsLib.getDocument(pdfUrl).promise;
+    const pages = document.querySelector('#pdfPages');
+    const pageInput = document.querySelector('#pdfPage');
+    const total = document.querySelector('#pdfTotal');
+    const zoomLabel = document.querySelector('#pdfZoom');
+    let currentPage = 1;
+    let scale = 1;
+    let automaticZoom = true;
+    total.textContent = pdf.numPages;
+
+    async function automaticScale() {
+      const firstPage = await pdf.getPage(1);
+      const baseViewport = firstPage.getViewport({ scale: 1 });
+      return Math.min(1, Math.max(.25, (container.clientWidth - 24) / baseViewport.width));
+    }
+
+    async function renderPages() {
+      pages.replaceChildren();
+      for (let number = 1; number <= pdf.numPages; number += 1) {
+        const page = await pdf.getPage(number);
+        const viewport = page.getViewport({ scale });
+        const dpr = window.devicePixelRatio || 1;
+        const canvas = document.createElement('canvas');
+        canvas.className = 'pdfjs-page';
+        canvas.dataset.page = number;
+        canvas.width = Math.ceil(viewport.width * dpr);
+        canvas.height = Math.ceil(viewport.height * dpr);
+        canvas.style.width = `${viewport.width}px`;
+        canvas.style.height = `${viewport.height}px`;
+        pages.appendChild(canvas);
+        const context = canvas.getContext('2d');
+        context.scale(dpr, dpr);
+        await page.render({ canvasContext: context, viewport }).promise;
+      }
+      pageInput.value = currentPage;
+      zoomLabel.textContent = automaticZoom ? 'Automatic' : `${Math.round(scale * 100)}%`;
+      pages.querySelector(`[data-page="${currentPage}"]`)?.scrollIntoView({ block: 'start' });
+    }
+
+    document.querySelector('.pdfjs-toolbar').addEventListener('click', event => {
+      const action = event.target.closest('[data-action]')?.dataset.action;
+      if (action === 'previous') currentPage = Math.max(1, currentPage - 1);
+      if (action === 'next') currentPage = Math.min(pdf.numPages, currentPage + 1);
+      if (action === 'zoom-out') { automaticZoom = false; scale = Math.max(.5, scale - .1); }
+      if (action === 'zoom-in') { automaticZoom = false; scale = Math.min(3, scale + .1); }
+      if (action === 'print') window.print();
+      if (action === 'previous' || action === 'next') pages.querySelector(`[data-page="${currentPage}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (action === 'zoom-out' || action === 'zoom-in') renderPages();
+    });
+    document.querySelector('#pdfZoomSelect').addEventListener('change', async event => {
+      automaticZoom = event.target.value === 'auto';
+      scale = automaticZoom ? await automaticScale() : Number(event.target.value);
+      renderPages();
+    });
+    pageInput.addEventListener('change', () => { currentPage = Math.min(pdf.numPages, Math.max(1, Number(pageInput.value) || 1)); pages.querySelector(`[data-page="${currentPage}"]`)?.scrollIntoView({ behavior: 'smooth' }); });
+    window.addEventListener('resize', async () => {
+      if (!automaticZoom) return;
+      scale = await automaticScale();
+      renderPages();
+    });
+    scale = await automaticScale();
+    await renderPages();
   }
 
-  hydrateIssue968Links();
-  addUploadedPdfs();
+  loadPdf();
 }());
