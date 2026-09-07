@@ -1,11 +1,14 @@
 (function () {
   if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY || !window.supabase) return;
-  const queryId = new URLSearchParams(window.location.search).get('uploadedId');
-  const numericArticleId = Number(new URLSearchParams(window.location.search).get('articleId'));
-  const numericGalleyId = Number(new URLSearchParams(window.location.search).get('galleyId'));
-  const hasNumericIds = Number.isInteger(numericArticleId) && Number.isInteger(numericGalleyId);
-  const id = queryId || (!hasNumericIds ? window.sessionStorage.getItem('uploadedArticleId') : null);
-  if (!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) return;
+  const params = new URLSearchParams(window.location.search);
+  const queryId = params.get('uploadedId');
+  const pathIds = window.location.pathname.match(/\/article\/view\/(\d+)(?:\/(\d+))?\.html$/);
+  const numericArticleId = Number(params.get('articleId') || pathIds?.[1]);
+  const numericGalleyId = Number(params.get('galleyId') || pathIds?.[2]);
+  const hasArticleId = Number.isInteger(numericArticleId);
+  const hasGalleyId = Number.isInteger(numericGalleyId);
+  const id = queryId || (!hasArticleId ? window.sessionStorage.getItem('uploadedArticleId') : null);
+  if (!id && !hasArticleId) return;
   if (queryId) window.sessionStorage.setItem('uploadedArticleId', queryId);
 
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
@@ -31,8 +34,9 @@
 
   async function loadUploadedArticle() {
     let articleQuery = client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, citation, references, alternate_url, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('is_published', true);
-    articleQuery = id ? articleQuery.eq('id', id) : articleQuery.eq('ojs_article_id', numericArticleId).eq('ojs_galley_id', numericGalleyId);
-    const { data, error } = await articleQuery.maybeSingle();
+    articleQuery = id ? articleQuery.eq('id', id) : articleQuery.eq('ojs_article_id', numericArticleId);
+    if (!id && hasGalleyId) articleQuery = articleQuery.eq('ojs_galley_id', numericGalleyId);
+    const { data, error } = await articleQuery.order('updated_at', { ascending: false, nullsFirst: false }).limit(1).maybeSingle();
     if (error || !data) return;
 
     const pdfUrl = `${client.storage.from('journal-pdfs').getPublicUrl(data.file_path).data.publicUrl}?v=${encodeURIComponent(data.updated_at || data.created_at || Date.now())}`;
