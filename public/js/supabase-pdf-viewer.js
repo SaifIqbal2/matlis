@@ -4,9 +4,14 @@
   const client = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
   const journalSlug = document.body.dataset.journalSlug;
   const issueId = document.body.dataset.issueId;
-  const list = document.querySelector(issueId ? '.cmp_article_list.articles' : '.online_first_issue_toc .cmp_article_list.articles');
+  const articleLists = Array.from(document.querySelectorAll(issueId ? '.cmp_article_list.articles' : '.online_first_issue_toc .cmp_article_list.articles'));
+  const list = articleLists[0];
   const isIssue968 = window.location.pathname.includes('/issue/view/968');
+  const isIssue928 = window.location.pathname.includes('/issue/view/928');
+  const isIssue963 = window.location.pathname.includes('/issue/view/963');
+  const isIssue955 = window.location.pathname.includes('/issue/view/955');
   const forceIssue968Url = 'https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/17657.html';
+  const forceIssue955Url = 'https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/16256.html';
   if (!list || !journalSlug) return;
 
   function escapeHtml(value) {
@@ -53,11 +58,14 @@
       const viewerUrl = `${productionHost}/api/pdf-preview?uploadedId=${encodeURIComponent(pdf.id)}`;
       const numericPdfUrl = pdf.ojs_article_id && pdf.ojs_galley_id ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}/${pdf.ojs_galley_id}.html` : '';
       const detailUrl = `${productionHost}/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
-      const viewerLink = numericPdfUrl || `${viewerUrl}&returnUrl=${encodeURIComponent(detailUrl)}`;
+      const issue928DetailUrl = `${productionHost}/index.php/actabiomedica/onlinefirst/view/16515.html?uploadedId=${encodeURIComponent(pdf.id)}`;
+      const titleUrl = pdf.ojs_article_id ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}.html?uploadedId=${encodeURIComponent(pdf.id)}` : detailUrl;
+      const viewerLink = pdf.file_path ? url : (numericPdfUrl || `${viewerUrl}&returnUrl=${encodeURIComponent(detailUrl)}`);
       const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';
       const articleUrl = pdf.alternate_url || doiUrl || detailUrl;
       const pageNumber = pdf.page_number || (pdf.doi || '').replace(/\/$/, '').split('/').pop() || 'PDF';
-      return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${isIssue968 ? `${forceIssue968Url}?uploadedId=${encodeURIComponent(pdf.id)}` : detailUrl}" data-uploaded-id="${escapeHtml(pdf.id)}">${escapeHtml(pdf.title)}</a></h2>${pdf.doi ? `<div class="doiInSummary"><strong>DOI:</strong> <a href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener">${escapeHtml(pdf.doi)}</a></div>` : (pdf.alternate_url ? `<div class="doiInSummary"><strong>Article link:</strong> <a href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener">${escapeHtml(articleUrl)}</a></div>` : '')}<div class="meta"><div class="authors">${escapeHtml(pdf.authors || 'Mattioli 1885 Journals')}</div><div class="pages">${escapeHtml(pageNumber)}</div></div><a class="obj_galley_link btn btn-primary pdf" href="${viewerLink}">PDF</a></div></li>`;
+      const uploadedTitleUrl = isIssue968 ? `${forceIssue968Url}?uploadedId=${encodeURIComponent(pdf.id)}` : (isIssue955 ? `${forceIssue955Url}?uploadedId=${encodeURIComponent(pdf.id)}` : (isIssue928 ? issue928DetailUrl : (isIssue963 ? detailUrl : titleUrl)));
+      return `<li class="uploaded-publication"><div class="obj_article_summary"><h2 class="title"><a href="${uploadedTitleUrl}" data-uploaded-id="${escapeHtml(pdf.id)}">${escapeHtml(pdf.title)}</a></h2>${pdf.doi ? `<div class="doiInSummary"><strong>DOI:</strong> <a href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener">${escapeHtml(pdf.doi)}</a></div>` : (pdf.alternate_url ? `<div class="doiInSummary"><strong>Article link:</strong> <a href="${escapeHtml(articleUrl)}" target="_blank" rel="noopener">${escapeHtml(articleUrl)}</a></div>` : '')}<div class="meta"><div class="authors">${escapeHtml(pdf.authors || 'Mattioli 1885 Journals')}</div><div class="pages">${escapeHtml(pageNumber)}</div></div><a class="obj_galley_link btn btn-primary pdf" href="${viewerLink}">PDF</a></div></li>`;
     });
 
     const fragment = document.createDocumentFragment();
@@ -67,11 +75,26 @@
       fragment.appendChild(wrapper.firstElementChild);
     });
     const uploadedNodes = Array.from(fragment.children);
-    const existingNodes = Array.from(list.children);
+    const existingNodes = articleLists.flatMap(articleList => Array.from(articleList.children));
+    const fallbackList = articleLists[articleLists.length - 1] || list;
     uploadedNodes.forEach((node, index) => {
       const order = Number(pdfs[index].sort_order);
       const position = Number.isFinite(order) && order > 0 ? Math.min(order - 1, existingNodes.length) : existingNodes.length;
-      list.insertBefore(node, list.children[position] || null);
+      const referenceNode = existingNodes[position];
+      if (referenceNode) {
+        const referenceList = referenceNode.parentNode;
+        const referenceSection = referenceList.closest('.section');
+        const isFirstArticleInSection = referenceNode === referenceList.firstElementChild;
+        const previousSection = referenceSection && referenceSection.previousElementSibling;
+        const previousList = previousSection && previousSection.querySelector('.cmp_article_list.articles');
+        if (isFirstArticleInSection && previousList) {
+          previousList.appendChild(node);
+        } else {
+          referenceList.insertBefore(node, referenceNode);
+        }
+      } else {
+        fallbackList.appendChild(node);
+      }
       existingNodes.splice(position, 0, node);
     });
 
