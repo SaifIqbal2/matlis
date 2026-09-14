@@ -29,7 +29,7 @@
       const numericPdfUrl = pdf.ojs_article_id && pdf.ojs_galley_id ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}/${pdf.ojs_galley_id}.html` : '';
       const fallbackArticlePage = shellArticleId ? `${productionHost}/index.php/${journalSlug}/article/view/${shellArticleId}.html` : `${productionHost}/api/pdf-preview?uploadedId=${encodeURIComponent(pdf.id)}`;
       const detailUrl = `${fallbackArticlePage}?uploadedId=${encodeURIComponent(pdf.id)}`;
-      const titleUrl = shellArticleId ? `${productionHost}/index.php/${journalSlug}/article/view/${shellArticleId}.html?uploadedId=${encodeURIComponent(pdf.id)}` : `${viewerUrl}&returnUrl=${encodeURIComponent(fallbackArticlePage)}`;
+      const titleUrl = viewerUrl;
       const viewerLink = numericPdfUrl || `${viewerUrl}&returnUrl=${encodeURIComponent(fallbackArticlePage)}`;
       const doiUrl = pdf.doi ? `https://doi.org/${encodeURIComponent(pdf.doi.replace(/^https?:\/\/doi\.org\//, ''))}` : '';
       const articleUrl = pdf.alternate_url || doiUrl || detailUrl;
