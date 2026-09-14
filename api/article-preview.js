@@ -11,11 +11,10 @@ module.exports = async function handler(request, response) {
   const id = request.query?.uploadedId;
   const numericArticleId = Number(request.query?.articleId);
   const numericGalleyId = Number(request.query?.galleyId);
-  const requestedPageNumber = Number(request.query?.pageNumber || request.query?.issuePageNumber || request.query?.page || request.query?.issue);
   if (!id && (!Number.isInteger(numericArticleId) || !Number.isInteger(numericGalleyId))) return response.status(400).send('Missing or invalid article ID.');
 
   const filter = id ? `id=eq.${encodeURIComponent(id)}` : `ojs_article_id=eq.${numericArticleId}&ojs_galley_id=eq.${numericGalleyId}`;
-  const result = await fetch(`${supabaseUrl}/rest/v1/journal_pdfs?select=id,title,ojs_article_id,ojs_galley_id&${filter}&is_published=eq.true`, {
+  const result = await fetch(`${supabaseUrl}/rest/v1/journal_pdfs?select=id,title,ojs_article_id,ojs_galley_id,article_shell_id,journal_id,journals!journal_id(slug)&${filter}&is_published=eq.true`, {
     headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` }
   });
   if (!result.ok) return response.status(502).send('Could not load article.');
@@ -27,14 +26,17 @@ module.exports = async function handler(request, response) {
   const articleId = article.id;
   const title = escapeHtml(article.title || 'Article');
   const returnUrl = typeof request.query?.returnUrl === 'string' ? `&returnUrl=${encodeURIComponent(request.query.returnUrl)}` : '';
+  const journalSlug = article.journals?.slug || 'actabiomedica';
+  const shellArticleId = Number.isFinite(Number(article.article_shell_id)) ? Number(article.article_shell_id) : (Number.isFinite(Number(article.ojs_article_id)) ? Number(article.ojs_article_id) : null);
 
-  const forcedIssuePageUrl = Number.isInteger(requestedPageNumber) && requestedPageNumber === 968
-    ? 'https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/17657.html'
-    : null;
+  const viewerUrl = article.ojs_article_id && article.ojs_galley_id
+    ? `https://www.mattioli1885journls.com/index.php/${journalSlug}/article/view/${article.ojs_article_id}/${article.ojs_galley_id}.html?uploadedId=${encodeURIComponent(articleId)}${returnUrl}`
+    : shellArticleId
+      ? `https://www.mattioli1885journls.com/index.php/${journalSlug}/article/view/${shellArticleId}.html?uploadedId=${encodeURIComponent(articleId)}${returnUrl}`
+      : `https://www.mattioli1885journls.com/api/pdf-preview?uploadedId=${encodeURIComponent(articleId)}${returnUrl}`;
 
-  const viewerUrl = forcedIssuePageUrl || `https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/18612/13437.html?uploadedId=${encodeURIComponent(articleId)}${returnUrl}`;
   const absoluteViewerUrl = viewerUrl;
   response.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300');
   response.setHeader('Content-Type', 'text/html; charset=utf-8');
-  return response.status(200).send(`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>View of ${title}</title><meta property="og:title" content="View of ${title}"><meta property="og:description" content="Read this article PDF from Mattioli 1885 Journals."><meta property="og:type" content="article"><meta property="og:url" content="${absoluteViewerUrl}"><link rel="canonical" href="${absoluteViewerUrl}"><meta http-equiv="refresh" content="0;url=${viewerUrl}"></head><body><p>Opening <a href="${viewerUrl}">${title}</a>...</p><script>const requestedPageNumber = Number(new URLSearchParams(window.location.search).get('pageNumber') || new URLSearchParams(window.location.search).get('issuePageNumber') || new URLSearchParams(window.location.search).get('page') || new URLSearchParams(window.location.search).get('issue') || ''); if (Number.isInteger(requestedPageNumber) && requestedPageNumber === 968) { window.location.replace('https://www.mattioli1885journls.com/index.php/actabiomedica/article/view/17657.html'); } else { window.location.replace(${JSON.stringify(viewerUrl)}); }</script></body></html>`);
+  return response.status(200).send(`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>View of ${title}</title><meta property="og:title" content="View of ${title}"><meta property="og:description" content="Read this article PDF from Mattioli 1885 Journals."><meta property="og:type" content="article"><meta property="og:url" content="${absoluteViewerUrl}"><link rel="canonical" href="${absoluteViewerUrl}"><meta http-equiv="refresh" content="0;url=${viewerUrl}"></head><body><p>Opening <a href="${viewerUrl}">${title}</a>...</p><script>window.location.replace(${JSON.stringify(viewerUrl)});</script></body></html>`);
 };
