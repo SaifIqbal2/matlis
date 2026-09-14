@@ -33,8 +33,12 @@
   }
 
   async function loadUploadedArticle() {
-    let articleQuery = client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, sort_order, doi, citation, references, alternate_url, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('is_published', true);
-    articleQuery = id ? articleQuery.eq('id', id) : articleQuery.eq('ojs_article_id', numericArticleId);
+    let articleQuery = client.from('journal_pdfs').select('title, authors, issue, page_number, ojs_article_id, ojs_galley_id, article_shell_id, sort_order, doi, citation, references_list, alternate_url, abstract, keywords, conflict_of_interest, ai_declaration, funding, correspondence, received_date, accepted_date, first_author_name, first_author_affiliation, file_path, created_at, updated_at, journals(name)').eq('is_published', true);
+    if (id) {
+      articleQuery = articleQuery.eq('id', id);
+    } else if (Number.isInteger(numericArticleId)) {
+      articleQuery = articleQuery.or(`ojs_article_id.eq.${numericArticleId},article_shell_id.eq.${numericArticleId}`);
+    }
     if (!id && hasGalleyId) articleQuery = articleQuery.eq('ojs_galley_id', numericGalleyId);
     const { data, error } = await articleQuery.order('updated_at', { ascending: false, nullsFirst: false }).limit(1).maybeSingle();
     if (error || !data) return;
@@ -65,7 +69,7 @@
     ].filter(([, value]) => value);
     const references = document.querySelector('section.item.references');
     if (references) {
-      const renderedReferences = renderReferencesHtml(data.references);
+      const renderedReferences = renderReferencesHtml(data.references_list ?? data.references);
       if (renderedReferences) {
         references.innerHTML = `<h2 class="label">References</h2><div class="value" style="text-align: justify;">${renderedReferences}</div>`;
       }
