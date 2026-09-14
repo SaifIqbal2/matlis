@@ -1,0 +1,15 @@
+TY  - JOUR
+AU  - Yusufoglu, Busra
+TI  - Application of Machine Learning Algorithms for Predicting Methylglyoxal Concentration in Processed Packaged Foods
+PY  - %2026/%07/%06
+Y2  - %2026/%08/%27
+JF  - Progress in Nutrition
+JA  - Progr Nutr
+VL  - 28
+IS  - 1
+SE  - Original articles
+DO  - 10.23751/pn.2026.18389
+UR  - https://doi.org/10.23751/pn.2026.18389
+SP  - 18389
+AB  - Background and aim: Methylglyoxal (MGO) is a reactive dicarbonyl metabolite of glucose and plays an important role in processed food products. It is formed by the binding of a sugar molecule to a protein or lipid molecule, inside or outside the body. In this study, a tool called predictive (pMGO) is proposed, which aims to accurately predict MGO formation in foods. Methods: Some machine learning (ML) algorithms were evaluated for pMGO based on food composition data. Models were tested using variables such as glucose, fructose, sucrose, total sugar, carbohydrate, protein, fat, fiber and salt. Results: The highest prediction performance among the models was obtained by the CatBoost model with the values of $R^2 = 0.52 \pm 0.30$ and $RMSE = 156.75 \pm 64.92$. While glucose, fructose and saturated fat stood out as the most effective variables, carbohydrates and protein provided more indirect contributions. Conclusion: Findings suggest that focus on some components, especially sugar type and saturated fat predicting MGO exposure.
+ER  -

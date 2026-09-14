@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journal Control Panel</title>
+  <link rel="stylesheet" href="/admin/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section id="loginView" class="panel auth-panel">
+      <p class="eyebrow">Mattioli 1885 Journals</p>
+      <h1>Control panel</h1>
+      <p class="muted">Sign in to manage journals and PDF publications.</p>
+      <form id="loginForm">
+        <label>Email<input id="email" type="email" autocomplete="email" required></label>
+        <label>Password<input id="password" type="password" autocomplete="current-password" required></label>
+        <button type="submit">Sign in</button>
+      </form>
+      <p id="loginMessage" class="message" role="status"></p>
+    </section>
+
+    <section id="dashboardView" hidden>
+      <header class="topbar">
+        <div><p class="eyebrow">Mattioli 1885 Journals</p><h1>Control panel</h1></div>
+        <button id="logoutButton" class="button-secondary">Sign out</button>
+      </header>
+      <p id="dashboardMessage" class="message" role="status"></p>
+
+      <div class="grid">
+        <section class="panel">
+          <h2 id="journalFormTitle">Add journal</h2>
+          <form id="journalForm">
+            <label>Name<input id="journalName" required></label>
+            <label>Slug<input id="journalSlug" pattern="[a-z0-9-]+" placeholder="acta-biomedica" required></label>
+            <label>Website URL<input id="journalUrl" type="url" placeholder="https://"></label>
+            <label>Description<textarea id="journalDescription" rows="3"></textarea></label>
+            <button id="journalSubmit" type="submit">Create journal</button>
+            <button id="cancelJournalEdit" class="button-secondary" type="button" hidden>Cancel edit</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Upload PDF</h2>
+          <form id="pdfForm">
+            <label>Journal<select id="journalSelect" required></select></label>
+            <label>Title<input id="pdfTitle" required></label>
+            <label>Authors<input id="pdfAuthors" placeholder="Author names"></label>
+            <label>Issue page ID<input id="pdfIssue" value="963" placeholder="963 (Volume 96 No. 4)"></label>
+            <label>Page number<input id="pdfPageNumber" placeholder="Leave empty to use DOI ending"></label>
+            <label>OJS Article ID<input id="pdfOjsArticleId" type="number" min="1" step="1" placeholder="16546"></label>
+            <label>OJS Galley ID<input id="pdfOjsGalleyId" type="number" min="1" step="1" placeholder="12510"></label>
+            <label>Article shell page ID<input id="pdfArticleShellId" type="number" min="1" step="1" placeholder="17657"></label>
+            <label>Display order<input id="pdfSortOrder" type="number" min="1" value="1" required></label>
+            <label>DOI<input id="pdfDoi" placeholder="10.23750/..."></label>
+            <label>Citation<textarea id="pdfCitation" rows="4" placeholder="Enter the citation shown in How to Cite"></textarea></label>
+            <label>References<textarea id="pdfReferences" rows="6" placeholder="One reference per line or paste a formatted reference list"></textarea></label>
+            <label>Alternate article link<input id="pdfAlternateUrl" type="url" placeholder="https://" /></label>
+            <label>Abstract<textarea id="pdfAbstract" rows="4"></textarea></label>
+            <label>Keywords<input id="pdfKeywords" placeholder="keyword one, keyword two"></label>
+            <label>Conflict of Interest<textarea id="pdfConflictOfInterest" rows="2">The authors declare that they have no conflict of interest.</textarea></label>
+            <label>Declaration on the Use of AI<textarea id="pdfAiDeclaration" rows="2">None.</textarea></label>
+            <label>Funding<textarea id="pdfFunding" rows="2">No funding was received for this study.</textarea></label>
+            <label>Correspondence<textarea id="pdfCorrespondence" rows="2"></textarea></label>
+            <label>Received<input id="pdfReceived" placeholder="05 March 2025"></label>
+            <label>Accepted<input id="pdfAccepted" placeholder="02 July 2025"></label>
+            <label>First author name<input id="pdfFirstAuthor"></label>
+            <label>First author affiliation<textarea id="pdfFirstAuthorAffiliation" rows="2"></textarea></label>
+            <label>PDF file<input id="pdfFile" type="file" accept="application/pdf" required></label>
+            <button type="submit">Upload PDF</button>
+          </form>
+        </section>
+      </div>
+
+      <section class="panel records-panel">
+        <div class="section-heading"><h2>Journals and PDFs</h2><button id="refreshButton" class="button-secondary">Refresh</button></div>
+        <div id="records" class="records"></div>
+      </section>
+
+      <section id="pdfEditPanel" class="panel" hidden>
+        <h2>Edit PDF article</h2>
+        <form id="pdfEditForm">
+          <label>Title<input id="editPdfTitle" required></label>
+          <label>Authors<input id="editPdfAuthors"></label>
+          <label>Issue page ID<input id="editPdfIssue"></label>
+          <label>Page number<input id="editPdfPageNumber" placeholder="Leave empty to use DOI ending"></label>
+          <label>OJS Article ID<input id="editPdfOjsArticleId" type="number" min="1" step="1"></label>
+          <label>OJS Galley ID<input id="editPdfOjsGalleyId" type="number" min="1" step="1"></label>
+          <label>Article shell page ID<input id="editPdfArticleShellId" type="number" min="1" step="1"></label>
+          <label>Display order<input id="editPdfSortOrder" type="number" min="1" required></label>
+          <label>DOI<input id="editPdfDoi"></label>
+          <label>Citation<textarea id="editPdfCitation" rows="4" placeholder="Enter the citation shown in How to Cite"></textarea></label>
+          <label>References<textarea id="editPdfReferences" rows="6" placeholder="One reference per line or paste a formatted reference list"></textarea></label>
+          <label>Alternate article link<input id="editPdfAlternateUrl" type="url" placeholder="https://" /></label>
+          <label>Replace PDF file<input id="editPdfFile" type="file" accept="application/pdf"></label>
+          <label>Abstract<textarea id="editPdfAbstract" rows="5"></textarea></label>
+          <label>Keywords<input id="editPdfKeywords"></label>
+          <label>Conflict of Interest<textarea id="editPdfConflictOfInterest" rows="2"></textarea></label>
+          <label>Declaration on the Use of AI<textarea id="editPdfAiDeclaration" rows="2"></textarea></label>
+          <label>Funding<textarea id="editPdfFunding" rows="2"></textarea></label>
+          <label>Correspondence<textarea id="editPdfCorrespondence" rows="2"></textarea></label>
+          <label>Received<input id="editPdfReceived"></label>
+          <label>Accepted<input id="editPdfAccepted"></label>
+          <label>First author name<input id="editPdfFirstAuthor"></label>
+          <label>First author affiliation<textarea id="editPdfFirstAuthorAffiliation" rows="2"></textarea></label>
+          <button type="submit">Save PDF changes</button>
+          <button id="cancelPdfEdit" class="button-secondary" type="button">Cancel</button>
+        </form>
+      </section>
+    </section>
+  </main>
+  <script src="/supabase/config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/admin/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+TY  - JOUR
+AU  - Mento, Federico
+AU  - Demi, Libertario
+TI  - On the interception of the optimal imaging plane for pleural line scanning with automatic robot assisted lung ultrasound: An experimental study
+PY  - %2026/%03/%02
+Y2  - %2026/%08/%27
+JF  - The Ultrasound Journal
+JA  - Ultrasound J
+VL  - 18
+IS  - 1
+SE  - Automation in Ultrasound Imaging: AI-driven and Model-based Data Acquisition, Analysis and Classification: Original Research Article
+DO  - 10.5826/tuj.2026.18302
+UR  - https://doi.org/10.5826/tuj.2026.18302
+SP  - 18302
+AB  - Background: Lung ultrasound (LUS) is nowadays an important tool to evaluate the state of lung surface. However, it is strongly operator-dependent, leading to reduced reproducibility of LUS analysis. Even though LUS acquisition protocols can improve LUS reproducibility and help standardizing LUS exams, human operators can guarantee only a limited precision in intercepting the optimal imaging plane. Hence, in this study, we assess the possibility to automatically intercept the optimal imaging plane in LUS examinations, i.e., the imaging plane perpendicular to the pleural plane (PP), by extracting three features, then utilized to guide a UR5e robotic arm handling an ultrasound probe.Methods: The main focus of this study consists on evaluating the potential of these three features in estimating the PP position with respect to the probe. To do so, we designed a simplified but highly controllable environment, where PP was mimicked with a steel plate (to simulate a highly reflective acoustic interface), while intercostal tissues were mimicked with a 2-cm-thick beef meat. The environment was imaged with a linear probe connected to an ULA-OP platform, which was held by an UR5e, programmed to explore 8 different paths of acquisitions with a rotational angle (RA) ranging from -20º to 20º (1º step size). This resulted in 328 positions that could be explored; each position with RA=0º corresponds to the optimal imaging plane. Radiofrequency data were acquired and post-processed to form normalized log-scale B-Mode images. A rectangular region of interest, defined to include PP, was considered to compute mean intensity at each depth of the region of interest, along lateral dimension. Mean intensity as a function of depth was then utilized to extract three different features, then fed to genetic algorithms to solve optimization problems to guide UR5e towards the optimal imaging plane.Results and Conclusions: Genetic algorithms converged towards an average error < 1º after exploring only 18 positions, showing strong potential in automatic probe placement for LUS.
+ER  -

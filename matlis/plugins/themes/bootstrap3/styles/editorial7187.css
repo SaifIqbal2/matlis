@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 600px;
+        margin: 130px auto;
+    }
+}
+
+.modal-dialog {
+    margin: 130px auto;
+}
+
+.speaTest .img {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+/*.speaTest .img:hover {
+    cursor: pointer;
+}*/
+.speaTest .nopic:hover, .speaTest .nopic .bgimg:hover {
+    cursor: default !important;
+}
+.speaTest .img:hover .btn-primary {
+    background: url(images/editorialBG.html);
+    width: 100%;
+    height: 100%;
+    padding-top: 130px;
+    font-size: 30pt;
+    opacity: 0.6;
+}
+.speaTest .img .bgimg {
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    height: 380px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    filter: url(data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter i…0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale);
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    -webkit-backface-visibility: hidden;
+}
+.speaTest .img:hover .bgimg {
+    filter: url(data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt…33 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale);
+    filter: initial;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.speaTest .nopic:hover .bgimg {
+    filter: url(data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter i…0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale);
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    -webkit-backface-visibility: hidden;
+}
+.speaTest .btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 0px 0px 0px 10px;
+    width: 45px;
+    height: 50px;
+    -o-transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    -ms-transition: all .5s;
+}
+.speaTest .title {
+    position: relative;
+    padding: 15px 20px;
+    background-color: #2D2D2A;
+    min-height: 100px;
+}
+.title h3 {
+    font-weight: 800;
+    text-transform: none;
+    font-size:1.2em;
+}
+.title h4 {
+    font-size: 1em;
+}
+.title h3, .title h4 {
+    margin: 5px 0px;
+color: #ffffff;
+}
+/*.speaTest .img .bgimg.kerina {
+    position: relative;
+    background-size: cover;
+    width: 100%;
+}*/
+
+.speaTest .img .bgimg.jilke {
+    background: url(../../../../public/site/images/ojsadmin/Seb_Jilke1.html) no-repeat center 0px;
+    position: relative;
+    background-size: cover;
+}
+
+.speaTest .img .bgimg.meier {
+    background: url(../../../../public/site/images/ojsadmin/Ken_Meier1.html) no-repeat center 0px;
+    position: relative;
+    background-size: cover;
+}
+
+.speaTest .img .bgimg.gvr {
+    background: url(../../../../public/site/images/ojsadmin/GVR_headshot.html) no-repeat center 0px;
+    position: relative;
+    background-size: cover;
+}
+
+.speaTest .img .bgimg.lee {
+    background: url(../../../../public/site/images/ojsadmin/MJLee2.html) no-repeat center 0px;
+    position: relative;
+    background-size: cover;
+}
+
+.speaTest .img .bgimg.tummer {
+    background: url(../../../../public/site/images/ojsadmin/LTummers1.html) no-repeat center 0px;
+    position: relative;
+    background-size: cover;
+}
+
+.speaTest .img .bgimg.olsen {
+    background: url(../../../../public/site/images/ojsadmin/AOlsen.html) no-repeat center 0px;
+    position: relative;
+    background-size: cover;
+}
+
+.speaTest .img .bgimg.voge {
+    background: url(../../../../public/site/images/ojsadmin/DVogel1.html) no-repeat center 0px;
+    position: relative;
+    background-size: cover;
+}
+
+.speaTest .img .bgimg.claudia {
+    background: url(../../../../public/site/images/ojsadmin/avellaneda_claudia.html) no-repeat center 0px;
+    position: relative;
+    background-size: cover;
+}
+
+
+
+
+
+.editoruserDetails, .editoruserHead{display: none}
+
+@media (max-width:1199px){
+.deputyeditor {margin-bottom:38px;}
+}
+@media (max-width:772px){
+    .speaTest .col-sm-3 {
+        width: 50%;
+    float:left;
+    }
+    .speaTest .title {
+        min-height: 0px;
+    }
+    .deputyeditor {margin-bottom:10.5px;}
+    .container{padding:0;}
+
+}
+@media (max-width:560px){
+.deputyeditor {margin-bottom:38px;}
+}
+@media (max-width:450px){
+.speaTest .col-sm-3 {
+    width: 100%;
+float:none;
+}

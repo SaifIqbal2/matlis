@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns="http://purl.org/rss/1.0/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:prism="http://prismstandard.org/namespaces/1.2/basic/"
+	xmlns:cc="http://web.resource.org/cc/"
+	xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/">
+
+	<channel rdf:about="https://mattioli1885journals.com/index.php/JBR">
+				<title>Journal of Bioarchaeological Research</title>
+		<link>https://mattioli1885journals.com/index.php/JBR</link>
+
+							
+		<description>&lt;p&gt;Bioarchaeology in a general sense is the discipline that deals with the study of any biological remains recovered from archaeological contexts. It concerns the analysis of human osteological remains of archaeological interest.&lt;br /&gt;Bioarchaeology is an integrative, holistic field that combines different theories, methods, and studies to offer a comprehensive interpretative framework of archaeological contexts. Interdisciplinary aspects are aimed at improving data upon biological findings in the archaeological record.&lt;/p&gt; &lt;p&gt;The JBR addresses bioarchaeological methods from field studies, laboratory analyses, to data interpretation.&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;&lt;strong&gt;Language:&lt;/strong&gt; English&lt;br /&gt;&lt;strong&gt;Frequency:&lt;/strong&gt; 3 issues/year&lt;br /&gt;&lt;strong&gt;Format:&lt;/strong&gt; 20 x 27 cm&lt;br /&gt;&lt;strong&gt;eISSN:&lt;/strong&gt;&lt;/p&gt;</description>
+
+									<dc:publisher>Mattioli 1885</dc:publisher>
+		
+					<dc:language>en</dc:language>
+		
+		<prism:publicationName>Journal of Bioarchaeological Research</prism:publicationName>
+
+							
+					<prism:issn>3034-8722</prism:issn>
+		
+					<prism:copyright>&lt;p&gt;This is an Open Access article distributed under the terms of the Creative Commons Attribution License (&lt;a href=&quot;https://creativecommons.org/licenses/by-nc/4.0&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://creativecommons.org/licenses/by-nc/4.0&lt;/a&gt;) which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Transfer of Copyright and Permission to Reproduce Parts of Published Papers.&lt;/strong&gt; &lt;br /&gt;Authors retain the copyright for their published work. No formal permission will be required to reproduce parts (tables or illustrations) of published papers, provided the source is quoted appropriately and reproduction has no commercial intent. &lt;strong&gt;Reproductions with commercial intent will require written permission and payment of royalties.&lt;/strong&gt;&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;&lt;a href=&quot;http://creativecommons.org/licenses/by-nc/4.0/&quot; rel=&quot;license&quot;&gt;&lt;img style=&quot;border-width: 0;&quot; src=&quot;https://i.creativecommons.org/l/by-nc/4.0/88x31.png&quot; alt=&quot;Creative Commons License&quot; /&gt;&lt;/a&gt;&lt;br /&gt;This work is licensed under a &lt;a href=&quot;http://creativecommons.org/licenses/by-nc/4.0/&quot; rel=&quot;license&quot;&gt;Creative Commons Attribution-NonCommercial 4.0 International License&lt;/a&gt;.&lt;/p&gt;</prism:copyright>
+		
+		<items>
+			<rdf:Seq>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/16233"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/16202"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/16172"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/16153"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15990"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15894"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15867"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15844"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15841"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15809"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15755"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15466"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15467"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15472"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15475"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15355"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14936"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/15290"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14867"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14862"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14703"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14780"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14749"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14715"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14695"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14697"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14701"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14272"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14038"/>
+							<rdf:li rdf:resource="https://mattioli1885journals.com/index.php/JBR/article/view/14024"/>
+						</rdf:Seq>
+		</items>
+	</channel>
+
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/16233">
+
+				<title>Editorial</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/16233</link>
+
+							<description>
+								&lt;p&gt;Editorial&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Editorial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>editorial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Marta Licata</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Marta Licata
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-08-09</dc:date>
+		<prism:publicationDate>2024-08-09</prism:publicationDate>
+
+					<prism:startingPage>e2024011</prism:startingPage>
+							<prism:endingPage>e2024011</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/16202">
+
+				<title>Virtual autopsy investigation of gallstones in an 18th century Sicilian mummy</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/16202</link>
+
+							<description>
+								&lt;p&gt;Gallstones represent a relatively rare finding in ancient human remains, and they are almost always related to high social classes. We report gallbladder stone disease detected by computed tomography-guided virtual autopsy in an 18&lt;sup&gt;th&lt;/sup&gt; century natural mummy found in the Church of Sant’Anna in Modica, south-eastern Sicily. The mummified body was conservatively investigated by external examination and computed tomography (CT) scanning. 3D rendering and virtual autopsy approach enabled us to recognize multiple stones in the gallbladder, whereas densitometry allowed us to reconstruct the exact stone morphology and establish the chemical composition. The mummy belonged to an anonymous plump elder man with poor dental status, calcified lung nodules, pelvic phleboliths, and severe osteoarthritis of the spine and the right hip. Seven gallstones measuring 1.3 to 2.0 cm in largest diameter were observed. They had ellipsoid shape and inhomogeneous morphology with central hypodense cores and density values ranging from 70 to -289 Hounsfield Units (average: -40). These features suggested combined cholesterol gallstones. Gallstones may be easily recognized in natural mummies through a CT-guided virtopsy approach, whereas densitometry may help to establish their chemical composition. In the present case, cholesterol-based stones were probably due to dietary factors and genetic predisposition like their modern counterparts. Along with the other pathological findings (obesity, phleboliths, dental status) gallbladder stones represent a good bioanthropological marker of high social class.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Case Report: Paleopathology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Gallstones</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Mummies </rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Sicily</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Paleopathology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Paleoradiology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Luca Ventura</dc:creator>
+					<dc:creator>Valentina Pensiero</dc:creator>
+					<dc:creator>Guido Romeo</dc:creator>
+					<dc:creator>Alessandro Causarano</dc:creator>
+					<dc:creator>Claudio Caruso</dc:creator>
+					<dc:creator>Maria Grazia Palmerini</dc:creator>
+					<dc:creator>Mirko Traversari</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Luca Ventura, Valentina Pensiero, Guido Romeo, Alessandro Causarano, Claudio Caruso, Maria Grazia Palmerini, Mirko Traversari
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-08-09</dc:date>
+		<prism:publicationDate>2024-08-09</prism:publicationDate>
+
+					<prism:startingPage>e2024010</prism:startingPage>
+							<prism:endingPage>e2024010</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/16172">
+
+				<title>Preliminary study of the point cloud obtained with a low cost structured light scanner of third lower human molars</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/16172</link>
+
+							<description>
+								&lt;div&gt;&lt;span lang=&quot;EN-GB&quot;&gt;This study presents a preliminary exploration of an objective, operator-independent method for acquiring and analyzing point cloud data from human lower third molars using low-cost equipment. Emphasizing the need for affordability in the field, this research begins the development of a technical protocol for the validation and use of the structured light scanner EinScan-SP V1. Two human mandibular third molars from the crypt of Santa Maria Maggiore in Vercelli (Italy) are digitized. The teeth were scanned, and the resulting point clouds were processed using the Open3D library to extract and normalize digital indexes at different voxel levels. This work also introduces the concept of the Digital HyperUranium (IUD), a digital environment inspired by Platonic philosophy, to contextualize the mathematical processing of point clouds. The ultimate goal is to correlate digital indexes with biological profiles, enhancing the documentation and analysis of Cultural Heritage artifacts through affordable and automated digital acquisition methods.&lt;/span&gt;&lt;/div&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Original Article: Physical Anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Structured light</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>point cloud</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>human teeth</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>protocol</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>new digital index</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Matteo Orsi</dc:creator>
+					<dc:creator>Nicol Rossetti</dc:creator>
+					<dc:creator>Roberto Taglioretti</dc:creator>
+					<dc:creator>Silvia Zito</dc:creator>
+					<dc:creator>Alessandra Mazzucchi</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Matteo Orsi, Nicol Rossetti, Roberto Taglioretti, Silvia Zito, Alessandra Mazzucchi
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-08-09</dc:date>
+		<prism:publicationDate>2024-08-09</prism:publicationDate>
+
+					<prism:startingPage>e2024009</prism:startingPage>
+							<prism:endingPage>e2024009</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/16153">
+
+				<title>Entheseal changes of the Achilles tendon in the Samnitic population of Opi, Val Fondillo (VII-VI century BCE; Abruzzo, central Italy): a preliminary study</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/16153</link>
+
+							<description>
+								&lt;div&gt;&lt;span lang=&quot;EN-GB&quot;&gt;Entheseal changes are an important feature in anthropological studies for reconstruction of lifestyles in ancient populations. This study examined Achilles tendon enthesis in a Samnitic population of Opi (VII-VI century BCE; central Italy), to investigate differences in work activities between females and males through life. Fifty-one individuals provided 35 usable heel bones that were examined using a standardized scoring method for entheseal changes (grades 0-4). Different distribution patterns of enthesopathies between females and males were seen. Females showed physiological changes in Achilles tendon enthesis linked to age-group. Males showed overall higher entheseal change distributions linked to earlier death, with some reaching the highest grade 4 in the 25-35 years age-group (8.3%). These data are consistent with different work activities between these females and males, and suggest more static and less-demanding female roles, with some males involved in harder/ more dynamic and dangerous activities, compared to females.&lt;/span&gt;&lt;/div&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Original Article: Physical Anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Enthesopathies</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Hell bone</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Achilles tendon</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Paleopathology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Italy</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Jacopo Cilli</dc:creator>
+					<dc:creator>Arianna Di Felice</dc:creator>
+					<dc:creator>Luigi Capasso</dc:creator>
+					<dc:creator>Ruggero D&#039;Anastasio</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Jacopo Cilli, Arianna Di Felice, Luigi Capasso, Ruggero D&#039;Anastasio
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-08-09</dc:date>
+		<prism:publicationDate>2024-08-09</prism:publicationDate>
+
+					<prism:startingPage>e2024008</prism:startingPage>
+							<prism:endingPage>e2024008</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15990">
+
+				<title>Bioarchaeology of affluence: Gold plate dentures as conspicuous consumption in the 19th century US South</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15990</link>
+
+							<description>
+								&lt;div&gt; &lt;div&gt;&lt;span lang=&quot;EN-US&quot;&gt;The first examples of gold plate dentures recovered from an archaeological context are presented. The field of archaeology has a robust literature on the notion of “conspicuous consumption,” bioarchaeology, in contrast, has focused class-based research on differential measures of health, with an emphasis on poverty indicators rather than affluence. Recent bioarchaeological workers have suggested the mouth as a nexus for identity and class representation. This study presents gold plate dentures as a bioarchaeological artifact that reflects affluency and conspicuous consumption. Through the process of mastication, dentures interact directly with alveolar tissues and, simultaneously, serve purposes of functionality as well as markers of affluence and identity.&lt;/span&gt;&lt;/div&gt; &lt;/div&gt; &lt;p&gt; &lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Short Report: Museum</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Gold plate dentures</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Bioarchaeology of affluence</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Conspicuous consumption</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Class &amp; Identity</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Shawn Phillips</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Shawn Phillips
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-08-09</dc:date>
+		<prism:publicationDate>2024-08-09</prism:publicationDate>
+
+					<prism:startingPage>e2024007</prism:startingPage>
+							<prism:endingPage>e2024007</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15894">
+
+				<title>Editorial</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15894</link>
+
+							<description>
+								&lt;p&gt;Editorial&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Editorial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Marta Licata</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Marta Licata
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-04-11</dc:date>
+		<prism:publicationDate>2024-04-11</prism:publicationDate>
+
+					<prism:startingPage>e2024001</prism:startingPage>
+							<prism:endingPage>e2024001</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15867">
+
+				<title>MAPOD4D “CSSG”: the first Metaverse on the skeletal recovery in the experimental field laboratory for the research on technological applications in the archaeological UNESCO site of Castelseprio – San Giovanni</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15867</link>
+
+							<description>
+								&lt;div&gt; &lt;p class=&quot;Standard&quot;&gt;&lt;span class=&quot;Carpredefinitoparagrafo1&quot;&gt;&lt;span lang=&quot;EN-US&quot;&gt;During the 2023 excavation campaign realized by the University of Padova in the UNESCO site in Castelseprio, in San Giovanni church, the first anthropological metaverse (https://&lt;/span&gt;&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;a href=&quot;http://www.mapod4d.it/&quot;&gt;&lt;span class=&quot;Internetlink&quot;&gt;&lt;span lang=&quot;EN-US&quot;&gt;www.mapod4d.it&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class=&quot;Carpredefinitoparagrafo1&quot;&gt;&lt;span lang=&quot;EN-US&quot;&gt;) called MAPOD4D CSSG has been created, focused on the skeletons recovery and analysis. The article aims to present Metaverse CSSG and the methods that led to its creation. The project purposes can be summarized as the creation of a new instrument for the virtual musealization capable of including new data kinds and information, suitable also for teaching and as support for bioanthropology lectures. It allows the musealization of excavations phases and of the analysis. It also contributes to the enhancement of the scientific activities thanks to a parallel database which saves data in suitable formats and to the software for the elaboration and measurement of the points cloud. Main features will be the FLOS (Free Libre and Open Source) philosophy, base of the developing; the technological instruments used, their affordable costs and problems; the definition level of Metaverse 3D models compared to reality items; future developments; new professions connected to the Metaverse and to Cultural Heritage and the possibility to consider the excavation site an experimental field-lab for the technological research in Archaeology.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt; &lt;/div&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Original Article: Physical Anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Metaverse</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>MAPOD4D</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Archaeological Skeletons</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>FLOSS</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Anthropological Teaching</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Alessandra Mazzucchi</dc:creator>
+					<dc:creator>Roberto Taglioretti</dc:creator>
+					<dc:creator>Maurizio Marinato</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Alessandra Mazzucchi, Roberto  Taglioretti, Maurizio Marinato
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-04-11</dc:date>
+		<prism:publicationDate>2024-04-11</prism:publicationDate>
+
+					<prism:startingPage>e2024006</prism:startingPage>
+							<prism:endingPage>e2024006</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15844">
+
+				<title>Archaeobotanical analysis in Cittanova necropolis (Modena)</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15844</link>
+
+							<description>
+								&lt;p&gt;The archaeological site of Cittanova had a key role during the romanization process of Mutina (now Modena, northern Italy). Preliminary archaeobotanical analysis (seeds/fruits) have been carried out on the necropolis dated from the II century BC to the II century AD, in order to find food remains involved in the ritual ceremonies. A total of 211 seeds/fruits and 5 taxa have been identified, among which Cereals, Legumes and wild species.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Case Report: Archaeobotany</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>archaeobotany</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>roman</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>necropolis</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Mutina</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Sambucus ebulus</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Federica Riso</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Federica Riso
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-04-11</dc:date>
+		<prism:publicationDate>2024-04-11</prism:publicationDate>
+
+					<prism:startingPage>e2024002</prism:startingPage>
+							<prism:endingPage>e2024002</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15841">
+
+				<title>From bones to understanding: the importance of teaching biological anthropology to children</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15841</link>
+
+							<description>
+								&lt;div&gt;&lt;span lang=&quot;EN-US&quot;&gt;Biological anthropology, though predominantly confined to university settings, holds immense potential to enrich pre-university education. Despite its limited presence in primary and secondary school curricula, early exposure to anthropological concepts, can significantly broaden students&#039; knowledge base and stimulate curiosity. Addressing this gap requires training primary school teachers and designing age-appropriate pedagogical strategies but also understanding children&#039;s perspectives is crucial for effective curriculum development. Integrating digital tools alongside hands-on experiences in teaching bioarchaeology further enhances learning outcomes. Ultimately, incorporating biological anthropology into pre-university education fosters a deeper understanding of human nature and evolution, preparing students for future academic and societal challenges.&lt;/span&gt;&lt;/div&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Short Report: Museum</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>primary education</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>biological anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>human osteology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>teaching</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>pedagogy</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Nicol Rossetti</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Nicol Rossetti
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-04-11</dc:date>
+		<prism:publicationDate>2024-04-11</prism:publicationDate>
+
+					<prism:startingPage>e2024004</prism:startingPage>
+							<prism:endingPage>e2024004</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15809">
+
+				<title>Behind the wall: a paleopathological examination of a non-adult subject from the cemetery of Santa Maria Maggiore, Vercelli</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15809</link>
+
+							<description>
+								&lt;p&gt;This study presents the anthropological and paleopathological investigation of Non-adult#1, an infant recovered from Funerary Unit 12 within the church of Santa Maria Maggiore in Vercelli, Italy. Non-adult#1 exhibited skeletal evidence suggestive of scurvy, characterized by diffuse porosity and new bone deposition in various skeletal elements. Through a comprehensive analysis incorporating macroscopic observations, skeletal measurements and cross-referencing with clinical and paleopathological literature, Non-adult#1 was classified as a probable case of scurvy. The interpretation of Non-adult#1&#039;s skeletal remains was further complicated by preservation challenges, incomplete mineralization and the fragmentary nature of the assemblage. Despite these complexities, Non-adult#1&#039;s pathology offers valuable insights into the health status and societal conditions of individuals in Modern Era northern Italy. This interdisciplinary approach underscores the importance of integrating archaeological, historical, and bioarchaeological perspectives to elucidate the complexities of past human health and well-being.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Case Report: Paleopathology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>vitamin deficiency</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>scurvy</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>nonadults</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Santa Maria Maggiore</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Arianna Vanni</dc:creator>
+					<dc:creator>Roberta Fusco</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Arianna Vanni, Roberta Fusco
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-04-11</dc:date>
+		<prism:publicationDate>2024-04-11</prism:publicationDate>
+
+					<prism:startingPage>e2024005</prism:startingPage>
+							<prism:endingPage>e2024005</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15755">
+
+				<title>The Inca collection (13th-15th century AD) from the Boccolari-Parenti collection (Modena, Italy): preliminary bioanthropological and paleopathological analyses</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15755</link>
+
+							<description>
+								&lt;div&gt;&lt;span lang=&quot;EN-GB&quot;&gt;The section on Ancient Peru of the Civic Museum of Modena preserves a valuable collection of materials recovered by Antonio Boccolari and Paolo Parenti, two officers of the Italian navy who were part of the crew of the Corvetta Vettor Pisani, during his voyage of circumnavigation of the globe, towards the end of the 19th century. In the collection, there is an intact mummy and several heads from the Necropolis of Ancón, which can be traced back to a cultural horizon between the 11th century AD and the final period of the Inca Empire (1532). The mummy was subjected to direct inspection, a CT scan was performed at the Policlinico of Modena then several skulls were taken for histological investigations, FTIR spectroscopic studies, radiocarbon dating and genetic study. CT dataset was also used for virtual facial reconstruction. The analysis of the biological profile indicates the sex of the mummy as female, with an age at death of 17-20 years, large skin folds suggest the presence of body fat. The anthropometric evaluation demonstrates a good bone consistency, without indices of strength, the skull has received an anthropogenic modification. The CT scan shows a part of the trachea and esophagus, a large part of the diaphragm, probably the two kidneys, plus different vascular structures are still visible. CT scan also revealed teeth spread throughout the body of the mummy. Numerous cotton seeds were found in the abdomen, probably the result of a rodent burrow. Considering the level of skeletonization reached by the seven skulls and the single calvarium, the investigation applied was the direct analysis. Interesting is the presence of auricular exostosis in a male individual (Id. 4), a condition that develops mainly due to environmental factors; in the case of ancient populations, as in our case study, the presence of this character is probably attributable to the action of spearfishing. The cranial indicators obtained reveal a general brachycephalic index (a skull with a decreased antero-posterior diameter). Additionally, in the case of Id. 1, 5, 6, and the mummified girl, a hyperbrachycephalic index is observed.&lt;/span&gt;&lt;/div&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Case Report: Paleopathology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Paleopathology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Inca mummy</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>bioanthropological collection</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Mirko Traversari</dc:creator>
+					<dc:creator>Adriana Latorre</dc:creator>
+					<dc:creator>Cristiana Zanasi</dc:creator>
+					<dc:creator>Elena Righi</dc:creator>
+					<dc:creator>Ilaria Pulini</dc:creator>
+					<dc:creator>Irene Faenza</dc:creator>
+					<dc:creator>Sara Salucci</dc:creator>
+					<dc:creator>Gianandrea Pasquinelli</dc:creator>
+					<dc:creator>Luca Ventura</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Mirko Traversari, Adriana Latorre, Cristiana Zanasi, Elena Righi, Ilaria Pulini, Irene Faenza, Sara Salucci, Gianandrea Pasquinelli, Luca Ventura
+			https://creativecommons.org/licenses/by-nc/4.0
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-04-11</dc:date>
+		<prism:publicationDate>2024-04-11</prism:publicationDate>
+
+					<prism:startingPage>e2024003</prism:startingPage>
+							<prism:endingPage>e2024003</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15466">
+
+				<title>Companions in eternity. The historical practice of burying pets</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15466</link>
+
+							<description>
+								&lt;p&gt;In the underground cemetery of Santa Maria Maggiore in Vercelli, the recovering of an ossuary chest unveiled the remains of a cat, together with human remains of some individuals of a noble family. The practice of burying pets has deep historical roots, offering insights into the intricate relationship between humans and their animal companions. The presence of the cat in the caisson, which dates before the establishment of cemeteries dedicated to domestic animals in Italy, raises questions about the meaning of this deposition. Despite incomplete data, we can hypothesize that the cat was intentionally translated from a previous burial.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Short Communication: Zooarchaeology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Hypogeal cemetery</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Human-animal relationships</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Animal burial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Companion animal</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Arianna Vanni</dc:creator>
+					<dc:creator>Roberta Fusco</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-01-08</dc:date>
+		<prism:publicationDate>2024-01-08</prism:publicationDate>
+
+					<prism:startingPage>e2023023</prism:startingPage>
+							<prism:endingPage>e2023023</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15467">
+
+				<title>Bioarchaeology as a means to enhance the territory</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15467</link>
+
+							<description>
+								&lt;p&gt;The bioarchaeological project in Valcuvia aimed to enhance and make accessible three archaeological sites in northern Italy. This initiative sought to address the historical, environmental, and cultural dimensions of the territory, using bioarcheology as a multidisciplinary tool. Beyond unraveling historical narratives, the project aimed to preserve and revitalize forgotten archaeological sites, fostering sustainable redevelopment and tourism initiatives. The proposal encompassed archaeological research, museum site valorization, and multimedia dissemination strategies, creating an interconnected system for rediscovery, recovery, and promotion. The project involved local communities, offering educational programs, creating the bioarcheo.it website and employing virtual reconstructions to facilitate remote exploration. Results included the completion of archaeological and anthropological investigations, closure of excavations, the end of the osteological analysis and the establishment of informative elements at each site. The project maximized impact, diffusion, and sustainability, contributing to the creation of the Insubre Bio-Archive for long-term preservation of the material retrieved from each site, but also from the Varese province. The bioarchaeological project in Valcuvia not only uncovered the historical tapestry of the region but also set the stage for sustained tourism, economic growth, and community involvement. The interconnected approach to research, preservation, and promotion serves as a model for revitalizing similar territories and fostering a positive relationship between history, institutions, and communities.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Original Article: Museum</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>minor cultural heritage</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>peripheral archaeological sites</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>tourism</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Bio-Archive</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Valcuvia</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Marta Licata</dc:creator>
+					<dc:creator>Arianna Vanni</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-01-08</dc:date>
+		<prism:publicationDate>2024-01-08</prism:publicationDate>
+
+					<prism:startingPage>e2023022</prism:startingPage>
+							<prism:endingPage>e2023022</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15472">
+
+				<title>Birds nesting in humans remains: an unexplored phenomenon</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15472</link>
+
+							<description>
+								&lt;p&gt;Ossuaries, designed for human bone preservation, become unexpected habitats for birds like swallows and pigeons, offering a unique opportunity to study the taphonomic signs of this interaction. Birds choose ossuaries for nesting due to the stable substrate of human remains, particularly the durable and protective nature of skulls. This symbiosis highlights the adaptability of animals to unconventional environments. Narratives from 19th- and 20th-century English literature chronicle instances of birds nesting in human skulls, captivating ornithologists, and curiosity enthusiasts. Moreover, modern cemeteries, exemplified in England and France&#039;s Breton region, serve as additional settings for bird nesting, highlighting the diverse choices of shelter made by birds. A comprehensive analysis of these occurrences holds the potential to yield valuable insights into taphonomy, bone preservation, and the ecological dynamics of anthropized environments. This article serves as a succinct reference, encouraging further investigation into the unique interaction between life and death.&lt;/p&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Short Communication: Zooarchaeology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Ossuary habitats</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>taphonomy</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>nest in the skull</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>human-animal spaces</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Roberta Fusco</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-01-08</dc:date>
+		<prism:publicationDate>2024-01-08</prism:publicationDate>
+
+					<prism:startingPage>e2023021</prism:startingPage>
+							<prism:endingPage>e2023021</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15475">
+
+				<title>Possible micronutrient deficiency disease in Medieval non-adults from a religious alpine context in northeastern Italy</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15475</link>
+
+							<description>
+								&lt;p&gt;Recent paleopathological investigations, aimed at identifying and proposing new morphological criteria to diagnose possible micronutrient deficiencies in the human skeletal sample, have opened new interpretative perspectives in bioarchaeological contexts, enriching them with their biocultural context. Particular importance is given to the analysis of pathologies related to non-adults, as they represent a human sample more susceptible to environmental insults, providing a valuable biological record to explore otherwise inaccessible aspects. The study focused on the non-adult osteological sample found in the church of San Vittore in Tonadico, Trento (Northeast Italy). Morphological osteological analyses were conducted to examine any present pathologies. The sample is characterized by the presence of diseases related to micronutrient deficiencies, which have been analyzed and interpreted from a biocultural perspective. This work fits into a research line that, in recent years, has explored the paleopathological aspects of Alpine populations in northern Italy, with particular attention to the medieval and modern periods, which are still relatively unexplored but of enormous scientific relevance.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Original Article: Physical Anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Bioarchaeology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>rickets</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>scurvy</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>nonadults</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Alps</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Middle Ages</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>paleopathology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Italy</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Omar Larentis</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-01-08</dc:date>
+		<prism:publicationDate>2024-01-08</prism:publicationDate>
+
+					<prism:startingPage>e2023020</prism:startingPage>
+							<prism:endingPage>e2023020</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15355">
+
+				<title> Our bioarchaeological itinerary is ready</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15355</link>
+
+							<description>
+								&lt;p&gt;&amp;nbsp;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Our bioarchaeological itinerary is ready&lt;/em&gt;&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Editorial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Marta Licata</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2024 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-01-08</dc:date>
+		<prism:publicationDate>2024-01-08</prism:publicationDate>
+
+					<prism:startingPage>e2023024</prism:startingPage>
+							<prism:endingPage>e2023024</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14936">
+
+				<title>Bioarchaeology in Senegal: state of the art and new perspectives in dental anthropology </title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14936</link>
+
+							<description>
+								&lt;div&gt;&lt;span lang=&quot;EN-US&quot;&gt;In this article, we focus on the evolution of bioarchaeology in Senegal and the relevance of the involvement of dental anthropology in this emerging sphere. In Senegal, bioarchaeology was first introduced as part of the doctoral program: reconstructing postcolonial anthropology in West Africa, conducted since 2017 by URICA. The investment towards this discipline was necessary because, in this country there is almost no bioarchaeologists and dental anthropologists. After the expedition of the physical anthropologist, Guy Thilmans, the human remains from Senegalese archaeological sites are sent abroad or kept at the &lt;em&gt;Laboratoire Préhistoire et Protohistoire of IFAN Cheikh Anta Diop&lt;/em&gt; in Dakar. The objective of this article is to review the achievements, shortcomings and possible new perspectives of Senegalese bioarchaeology. Thus, we will review funerary archaeology and diagnose the studies of human remains known to date in Senegal. In our analysis we will refer to the recognized funerary ensembles: megalithism, earth mounds, shell mounds, baobabs known as griots, and the funerary sites of Senegal River Valley.&lt;/span&gt;&lt;/div&gt; &lt;p&gt; &lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Review: Physical Anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Bioarchaeology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Dental anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Perspectives</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Ibrahima Oumar Sy</dc:creator>
+					<dc:creator>Tigran-Lucian Mandalian</dc:creator>
+					<dc:creator>Demba Kebe</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-01-08</dc:date>
+		<prism:publicationDate>2024-01-08</prism:publicationDate>
+
+					<prism:startingPage>e2023019</prism:startingPage>
+							<prism:endingPage>e2023019</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/15290">
+
+				<title>Analysis of the funerary ritual of the necropolis Ex Manifattura Tabacchi of Piacenza</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/15290</link>
+
+							<description>
+								&lt;p&gt;In 2021 an excavation was carried out in the suburban necropolis Ex Manifattura Tabacchi of the Roman city of Piacenza. The necropolis is dated between the I and the II century AD. The research focused on food remains, as evidence of the roman funerary ceremonies. An archaeobotanical approach was adopted, analysing vegetal offerings from the graves. The carpological remains mostly belong to cultivated plants such as cereals and pulses. Fava beans are the most frequent taxon, due to their funerary symbology.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Case Report: Archaeobotany</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Necropolis</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>roman</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>archaeobotany</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>rituals</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Federica Riso</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2024-01-08</dc:date>
+		<prism:publicationDate>2024-01-08</prism:publicationDate>
+
+					<prism:startingPage>e2023018</prism:startingPage>
+							<prism:endingPage>e2023018</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14867">
+
+				<title>Editorial</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14867</link>
+
+				
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Editorial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>editorial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Marta Licata</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-06-14</dc:date>
+		<prism:publicationDate>2023-06-14</prism:publicationDate>
+
+					<prism:startingPage>e2023008</prism:startingPage>
+							<prism:endingPage>e2023008</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14862">
+
+				<title>From the field to the microscope: funerary archaeoentomology workflow </title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14862</link>
+
+							<description>
+								&lt;div class=&quot;page&quot; title=&quot;Page 1&quot;&gt; &lt;div class=&quot;layoutArea&quot;&gt; &lt;div class=&quot;column&quot;&gt; &lt;p&gt;Funerary archaeoentomology is a recent bioarchaeological discipline. It shares the same bulk of knowledge of forensic entomology, which is the science of analysing entomological evidence (insects and other arthropods) as an aid to legal investigations. In archaeo-funerary contexts insects can provide informa- tion to describe the funerary practices but also to understand the taphonomic processes involving human and other animal bodies. The discipline was founded by Jean-Bernard Huchet in 1996. In this paper a workflow in seven main steps - documentation, collection on site, insect-sediment separation, specimens cleaning, mount- ing, labelling and identification - is suggested in order to maximize the information that can be derived from insect samples collected from archaeo-funerary sites.&lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Original Article: Archaeoentomology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>insects</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>entomology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>specimen preparation</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>funerary archaeology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>protocol</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Stefano Vanin</dc:creator>
+					<dc:creator>Giorgia Giordani</dc:creator>
+					<dc:creator>Giuseppina Carta</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-06-14</dc:date>
+		<prism:publicationDate>2023-06-14</prism:publicationDate>
+
+					<prism:startingPage>e2023017</prism:startingPage>
+							<prism:endingPage>e2023017</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14703">
+
+				<title>Human remains: European legislative perspective on the limit between forensic and archaeological jurisdiction with special regard to war graves</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14703</link>
+
+							<description>
+								&lt;p style=&quot;font-weight: 400;&quot;&gt;The definition of the jurisdiction of human remains from mass graves related to war crimes, committed in Europe during the two World Wars and civil wars, is to be considered a contemporary topic because of the still existing heterogeneous European legal situation and undefined delineation of pertinences. The excavation of these burial sites is complex mainly because of the ethical issues hidden behind the treatment of human remains, especially those concerning violations of human rights, and the concurrent need for both forensic competencies and archaeological-anthropological ones that result in different handling practices adopted by each country.&lt;/p&gt; &lt;p style=&quot;font-weight: 400;&quot;&gt;Since there are no standardized and recognized protocols regarding the excavation of mass graves, there is also a difference in the chronological limits for a burial to be defined of forensic interest/competence, opening an investigation to prosecute the guilty parties, or of historical-archaeological one, collecting data to evaluate the bio-demographic characteristics of a population.&lt;/p&gt; &lt;p style=&quot;font-weight: 400;&quot;&gt;This review of the literature aims to briefly summarize three key points for each state: the existence of a law explicating a chronological threshold between forensic and archaeological jurisdiction, the related pertinence of the excavation of human remains and the establishment of regulations respecting the reburial of human remains.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Review: Physical Anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Mass grave</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Recovery</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Chronological boundary</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Reburial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Arianna Vanni</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-06-14</dc:date>
+		<prism:publicationDate>2023-06-14</prism:publicationDate>
+
+					<prism:startingPage>e2023016</prism:startingPage>
+							<prism:endingPage>e2023016</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14780">
+
+				<title>The Valcuvia bioarchaeological archive: an example of human remains conservation, valorization and fruition</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14780</link>
+
+							<description>
+								&lt;p&gt;Within the project “Paesaggi della Valcuvia. Riqualificazione ambientale attraverso un percorso archeologico: valorizzazione, tutela e fruizione del Patrimonio Culturale.”, the bioarchaeological archive has been created by the physical anthropology team of University of Insubria. The archive is located in Caravate and in preserves the human remains recovered in the archaeological site of Lombardy. It aims to the conservation, valorization and fruition of the cultural heritage of the region, and it allows the creation of a dedicated laboratory for anthropological analysis.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Short Report: Museum</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Valcuvia</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>bioarchaeological archive</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>bioethics</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>anthropological collection</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>digital catalogue</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Claudia Bressan</dc:creator>
+					<dc:creator>Caterina Pangrazzi</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-06-14</dc:date>
+		<prism:publicationDate>2023-06-14</prism:publicationDate>
+
+					<prism:startingPage>e2023009</prism:startingPage>
+							<prism:endingPage>e2023009</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14749">
+
+				<title>Voices from the cloister. Bioarchaeology of a modern Nunnery</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14749</link>
+
+							<description>
+								&lt;p&gt;The Church of SS. Annunziata, Valenza (northern Italy) founded in 1699, harbors a crypt with 29 burial cells. Here, the Augustinian nuns of the nearby cloistered convent received a particular type of inhumation. The nuns were deposed inside the crypt in a sitting position, on a step inside a cell. The corpses were supported by a stick placed at the level of the bust, probably a vase was located beneath the seat to collect the decomposition fluids. The skeletal remains of the nuns underwent an extensive anthropological-palaeopathological analysis. This analysis provides considerable insight into the daily life of a group of cloistered nuns in the 18th century. The study of the history of female monastic communities is important for understanding this important part of the Christian tradition.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Original Article: Physical Anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Female monastic population</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>burial ritual</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>convent</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>putridarium</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>double burial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Roberta Fusco</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-06-14</dc:date>
+		<prism:publicationDate>2023-06-14</prism:publicationDate>
+
+					<prism:startingPage>e2023010</prism:startingPage>
+							<prism:endingPage>e2023010</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14715">
+
+				<title>The Lady of Pavia: microbiological essays and qualitative GC/MS characterization of embalming materials</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14715</link>
+
+							<description>
+								&lt;p&gt;The application of molecular characterization techniques to an Egyptian mummy preserved in the Archaeological Museum of the University of Pavia, a as part of a wide research project conducted by the Mummy Project Research, provided a description of the embalming technique adopted. The number of analytical methods applied has also made it possible to identify the presence of some molecules attributable to plants not included among those commonly reported in similar cases. Before the study, a microbiological screening of ten zones on the surface of the mummy revealed the effective antiseptic properties of the substances present. The chemical composition of the balms was then investigated using quadrupole Gas Chromatography/Mass Spectrometry (GC/MS), testing the effects of different extraction solvents and the use of a derivatizing agent, which allowed to improve the detection of some compounds. Overall, the compounds identified are linked to an embalming technique that involves the use of bitumen, oils and resins as common both in the Late and in the Ptolemaic Periods. Some analytical methods applied have also made it possible to detect traces of compounds possibly attributable to some genera of plants used by the Egyptians and which grow on the Mediterranean coast of North Africa or in southern tropical regions. The work, still ongoing, highlights the importance of using different analytical methods to detect even minor amounts of compounds difficult to identify. This approach aims at the improvement of the understanding of medical and embalming techniques used in ancient Egypt.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Case Report: Museum</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>mummification</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>embalming materials</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>microbiological essays</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>GC/MS</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>terpenoids</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Marco Nicola</dc:creator>
+					<dc:creator>Luca Maraviglia</dc:creator>
+					<dc:creator>Riccardo Ariotti</dc:creator>
+					<dc:creator>Francesco Chiara</dc:creator>
+					<dc:creator>Sabina Malgora</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-06-14</dc:date>
+		<prism:publicationDate>2023-06-14</prism:publicationDate>
+
+					<prism:startingPage>e2023013</prism:startingPage>
+							<prism:endingPage>e2023013</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14695">
+
+				<title>Paleopathology and functional anatomy evaluation of the ex voto of Veii preserved in Modena: historical context and possible interpretations</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14695</link>
+
+							<description>
+								&lt;p&gt;The Modena &lt;em&gt;ex-voto&lt;/em&gt; collection represents a selection of materials coming from the conspicuous Lanciani Stipe and represent a formidable opportunity to observe the devotional phenomenon, being able to provide the visitor with a varied and complete taxonomy of cases and intentions. We have no concrete evidence to establish the real extent of the Etruscan knowledge of human anatomy. Some indications can be derived from a large number of &lt;em&gt;donaria&lt;/em&gt; representing parts of the human body. Considering that Western medicine at the time based its anatomical knowledge on animal observation, the specific cultural level of the Etruscans seems in line with that of contemporary peoples, with whom they were in a relationship of mutual cultural exchange.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Original Article: Paleopathology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Paleopathology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Etruscan</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>ex voto</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Mirko Traversari</dc:creator>
+					<dc:creator>Gianandrea Pasquinelli</dc:creator>
+					<dc:creator>Adriana Latorre</dc:creator>
+					<dc:creator>Elisabetta Cilli</dc:creator>
+					<dc:creator>Laura Maria Michetti</dc:creator>
+					<dc:creator>Carla Tulini</dc:creator>
+					<dc:creator>Cristiana Zanasi</dc:creator>
+					<dc:creator>Luca Ventura</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-06-14</dc:date>
+		<prism:publicationDate>2023-06-14</prism:publicationDate>
+
+					<prism:startingPage>e2023015</prism:startingPage>
+							<prism:endingPage>e2023015</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14697">
+
+				<title>Bioarchaeological study of the skeletal remains attributed to Saint Ceccardo from Luni, patron of Carrara (Tuscany)</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14697</link>
+
+							<description>
+								&lt;p&gt;&lt;em&gt;Aim: &lt;/em&gt;The research focused on the multidisciplinary study of the skeletal remains attributed to Saint Ceccardo from Luni, patron of Carrara (Tuscany, Italy), with the aim of clarifying the period in which he lived, reconstructing his biological profile, and verifying the circumstances of his death.&lt;/p&gt; &lt;p&gt;&lt;em&gt;Material and Methods:&lt;/em&gt; The skeleton, almost complete and well-preserved, was studied by using the classical anthropological and paleopathological methods implemented by X-ray and CT scans; the latter allowed 3D rendering of the skull and physiognomic facial reconstruction. C14 dating and stable isotope analyses were also performed.&lt;/p&gt; &lt;p&gt;&lt;em&gt;Results:&lt;/em&gt; The biological profile evidenced a fairly robust adult male of short stature. Enamel hypoplasia, Harris lines, &lt;em&gt;cribra cranii&lt;/em&gt; and &lt;em&gt;orbitalia&lt;/em&gt;, diffuse periosteal reactions were present, but no perimortal lesions were observed. Paleonutritional analysis indicates a consumption of C3 plants and a high dietary protein intake. Radiocarbon dating places the death of Saint Ceccardo between the 8&lt;sup&gt;th&lt;/sup&gt; and the 10&lt;sup&gt;th&lt;/sup&gt; centuries.&lt;/p&gt; &lt;p&gt;&lt;em&gt;Discussion:&lt;/em&gt; The presence of several stress markers evidences physiological stress occurrences in both childhood and adulthood. On the other hand, isotope analysis indicates a good nutritional intake, in agreement with the saint’s episcopal rank. The absence of bone lesions does not support the tradition of martyrdom or murder, as attested by historical sources. Radiocarbon dating agrees with the historical sources that refer to Saint Ceccardo as bishop of Luni in the 9&lt;sup&gt;th&lt;/sup&gt; century.&lt;/p&gt; &lt;p&gt;&lt;em&gt;Conclusion:&lt;/em&gt; The bioarcheological study of the remains attributed to the martyrs, saints, and blessed of the Catholic Church is a relevant field of research. It enriches the historical sources with solid scientific data, it allows to gain information on health status and living conditions, and it sometimes offers new perspectives on hagiographic investigation.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Case Report: Physical Anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>canonical recognition</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>paleonutrition</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>stress markers</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>radiocarbon dating</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>facial reconstruction</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Early Medieval Age</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Simona Minozzi</dc:creator>
+					<dc:creator>Giovanni Gatti</dc:creator>
+					<dc:creator>Stefano Ricci</dc:creator>
+					<dc:creator>Valentina Giuffra</dc:creator>
+					<dc:creator>Agata Lunardini</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-06-14</dc:date>
+		<prism:publicationDate>2023-06-14</prism:publicationDate>
+
+					<prism:startingPage>e2023012</prism:startingPage>
+							<prism:endingPage>e2023012</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14701">
+
+				<title>The identification of the body of Carlo Girolamo I Della Porta (1635-1704)</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14701</link>
+
+							<description>
+								&lt;p&gt;The Della Porta family is a noble family that settled in Valcuvia starting in the 16th century, building Villa Della Porta Bozzolo, one of the most prestigious residences in the area. Historical sources report that some members of the family were buried in the church of Sant&#039;Eusebio and Antonio in Azzio, which was part of the Franciscan convent of Santa Maria degli Angeli, whose economic interests were cared for by the Della Porta family. Between 2021 and 2022, the resumption of anthropological research within the church allowed for a scientific investigation of the underground environments, identifying the remains of Carlo Girolamo I Della Porta.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Original Article: Physical Anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>anthropology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>paleopathology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>taphonomy</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Modern Era</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Italy</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Omar Larentis</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-06-14</dc:date>
+		<prism:publicationDate>2023-06-14</prism:publicationDate>
+
+					<prism:startingPage>e2023011</prism:startingPage>
+							<prism:endingPage>e2023011</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14272">
+
+				<title>Archaeobotanical analysis of a roman funerary context in Mutina: via Ferrari</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14272</link>
+
+							<description>
+								&lt;p&gt;The archaeological investigations of the funerary context of via Ferrari in Modena (northern Italy) carried on in 2010 brought to light two cremation burials of the &lt;em&gt;Lollia gens&lt;/em&gt; of the 1st century AD. An archaeobotanical analysis (seeds/fruits and charcoals) has been carried out in order to find remains of meals involved in the ritual ceremonies, as evidence of the attendance of the sepulcher. Soil samples taken have been examined at the Laboratory of Palynology and Palaeobotany in Modena. Here the soil-sieving operation was carried out using piled sieves of differing mesh sizes (10 mm – 0.5 mm – 0.2 mm), as well as screening and microscopic identification. A total 836 seeds/fruits and 19 &lt;em&gt;taxa&lt;/em&gt; have been identified and they mostly belong to cultivated plants or, anyway, plants that can be used as food, as Cereals, Pulses and Fruit plants. The aim of the anthracological analysis was a preliminary essay. A total of 15 charcoals were examined and the only &lt;em&gt;taxon&lt;/em&gt; identified was ash (&lt;em&gt;Fraxinus&lt;/em&gt;).&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Case Report: Archaeobotany</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>archaeobotany</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>roman</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>necropolis</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Mutina</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>carpology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>anthracology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>multidisciplinary</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Federica Riso</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-06-14</dc:date>
+		<prism:publicationDate>2023-06-14</prism:publicationDate>
+
+					<prism:startingPage>e2023014</prism:startingPage>
+							<prism:endingPage>e2023014</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14038">
+
+				<title>When Entomological studies meet Archaeology: archaeoentomology an old, new discipline for investigation of the Past</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14038</link>
+
+							<description>
+								&lt;p style=&quot;font-weight: 400;&quot;&gt;Due to their widespread distribution and their ability of colonizing all the terrestrial and freshwater ecological niches, insects represent a good candidate in archaeological investigation to derive further levels of knowledge. Arcaheoentomology is the discipline devoted to this aim. In addition, a more specific discipline, funerary archaeoentomology focus its attention to the funerary context in order to reconstruct the funerary practices and obtaining specific information about rituals, bodies’s transfer and sanitary conditions. In this review the potentialities and the limits of this disciplines are described.&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Review Article: Archaeoentomology</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+												<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Insects</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Diptera</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Mummies</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Burial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+							<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/keywords" />
+						<rdf:value>Decomposition</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Stefano Vanin</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-02-07</dc:date>
+		<prism:publicationDate>2023-02-07</prism:publicationDate>
+
+					<prism:startingPage>e2023007</prism:startingPage>
+							<prism:endingPage>e2023007</prism:endingPage>
+		
+			</item>
+			<item rdf:about="https://mattioli1885journals.com/index.php/JBR/article/view/14024">
+
+				<title>Editorial The new Journal of Bioarchaeology, a fundamental tool for the dissemination of research</title>
+		<link>https://mattioli1885journals.com/index.php/JBR/article/view/14024</link>
+
+							<description>
+								&lt;p&gt;Editorial&lt;/p&gt; &lt;p&gt;&lt;em&gt;The new Journal of Bioarchaeology, a fundamental tool for the dissemination of research&lt;/em&gt;&lt;/p&gt;
+			</description>
+		
+									<dc:subject>
+					<rdf:Description>
+						<taxo:topic rdf:resource="https://pkp.sfu.ca/ojs/category/section" />
+						<rdf:value>Editorial</rdf:value>
+					</rdf:Description>
+				</dc:subject>
+										<dc:creator>Marta Licata</dc:creator>
+		
+		<dc:rights>
+			Copyright (c) 2023 Publisher
+			
+		</dc:rights>
+		<cc:license  />
+
+		<dc:date>2023-02-07</dc:date>
+		<prism:publicationDate>2023-02-07</prism:publicationDate>
+
+					<prism:startingPage>e2023001</prism:startingPage>
+							<prism:endingPage>e2023001</prism:endingPage>
+		
+			</item>
+</rdf:RDF>
