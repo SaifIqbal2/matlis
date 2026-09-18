@@ -57,7 +57,7 @@
       const productionHost = 'https://www.mattioli1885journls.com';
       const viewerUrl = `${productionHost}/api/pdf-preview?uploadedId=${encodeURIComponent(pdf.id)}`;
       const numericPdfUrl = pdf.ojs_article_id && pdf.ojs_galley_id ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}/${pdf.ojs_galley_id}.html` : '';
-      const detailUrl = `${productionHost}/index.php/actabiomedica/onlinefirst/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
+      const detailUrl = `${productionHost}/index.php/actabiomedica/article/view/19401.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       const issue928DetailUrl = `${productionHost}/index.php/actabiomedica/onlinefirst/view/16515.html?uploadedId=${encodeURIComponent(pdf.id)}`;
       const titleUrl = pdf.ojs_article_id ? `${productionHost}/index.php/${journalSlug}/article/view/${pdf.ojs_article_id}.html?uploadedId=${encodeURIComponent(pdf.id)}` : detailUrl;
       const viewerLink = numericPdfUrl || `${viewerUrl}&returnUrl=${encodeURIComponent(detailUrl)}`;
